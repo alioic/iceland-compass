@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iceland Compass — a travel guide to Iceland</title>
+    <meta
+      name="description"
+      content="A guide to Iceland – choose a region on the interactive map and find places, hiking trails, accommodation and activities across all eight regions."
+    />
+    <link rel="canonical" href="https://icelandcompass.com/en/" />
+    <meta name="robots" content="index, follow" />
+    <link rel="alternate" hreflang="is" href="https://icelandcompass.com/" />
+    <link rel="alternate" hreflang="en" href="https://icelandcompass.com/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://icelandcompass.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Iceland Compass — a travel guide to Iceland" />
+    <meta property="og:description" content="Choose a region on the interactive map and find places, hiking trails, accommodation and activities across Iceland." />
+    <meta property="og:url" content="https://icelandcompass.com/en/" />
+    <meta property="og:site_name" content="Iceland Compass" />
+    <meta property="og:locale" content="en" />
+    <meta property="og:image" content="https://icelandcompass.com/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Iceland Compass — a travel guide to Iceland" />
+    <meta name="twitter:image" content="https://icelandcompass.com/og-image.svg" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Iceland Compass",
+      "url": "https://icelandcompass.com/en/",
+      "inLanguage": "en",
+      "description": "A travel guide to Iceland – places, hiking trails, accommodation and activities in every region."
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="siteHeader">
+      <a href="/en/" class="logo">
+        <span class="logo-text">Iceland</span>
+        <span class="logo-sub">Compass</span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#kort">Map</a>
+        <a href="#landshlutar">Regions</a>
+        <a href="#stadir">Places</a>
+        <a href="#um">About</a>
+        <a href="/" class="lang-switch">IS</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <p class="hero-kicker">Travel guide</p>
+        <h1 class="hero-title">Land of fire, ice<br />and eight regions</h1>
+        <p class="hero-sub">
+          From city life by the sea to the untouched wilderness of the highlands. Choose a region
+          on the map and find places, stays and activities — big and small.
+        </p>
+        <div class="hero-actions">
+          <a href="#kort" class="btn btn-primary">Explore the map</a>
+          <a href="#stadir" class="btn btn-ghost">Browse places</a>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>Places in the guide</dt><dd id="statPlaces">0</dd></div>
+          <div><dt>Regions</dt><dd>8</dd></div>
+          <div><dt>Land area</dt><dd>103,000 km²</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="map-section" id="kort">
+      <div class="section-head">
+        <p class="section-kicker">Interactive map</p>
+        <h2>Choose a region</h2>
+        <p class="section-lead">
+          Click an area on the map to see its places, accommodation and activities. The map is
+          based on the real boundaries of Iceland's eight regions.
+        </p>
+      </div>
+
+      <div class="map-layout">
+        <div class="map-wrap">
+          <div id="mapContainer"></div>
+        </div>
+
+        <aside class="region-panel" id="regionPanel">
+          <div class="region-panel-empty" id="regionEmpty">
+            <h3>Choose a region</h3>
+            <p>Click the map on the left to see more about each area.</p>
+            <ul class="region-quicklist" id="regionQuicklist"></ul>
+          </div>
+          <div class="region-panel-content" id="regionContent" hidden></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="regions-section" id="landshlutar">
+      <div class="section-head">
+        <p class="section-kicker">The eight regions</p>
+        <h2>Each with its own character</h2>
+      </div>
+      <div class="region-cards" id="regionCards"></div>
+    </section>
+
+    <section class="places-section" id="stadir">
+      <div class="section-head">
+        <p class="section-kicker">Destinations</p>
+        <h2>Places, hiking trails and restaurants</h2>
+        <p class="section-lead">Pick a category and region, or search directly for what you need.</p>
+      </div>
+
+      <div class="filters" id="filters">
+        <div class="filter-cats" id="categoryFilters"></div>
+        <div class="filter-search">
+          <input type="text" id="searchInput" placeholder="Search for a place, hike or restaurant…" />
+        </div>
+        <div class="filter-chips" id="regionFilters"></div>
+      </div>
+
+      <p class="place-count" id="placeCount"></p>
+      <div class="place-grid" id="placeGrid"></div>
+      <p class="no-results" id="noResults" hidden>No places found — try a different filter.</p>
+    </section>
+
+    <section class="about-section" id="um">
+      <div class="about-inner">
+        <h2>About</h2>
+        <p>
+          This site is a guide to Iceland — made to help you plan a trip anywhere in the country.
+          Every place is linked to nearby accommodation and activities so you can put together your
+          own journey.
+        </p>
+        <p class="about-note">
+          Iceland's nature is powerful and the weather changes fast. Always check
+          <strong>safetravel.is</strong> and <strong>vedur.is</strong> before you set off,
+          especially in the highlands and near volcanic areas.
+        </p>
+        <p class="about-source">
+          The map is based on open geographic data for the region boundaries (geoBoundaries, ADM1).
+          Some booking links on this site are affiliate links — the site may earn a commission on
+          bookings at no extra cost to you.
+        </p>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <nav class="footer-nav" id="footerNav" aria-label="Regions">
+        <span class="footer-nav-title">Regions</span>
+      </nav>
+      <div class="footer-inner">
+        <span class="footer-logo">Iceland Compass</span>
+        <span class="footer-small">
+          <a href="/en/places/">All places</a> · <a href="/">Íslenska</a> · Interactive travel guide
+        </span>
+      </div>
+    </footer>
+
+    <div class="modal-overlay" id="modalOverlay" hidden>
+      <div class="modal" id="modal" role="dialog" aria-modal="true">
+        <button class="modal-close" id="modalClose" aria-label="Close">Close</button>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </div>
+
+    <script src="/js/mapdata.js"></script>
+    <script src="/js/data.en.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

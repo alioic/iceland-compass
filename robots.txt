@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://icelandcompass.com/sitemap.xml

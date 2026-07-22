@@ -1,0 +1,34 @@
+/* Stílar fyrir kyrrstæðu SEO-síðurnar (byggðar af build.py) */
+.doc { max-width: 760px; margin: 0 auto; padding: 120px 24px 80px; }
+.crumbs { font-size: .84rem; color: var(--ink-faint); margin-bottom: 28px; }
+.crumbs a { color: var(--ink-soft); } .crumbs a:hover { color: var(--accent); }
+.doc-kicker { text-transform: uppercase; letter-spacing: .16em; font-size: .74rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+.doc-kicker a { color: var(--accent); }
+.doc h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 16px; }
+.doc-lead { font-size: 1.2rem; color: var(--ink-soft); margin-bottom: 24px; }
+.doc-band { height: 8px; border-radius: 6px; margin-bottom: 28px; }
+.doc-body { font-size: 1.05rem; color: var(--ink-soft); margin-bottom: 8px; }
+.doc h2 { font-size: 1.4rem; margin: 38px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.doc h2 a { color: var(--ink); } .doc h2 a:hover { color: var(--accent); }
+.doc-stats { display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin: 4px 0 8px; }
+.doc-stat { flex: 1; padding: 16px 12px; text-align: center; }
+.doc-stat + .doc-stat { border-left: 1px solid var(--line); }
+.doc-stat strong { display: block; font-family: var(--font-display); font-size: 1.05rem; }
+.doc-stat span { font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-faint); }
+.doc-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; }
+.doc-tags li { background: var(--card); border: 1px solid var(--line); border-radius: 100px; padding: 7px 14px; font-size: .9rem; }
+.doc-list { list-style: none; padding: 0; }
+.doc-list li { display: flex; justify-content: space-between; gap: 12px; padding: 12px 2px; border-bottom: 1px solid var(--line-soft); }
+.doc-list em { color: var(--ink-faint); font-style: normal; font-size: .82rem; display: block; }
+.doc-list b { color: var(--accent); }
+.doc-links { list-style: none; padding: 0; }
+.doc-links li { padding: 12px 2px; border-bottom: 1px solid var(--line-soft); }
+.doc-links a { font-weight: 600; }
+.doc-links a:hover { color: var(--accent); }
+.doc-links span { color: var(--ink-faint); font-size: .88rem; display: block; }
+.doc-cta { display: flex; gap: 12px; flex-wrap: wrap; margin: 32px 0; padding-top: 26px; border-top: 1px solid var(--line); }
+.doc-btn { flex: 1; min-width: 200px; text-align: center; padding: 14px 20px; border-radius: 6px; font-weight: 600; border: 1px solid var(--line); }
+.doc-btn.primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.doc-btn:hover { transform: translateY(-2px); }
+.doc-more { margin-top: 30px; color: var(--ink-faint); }
+.doc-more a { color: var(--accent); font-weight: 600; }

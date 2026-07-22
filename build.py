@@ -1,0 +1,423 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Tvítyngdur SEO-byggari fyrir Iceland Compass
+----------------------------------------------
+Les js/data.js (íslensku) og js/data.en.js (ensku) og býr til
+kyrrstæðar, leitarhæfar síður á báðum tungumálum:
+
+  Íslenska (rót):        /stadur/<id>/  /landshluti/<id>/  /stadir/
+  Enska (/en/):          /en/place/<id>/  /en/region/<id>/  /en/places/
+
+Auk þess: sitemap.xml (báðar útgáfur), robots.txt, css/doc.css, og-image.svg,
+hreflang-tengsl og tungumálarofa á hverri síðu.
+
+Forsíðurnar (index.html og en/index.html) eru handgerðar og ekki snertar hér.
+Keyrsla:   python3 build.py   (þarf `json5`: python3 -m pip install json5)
+"""
+import json5, json, os, re, html, datetime
+
+# ----------------------------------------------------------------------
+SITE_URL  = "https://icelandcompass.com"   # <-- BREYTTU í þitt lén (líka í index.html og en/index.html)
+SITE_NAME = "Iceland Compass"
+ROOT = os.path.dirname(os.path.abspath(__file__))
+TODAY = datetime.date.today().isoformat()
+
+# Ítarlegt SEO-efni (kaflar) — { "<id>": { "is": [{title,text}], "en": [...] } }
+def load_seo():
+    path = os.path.join(ROOT, "seo-content.json")
+    return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
+SEO = {}
+
+# Ítarlegt SEO-efni fyrir landshluta — { "<regionid>": { "is": [{title,text}], "en": [...] } }
+def load_region_seo():
+    path = os.path.join(ROOT, "region-content.json")
+    return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
+REGION_SEO = {}
+
+REGION_ORDER = ["hofudborg","reykjanes","vesturland","vestfirdir",
+                "nordvestur","nordaustur","austurland","sudurland"]
+
+LANGS = {
+  "is": {
+    "code": "is", "og_locale": "is_IS", "data": "js/data.js", "prefix": "",
+    "seg": {"place": "stadur", "region": "landshluti", "all": "stadir"},
+    "country": "Ísland",
+    "ui": {
+      "nav_map":"Kort","nav_all":"Allir staðir","nav_about":"Um vefinn","crumb_home":"Heim",
+      "kicker_place":{"stadur":"Staður","ganga":"Gönguleið","bod":"Sundlaug & böð","veitingar":"Veitingastaður","kaffi":"Kaffihús"},
+      "kicker_region":"Landshluti","kicker_overview":"Yfirlit",
+      "h_highlights":"Hápunktar","h_route":"Á leiðinni","h_known":"Þekkt fyrir",
+      "h_accom":"Gisting í nágrenni","h_activities":"Afþreying",
+      "stat_area":"Flæmi","stat_pop":"Íbúar","stat_town":"Þéttbýli",
+      "stat_dist":"Vegalengd","stat_dur":"Tími","stat_diff":"Erfiðleiki",
+      "stat_cuisine":"Tegund","stat_price":"Verðflokkur","stat_loc":"Staðsetning",
+      "btn_book":"Bóka gistingu í nágrenni","btn_tours":"Skoða ferðir og afþreyingu","btn_find":"Sjá á korti",
+      "more_in":"Fleiri á {r}","all_in":"Allt á {r} →","view_map":"Skoða á gagnvirku korti →",
+      "region_groups":{"stadur":"Staðir og náttúra","ganga":"Gönguleiðir","bod":"Sundlaugar & böð","veitingar":"Veitingastaðir","kaffi":"Kaffihús"},
+      "dir_h1":"Allir staðir á Íslandi","all_places":"Allir staðir","lang_label":"EN",
+      "place_title":"{name} — {type}, {rname} | {site}",
+      "region_title":"{rname} — staðir, gisting og afþreyging | {site}",
+      "dir_title":"Allir staðir, gönguleiðir og veitingar á Íslandi | {site}",
+      "dir_desc":"Leiðsögn um Ísland — staðir, gönguleiðir, gisting og afþreyging í öllum landshlutum.",
+    },
+  },
+  "en": {
+    "code": "en", "og_locale": "en", "data": "js/data.en.js", "prefix": "/en",
+    "seg": {"place": "place", "region": "region", "all": "places"},
+    "country": "Iceland",
+    "ui": {
+      "nav_map":"Map","nav_all":"All places","nav_about":"About","crumb_home":"Home",
+      "kicker_place":{"stadur":"Place","ganga":"Hiking trail","bod":"Pool & baths","veitingar":"Restaurant","kaffi":"Café"},
+      "kicker_region":"Region","kicker_overview":"Overview",
+      "h_highlights":"Highlights","h_route":"On the route","h_known":"Known for",
+      "h_accom":"Nearby accommodation","h_activities":"Activities",
+      "stat_area":"Area","stat_pop":"Population","stat_town":"Main town",
+      "stat_dist":"Distance","stat_dur":"Duration","stat_diff":"Difficulty",
+      "stat_cuisine":"Cuisine","stat_price":"Price","stat_loc":"Location",
+      "btn_book":"Book nearby accommodation","btn_tours":"Browse tours & activities","btn_find":"Find on map",
+      "more_in":"More in {r}","all_in":"All of {r} →","view_map":"View on the interactive map →",
+      "region_groups":{"stadur":"Places & nature","ganga":"Hiking trails","bod":"Pools & baths","veitingar":"Restaurants","kaffi":"Cafés"},
+      "dir_h1":"All places in Iceland","all_places":"All places","lang_label":"IS",
+      "place_title":"{name} — {type} in {rname} | {site}",
+      "region_title":"{rname} — places, accommodation & activities | {site}",
+      "dir_title":"All places, hiking trails & restaurants in Iceland | {site}",
+      "dir_desc":"A guide to Iceland — places, hiking trails, accommodation and activities in every region.",
+    },
+  },
+}
+
+# ----------------------------------------------------------------------
+def load(datafile):
+    src = open(os.path.join(ROOT, datafile), encoding="utf-8").read()
+    r0 = src.index("const REGIONS =") + len("const REGIONS =")
+    p0 = src.index("const PLACES =")
+    regions = json5.loads(src[r0:p0].rstrip().rstrip(";").strip())
+    p1 = src.index("const PLACES =") + len("const PLACES =")
+    end = src.index("if (typeof module")
+    places = json5.loads(src[p1:end].rstrip().rstrip(";").strip())
+    return regions, places
+
+def e(s):  return html.escape(str(s), quote=True)
+def cat_of(p): return p.get("category", "stadur")
+def trunc(s, n=155):
+    s = re.sub(r"\s+", " ", s).strip()
+    return s if len(s) <= n else s[:n-1].rsplit(" ", 1)[0] + "…"
+def write(path, content):
+    full = os.path.join(ROOT, path)
+    os.makedirs(os.path.dirname(full), exist_ok=True)
+    open(full, "w", encoding="utf-8").write(content)
+def jsonld_block(obj):
+    return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False) + '</script>'
+
+# ---- URL-smiðir ----
+def home_url(lang):   return f"{SITE_URL}{LANGS[lang]['prefix']}/"
+def all_url(lang):    return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['all']}/"
+def place_url(lang, pid): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['place']}/{pid}/"
+def region_url(lang, rid): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['region']}/{rid}/"
+def out_path(url):
+    return url.replace(SITE_URL + "/", "") + "index.html"
+
+def kind_url(lang, kind, ident):
+    if kind == "place":  return place_url(lang, ident)
+    if kind == "region": return region_url(lang, ident)
+    if kind == "all":    return all_url(lang)
+    return home_url(lang)
+
+def alternates(kind, ident):
+    return "\n".join([
+        f'<link rel="alternate" hreflang="is" href="{kind_url("is",kind,ident)}">',
+        f'<link rel="alternate" hreflang="en" href="{kind_url("en",kind,ident)}">',
+        f'<link rel="alternate" hreflang="x-default" href="{kind_url("is",kind,ident)}">',
+    ])
+
+# ----------------------------------------------------------------------
+HEAD = """<!DOCTYPE html>
+<html lang="{lc}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title}</title>
+<meta name="description" content="{desc}">
+<link rel="canonical" href="{url}">
+<meta name="robots" content="index, follow">
+{alts}
+<meta property="og:type" content="{ogtype}">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:url" content="{url}">
+<meta property="og:site_name" content="{site}">
+<meta property="og:locale" content="{oglocale}">
+<meta property="og:image" content="{siteurl}/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:image" content="{siteurl}/og-image.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/doc.css">
+{jsonld}
+</head>
+<body>
+<header class="site-header scrolled">
+  <a href="{home}" class="logo"><span class="logo-text">{logo}</span><span class="logo-sub">{logosub}</span></a>
+  <nav class="main-nav">
+    <a href="{home}#kort">{nav_map}</a>
+    <a href="{all}">{nav_all}</a>
+    <a href="{home}#um">{nav_about}</a>
+    <a href="{lang_href}" class="lang-switch">{lang_label}</a>
+  </nav>
+</header>
+<main class="doc">
+"""
+FOOT = """</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="footer-logo">Iceland Compass</span>
+    <span class="footer-small"><a href="{all}">{nav_all}</a></span>
+  </div>
+</footer>
+</body>
+</html>
+"""
+
+def page(lang, kind, ident, title, desc, url, ogtype, jsonld, body):
+    ui = LANGS[lang]["ui"]
+    other = "en" if lang == "is" else "is"
+    logo, logosub = ("Iceland", "Compass")
+    head = HEAD.format(
+        lc=LANGS[lang]["code"], title=e(title), desc=e(desc), url=e(url), ogtype=ogtype,
+        site=e(SITE_NAME), oglocale=LANGS[lang]["og_locale"], siteurl=SITE_URL,
+        alts=alternates(kind, ident), jsonld="\n".join(jsonld),
+        home=home_url(lang), all=all_url(lang), logo=logo, logosub=logosub,
+        nav_map=ui["nav_map"], nav_all=ui["nav_all"], nav_about=ui["nav_about"],
+        lang_href=kind_url(other, kind, ident), lang_label=ui["lang_label"])
+    return head + body + FOOT.format(all=all_url(lang), nav_all=ui["nav_all"])
+
+def breadcrumbs(items):
+    ol, crumbs = [], []
+    for i, (name, url) in enumerate(items):
+        crumbs.append({"@type":"ListItem","position":i+1,"name":name, **({"item":url} if url else {})})
+        ol.append(f'<a href="{e(url)}">{e(name)}</a>' if url and i < len(items)-1 else f'<span>{e(name)}</span>')
+    nav = '<nav class="crumbs" aria-label="Breadcrumb">' + ' / '.join(ol) + '</nav>'
+    ld = jsonld_block({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":crumbs})
+    return nav, ld
+
+# ----------------------------------------------------------------------
+def build_place(lang, p, regions, places):
+    ui = LANGS[lang]["ui"]
+    rid = p["region"]; region = regions[rid]; rname = region["name"]; cat = cat_of(p); pid = p["id"]
+    url = place_url(lang, pid)
+    title = ui["place_title"].format(name=p["name"], type=p["type"], rname=rname, site=SITE_NAME)
+    desc = trunc(p.get("blurb") or p.get("description",""))
+
+    crumb_nav, crumb_ld = breadcrumbs([(ui["crumb_home"], home_url(lang)),
+                                       (rname, region_url(lang, rid)), (p["name"], url)])
+    parts = [crumb_nav,
+        f'<p class="doc-kicker">{e(ui["kicker_place"][cat])} · <a href="{region_url(lang,rid)}">{e(rname)}</a></p>',
+        f'<h1>{e(p["name"])}</h1>',
+        f'<p class="doc-lead">{e(p.get("blurb",""))}</p>',
+        f'<div class="doc-band" style="background:{e(region["color"])}"></div>',
+        f'<p class="doc-body">{e(p["description"])}</p>']
+
+    # Ítarlegt SEO-efni (kaflar með undirfyrirsögnum)
+    for sec in SEO.get(pid, {}).get(lang, []):
+        txt = sec.get("text") or sec.get("body") or ""
+        parts.append(f'<h2>{e(sec.get("title",""))}</h2><p class="doc-body">{e(txt)}</p>')
+
+    if cat in ("ganga","veitingar","kaffi","bod"):
+        if cat == "ganga":
+            stats = [(ui["stat_dist"],p.get("length")),(ui["stat_dur"],p.get("duration")),(ui["stat_diff"],p.get("difficulty"))]
+        elif cat == "bod":
+            stats = [(ui["stat_price"],p.get("price")),(ui["stat_loc"],p.get("location"))]
+        else:
+            stats = [(ui["stat_cuisine"],p.get("cuisine")),(ui["stat_price"],p.get("price")),(ui["stat_loc"],p.get("location"))]
+        parts.append('<div class="doc-stats">' +
+            "".join(f'<div class="doc-stat"><strong>{e(v)}</strong><span>{e(l)}</span></div>' for l,v in stats if v) + '</div>')
+
+    if p.get("highlights"):
+        ht = ui["h_route"] if cat=="ganga" else (ui["h_known"] if cat in ("veitingar","kaffi") else ui["h_highlights"])
+        parts.append(f'<h2>{e(ht)}</h2><ul class="doc-tags">' +
+                     "".join(f'<li>{e(h)}</li>' for h in p["highlights"]) + '</ul>')
+
+    if cat in ("stadur","ganga") and p.get("accommodation"):
+        parts.append(f'<h2>{e(ui["h_accom"])}</h2><ul class="doc-list">' +
+            "".join(f'<li><span>{e(a["name"])} <em>{e(a["type"])}</em></span><b>{e(a["price"])}</b></li>'
+                    for a in p["accommodation"]) + '</ul>')
+    if cat == "stadur" and p.get("activities"):
+        parts.append(f'<h2>{e(ui["h_activities"])}</h2><ul class="doc-list">' +
+            "".join(f'<li><span>{e(a)}</span></li>' for a in p["activities"]) + '</ul>')
+
+    q = p.get("location") or f'{p["name"]} {rname}'
+    booking = f'https://www.booking.com/searchresults.html?ss={e(q)}, {LANGS[lang]["country"]}'
+    if cat in ("veitingar","kaffi","bod"):
+        mapq = f'{p["name"]} {p.get("location") or rname}'
+        maplink = f'https://www.google.com/maps/search/{e(mapq)}, {LANGS[lang]["country"]}'
+        parts.append(f'''<div class="doc-cta">
+      <a class="doc-btn primary" href="{maplink}" target="_blank" rel="noopener nofollow">{e(ui["btn_find"])}</a>
+      <a class="doc-btn" href="{booking}" target="_blank" rel="noopener sponsored nofollow">{e(ui["btn_book"])}</a></div>''')
+    else:
+        tours = f'https://www.getyourguide.com/s/?q={e(p["name"])}'
+        parts.append(f'''<div class="doc-cta">
+      <a class="doc-btn primary" href="{booking}" target="_blank" rel="noopener sponsored nofollow">{e(ui["btn_book"])}</a>
+      <a class="doc-btn" href="{tours}" target="_blank" rel="noopener sponsored nofollow">{e(ui["btn_tours"])}</a></div>''')
+
+    siblings = [x for x in places if x["region"]==rid and x["id"]!=pid][:8]
+    if siblings:
+        parts.append(f'<h2>{e(ui["more_in"].format(r=rname))}</h2><ul class="doc-links">' +
+            "".join(f'<li><a href="{place_url(lang,s["id"])}">{e(s["name"])}</a> <span>{e(s["type"])}</span></li>'
+                    for s in siblings) + '</ul>')
+    parts.append(f'<p class="doc-more"><a href="{region_url(lang,rid)}">{e(ui["all_in"].format(r=rname))}</a> · '
+                 f'<a href="{home_url(lang)}#kort">{e(ui["view_map"])}</a></p>')
+
+    if cat in ("veitingar","kaffi"):
+        schema = {"@context":"https://schema.org","@type":"CafeOrCoffeeShop" if cat=="kaffi" else "Restaurant",
+                  "name":p["name"],
+                  "description":p["description"],"servesCuisine":p.get("cuisine"),"priceRange":p.get("price"),
+                  "address":{"@type":"PostalAddress","addressLocality":p.get("location",rname),
+                             "addressRegion":rname,"addressCountry":"IS"},
+                  "url":url,"image":f"{SITE_URL}/og-image.svg"}
+    else:
+        schema = {"@context":"https://schema.org","@type":"TouristAttraction","name":p["name"],
+                  "description":p["description"],"touristType":list(p.get("tags",[])),
+                  "address":{"@type":"PostalAddress","addressRegion":rname,"addressCountry":"IS"},
+                  "isAccessibleForFree":True,"url":url,"image":f"{SITE_URL}/og-image.svg"}
+
+    write(out_path(url), page(lang,"place",pid,title,desc,url,"article",[crumb_ld,jsonld_block(schema)], crumb_nav and "\n".join(parts)))
+    return url
+
+def build_region(lang, rid, regions, places):
+    ui = LANGS[lang]["ui"]; region = regions[rid]; rname = region["name"]
+    url = region_url(lang, rid)
+    title = ui["region_title"].format(rname=rname, site=SITE_NAME)
+    desc = trunc(region.get("intro",""))
+    rplaces = [p for p in places if p["region"]==rid]
+    crumb_nav, crumb_ld = breadcrumbs([(ui["crumb_home"], home_url(lang)),(rname, url)])
+    parts = [crumb_nav,
+        f'<p class="doc-kicker">{e(ui["kicker_region"])} · {e(region.get("tagline",""))}</p>',
+        f'<h1>{e(rname)}</h1>',
+        f'<div class="doc-band" style="background:{e(region["color"])}"></div>',
+        f'<p class="doc-body">{e(region.get("intro",""))}</p>']
+    s = region.get("stats",{})
+    if s:
+        parts.append('<div class="doc-stats">' +
+            f'<div class="doc-stat"><strong>{e(s.get("flaemi",""))}</strong><span>{e(ui["stat_area"])}</span></div>' +
+            f'<div class="doc-stat"><strong>{e(s.get("ibuar",""))}</strong><span>{e(ui["stat_pop"])}</span></div>' +
+            f'<div class="doc-stat"><strong>{e(s.get("saeti",""))}</strong><span>{e(ui["stat_town"])}</span></div></div>')
+    # Ítarlegt landshlutaefni (kaflar með undirfyrirsögnum)
+    for sec in REGION_SEO.get(rid, {}).get(lang, []):
+        txt = sec.get("text") or sec.get("body") or ""
+        parts.append(f'<h2>{e(sec.get("title",""))}</h2><p class="doc-body">{e(txt)}</p>')
+    for cat in ("stadur","ganga","bod","veitingar","kaffi"):
+        group = [p for p in rplaces if cat_of(p)==cat]
+        if not group: continue
+        parts.append(f'<h2>{e(ui["region_groups"][cat])}</h2><ul class="doc-links">' +
+            "".join(f'<li><a href="{place_url(lang,p["id"])}">{e(p["name"])}</a> <span>{e(p.get("blurb",""))}</span></li>'
+                    for p in group) + '</ul>')
+    item_list = {"@context":"https://schema.org","@type":"ItemList",
+                 "itemListElement":[{"@type":"ListItem","position":i+1,"url":place_url(lang,p["id"]),"name":p["name"]}
+                                    for i,p in enumerate(rplaces)]}
+    dest = {"@context":"https://schema.org","@type":"TouristDestination","name":rname,
+            "description":region.get("intro",""),"url":url,"image":f"{SITE_URL}/og-image.svg","addressCountry":"IS"}
+    write(out_path(url), page(lang,"region",rid,title,desc,url,"website",[crumb_ld,jsonld_block(dest),jsonld_block(item_list)], "\n".join(parts)))
+    return url
+
+def build_directory(lang, regions, places):
+    ui = LANGS[lang]["ui"]; url = all_url(lang)
+    title = ui["dir_title"].format(site=SITE_NAME); desc = trunc(ui["dir_desc"])
+    crumb_nav, crumb_ld = breadcrumbs([(ui["crumb_home"], home_url(lang)),(ui["all_places"], url)])
+    parts = [crumb_nav, f'<p class="doc-kicker">{e(ui["kicker_overview"])}</p>',
+             f'<h1>{e(ui["dir_h1"])}</h1>', f'<p class="doc-lead">{e(ui["dir_desc"])}</p>']
+    for rid in REGION_ORDER:
+        if rid not in regions: continue
+        rplaces = [p for p in places if p["region"]==rid]
+        if not rplaces: continue
+        parts.append(f'<h2><a href="{region_url(lang,rid)}">{e(regions[rid]["name"])}</a></h2>')
+        parts.append('<ul class="doc-links">' +
+            "".join(f'<li><a href="{place_url(lang,p["id"])}">{e(p["name"])}</a> <span>{e(p["type"])}</span></li>'
+                    for p in rplaces) + '</ul>')
+    write(out_path(url), page(lang,"all",None,title,desc,url,"website",[crumb_ld], "\n".join(parts)))
+    return url
+
+# ----------------------------------------------------------------------
+def build_sitemap(urls):
+    items = "".join(
+        f"<url><loc>{u}</loc><lastmod>{TODAY}</lastmod><changefreq>monthly</changefreq><priority>{pr}</priority></url>\n"
+        for u,pr in urls)
+    write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'
+          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + items + '</urlset>\n')
+
+def build_robots():
+    write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n")
+
+def build_og_image():
+    write("og-image.svg", '''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f4f1ea"/>
+  <rect width="1200" height="10" fill="#1f4e46"/>
+  <text x="90" y="300" font-family="Georgia, serif" font-size="90" font-weight="600" fill="#1c1b19">Iceland Compass</text>
+  <text x="90" y="380" font-family="Georgia, serif" font-size="44" fill="#57534c">your travel guide to Iceland</text>
+  <text x="90" y="470" font-family="Inter, sans-serif" font-size="27" fill="#8c877d">Places · baths · hiking · food · in every region</text>
+</svg>''')
+
+def build_doc_css():
+    write("css/doc.css", """/* Stílar fyrir kyrrstæðu SEO-síðurnar (byggðar af build.py) */
+.doc { max-width: 760px; margin: 0 auto; padding: 120px 24px 80px; }
+.crumbs { font-size: .84rem; color: var(--ink-faint); margin-bottom: 28px; }
+.crumbs a { color: var(--ink-soft); } .crumbs a:hover { color: var(--accent); }
+.doc-kicker { text-transform: uppercase; letter-spacing: .16em; font-size: .74rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+.doc-kicker a { color: var(--accent); }
+.doc h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 16px; }
+.doc-lead { font-size: 1.2rem; color: var(--ink-soft); margin-bottom: 24px; }
+.doc-band { height: 8px; border-radius: 6px; margin-bottom: 28px; }
+.doc-body { font-size: 1.05rem; color: var(--ink-soft); margin-bottom: 8px; }
+.doc h2 { font-size: 1.4rem; margin: 38px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.doc h2 a { color: var(--ink); } .doc h2 a:hover { color: var(--accent); }
+.doc-stats { display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin: 4px 0 8px; }
+.doc-stat { flex: 1; padding: 16px 12px; text-align: center; }
+.doc-stat + .doc-stat { border-left: 1px solid var(--line); }
+.doc-stat strong { display: block; font-family: var(--font-display); font-size: 1.05rem; }
+.doc-stat span { font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-faint); }
+.doc-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; }
+.doc-tags li { background: var(--card); border: 1px solid var(--line); border-radius: 100px; padding: 7px 14px; font-size: .9rem; }
+.doc-list { list-style: none; padding: 0; }
+.doc-list li { display: flex; justify-content: space-between; gap: 12px; padding: 12px 2px; border-bottom: 1px solid var(--line-soft); }
+.doc-list em { color: var(--ink-faint); font-style: normal; font-size: .82rem; display: block; }
+.doc-list b { color: var(--accent); }
+.doc-links { list-style: none; padding: 0; }
+.doc-links li { padding: 12px 2px; border-bottom: 1px solid var(--line-soft); }
+.doc-links a { font-weight: 600; }
+.doc-links a:hover { color: var(--accent); }
+.doc-links span { color: var(--ink-faint); font-size: .88rem; display: block; }
+.doc-cta { display: flex; gap: 12px; flex-wrap: wrap; margin: 32px 0; padding-top: 26px; border-top: 1px solid var(--line); }
+.doc-btn { flex: 1; min-width: 200px; text-align: center; padding: 14px 20px; border-radius: 6px; font-weight: 600; border: 1px solid var(--line); }
+.doc-btn.primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.doc-btn:hover { transform: translateY(-2px); }
+.doc-more { margin-top: 30px; color: var(--ink-faint); }
+.doc-more a { color: var(--accent); font-weight: 600; }
+""")
+
+# ----------------------------------------------------------------------
+def main():
+    global SEO, REGION_SEO
+    SEO = load_seo()
+    REGION_SEO = load_region_seo()
+    build_og_image(); build_doc_css(); build_robots()
+    urls = [(home_url("is"), "1.0"), (home_url("en"), "1.0")]
+    counts = {}
+    for lang, cfg in LANGS.items():
+        regions, places = load(cfg["data"])
+        counts[lang] = len(places)
+        urls.append((build_directory(lang, regions, places), "0.8"))
+        for rid in REGION_ORDER:
+            if rid in regions:
+                urls.append((build_region(lang, rid, regions, places), "0.7"))
+        for p in places:
+            urls.append((build_place(lang, p, regions, places), "0.6"))
+    build_sitemap(urls)
+    print(f"✔ Byggt á 2 tungumálum — is: {counts['is']} staðir, en: {counts['en']} staðir")
+    print(f"✔ {len(urls)} slóðir í sitemap.xml")
+    print(f"⚠ Stilltu SITE_URL (nú: {SITE_URL}) — líka í index.html og en/index.html")
+
+if __name__ == "__main__":
+    main()

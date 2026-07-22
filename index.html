@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="is">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iceland Compass — ferðaleiðsögn um allt Ísland</title>
+    <meta
+      name="description"
+      content="Leiðsögn um Ísland – veldu landshluta á gagnvirku korti og finndu staði, gönguleiðir, gistingu og afþreyingu í öllum átta landshlutum."
+    />
+    <link rel="canonical" href="https://icelandcompass.com/" />
+    <meta name="robots" content="index, follow" />
+    <link rel="alternate" hreflang="is" href="https://icelandcompass.com/" />
+    <link rel="alternate" hreflang="en" href="https://icelandcompass.com/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://icelandcompass.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Iceland Compass — ferðaleiðsögn um allt Ísland" />
+    <meta property="og:description" content="Veldu landshluta á gagnvirku korti og finndu staði, gönguleiðir, gistingu og afþreyingu um allt Ísland." />
+    <meta property="og:url" content="https://icelandcompass.com/" />
+    <meta property="og:site_name" content="Iceland Compass" />
+    <meta property="og:locale" content="is_IS" />
+    <meta property="og:image" content="https://icelandcompass.com/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Iceland Compass — ferðaleiðsögn um allt Ísland" />
+    <meta name="twitter:image" content="https://icelandcompass.com/og-image.svg" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Iceland Compass",
+      "url": "https://icelandcompass.com/",
+      "inLanguage": "is",
+      "description": "Ferðaleiðsögn um Ísland – staðir, gönguleiðir, gisting og afþreyging í öllum landshlutum.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://icelandcompass.com/stadir/?leit={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Iceland Compass",
+      "url": "https://icelandcompass.com/",
+      "logo": "https://icelandcompass.com/og-image.svg"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- ============ HAUS ============ -->
+    <header class="site-header" id="siteHeader">
+      <a href="#top" class="logo">
+        <span class="logo-text">Iceland</span>
+        <span class="logo-sub">Compass</span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#kort">Kort</a>
+        <a href="#landshlutar">Landshlutar</a>
+        <a href="#stadir">Staðir</a>
+        <a href="#um">Um vefinn</a>
+        <a href="/en/" class="lang-switch">EN</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Valmynd">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <p class="hero-kicker">Ferðaleiðsögn</p>
+        <h1 class="hero-title">Land elds, íss<br />og átta landshluta</h1>
+        <p class="hero-sub">
+          Frá borgarlífi við sjávarsíðuna til ósnortinna víðerna hálendisins. Veldu landshluta
+          á kortinu og finndu staði, gistingu og afþreyingu — stóra sem smáa.
+        </p>
+        <div class="hero-actions">
+          <a href="#kort" class="btn btn-primary">Skoða kortið</a>
+          <a href="#stadir" class="btn btn-ghost">Vafra um staði</a>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>Staðir í leiðsögn</dt><dd id="statPlaces">0</dd></div>
+          <div><dt>Landshlutar</dt><dd>8</dd></div>
+          <div><dt>Flatarmál lands</dt><dd>103.000 km²</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ KORT ============ -->
+    <section class="map-section" id="kort">
+      <div class="section-head">
+        <p class="section-kicker">Gagnvirkt kort</p>
+        <h2>Veldu landshluta</h2>
+        <p class="section-lead">
+          Smelltu á svæði á kortinu til að sjá staði, gistingu og afþreyingu. Kortið byggir á
+          raunverulegum mörkum landshlutanna átta.
+        </p>
+      </div>
+
+      <div class="map-layout">
+        <div class="map-wrap">
+          <div id="mapContainer"></div>
+        </div>
+
+        <aside class="region-panel" id="regionPanel">
+          <div class="region-panel-empty" id="regionEmpty">
+            <h3>Veldu landshluta</h3>
+            <p>Smelltu á kortið til vinstri til að sjá nánari upplýsingar um hvert svæði.</p>
+            <ul class="region-quicklist" id="regionQuicklist"></ul>
+          </div>
+          <div class="region-panel-content" id="regionContent" hidden></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ LANDSHLUTAR ============ -->
+    <section class="regions-section" id="landshlutar">
+      <div class="section-head">
+        <p class="section-kicker">Landshlutarnir átta</p>
+        <h2>Hver með sinn karakter</h2>
+      </div>
+      <div class="region-cards" id="regionCards"></div>
+    </section>
+
+    <!-- ============ STAÐIR ============ -->
+    <section class="places-section" id="stadir">
+      <div class="section-head">
+        <p class="section-kicker">Áfangastaðir</p>
+        <h2>Staðir, gönguleiðir og veitingar</h2>
+        <p class="section-lead">Veldu flokk og landshluta, eða leitaðu beint að því sem þig vantar.</p>
+      </div>
+
+      <div class="filters" id="filters">
+        <div class="filter-cats" id="categoryFilters"></div>
+        <div class="filter-search">
+          <input type="text" id="searchInput" placeholder="Leita að stað, gönguleið eða veitingastað…" />
+        </div>
+        <div class="filter-chips" id="regionFilters"></div>
+      </div>
+
+      <p class="place-count" id="placeCount"></p>
+      <div class="place-grid" id="placeGrid"></div>
+      <p class="no-results" id="noResults" hidden>Engir staðir fundust — prófaðu aðra síu.</p>
+    </section>
+
+    <!-- ============ UM ============ -->
+    <section class="about-section" id="um">
+      <div class="about-inner">
+        <h2>Um vefinn</h2>
+        <p>
+          Þessi vefur er leiðsögn um Ísland — hugsaður til að hjálpa þér að skipuleggja ferðalag
+          hvert sem er á landinu. Hver staður tengist gistimöguleikum og afþreyingu í nágrenninu
+          svo þú getir sett saman þína eigin ferð.
+        </p>
+        <p class="about-note">
+          Náttúra Íslands er kraftmikil og veður breytist hratt. Fylgdu alltaf
+          <strong>safetravel.is</strong> og <strong>vedur.is</strong> áður en lagt er af stað,
+          sérstaklega á hálendi og að eldstöðvum.
+        </p>
+        <p class="about-source">
+          Kortið byggir á opnum landfræðigögnum um mörk landshlutanna (geoBoundaries, ADM1).
+          Sumir bókunarhlekkir á vefnum eru samstarfshlekkir (affiliate) — vefurinn getur fengið
+          þóknun af bókunum án þess að það hafi áhrif á verð til þín.
+        </p>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <nav class="footer-nav" id="footerNav" aria-label="Landshlutar">
+        <span class="footer-nav-title">Landshlutar</span>
+        <!-- fyllist af app.js; skriðanlegir tenglar á allar undirsíður -->
+      </nav>
+      <div class="footer-inner">
+        <span class="footer-logo">Iceland Compass</span>
+        <span class="footer-small">
+          <a href="/stadir/">Allir staðir</a> · Gagnvirkur ferðavefur · sýnidæmi
+        </span>
+      </div>
+    </footer>
+
+    <!-- ============ MÓÐALGLUGGI ============ -->
+    <div class="modal-overlay" id="modalOverlay" hidden>
+      <div class="modal" id="modal" role="dialog" aria-modal="true">
+        <button class="modal-close" id="modalClose" aria-label="Loka">Loka</button>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </div>
+
+    <script src="js/mapdata.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
