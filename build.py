@@ -250,7 +250,10 @@ def page(lang, kind, ident, title, desc, url, ogtype, jsonld, body, ogimg=None):
         nav_map=ui["nav_map"], nav_all=ui["nav_all"], nav_about=ui["nav_about"],
         coll_index=coll_index_url(lang), nav_coll=ui["nav_coll"],
         lang_href=kind_url(other, kind, ident), lang_label=ui["lang_label"])
-    return head + body + FOOT.format(all=all_url(lang), nav_all=ui["nav_all"])
+    full = head + body + FOOT.format(all=all_url(lang), nav_all=ui["nav_all"])
+    # Innri <a>-tenglar afstæðir svo síðan virki á hvaða léni sem er
+    # (canonical/hreflang/og halda áfram að vera algildir — það á að vera svo)
+    return full.replace('<a href="' + SITE_URL, '<a href="')
 
 def breadcrumbs(items):
     ol, crumbs = [], []
