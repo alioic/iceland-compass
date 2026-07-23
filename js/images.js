@@ -1,0 +1,520 @@
+/* IMAGES — hero-myndir fyrir staði/landshluta/leiðir.
+   Sjálfvirkt búið til; myndir frá Unsplash/Pexels (leyfin heimila notkun). */
+const IMAGES = {
+  "gullni-hringurinn": {
+    "src": "/img/places/gullni-hringurinn.jpg",
+    "alt_is": "Gullfoss í klakaböndum að vetri",
+    "alt_en": "Gullfoss waterfall in winter, Iceland",
+    "credit": "mana5280",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-frozen-waterfall-with-snow-on-the-ground-bLoQeWky8BU"
+  },
+  "demantshringurinn": {
+    "src": "/img/places/demantshringurinn.jpg",
+    "alt_is": "Goðafoss, foss goðanna á Norðurlandi",
+    "alt_en": "Godafoss waterfall in North Iceland",
+    "credit": "WeRoad",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/p8-oTF8Fh9I"
+  },
+  "bestu-baudin": {
+    "src": "/img/places/bestu-baudin.jpg",
+    "alt_is": "Slökun í mjólkurbláu jarðhitalóni, Bláa lónið",
+    "alt_en": "Bather relaxing in the milky-blue Blue Lagoon geothermal spa, Iceland",
+    "credit": "Karsten Winegeart",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/aiBu12OlzFA"
+  },
+  "sudurstrondin": {
+    "src": "/img/places/sudurstrondin.jpg",
+    "alt_is": "Reynisfjara, svört sandfjara með Reynisdröngum",
+    "alt_en": "Reynisfjara black sand beach with basalt sea stacks",
+    "credit": "Joseph Corl",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/black-sand-beach-with-rock-formations-FV7NJ-bSH6o"
+  },
+  "snaefellsnes": {
+    "src": "/img/places/snaefellsnes.jpg",
+    "alt_is": "Kirkjufell á Snæfellsnesi í vetrarbúningi",
+    "alt_en": "Kirkjufell mountain on the Snæfellsnes peninsula, Iceland",
+    "credit": "Presetbase Lightroom Presets",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/GhmVx0wpSto"
+  },
+  "vestfirdir-hapunktar": {
+    "src": "/img/places/vestfirdir-hapunktar.jpg",
+    "alt_is": "Dynjandi, perla Vestfjarða",
+    "alt_en": "Dynjandi waterfall in the Westfjords of Iceland",
+    "credit": "Denise Schuld",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/1g8V8-uPQJg"
+  },
+  "fjolskylduvaent": {
+    "src": "/img/places/fjolskylduvaent.jpg",
+    "alt_is": "Íslenskir hestar í haga",
+    "alt_en": "Icelandic horses in a field, Iceland",
+    "credit": "Timothy Muza",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/three-assorted-horses-4F42IqLRjf4"
+  },
+  "okeypis-natturuperlur": {
+    "src": "/img/places/okeypis-natturuperlur.jpg",
+    "alt_is": "Skógafoss með regnboga",
+    "alt_en": "Skógafoss waterfall with a rainbow, Iceland",
+    "credit": "Sorasak",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/8ZAxI5FwjFo"
+  },
+  "hofudborg": {
+    "src": "/img/places/hofudborg.jpg",
+    "alt_is": "Hallgrímskirkja í Reykjavík",
+    "alt_en": "Hallgrímskirkja church in Reykjavík, Iceland",
+    "credit": "Tim Foster",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/hallgrimur-church-iceland-WCtfyti07nc"
+  },
+  "reykjanes": {
+    "src": "/img/places/reykjanes.jpg",
+    "alt_is": "Reykjanesviti á Reykjanesskaga",
+    "alt_en": "Reykjanes lighthouse on the Reykjanes peninsula, Iceland",
+    "credit": "Tatiana Zanon",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/Ssic2bGANwI"
+  },
+  "vesturland": {
+    "src": "/img/places/vesturland.jpg",
+    "alt_is": "Hraunfossar í Borgarfirði",
+    "alt_en": "Hraunfossar waterfalls in West Iceland",
+    "credit": "Freysteinn G. Jonsson",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/fo2sfKG9mJ4"
+  },
+  "vestfirdir": {
+    "src": "/img/places/vestfirdir.jpg",
+    "alt_is": "Látrabjarg, vestasti oddi Íslands",
+    "alt_en": "Látrabjarg sea cliffs in the Westfjords of Iceland",
+    "credit": "Einar H. Reynis",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/QGlW5vCRDVM"
+  },
+  "nordvestur": {
+    "src": "/img/places/nordvestur.jpg",
+    "alt_is": "Hvítserkur við Vatnsnes",
+    "alt_en": "Hvítserkur sea stack off the Vatnsnes peninsula, Iceland",
+    "credit": "Rocco Casadei",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/rock-monolith-surrounded-body-of-water-V5nICghBiuM"
+  },
+  "nordaustur": {
+    "src": "/img/places/nordaustur.jpg",
+    "alt_is": "Mývatn á Norðausturlandi",
+    "alt_en": "Lake Mývatn in North Iceland",
+    "credit": "Jack Millard",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/panoramic-photo-of-mountain-and-lake-j7uReBfOSfo"
+  },
+  "austurland": {
+    "src": "/img/places/austurland.jpg",
+    "alt_is": "Vestrahorn við Stokksnes",
+    "alt_en": "Vestrahorn mountain at Stokksnes, southeast Iceland",
+    "credit": "Michał Janus",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/Usj3EA5SSD4"
+  },
+  "sudurland": {
+    "src": "/img/places/sudurland.jpg",
+    "alt_is": "Ísjakar á Jökulsárlóni",
+    "alt_en": "Icebergs floating in Jökulsárlón glacier lagoon, Iceland",
+    "credit": "Xavier S.",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-body-of-water-with-icebergs-floating-in-it-S1mzjkaHuUA"
+  },
+  "thingvellir": {
+    "src": "/img/places/thingvellir.jpg",
+    "alt_is": "Silfra-gjáin á Þingvöllum speglast í kyrru vatni",
+    "alt_en": "Silfra rift at Thingvellir National Park reflected in still water",
+    "credit": "Gunnar Sigurðarson",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/reflection-of-rock-mountain-on-body-of-water-5txDX59Hdwo"
+  },
+  "geysir": {
+    "src": "/img/places/geysir.jpg",
+    "alt_is": "Gestir fylgjast með Strokki á Geysissvæðinu",
+    "alt_en": "Visitors watching Strokkur geyser at the Geysir geothermal area",
+    "credit": "Piotr Musioł",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-group-of-people-standing-around-a-geyser-WxMTLrXlTjQ"
+  },
+  "gullfoss": {
+    "src": "/img/places/gullfoss.jpg",
+    "alt_is": "Regnbogi yfir Gullfossi í Hvítá",
+    "alt_en": "Rainbow over Gullfoss waterfall in Iceland",
+    "credit": "Laila Gebhard",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/water-waves-hitting-the-shore-during-daytime-Rt4p0KMo86k"
+  },
+  "kerid": {
+    "src": "/img/places/kerid.jpg",
+    "alt_is": "Kerið, eldgígur með vatni í botni, að vetri til",
+    "alt_en": "Kerid volcanic crater lake in winter, Iceland",
+    "credit": "Henrique Ferreira",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-large-crater-with-ice-on-the-ground-J9Z4nHwzj68"
+  },
+  "reynisfjara": {
+    "src": "/img/places/reynisfjara.jpg",
+    "alt_is": "Reynisdrangar rísa úr svörtum sandi Reynisfjöru",
+    "alt_en": "Reynisdrangar sea stacks rising from the black sand of Reynisfjara beach",
+    "credit": "Joseph Corl",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/black-sand-beach-with-rock-formations-FV7NJ-bSH6o"
+  },
+  "skogafoss": {
+    "src": "/img/places/skogafoss.jpg",
+    "alt_is": "Skógafoss steypist fram af brúninni í grænu umhverfi",
+    "alt_en": "Skogafoss waterfall plunging over green cliffs in South Iceland",
+    "credit": "Tim Foster",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/skogafoss-falls-A6qKpYdjE1w"
+  },
+  "jokulsarlon": {
+    "src": "/img/places/jokulsarlon.jpg",
+    "alt_is": "Ísjakar speglast í Jökulsárlóni",
+    "alt_en": "Icebergs reflected in Jokulsarlon glacier lagoon",
+    "credit": "Mark Olsen",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/reflection-of-snow-mountain-on-body-of-water-under-white-sky-KZdEtGWK1Mk"
+  },
+  "solheimasandur": {
+    "src": "/img/places/solheimasandur.jpg",
+    "alt_is": "Flugvélarflakið DC-3 á Sólheimasandi",
+    "alt_en": "Abandoned DC-3 plane wreck on Solheimasandur black sand plain",
+    "credit": "Dion Tavenier",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/abandoned-airplane-on-the-floor-under-white-clouds-a02F6k6CDyc"
+  },
+  "solheimajokull": {
+    "src": "/img/places/solheimajokull.jpg",
+    "alt_is": "Sólheimajökull og jökullón við sporðinn",
+    "alt_en": "Solheimajokull glacier tongue and its meltwater lake",
+    "credit": "Chris Liverani",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/gq0nlL9xz6I"
+  },
+  "fjadrargljufur": {
+    "src": "/img/places/fjadrargljufur.jpg",
+    "alt_is": "Fjaðrárgljúfur séð úr lofti, grænt og hlykkjótt gljúfur",
+    "alt_en": "Aerial view of the lush green Fjadrargljufur canyon",
+    "credit": "Karsten Winegeart",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-lush-green-canyon-carves-through-the-landscape-CwHiGEfWgRo"
+  },
+  "landmannalaugar": {
+    "src": "/img/places/landmannalaugar.jpg",
+    "alt_is": "Litrík líparítfjöll í Landmannalaugum",
+    "alt_en": "Colourful rhyolite mountains at Landmannalaugar in the highlands",
+    "credit": "Karsten Winegeart",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-mountain-range-with-a-dirt-road-in-the-foreground-Rr0DAKP6bu4"
+  },
+  "thorsmork": {
+    "src": "/img/places/thorsmork.jpg",
+    "alt_is": "Á rennur um dal í Þórsmörk, umkringd fjöllum",
+    "alt_en": "River running through the Thorsmork valley surrounded by mountains",
+    "credit": "Lien Van Win",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-river-running-through-a-valley-surrounded-by-mountains-Gz3RXr93-Fo"
+  },
+  "kerlingarfjoll": {
+    "src": "/img/places/kerlingarfjoll.jpg",
+    "alt_is": "Gufustrókar stíga upp af jarðhitasvæðinu í Kerlingarfjöllum",
+    "alt_en": "Steam rising from the geothermal mountains of Kerlingarfjoll",
+    "credit": "Karsten Winegeart",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-group-of-mountains-with-steam-coming-out-of-them-OFksJFQapY8"
+  },
+  "vestmannaeyjar": {
+    "src": "/img/places/vestmannaeyjar.jpg",
+    "alt_is": "Útsýni frá Heimaey yfir Vestmannaeyjar",
+    "alt_en": "View from Heimaey over the Westman Islands",
+    "credit": "Ursula Drake",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/white-boat-on-body-of-water-near-green-and-gray-island-1OVcNeq6ZHQ"
+  },
+  "seljavallalaug": {
+    "src": "/img/places/seljavallalaug.jpg",
+    "alt_is": "Gamla sundlaugin Seljavallalaug í þröngum fjalladal",
+    "alt_en": "The old Seljavallalaug swimming pool nestled in a mountain valley",
+    "credit": "Sigurdur Fjalar Jonsson",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/d8oRKkxrZVw"
+  },
+  "skaftafell": {
+    "src": "/img/places/skaftafell.jpg",
+    "alt_is": "Svartifoss í Skaftafelli með stuðlabergsumgjörð",
+    "alt_en": "Svartifoss waterfall framed by basalt columns in Skaftafell",
+    "credit": "Gigi",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/waterfalls-under-white-clouds-AEgvTRJXm-U"
+  },
+  "laugavegurinn": {
+    "src": "/img/places/laugavegurinn.jpg",
+    "alt_is": "Fjallalandslag á Laugaveginum á hálendi Íslands",
+    "alt_en": "Mountain landscape on the Laugavegur trek in the Icelandic highlands",
+    "credit": "Michael Hacker",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/mountain-with-snow-NrlYWlqlf80"
+  },
+  "godafoss": {
+    "src": "/img/places/godafoss.jpg",
+    "alt_is": "Goðafoss, foss goðanna, í Skjálfandafljóti á Norðurlandi",
+    "alt_en": "Godafoss, the waterfall of the gods, in North Iceland",
+    "credit": "WeRoad",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/p8-oTF8Fh9I"
+  },
+  "myvatn": {
+    "src": "/img/places/myvatn.jpg",
+    "alt_is": "Útsýni yfir Mývatn og fjöllin í kring",
+    "alt_en": "Panoramic view over Lake Myvatn and surrounding mountains",
+    "credit": "Jack Millard",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/panoramic-photo-of-mountain-and-lake-j7uReBfOSfo"
+  },
+  "namaskard": {
+    "src": "/img/places/namaskard.jpg",
+    "alt_is": "Litríkt jarðhitasvæðið Hverir við Námaskarð",
+    "alt_en": "Colourful Hverir geothermal area at Namaskard",
+    "credit": "Olivier Giboulot",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/NlyFGiN5uHM"
+  },
+  "krafla": {
+    "src": "/img/places/krafla.jpg",
+    "alt_is": "Víti, vatnsfylltur gígur við Kröflu",
+    "alt_en": "Viti, the water-filled crater at Krafla volcano",
+    "credit": "Pavol Svantner",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/pACtyqDfn9U"
+  },
+  "asbyrgi": {
+    "src": "/img/places/asbyrgi.jpg",
+    "alt_is": "Dettifoss, aflmesti foss Evrópu, í Jökulsárgljúfrum",
+    "alt_en": "Dettifoss, Europe's most powerful waterfall, in Jokulsargljufur",
+    "credit": "Richard Dorran",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/dettifoss-waterfall-in-iceland-JFW-P9IMgxo"
+  },
+  "husavik": {
+    "src": "/img/places/husavik.jpg",
+    "alt_is": "Bátur við bryggju á Húsavík",
+    "alt_en": "Boat at the harbour in Husavik, whale watching capital of Iceland",
+    "credit": "Bernd Dittrich",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-yellow-boat-is-docked-at-a-dock-hHWm8l_gB2Q"
+  },
+  "akureyri": {
+    "src": "/img/places/akureyri.jpg",
+    "alt_is": "Kirkja á Akureyri, höfuðstað Norðurlands",
+    "alt_en": "Church in Akureyri, the capital of North Iceland",
+    "credit": "Lachlan Gowen",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/low-angle-photography-of-brown-painted-church-bW2ny2UD08s"
+  },
+  "siglufjordur": {
+    "src": "/img/places/siglufjordur.jpg",
+    "alt_is": "Litrík hús við höfnina á Siglufirði",
+    "alt_en": "Colourful houses by the harbour in Siglufjordur",
+    "credit": "Luciano Braga",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/M-f-BijMEgw"
+  },
+  "grimsey": {
+    "src": "/img/places/grimsey.jpg",
+    "alt_is": "Lundi í Grímsey við heimskautsbaug",
+    "alt_en": "Puffin on Grimsey island at the Arctic Circle",
+    "credit": "Paul Levesley",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/znQ28Lf9weU"
+  },
+  "hvitserkur": {
+    "src": "/img/places/hvitserkur.jpg",
+    "alt_is": "Hvítserkur, 15 metra hár brimklettur við Vatnsnes",
+    "alt_en": "Hvitserkur, the 15-metre sea stack off the Vatnsnes peninsula",
+    "credit": "v2osk",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/black-rock-formation-on-body-of-water--LRuNvY8W7Q"
+  },
+  "studlagil": {
+    "src": "/img/places/studlagil.jpg",
+    "alt_is": "Stuðlagil í Jökuldal með stuðlabergi og blágrænni á",
+    "alt_en": "Studlagil canyon with basalt columns and turquoise river",
+    "credit": "Freysteinn G. Jonsson",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/an-aerial-view-of-a-cliff-with-a-body-of-water-mVxpDaYIgPg"
+  },
+  "stokksnes": {
+    "src": "/img/places/stokksnes.jpg",
+    "alt_is": "Vestrahorn við Stokksnes með svörtum sandöldum",
+    "alt_en": "Vestrahorn mountain at Stokksnes with black sand dunes",
+    "credit": "Luca Micheli",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/photo-of-mountain-ruWkmt3nU58"
+  },
+  "seydisfjordur": {
+    "src": "/img/places/seydisfjordur.jpg",
+    "alt_is": "Regnbogagatan og bláa kirkjan á Seyðisfirði",
+    "alt_en": "The rainbow street and blue church in Seydisfjordur",
+    "credit": "Freysteinn G. Jonsson",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-rainbow-painted-street-with-a-church-in-the-background-OtB3NJcTd80"
+  },
+  "borgarfjordur_eystri": {
+    "src": "/img/places/borgarfjordur_eystri.jpg",
+    "alt_is": "Bakkagerði í Borgarfirði eystri undir fjöllunum",
+    "alt_en": "Bakkagerdi village in Borgarfjordur Eystri beneath the mountains",
+    "credit": "K. K.",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/Vui4WYgr_qA"
+  },
+  "askja": {
+    "src": "/img/places/askja.jpg",
+    "alt_is": "Víti og Öskjuvatn í Öskju á hálendinu",
+    "alt_en": "Viti crater and Oskjuvatn lake in the Askja caldera",
+    "credit": "Tomáš Malík",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/lakes-viti-and-oskjuvatn-on-iceland-27244371/"
+  },
+  "aldeyjarfoss": {
+    "src": "/img/places/aldeyjarfoss.jpg",
+    "alt_is": "Aldeyjarfoss í Skjálfandafljóti umkringdur stuðlabergi",
+    "alt_en": "Aldeyjarfoss waterfall framed by basalt columns",
+    "credit": "Freysteinn G. Jonsson",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/YmaNFa9tPXw"
+  },
+  "arctic_henge": {
+    "src": "/img/places/arctic_henge.jpg",
+    "alt_is": "Heimskautsgerðið á Raufarhöfn í þoku",
+    "alt_en": "The Arctic Henge monument at Raufarhofn in fog",
+    "credit": "Joseph Corl",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/sQRL9e4RxWQ"
+  },
+  "reykjavik": {
+    "src": "/img/places/reykjavik.jpg",
+    "alt_is": "Hallgrímskirkja í Reykjavík",
+    "alt_en": "Hallgrimskirkja church in Reykjavik, Iceland",
+    "credit": "Tim Foster",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/hallgrimur-church-iceland-WCtfyti07nc"
+  },
+  "esjan": {
+    "src": "/img/places/esjan.jpg",
+    "alt_is": "Esjan gnæfir yfir hafflötinn við Reykjavík",
+    "alt_en": "Mount Esja with clouds over the ocean near Reykjavik, Iceland",
+    "credit": "Jiri Ikonomidis",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/scenic-view-of-mount-esja-in-reykjavik-iceland-32608173/"
+  },
+  "videy": {
+    "src": "/img/places/videy.jpg",
+    "alt_is": "Friðarsúlan í Viðey lýsir upp næturhimininn",
+    "alt_en": "Imagine Peace Tower light beam on Videy island, Reykjavik",
+    "credit": "Gylfi Gylfason",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/pillar-of-blue-light-of-imagine-peace-tower-memorial-in-the-night-sky-5723480/"
+  },
+  "kirkjufell": {
+    "src": "/img/places/kirkjufell.jpg",
+    "alt_is": "Kirkjufellsfoss við Grundarfjörð með Kirkjufell í baksýn",
+    "alt_en": "Kirkjufellsfoss waterfall with Kirkjufell mountain, Grundarfjordur, Iceland",
+    "credit": "Frugal Flyer",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-waterfall-with-grass-and-rocks-AsMSF6fkIaA"
+  },
+  "snaefellsjokull": {
+    "src": "/img/places/snaefellsjokull.jpg",
+    "alt_is": "Snæfellsjökull, snævi þakið eldfjall á Snæfellsnesi",
+    "alt_en": "Snaefellsjokull glacier-capped volcano, Snaefellsnes peninsula, Iceland",
+    "credit": "Guillermo Galan",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/BNJ-CDKMFok"
+  },
+  "arnarstapi_hellnar": {
+    "src": "/img/places/arnarstapi_hellnar.jpg",
+    "alt_is": "Klettabogi við ströndina hjá Arnarstapa",
+    "alt_en": "Natural rock arch on the coast at Arnarstapi, Iceland",
+    "credit": "Piotr Musioł",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/BkxgRcpVM8I"
+  },
+  "hraunfossar": {
+    "src": "/img/places/hraunfossar.jpg",
+    "alt_is": "Hraunfossar streyma undan hrauninu í Borgarfirði",
+    "alt_en": "Hraunfossar lava waterfalls in Borgarfjordur, West Iceland",
+    "credit": "Freysteinn G. Jonsson",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-river-running-through-a-lush-green-forest-fo2sfKG9mJ4"
+  },
+  "glymur": {
+    "src": "/img/places/glymur.jpg",
+    "alt_is": "Glymur, næsthæsti foss Íslands, í Hvalfirði",
+    "alt_en": "Glymur waterfall in Hvalfjordur, West Iceland",
+    "credit": "Save For Later Photo",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/u4YrBhZhjno"
+  },
+  "stykkisholmur": {
+    "src": "/img/places/stykkisholmur.jpg",
+    "alt_is": "Rauði vitinn á Súgandisey yfir höfninni í Stykkishólmi",
+    "alt_en": "Red lighthouse above the harbour in Stykkisholmur, Iceland",
+    "credit": "Charles Zhang",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/INdL82LmEvk"
+  },
+  "dynjandi": {
+    "src": "/img/places/dynjandi.jpg",
+    "alt_is": "Dynjandi, perla Vestfjarða",
+    "alt_en": "Dynjandi waterfall in the Westfjords, Iceland",
+    "credit": "Mathieu Stern",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/dynjandi-waterfall-in-iceland-ZmusSS1rI6k"
+  },
+  "latrabjarg": {
+    "src": "/img/places/latrabjarg.jpg",
+    "alt_is": "Lundi á Látrabjargi á sumardegi",
+    "alt_en": "Atlantic puffin at Latrabjarg cliffs, Westfjords, Iceland",
+    "credit": "Yanshu Lee",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/selective-focus-photography-of-black-and-white-bird-ZUUU9F34xYk"
+  },
+  "hornstrandir": {
+    "src": "/img/places/hornstrandir.jpg",
+    "alt_is": "Strönd og björg á Hornströndum",
+    "alt_en": "Sandy beach and cliffs in Hornstrandir nature reserve, Iceland",
+    "credit": "Andrey Kwin",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/a-beach-with-brown-sand-10436182/"
+  },
+  "isafjordur": {
+    "src": "/img/places/isafjordur.jpg",
+    "alt_is": "Snævi þakin fjöll við Ísafjörð",
+    "alt_en": "Snow-capped mountains at Isafjordur, Westfjords, Iceland",
+    "credit": "Ady Cal",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/landscape-with-shed-and-snow-in-mountains-5867401/"
+  },
+  "blaalonid": {
+    "src": "/img/places/blaalonid.jpg",
+    "alt_is": "Slökun í mjólkurbláu vatni Bláa lónsins",
+    "alt_en": "Bather floating in the milky-blue water of the Blue Lagoon, Iceland",
+    "credit": "Karsten Winegeart",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-woman-is-floating-in-a-blue-pool-aiBu12OlzFA"
+  }
+};
+
+if (typeof module !== "undefined") {
+  module.exports = { IMAGES };
+}

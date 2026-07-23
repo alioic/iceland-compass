@@ -225,8 +225,33 @@ section { padding: 96px 32px; }
   font-weight: 500;
 }
 
+/* ---------------- INNGANGUR (kort-fyrst) ---------------- */
+.intro { padding: 116px 32px 26px; }
+.intro-inner { max-width: var(--max); margin: 0 auto; }
+.intro-title {
+  font-size: clamp(1.9rem, 4vw, 3.1rem);
+  font-weight: 500;
+  margin-bottom: 14px;
+  max-width: 20ch;
+}
+.intro-sub {
+  font-size: clamp(1rem, 1.7vw, 1.18rem);
+  color: var(--ink-soft);
+  max-width: 640px;
+  margin-bottom: 24px;
+}
+.intro-stats { display: flex; gap: 44px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 20px; }
+.intro-stats dt { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-faint); margin-bottom: 6px; }
+.intro-stats dd { font-family: var(--font-display); font-size: 1.7rem; font-weight: 500; }
+
+@media (max-width: 640px) {
+  .intro { padding: 92px 20px 20px; }
+  .intro-stats { gap: 30px; }
+  .map-section { padding-top: 28px; }
+}
+
 /* ---------------- KORT ---------------- */
-.map-section { background: var(--paper-2); border-bottom: 1px solid var(--line); }
+.map-section { background: var(--paper-2); border-bottom: 1px solid var(--line); padding-top: 40px; }
 
 .map-layout {
   max-width: var(--max);
@@ -673,6 +698,13 @@ section { padding: 96px 32px; }
   display: flex; align-items: flex-end;
   padding: 22px 30px;
   position: relative;
+}
+.modal-hero.has-img { height: 230px; }
+.modal-hero.has-img .mh-region {
+  background: rgba(12, 16, 16, 0.45);
+  padding: 5px 12px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
 }
 .modal-hero .mh-region {
   font-size: 0.8rem; font-weight: 600; color: #fff;

@@ -1276,29 +1276,6 @@ const PLACES = [
     ]
   },
   {
-    "id": "lonkot",
-    "name": "Lónkot",
-    "region": "nordvestur",
-    "category": "veitingar",
-    "type": "Restaurant",
-    "cuisine": "Country cuisine",
-    "price": "$$$",
-    "location": "Sléttuhlíð, by Skagafjörður",
-    "tags": [
-      "Countryside",
-      "Unique",
-      "Tranquillity"
-    ],
-    "blurb": "A country retreat by the sea with local food and an art gallery.",
-    "description": "Lónkot is a unique country venue in Sléttuhlíð north of Hofsós — a restaurant, gallery and guesthouse in beautiful surroundings by the sea. The focus is on local ingredients, with views towards Drangey and Málmey. A peaceful spot away from the crowds.",
-    "highlights": [
-      "Local produce",
-      "Views towards Drangey",
-      "Art gallery",
-      "Country tranquillity"
-    ]
-  },
-  {
     "id": "akureyri",
     "name": "Akureyri",
     "region": "nordaustur",
@@ -2003,29 +1980,6 @@ const PLACES = [
       "Fish soup",
       "Harbour atmosphere",
       "Views over Skjálfandi"
-    ]
-  },
-  {
-    "id": "hannes_boy",
-    "name": "Hannes Boy",
-    "region": "nordaustur",
-    "category": "veitingar",
-    "type": "Restaurant",
-    "cuisine": "Seafood",
-    "price": "$$$",
-    "location": "Siglufjörður",
-    "tags": [
-      "Fish",
-      "Harbour",
-      "Historic"
-    ],
-    "blurb": "The red house by the harbour in Siglufjörður with a focus on fish.",
-    "description": "Hannes Boy is in a colourful house by the small-boat harbour in Siglufjörður, part of a restored harbour area tied to the town's herring history. The restaurant focuses on fresh fish and seafood in a warm, historic setting.",
-    "highlights": [
-      "Fresh fish of the day",
-      "The red harbour house",
-      "The herring history",
-      "Kaffi Rauðka next door"
     ]
   },
   {
@@ -3489,29 +3443,6 @@ const PLACES = [
     ]
   },
   {
-    "id": "kaffitar",
-    "name": "Kaffitár",
-    "region": "hofudborg",
-    "category": "kaffi",
-    "type": "Café",
-    "cuisine": "Specialty coffee",
-    "price": "$",
-    "location": "Reykjavík",
-    "tags": [
-      "coffee roaster",
-      "specialty coffee",
-      "chain"
-    ],
-    "blurb": "Icelandic coffee roaster and café chain focused on quality coffee.",
-    "description": "Kaffitár is a well-established Icelandic coffee roaster with cafés across the capital area. It serves house-roasted coffee, and beans can be bought to take home.",
-    "highlights": [
-      "House-roasted coffee",
-      "Beans to take home",
-      "Multiple locations",
-      "Friendly service"
-    ]
-  },
-  {
     "id": "grai_kotturinn",
     "name": "Grái kötturinn",
     "region": "hofudborg",
@@ -3857,29 +3788,6 @@ const PLACES = [
     ]
   },
   {
-    "id": "noa_seafood_akureyri",
-    "name": "Noa Seafood",
-    "region": "nordaustur",
-    "category": "veitingar",
-    "type": "Restaurant",
-    "cuisine": "Seafood",
-    "price": "$$$",
-    "location": "Akureyri",
-    "tags": [
-      "seafood",
-      "fish",
-      "lamb"
-    ],
-    "blurb": "A seafood restaurant on Hafnarstræti focused on local fish.",
-    "description": "Noa Seafood sits on Hafnarstræti a short way from downtown and serves local fish, lamb and beef prepared in various ways. Dishes come with fresh vegetables that round out the flavors.",
-    "highlights": [
-      "Local fish",
-      "Lamb",
-      "Fresh vegetables",
-      "Near downtown"
-    ]
-  },
-  {
     "id": "bautinn_akureyri",
     "name": "Bautinn",
     "region": "nordaustur",
@@ -4038,29 +3946,6 @@ const PLACES = [
       "Weekend brunch",
       "Downtown Akureyri",
       "Cozy"
-    ]
-  },
-  {
-    "id": "heimabakari_husavik",
-    "name": "Heimabakarí",
-    "region": "nordaustur",
-    "category": "kaffi",
-    "type": "Bakery & café",
-    "cuisine": "Pastries and coffee",
-    "price": "$",
-    "location": "Húsavík",
-    "tags": [
-      "bakery",
-      "cinnamon rolls",
-      "family-run"
-    ],
-    "blurb": "A family-run bakery and café a short walk from the Húsavík harbour.",
-    "description": "Heimabakarí is a beloved bakery and café in Húsavík located close to the harbour. It is known for traditional Icelandic pastries and its cinnamon rolls, and takes pride in using locally sourced ingredients.",
-    "highlights": [
-      "Cinnamon rolls",
-      "Near the harbour",
-      "Local ingredients",
-      "Family-run"
     ]
   },
   {
@@ -4363,29 +4248,6 @@ const PLACES = [
     ]
   },
   {
-    "id": "cafe_kaja_akranes",
-    "name": "Café Kaja",
-    "region": "vesturland",
-    "category": "kaffi",
-    "type": "Café",
-    "cuisine": "Organic, soups and light dishes",
-    "price": "$$",
-    "location": "Akranes",
-    "tags": [
-      "organic",
-      "vegetarian",
-      "cosy"
-    ],
-    "blurb": "A certified organic café in Akranes.",
-    "description": "Café Kaja in Akranes focuses on organic ingredients and wholesome food. The menu includes fish soup, falafel salad, avocado toast, cakes and coffee.",
-    "highlights": [
-      "Organic ingredients",
-      "Fish soup",
-      "Vegetarian and vegan options",
-      "Cakes and coffee"
-    ]
-  },
-  {
     "id": "gilbakki_kaffihus_hellissandur",
     "name": "Gilbakki Kaffihús",
     "region": "vesturland",
@@ -4567,29 +4429,6 @@ const PLACES = [
       "Central location",
       "Varied menu",
       "Seafood"
-    ]
-  },
-  {
-    "id": "flak_patreksfjordur",
-    "name": "Flak",
-    "region": "vestfirdir",
-    "category": "veitingar",
-    "type": "Restaurant",
-    "cuisine": "Fish soup, light dishes and beer",
-    "price": "$$",
-    "location": "Patreksfjörður",
-    "tags": [
-      "harbour",
-      "culture",
-      "home-brewed beer"
-    ],
-    "blurb": "A culture-minded pub and fish-soup spot at Patreksfjörður harbour.",
-    "description": "Flak is a culture-oriented pub and fish-soup restaurant at the harbour in Patreksfjörður. It serves light meals and home-brewed beer, and often hosts live concerts and other events.",
-    "highlights": [
-      "Fish soup",
-      "Home-brewed beer",
-      "Live music and events",
-      "By the harbour"
     ]
   },
   {
@@ -4912,29 +4751,6 @@ const PLACES = [
       "Fresh fish from the fjords",
       "Japanese small plates",
       "Near the rainbow street"
-    ]
-  },
-  {
-    "id": "vid_voginn",
-    "name": "Við Voginn",
-    "region": "austurland",
-    "category": "kaffi",
-    "type": "Café & restaurant",
-    "cuisine": "Home cooking",
-    "price": "$",
-    "location": "Djúpivogur",
-    "tags": [
-      "home cooking",
-      "fish and chips",
-      "cozy"
-    ],
-    "blurb": "A cozy spot in the middle of the village in Djúpivogur serving home-cooked food.",
-    "description": "Við Voginn is a small, cozy spot in the heart of Djúpivogur. It offers home-style lunches along with fish and chips, hamburgers and sandwiches, with good views over the harbour and fjord.",
-    "highlights": [
-      "Home-style lunches",
-      "Fish and chips",
-      "Harbour views",
-      "Friendly service"
     ]
   },
   {

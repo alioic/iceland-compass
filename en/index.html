@@ -49,7 +49,7 @@
       </a>
       <nav class="main-nav" id="mainNav">
         <a href="#kort">Map</a>
-        <a href="#landshlutar">Regions</a>
+        <a href="#leidir">Routes</a>
         <a href="#stadir">Places</a>
         <a href="#um">About</a>
         <a href="/" class="lang-switch">IS</a>
@@ -59,36 +59,22 @@
       </button>
     </header>
 
-    <section class="hero" id="top">
-      <div class="hero-inner">
-        <p class="hero-kicker">Travel guide</p>
-        <h1 class="hero-title">Land of fire, ice<br />and eight regions</h1>
-        <p class="hero-sub">
-          From city life by the sea to the untouched wilderness of the highlands. Choose a region
-          on the map and find places, stays and activities — big and small.
+    <section class="intro" id="top">
+      <div class="intro-inner">
+        <p class="hero-kicker">A travel guide to Iceland</p>
+        <h1 class="intro-title">Iceland on the map — pick a region</h1>
+        <p class="intro-sub">
+          Click a region and find places, pools &amp; baths, hiking trails, stays and activities
+          all over the country — big and small.
         </p>
-        <div class="hero-actions">
-          <a href="#kort" class="btn btn-primary">Explore the map</a>
-          <a href="#stadir" class="btn btn-ghost">Browse places</a>
-        </div>
-        <dl class="hero-stats">
+        <dl class="intro-stats">
           <div><dt>Places in the guide</dt><dd id="statPlaces">0</dd></div>
           <div><dt>Regions</dt><dd>8</dd></div>
-          <div><dt>Land area</dt><dd>103,000 km²</dd></div>
         </dl>
       </div>
     </section>
 
     <section class="map-section" id="kort">
-      <div class="section-head">
-        <p class="section-kicker">Interactive map</p>
-        <h2>Choose a region</h2>
-        <p class="section-lead">
-          Click an area on the map to see its places, accommodation and activities. The map is
-          based on the real boundaries of Iceland's eight regions.
-        </p>
-      </div>
-
       <div class="map-layout">
         <div class="map-wrap">
           <div id="mapContainer"></div>
@@ -111,6 +97,41 @@
         <h2>Each with its own character</h2>
       </div>
       <div class="region-cards" id="regionCards"></div>
+    </section>
+
+    <!-- ============ TRAVEL ROUTES ============ -->
+    <section class="regions-section routes-section" id="leidir">
+      <div class="section-head">
+        <p class="section-kicker">Travel routes & themed lists</p>
+        <h2>Ready-made routes around Iceland</h2>
+        <p class="section-lead">The famous circles, the best baths and more — put together for you.</p>
+      </div>
+      <div class="region-cards">
+        <a class="region-card" style="--rc:#b05750" href="/en/routes/gullni-hringurinn/">
+          <h3>The Golden Circle</h3><p>Iceland's most famous day trip from Reykjavík</p>
+          <span class="rc-count">View route</span></a>
+        <a class="region-card" style="--rc:#3f7d6e" href="/en/routes/demantshringurinn/">
+          <h3>The Diamond Circle</h3><p>North Iceland's answer to the Golden Circle</p>
+          <span class="rc-count">View route</span></a>
+        <a class="region-card" style="--rc:#4f8a8b" href="/en/routes/bestu-baudin/">
+          <h3>Best pools & geothermal baths</h3><p>From luxury lagoons to hidden hot springs</p>
+          <span class="rc-count">View list</span></a>
+        <a class="region-card" style="--rc:#1c1b19" href="/en/routes/sudurstrondin/">
+          <h3>The South Coast</h3><p>Waterfalls, black sand and glaciers</p>
+          <span class="rc-count">View route</span></a>
+        <a class="region-card" style="--rc:#5b8a72" href="/en/routes/snaefellsnes/">
+          <h3>Snæfellsnes</h3><p>"Iceland in miniature"</p>
+          <span class="rc-count">View route</span></a>
+        <a class="region-card" style="--rc:#6a6ea6" href="/en/routes/vestfirdir-hapunktar/">
+          <h3>Westfjords highlights</h3><p>Iceland's most untouched corner</p>
+          <span class="rc-count">View route</span></a>
+        <a class="region-card" style="--rc:#b0674c" href="/en/routes/fjolskylduvaent/">
+          <h3>Family-friendly</h3><p>Places the kids will love</p>
+          <span class="rc-count">View list</span></a>
+        <a class="region-card" style="--rc:#4a6fa5" href="/en/routes/okeypis-natturuperlur/">
+          <h3>Free natural gems</h3><p>Spectacular nature at no charge</p>
+          <span class="rc-count">View list</span></a>
+      </div>
     </section>
 
     <section class="places-section" id="stadir">
@@ -148,6 +169,7 @@
         </p>
         <p class="about-source">
           The map is based on open geographic data for the region boundaries (geoBoundaries, ADM1).
+          Photographs are by photographers on Unsplash and Pexels — each image is credited.
           Some booking links on this site are affiliate links — the site may earn a commission on
           bookings at no extra cost to you.
         </p>
@@ -174,6 +196,8 @@
     </div>
 
     <script src="/js/mapdata.js"></script>
+    <script src="/js/staymap.js"></script>
+    <script src="/js/images.js"></script>
     <script src="/js/data.en.js"></script>
     <script src="/js/app.js"></script>
   </body>

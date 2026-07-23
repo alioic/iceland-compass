@@ -64,7 +64,7 @@
       </a>
       <nav class="main-nav" id="mainNav">
         <a href="#kort">Kort</a>
-        <a href="#landshlutar">Landshlutar</a>
+        <a href="#leidir">Leiðir</a>
         <a href="#stadir">Staðir</a>
         <a href="#um">Um vefinn</a>
         <a href="/en/" class="lang-switch">EN</a>
@@ -74,38 +74,23 @@
       </button>
     </header>
 
-    <!-- ============ HERO ============ -->
-    <section class="hero" id="top">
-      <div class="hero-inner">
-        <p class="hero-kicker">Ferðaleiðsögn</p>
-        <h1 class="hero-title">Land elds, íss<br />og átta landshluta</h1>
-        <p class="hero-sub">
-          Frá borgarlífi við sjávarsíðuna til ósnortinna víðerna hálendisins. Veldu landshluta
-          á kortinu og finndu staði, gistingu og afþreyingu — stóra sem smáa.
+    <!-- ============ INNGANGUR + KORT ============ -->
+    <section class="intro" id="top">
+      <div class="intro-inner">
+        <p class="hero-kicker">Ferðaleiðsögn um Ísland</p>
+        <h1 class="intro-title">Ísland á korti — veldu landshluta</h1>
+        <p class="intro-sub">
+          Smelltu á landshluta og finndu staði, sundlaugar &amp; böð, gönguleiðir, gistingu og
+          afþreyingu um allt land — stóra sem smáa.
         </p>
-        <div class="hero-actions">
-          <a href="#kort" class="btn btn-primary">Skoða kortið</a>
-          <a href="#stadir" class="btn btn-ghost">Vafra um staði</a>
-        </div>
-        <dl class="hero-stats">
+        <dl class="intro-stats">
           <div><dt>Staðir í leiðsögn</dt><dd id="statPlaces">0</dd></div>
           <div><dt>Landshlutar</dt><dd>8</dd></div>
-          <div><dt>Flatarmál lands</dt><dd>103.000 km²</dd></div>
         </dl>
       </div>
     </section>
 
-    <!-- ============ KORT ============ -->
     <section class="map-section" id="kort">
-      <div class="section-head">
-        <p class="section-kicker">Gagnvirkt kort</p>
-        <h2>Veldu landshluta</h2>
-        <p class="section-lead">
-          Smelltu á svæði á kortinu til að sjá staði, gistingu og afþreyingu. Kortið byggir á
-          raunverulegum mörkum landshlutanna átta.
-        </p>
-      </div>
-
       <div class="map-layout">
         <div class="map-wrap">
           <div id="mapContainer"></div>
@@ -129,6 +114,41 @@
         <h2>Hver með sinn karakter</h2>
       </div>
       <div class="region-cards" id="regionCards"></div>
+    </section>
+
+    <!-- ============ FERÐALEIÐIR ============ -->
+    <section class="regions-section routes-section" id="leidir">
+      <div class="section-head">
+        <p class="section-kicker">Ferðaleiðir og þemalistar</p>
+        <h2>Tilbúnar leiðir um landið</h2>
+        <p class="section-lead">Frægu hringirnir, bestu laugarnar og fleiri listar — settir saman fyrir þig.</p>
+      </div>
+      <div class="region-cards">
+        <a class="region-card" style="--rc:#b05750" href="/leidir/gullni-hringurinn/">
+          <h3>Gullni hringurinn</h3><p>Frægasta dagsferð Íslands frá Reykjavík</p>
+          <span class="rc-count">Skoða leið</span></a>
+        <a class="region-card" style="--rc:#3f7d6e" href="/leidir/demantshringurinn/">
+          <h3>Demantshringurinn</h3><p>Svar Norðurlands við Gullna hringnum</p>
+          <span class="rc-count">Skoða leið</span></a>
+        <a class="region-card" style="--rc:#4f8a8b" href="/leidir/bestu-baudin/">
+          <h3>Bestu laugarnar og böðin</h3><p>Frá lúxuslónum til falinna náttúrulauga</p>
+          <span class="rc-count">Skoða lista</span></a>
+        <a class="region-card" style="--rc:#1c1b19" href="/leidir/sudurstrondin/">
+          <h3>Suðurströndin</h3><p>Fossar, svartur sandur og jöklar</p>
+          <span class="rc-count">Skoða leið</span></a>
+        <a class="region-card" style="--rc:#5b8a72" href="/leidir/snaefellsnes/">
+          <h3>Snæfellsnes</h3><p>„Ísland í hnotskurn“</p>
+          <span class="rc-count">Skoða leið</span></a>
+        <a class="region-card" style="--rc:#6a6ea6" href="/leidir/vestfirdir-hapunktar/">
+          <h3>Hápunktar Vestfjarða</h3><p>Ósnortnasti hluti landsins</p>
+          <span class="rc-count">Skoða leið</span></a>
+        <a class="region-card" style="--rc:#b0674c" href="/leidir/fjolskylduvaent/">
+          <h3>Fjölskylduvænt</h3><p>Staðir sem krakkarnir elska</p>
+          <span class="rc-count">Skoða lista</span></a>
+        <a class="region-card" style="--rc:#4a6fa5" href="/leidir/okeypis-natturuperlur/">
+          <h3>Ókeypis náttúruperlur</h3><p>Stórbrotin náttúra án aðgangseyris</p>
+          <span class="rc-count">Skoða lista</span></a>
+      </div>
     </section>
 
     <!-- ============ STAÐIR ============ -->
@@ -168,6 +188,7 @@
         </p>
         <p class="about-source">
           Kortið byggir á opnum landfræðigögnum um mörk landshlutanna (geoBoundaries, ADM1).
+          Ljósmyndir eru frá ljósmyndurum á Unsplash og Pexels — kredit fylgir hverri mynd.
           Sumir bókunarhlekkir á vefnum eru samstarfshlekkir (affiliate) — vefurinn getur fengið
           þóknun af bókunum án þess að það hafi áhrif á verð til þín.
         </p>
@@ -196,6 +217,8 @@
     </div>
 
     <script src="js/mapdata.js"></script>
+    <script src="js/staymap.js"></script>
+    <script src="js/images.js"></script>
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
   </body>

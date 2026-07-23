@@ -3367,28 +3367,6 @@
       }
     ]
   },
-  "kaffitar": {
-    "is": [
-      {
-        "title": "Um staðinn",
-        "text": "Kaffitár er rótgróin íslensk kaffibrennsla með kaffihús víða um höfuðborgarsvæðið. Áherslan er á gæðakaffi og sérbrennslu, og hægt er að kaupa baunir með sér heim. Þjónustan er vinaleg og andrúmsloftið afslappað. Góður kostur fyrir þá sem vilja traustan og vandaðan kaffibolla á ferðinni."
-      },
-      {
-        "title": "Gott að vita",
-        "text": "Kaffitár er með mörg útibú á höfuðborgarsvæðinu, svo þægilegt er að finna eitt í nágrenninu. Fínt fyrir kaffihlé á ferðinni eða til að grípa baunir heim. Sum útibúin eru meira til að grípa með sér en önnur, en alls staðar er lögð áhersla á gæðakaffi."
-      }
-    ],
-    "en": [
-      {
-        "title": "About",
-        "text": "Kaffitár is a long-standing Icelandic coffee roaster with cafés across the capital area. The focus is on quality coffee and its own roast, and you can buy beans to take home. The service is friendly and the atmosphere relaxed. A reliable choice for a well-made cup while you are out and about."
-      },
-      {
-        "title": "Good to know",
-        "text": "Kaffitár has several branches around the capital area, so one is usually easy to find nearby. It is handy for a coffee break on the move or picking up beans to take home. Some locations lean more grab-and-go than others, but all put quality coffee first."
-      }
-    ]
-  },
   "grai_kotturinn": {
     "is": [
       {
@@ -3675,28 +3653,6 @@
       }
     ]
   },
-  "hannes_boy": {
-    "is": [
-      {
-        "title": "Um staðinn",
-        "text": "Hannes Boy er í litríku húsi við smábátahöfnina á Siglufirði, hluti af uppgerðu hafnarsvæði sem tengist síldarsögu bæjarins. Staðurinn leggur áherslu á ferskan fisk og sjávarrétti í hlýlegu, sögulegu umhverfi. Rauða húsið er meðal einkenna hafnarinnar og gott er að njóta réttar dagsins með sögu bæjarins allt um kring."
-      },
-      {
-        "title": "Gott að vita",
-        "text": "Staðsettur við höfnina á Siglufirði, nyrsta bæ landsins, í göngufæri frá Síldarminjasafninu og Kaffi Rauðku sem er við hlið. Tilvalinn eftir gönguferð um bæinn eða Tröllaskaga. Gott er að kanna opnunartíma utan sumars þar sem hann getur verið breytilegur."
-      }
-    ],
-    "en": [
-      {
-        "title": "About",
-        "text": "Hannes Boy occupies a colourful house by Siglufjörður's small-boat harbour, part of a restored waterfront tied to the town's herring history. It focuses on fresh fish and seafood in a warm, historic setting. The red building is one of the harbour's signatures, and the catch of the day comes served with the town's story all around."
-      },
-      {
-        "title": "Good to know",
-        "text": "Located on the harbour in Siglufjörður, Iceland's northernmost town, within walking distance of the Herring Era Museum and neighbouring Kaffi Rauðka. A great stop after exploring the town or the Tröllaskagi peninsula. Check opening hours outside summer, as they can vary."
-      }
-    ]
-  },
   "kaffi_ilmur": {
     "is": [
       {
@@ -3782,28 +3738,6 @@
       {
         "title": "Good to know",
         "text": "Located on Hafnarstræti in central Akureyri, tied to Hótel Kea and so handy for hotel guests and others exploring the town centre. Within walking distance of the pedestrian street and the main landmarks. Booking a table is wise at busy times."
-      }
-    ]
-  },
-  "noa_seafood_akureyri": {
-    "is": [
-      {
-        "title": "Um staðinn",
-        "text": "Noa Seafood er við Hafnarstræti stutt frá miðbæ Akureyrar og býður upp á staðbundinn fisk, lambakjöt og nautakjöt matreitt á ýmsa vegu. Réttunum fylgir ferskt grænmeti sem rammar inn bragðið. Áherslan á sjávarfang og gott hráefni gerir staðinn að góðum valkosti fyrir þá sem vilja njóta norðlensks fisks við notaleg skilyrði."
-      },
-      {
-        "title": "Gott að vita",
-        "text": "Staðsettur við Hafnarstræti, stutt frá miðbæ Akureyrar og í göngufæri frá gistingu og verslunum. Hentar vel fyrir kvöldverð. Þar sem áherslan er á ferskan fisk getur úrval verið árstíðabundið, og borðapöntun getur borgað sig á annatímum."
-      }
-    ],
-    "en": [
-      {
-        "title": "About",
-        "text": "Noa Seafood is on Hafnarstræti a short distance from central Akureyri, serving local fish, lamb and beef prepared in various ways. Dishes come with fresh vegetables that round out the flavours. Its focus on seafood and good ingredients makes it a solid choice for anyone wanting to enjoy northern Icelandic fish in a comfortable setting."
-      },
-      {
-        "title": "Good to know",
-        "text": "Located on Hafnarstræti, a short walk from Akureyri's centre and within reach of accommodation and shops. Well suited to dinner. As the emphasis is on fresh fish, the selection can be seasonal, and booking can pay off at busy times."
       }
     ]
   },
@@ -3958,28 +3892,6 @@
       {
         "title": "Good to know",
         "text": "Located in central Akureyri, within walking distance of accommodation and the pedestrian street. As it is small and weekend brunch is popular, it can fill up at busy times, so arriving early can help. An ideal starting point for a day in town."
-      }
-    ]
-  },
-  "heimabakari_husavik": {
-    "is": [
-      {
-        "title": "Um staðinn",
-        "text": "Heimabakarí er ástsælt, fjölskyldurekið bakarí og kaffihús á Húsavík, skammt frá höfninni. Það er þekkt fyrir hefðbundið íslenskt bakkelsi og snúðana sína, og leggur áherslu á staðbundið hráefni. Notalegur staður til að grípa nýbakað með sér eða setjast niður með kaffibolla áður en haldið er í hvalaskoðun eða á ferð um bæinn."
-      },
-      {
-        "title": "Gott að vita",
-        "text": "Staðsett skammt frá höfninni á Húsavík, í göngufæri frá hvalaskoðunarfyrirtækjunum og Hvalasafninu. Tilvalinn viðkomustaður fyrir morgunmat eða hressingu. Gott er að líta við snemma dags þegar úrvalið af nýbökuðu er mest."
-      }
-    ],
-    "en": [
-      {
-        "title": "About",
-        "text": "Heimabakarí is a beloved family-run bakery and café in Húsavík, a short distance from the harbour. It is known for traditional Icelandic pastries and its cinnamon buns, with an emphasis on local ingredients. A cosy spot to grab something freshly baked to go or to sit down with a coffee before heading out whale watching or exploring the town."
-      },
-      {
-        "title": "Good to know",
-        "text": "Located a short distance from Húsavík's harbour, within walking distance of the whale-watching operators and the Whale Museum. A perfect stop for breakfast or a quick bite. It is worth stopping by early in the day when the fresh selection is at its best."
       }
     ]
   },
@@ -4621,28 +4533,6 @@
       }
     ]
   },
-  "vid_voginn": {
-    "is": [
-      {
-        "title": "Um staðinn",
-        "text": "Við Voginn er lítill og notalegur staður í hjarta Djúpavogs. Í boði er heimilislegur hádegismatur ásamt fiski og frönskum, hamborgurum og samlokum. Óþvingaður og vinalegur staður sem hentar vel fjölskyldum og þeim sem vilja einfaldan, góðan mat á sanngjörnu verði á ferð um Austfirði."
-      },
-      {
-        "title": "Gott að vita",
-        "text": "Staðurinn er í miðju þorpinu á Djúpavogi með gott útsýni yfir höfnina og fjörðinn. Djúpivogur er rólegt Cittaslow-þorp á Austfjörðum, þekkt fyrir listaverkið Eggin í Gleðivík. Þægilegt stopp við hringveginn."
-      }
-    ],
-    "en": [
-      {
-        "title": "About",
-        "text": "Við Voginn is a small, cosy spot in the heart of Djúpivogur. It serves homely lunch fare along with fish and chips, burgers and sandwiches. Unpretentious and friendly, it suits families and anyone after simple, good food at a fair price while travelling through the East Fjords."
-      },
-      {
-        "title": "Good to know",
-        "text": "The place is in the middle of the village of Djúpivogur, with a good view over the harbour and fjord. Djúpivogur is a calm Cittaslow town in East Iceland, known for the Eggs of Merry Bay artwork. It's a handy stop along the Ring Road."
-      }
-    ]
-  },
   "langabud": {
     "is": [
       {
@@ -4706,28 +4596,6 @@
       {
         "title": "Good to know",
         "text": "The restaurant is in the heart of Sauðárkrókur, the largest town in Skagafjörður. The region is known for the Icelandic horse, river rafting and a rich heritage of sagas. It's a convenient stop for those touring Northwest Iceland."
-      }
-    ]
-  },
-  "lonkot": {
-    "is": [
-      {
-        "title": "Um staðinn",
-        "text": "Lónkot er einstakur sveitastaður á Sléttuhlíð norðan Hofsóss — veitingahús, gallerí og gistihús í fallegu umhverfi við sjóinn. Áhersla er á hráefni úr héraði, borið fram í rólegri sveitasælu fjarri fjöldanum. Staðurinn sameinar góðan mat, list og kyrrð í einstöku umhverfi við Skagafjörð."
-      },
-      {
-        "title": "Gott að vita",
-        "text": "Lónkot er á Sléttuhlíð við Skagafjörð, norðan við Hofsós, með útsýni til Drangeyjar og Málmeyjar. Staðurinn er nokkuð afskekktur og því er gott að athuga opnunartíma fyrirfram. Fallegt stopp fyrir þá sem sækja í kyrrð og sveit."
-      }
-    ],
-    "en": [
-      {
-        "title": "About",
-        "text": "Lónkot is a unique country retreat in Sléttuhlíð north of Hofsós — a restaurant, gallery and guesthouse in beautiful surroundings by the sea. The emphasis is on regional ingredients, served in peaceful rural calm away from the crowds. It brings together good food, art and quiet in a special setting by Skagafjörður."
-      },
-      {
-        "title": "Good to know",
-        "text": "Lónkot is in Sléttuhlíð by Skagafjörður, north of Hofsós, with views out to the islands of Drangey and Málmey. The spot is fairly remote, so it's worth checking opening times in advance. A lovely stop for those seeking quiet and countryside."
       }
     ]
   },
@@ -4882,28 +4750,6 @@
       {
         "title": "Good to know",
         "text": "The café is on Skúlagata in the old town, close to Englendingavík, and fits well with a leisurely walk through the oldest part of Borgarnes. The setting is homely and draws both locals and travellers. A good stop for anyone wanting coffee and a bite in quieter surroundings than by the main road."
-      }
-    ]
-  },
-  "cafe_kaja_akranes": {
-    "is": [
-      {
-        "title": "Um staðinn",
-        "text": "Café Kaja er lífrænt vottað kaffihús á Akranesi sem leggur áherslu á lífrænt hráefni og hollan mat. Á matseðlinum eru meðal annars fiskisúpa, falafelsalat, avókadóbrauð, kökur og kaffi, ásamt góðu úrvali fyrir grænmetisætur og vegan gesti. Heimilislegur og afslappaður staður fyrir létta máltíð eða kaffibolla í rólegheitum."
-      },
-      {
-        "title": "Gott að vita",
-        "text": "Staðurinn er á Akranesi, stutt frá Reykjavík og þægilega í leiðinni fyrir þá sem ferðast um Vesturland. Áherslan á lífrænt og hollt hráefni gerir hann að góðum kosti fyrir gesti sem vilja léttari valkosti. Hentar vel í hádegisverð eða síðdegishressingu á ferð um svæðið."
-      }
-    ],
-    "en": [
-      {
-        "title": "About",
-        "text": "Café Kaja is a certified organic café in Akranes with an emphasis on organic ingredients and wholesome food. The menu includes fish soup, falafel salad, avocado toast, cakes and coffee, with good options for vegetarian and vegan guests. It is a homely, relaxed spot for a light meal or an unhurried cup of coffee."
-      },
-      {
-        "title": "Good to know",
-        "text": "The café is in Akranes, a short drive from Reykjavík and conveniently on the way for travellers exploring West Iceland. Its focus on organic, wholesome ingredients makes it a good choice for guests seeking lighter fare. It works well for lunch or an afternoon break while touring the area."
       }
     ]
   },
@@ -5234,28 +5080,6 @@
       {
         "title": "Good to know",
         "text": "Café Riis is centrally located in Hólmavík by Steingrímsfjörður in the Strandir region. Its varied menu of both Icelandic dishes and pizzas makes it a good choice for different tastes. It is an ideal stop while touring Strandir, where the Museum of Icelandic Sorcery and Witchcraft is nearby."
-      }
-    ]
-  },
-  "flak_patreksfjordur": {
-    "is": [
-      {
-        "title": "Um staðinn",
-        "text": "Flak er menningartengd krá og fiskisúpustaður við höfnina á Patreksfirði. Þar má fá léttar máltíðir og heimabruggaðan bjór, og oft eru tónleikar eða aðrir viðburðir á dagskrá. Andrúmsloftið er afslappað og lifandi, og staðurinn er skemmtileg blanda af veitingastað, krá og menningarhúsi í litlu sjávarþorpi."
-      },
-      {
-        "title": "Gott að vita",
-        "text": "Flak stendur við höfnina á Patreksfirði, stærsta þéttbýlisstað sunnanverðra Vestfjarða. Fiskisúpan og heimabruggaði bjórinn eru einkenni hússins. Gott er að fylgjast með dagskrá staðarins, því viðburðir og tónleikar setja svip á stemninguna. Tilvalinn áfangastaður fyrir kvöldstund á ferð um Vestfirði."
-      }
-    ],
-    "en": [
-      {
-        "title": "About",
-        "text": "Flak is a culture-minded pub and fish-soup spot by the harbour in Patreksfjörður. It serves light meals and home-brewed beer, and often has concerts or other events on the programme. The atmosphere is relaxed and lively, and the place is an enjoyable blend of restaurant, pub and cultural venue in a small fishing town."
-      },
-      {
-        "title": "Good to know",
-        "text": "Flak sits by the harbour in Patreksfjörður, the largest town in the southern Westfjords. The fish soup and home-brewed beer are house signatures. It is worth checking the venue's programme, as events and concerts shape the mood. It is an ideal spot for an evening while travelling around the Westfjords."
       }
     ]
   }

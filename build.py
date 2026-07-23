@@ -35,13 +35,42 @@ def load_region_seo():
     return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
 REGION_SEO = {}
 
+# IMAGES — hero-myndir (deilt með app.js úr js/images.js)
+def load_images():
+    path = os.path.join(ROOT, "js", "images.js")
+    if not os.path.exists(path):
+        return {}
+    s = open(path, encoding="utf-8").read()
+    obj = s[s.index("const IMAGES =") + len("const IMAGES ="):]
+    obj = obj[:obj.index("if (typeof module")]
+    obj = obj[:obj.rindex("}") + 1].strip()
+    return json5.loads(obj)
+IMAGES = {}
+
+# STAY_HUB — næsti gistibær fyrir náttúrustaði (deilt með app.js úr js/staymap.js)
+def load_stay_hub():
+    path = os.path.join(ROOT, "js", "staymap.js")
+    if not os.path.exists(path):
+        return {}
+    src = open(path, encoding="utf-8").read()
+    obj = src[src.index("const STAY_HUB =") + len("const STAY_HUB ="):]
+    obj = obj[:obj.index("};") + 1].strip()
+    return json5.loads(obj)
+STAY_HUB = {}
+
+# Þemalistar / ferðaleiðir — collections.json
+def load_collections():
+    path = os.path.join(ROOT, "collections.json")
+    return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
+COLLECTIONS = {}
+
 REGION_ORDER = ["hofudborg","reykjanes","vesturland","vestfirdir",
                 "nordvestur","nordaustur","austurland","sudurland"]
 
 LANGS = {
   "is": {
     "code": "is", "og_locale": "is_IS", "data": "js/data.js", "prefix": "",
-    "seg": {"place": "stadur", "region": "landshluti", "all": "stadir"},
+    "seg": {"place": "stadur", "region": "landshluti", "all": "stadir", "coll": "leidir"},
     "country": "Ísland",
     "ui": {
       "nav_map":"Kort","nav_all":"Allir staðir","nav_about":"Um vefinn","crumb_home":"Heim",
@@ -60,11 +89,15 @@ LANGS = {
       "region_title":"{rname} — staðir, gisting og afþreyging | {site}",
       "dir_title":"Allir staðir, gönguleiðir og veitingar á Íslandi | {site}",
       "dir_desc":"Leiðsögn um Ísland — staðir, gönguleiðir, gisting og afþreyging í öllum landshlutum.",
+      "nav_coll":"Leiðir","kicker_coll":"Þemaleið","colls_kicker":"Yfirlit",
+      "colls_h1":"Ferðaleiðir & þemalistar","colls_desc":"Tilbúnar leiðir og listar — Gullni hringurinn, Demantshringurinn, bestu laugarnar og fleira.",
+      "colls_title":"Ferðaleiðir og þemalistar á Íslandi | {site}",
+      "coll_title":"{name} — {tagline} | {site}","places_in":"Staðir á leiðinni",
     },
   },
   "en": {
     "code": "en", "og_locale": "en", "data": "js/data.en.js", "prefix": "/en",
-    "seg": {"place": "place", "region": "region", "all": "places"},
+    "seg": {"place": "place", "region": "region", "all": "places", "coll": "routes"},
     "country": "Iceland",
     "ui": {
       "nav_map":"Map","nav_all":"All places","nav_about":"About","crumb_home":"Home",
@@ -83,6 +116,10 @@ LANGS = {
       "region_title":"{rname} — places, accommodation & activities | {site}",
       "dir_title":"All places, hiking trails & restaurants in Iceland | {site}",
       "dir_desc":"A guide to Iceland — places, hiking trails, accommodation and activities in every region.",
+      "nav_coll":"Routes","kicker_coll":"Route","colls_kicker":"Overview",
+      "colls_h1":"Travel routes & themed lists","colls_desc":"Ready-made routes and lists — the Golden Circle, Diamond Circle, best baths and more.",
+      "colls_title":"Iceland travel routes & themed lists | {site}",
+      "coll_title":"{name} — {tagline} | {site}","places_in":"Places on this route",
     },
   },
 }
@@ -110,11 +147,25 @@ def write(path, content):
 def jsonld_block(obj):
     return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False) + '</script>'
 
+def hero_figure(key, lang):
+    """Skilar (html, ogimg_url) fyrir hero-mynd ef til, annars ("", None)."""
+    img = IMAGES.get(key)
+    if not img:
+        return "", None
+    alt = img.get("alt_" + lang) or img.get("alt_en") or ""
+    cap = " / ".join(x for x in (img.get("credit"), (img.get("source") or "").capitalize()) if x)
+    html_ = (f'<figure class="doc-hero"><img src="{e(img["src"])}" alt="{e(alt)}" loading="lazy">'
+             + (f'<figcaption>{e(cap)}</figcaption>' if cap else '') + '</figure>')
+    return html_, SITE_URL + img["src"]
+
 # ---- URL-smiðir ----
 def home_url(lang):   return f"{SITE_URL}{LANGS[lang]['prefix']}/"
 def all_url(lang):    return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['all']}/"
 def place_url(lang, pid): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['place']}/{pid}/"
 def region_url(lang, rid): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['region']}/{rid}/"
+def coll_url(lang, cid): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['coll']}/{cid}/"
+def coll_index_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['coll']}/"
+def colls_url(lang):     return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['coll']}/"
 def out_path(url):
     return url.replace(SITE_URL + "/", "") + "index.html"
 
@@ -122,6 +173,9 @@ def kind_url(lang, kind, ident):
     if kind == "place":  return place_url(lang, ident)
     if kind == "region": return region_url(lang, ident)
     if kind == "all":    return all_url(lang)
+    if kind == "coll":   return coll_url(lang, ident)
+    if kind == "colls":  return coll_index_url(lang)
+    if kind == "colls":  return colls_url(lang)
     return home_url(lang)
 
 def alternates(kind, ident):
@@ -148,10 +202,10 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:url" content="{url}">
 <meta property="og:site_name" content="{site}">
 <meta property="og:locale" content="{oglocale}">
-<meta property="og:image" content="{siteurl}/og-image.svg">
+<meta property="og:image" content="{ogimg}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
-<meta name="twitter:image" content="{siteurl}/og-image.svg">
+<meta name="twitter:image" content="{ogimg}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -164,6 +218,7 @@ HEAD = """<!DOCTYPE html>
   <a href="{home}" class="logo"><span class="logo-text">{logo}</span><span class="logo-sub">{logosub}</span></a>
   <nav class="main-nav">
     <a href="{home}#kort">{nav_map}</a>
+    <a href="{coll_index}">{nav_coll}</a>
     <a href="{all}">{nav_all}</a>
     <a href="{home}#um">{nav_about}</a>
     <a href="{lang_href}" class="lang-switch">{lang_label}</a>
@@ -182,16 +237,18 @@ FOOT = """</main>
 </html>
 """
 
-def page(lang, kind, ident, title, desc, url, ogtype, jsonld, body):
+def page(lang, kind, ident, title, desc, url, ogtype, jsonld, body, ogimg=None):
     ui = LANGS[lang]["ui"]
     other = "en" if lang == "is" else "is"
     logo, logosub = ("Iceland", "Compass")
     head = HEAD.format(
         lc=LANGS[lang]["code"], title=e(title), desc=e(desc), url=e(url), ogtype=ogtype,
         site=e(SITE_NAME), oglocale=LANGS[lang]["og_locale"], siteurl=SITE_URL,
+        ogimg=e(ogimg or f"{SITE_URL}/og-image.svg"),
         alts=alternates(kind, ident), jsonld="\n".join(jsonld),
         home=home_url(lang), all=all_url(lang), logo=logo, logosub=logosub,
         nav_map=ui["nav_map"], nav_all=ui["nav_all"], nav_about=ui["nav_about"],
+        coll_index=coll_index_url(lang), nav_coll=ui["nav_coll"],
         lang_href=kind_url(other, kind, ident), lang_label=ui["lang_label"])
     return head + body + FOOT.format(all=all_url(lang), nav_all=ui["nav_all"])
 
@@ -221,6 +278,10 @@ def build_place(lang, p, regions, places):
         f'<div class="doc-band" style="background:{e(region["color"])}"></div>',
         f'<p class="doc-body">{e(p["description"])}</p>']
 
+    hero_html, hero_og = hero_figure(pid, lang)
+    if hero_html:
+        parts.insert(5, hero_html)
+
     # Ítarlegt SEO-efni (kaflar með undirfyrirsögnum)
     for sec in SEO.get(pid, {}).get(lang, []):
         txt = sec.get("text") or sec.get("body") or ""
@@ -249,7 +310,7 @@ def build_place(lang, p, regions, places):
         parts.append(f'<h2>{e(ui["h_activities"])}</h2><ul class="doc-list">' +
             "".join(f'<li><span>{e(a)}</span></li>' for a in p["activities"]) + '</ul>')
 
-    q = p.get("location") or f'{p["name"]} {rname}'
+    q = STAY_HUB.get(pid) or p.get("location") or f'{p["name"]} {rname}'
     booking = f'https://www.booking.com/searchresults.html?ss={e(q)}, {LANGS[lang]["country"]}'
     if cat in ("veitingar","kaffi","bod"):
         mapq = f'{p["name"]} {p.get("location") or rname}'
@@ -284,7 +345,7 @@ def build_place(lang, p, regions, places):
                   "address":{"@type":"PostalAddress","addressRegion":rname,"addressCountry":"IS"},
                   "isAccessibleForFree":True,"url":url,"image":f"{SITE_URL}/og-image.svg"}
 
-    write(out_path(url), page(lang,"place",pid,title,desc,url,"article",[crumb_ld,jsonld_block(schema)], crumb_nav and "\n".join(parts)))
+    write(out_path(url), page(lang,"place",pid,title,desc,url,"article",[crumb_ld,jsonld_block(schema)], crumb_nav and "\n".join(parts), ogimg=hero_og))
     return url
 
 def build_region(lang, rid, regions, places):
@@ -299,6 +360,9 @@ def build_region(lang, rid, regions, places):
         f'<h1>{e(rname)}</h1>',
         f'<div class="doc-band" style="background:{e(region["color"])}"></div>',
         f'<p class="doc-body">{e(region.get("intro",""))}</p>']
+    hero_html, hero_og = hero_figure(rid, lang)
+    if hero_html:
+        parts.insert(4, hero_html)
     s = region.get("stats",{})
     if s:
         parts.append('<div class="doc-stats">' +
@@ -320,7 +384,7 @@ def build_region(lang, rid, regions, places):
                                     for i,p in enumerate(rplaces)]}
     dest = {"@context":"https://schema.org","@type":"TouristDestination","name":rname,
             "description":region.get("intro",""),"url":url,"image":f"{SITE_URL}/og-image.svg","addressCountry":"IS"}
-    write(out_path(url), page(lang,"region",rid,title,desc,url,"website",[crumb_ld,jsonld_block(dest),jsonld_block(item_list)], "\n".join(parts)))
+    write(out_path(url), page(lang,"region",rid,title,desc,url,"website",[crumb_ld,jsonld_block(dest),jsonld_block(item_list)], "\n".join(parts), ogimg=hero_og))
     return url
 
 def build_directory(lang, regions, places):
@@ -338,6 +402,65 @@ def build_directory(lang, regions, places):
             "".join(f'<li><a href="{place_url(lang,p["id"])}">{e(p["name"])}</a> <span>{e(p["type"])}</span></li>'
                     for p in rplaces) + '</ul>')
     write(out_path(url), page(lang,"all",None,title,desc,url,"website",[crumb_ld], "\n".join(parts)))
+    return url
+
+# ----------------------------------------------------------------------
+def build_collection(lang, cid, coll, places_by_id):
+    ui = LANGS[lang]["ui"]
+    c = coll[lang]
+    url = coll_url(lang, cid)
+    title = ui["coll_title"].format(name=c["name"], tagline=c["tagline"], site=SITE_NAME)
+    desc = trunc(c.get("intro") or c["tagline"])
+    color = coll.get("color", "#1f4e46")
+
+    crumb_nav, crumb_ld = breadcrumbs([(ui["crumb_home"], home_url(lang)),
+                                       (ui["nav_coll"], coll_index_url(lang)),
+                                       (c["name"], url)])
+    parts = [crumb_nav,
+        f'<p class="doc-kicker">{e(ui["kicker_coll"])}</p>',
+        f'<h1>{e(c["name"])}</h1>',
+        f'<p class="doc-lead">{e(c["tagline"])}</p>',
+        f'<div class="doc-band" style="background:{e(color)}"></div>']
+    hero_html, hero_og = hero_figure(cid, lang)
+    if hero_html:
+        parts.append(hero_html)
+    if c.get("intro"):
+        parts.append(f'<p class="doc-body">{e(c["intro"])}</p>')
+    # Ítarlegir kaflar (frá textahöfundum) ef til
+    for sec in c.get("sections", []):
+        txt = sec.get("text") or sec.get("body") or ""
+        parts.append(f'<h2>{e(sec.get("title",""))}</h2><p class="doc-body">{e(txt)}</p>')
+
+    # Viðkomustaðir í röð
+    items = [places_by_id[pid] for pid in coll["places"] if pid in places_by_id]
+    parts.append(f'<h2>{e(ui["places_in"])}</h2><ul class="doc-links">' +
+        "".join(f'<li><a href="{place_url(lang, p["id"])}">{e(p["name"])}</a> <span>{e(p.get("blurb") or p["type"])}</span></li>'
+                for p in items) + '</ul>')
+    parts.append(f'<p class="doc-more"><a href="{coll_index_url(lang)}">{e(ui["colls_h1"])} →</a> · '
+                 f'<a href="{home_url(lang)}#kort">{e(ui["view_map"])}</a></p>')
+
+    item_list = {"@context":"https://schema.org","@type":"ItemList","name":c["name"],
+                 "itemListElement":[{"@type":"ListItem","position":i+1,"url":place_url(lang,p["id"]),"name":p["name"]}
+                                    for i,p in enumerate(items)]}
+    ld = [crumb_ld, jsonld_block(item_list)]
+    write(out_path(url), page(lang,"coll",cid,title,desc,url,"website",ld,"\n".join(parts), ogimg=hero_og))
+    return url
+
+def build_collections_index(lang, collections):
+    ui = LANGS[lang]["ui"]
+    url = coll_index_url(lang)
+    title = ui["colls_title"].format(site=SITE_NAME)
+    desc = trunc(ui["colls_desc"])
+    crumb_nav, crumb_ld = breadcrumbs([(ui["crumb_home"], home_url(lang)),(ui["nav_coll"], url)])
+    ordered = sorted(collections.items(), key=lambda kv: kv[1].get("order", 99))
+    parts = [crumb_nav,
+        f'<p class="doc-kicker">{e(ui["colls_kicker"])}</p>',
+        f'<h1>{e(ui["colls_h1"])}</h1>',
+        f'<p class="doc-lead">{e(ui["colls_desc"])}</p>',
+        '<ul class="doc-links">' +
+        "".join(f'<li><a href="{coll_url(lang,cid)}">{e(coll[lang]["name"])}</a> <span>{e(coll[lang]["tagline"])}</span></li>'
+                for cid, coll in ordered) + '</ul>']
+    write(out_path(url), page(lang,"colls",None,title,desc,url,"website",[crumb_ld],"\n".join(parts)))
     return url
 
 # ----------------------------------------------------------------------
@@ -370,6 +493,9 @@ def build_doc_css():
 .doc h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 16px; }
 .doc-lead { font-size: 1.2rem; color: var(--ink-soft); margin-bottom: 24px; }
 .doc-band { height: 8px; border-radius: 6px; margin-bottom: 28px; }
+.doc-hero { margin: 0 0 28px; }
+.doc-hero img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px; display: block; }
+.doc-hero figcaption { font-size: .72rem; color: var(--ink-faint); margin-top: 6px; text-align: right; }
 .doc-body { font-size: 1.05rem; color: var(--ink-soft); margin-bottom: 8px; }
 .doc h2 { font-size: 1.4rem; margin: 38px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
 .doc h2 a { color: var(--ink); } .doc h2 a:hover { color: var(--accent); }
@@ -399,9 +525,12 @@ def build_doc_css():
 
 # ----------------------------------------------------------------------
 def main():
-    global SEO, REGION_SEO
+    global SEO, REGION_SEO, STAY_HUB, COLLECTIONS, IMAGES
     SEO = load_seo()
     REGION_SEO = load_region_seo()
+    STAY_HUB = load_stay_hub()
+    IMAGES = load_images()
+    COLLECTIONS = load_collections()
     build_og_image(); build_doc_css(); build_robots()
     urls = [(home_url("is"), "1.0"), (home_url("en"), "1.0")]
     counts = {}
@@ -414,8 +543,14 @@ def main():
                 urls.append((build_region(lang, rid, regions, places), "0.7"))
         for p in places:
             urls.append((build_place(lang, p, regions, places), "0.6"))
+        if COLLECTIONS:
+            places_by_id = {p["id"]: p for p in places}
+            urls.append((build_collections_index(lang, COLLECTIONS), "0.8"))
+            for cid, coll in COLLECTIONS.items():
+                urls.append((build_collection(lang, cid, coll, places_by_id), "0.8"))
     build_sitemap(urls)
     print(f"✔ Byggt á 2 tungumálum — is: {counts['is']} staðir, en: {counts['en']} staðir")
+    print(f"✔ {len(COLLECTIONS)} þemaleiðir")
     print(f"✔ {len(urls)} slóðir í sitemap.xml")
     print(f"⚠ Stilltu SITE_URL (nú: {SITE_URL}) — líka í index.html og en/index.html")
 

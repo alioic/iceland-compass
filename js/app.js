@@ -47,7 +47,7 @@ const STR = {
     sDist: "Vegalengd", sDur: "Tími", sDiff: "Erfiðleiki",
     sCuisine: "Tegund", sPrice: "Verðflokkur", sLoc: "Staðsetning",
     btnBook: "Bóka gistingu í nágrenni", btnTours: "Skoða ferðir og afþreyingu", btnMap: "Finna á korti",
-    fullPage: (n) => `Sjá heila síðu um ${n} →`, near: "Ísland",
+    fullPage: (n) => `Lestu meira um ${n} →`, near: "Ísland",
   },
   en: {
     hint: "Click a region to see places in that area",
@@ -62,7 +62,7 @@ const STR = {
     sDist: "Distance", sDur: "Duration", sDiff: "Difficulty",
     sCuisine: "Cuisine", sPrice: "Price", sLoc: "Location",
     btnBook: "Book nearby accommodation", btnTours: "Browse tours & activities", btnMap: "Find on map",
-    fullPage: (n) => `See the full page on ${n} →`, near: "Iceland",
+    fullPage: (n) => `Read more about ${n} →`, near: "Iceland",
   },
 };
 const t = STR[LANG];
@@ -445,8 +445,9 @@ function openModal(placeId) {
       </div>`;
   }
 
-  // Bókunarhnappar (tekjuhlekkir)
-  const searchTerm = p.location || `${p.name} ${region.name}`;
+  // Bókunarhnappar (tekjuhlekkir) — nota næsta gistibæ (STAY_HUB) fyrir náttúrustaði
+  const stayHub = typeof STAY_HUB !== "undefined" ? STAY_HUB[p.id] : null;
+  const searchTerm = stayHub || p.location || region.name;
   let cta;
   if (hasLoc(cat)) {
     cta = `
@@ -458,8 +459,14 @@ function openModal(placeId) {
       <a class="mc-btn" href="${tourLink(p.name)}" target="_blank" rel="noopener sponsored nofollow">${t.btnTours}</a>`;
   }
 
+  // Hero-mynd ef til, annars litur landshlutans
+  const heroImg = (typeof IMAGES !== "undefined" && IMAGES[p.id]) || null;
+  const heroStyle = heroImg
+    ? `background:linear-gradient(rgba(12,16,16,0.15), rgba(12,16,16,0.4)), url('${heroImg.src}') center/cover no-repeat`
+    : `background:${region.color}`;
+
   document.getElementById("modalBody").innerHTML = `
-    <div class="modal-hero" style="background:${region.color}">
+    <div class="modal-hero${heroImg ? " has-img" : ""}" style="${heroStyle}">
       <span class="mh-region">${region.name}${hlnd}</span>
     </div>
     <div class="modal-content">
