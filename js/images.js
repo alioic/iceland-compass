@@ -512,6 +512,182 @@ const IMAGES = {
     "credit": "Karsten Winegeart",
     "source": "unsplash",
     "page": "https://unsplash.com/photos/a-woman-is-floating-in-a-blue-pool-aiBu12OlzFA"
+  },
+  "fagradalsfjall": {
+    "src": "/img/places/fagradalsfjall.jpg",
+    "alt_is": "Eldgosið í Geldingadölum við Fagradalsfjall – glóandi hraun í myrkri",
+    "alt_en": "The volcanic eruption at Geldingadalir, Fagradalsfjall – glowing lava in the dark",
+    "credit": "Toby Elliott",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/MugEve1ytpY"
+  },
+  "krysuvik": {
+    "src": "/img/places/krysuvik.jpg",
+    "alt_is": "Litríkt jarðhitasvæðið í Krýsuvík á Reykjanesskaga",
+    "alt_en": "The colourful geothermal area at Krýsuvík on the Reykjanes peninsula",
+    "credit": "Job Savelsberg",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/XOdU2Isoq1M"
+  },
+  "gardskagi": {
+    "src": "/img/places/gardskagi.jpg",
+    "alt_is": "Gamli vitinn á Garðskaga við bláan himin",
+    "alt_en": "The old Garðskagi lighthouse against a blue sky on the Icelandic shore",
+    "credit": "ArtHouse Studio",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/old-lighthouse-against-cloudy-blue-sky-4344321/"
+  },
+  "grotta": {
+    "src": "/img/places/grotta.jpg",
+    "alt_is": "Norðurljós yfir Gróttuvita á Seltjarnarnesi",
+    "alt_en": "Aurora borealis over Grótta lighthouse in Seltjarnarnes",
+    "credit": "Björn Austmar Þórsson",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/a-view-of-the-beautiful-aurora-borealis-6953463/"
+  },
+  "grabrok": {
+    "src": "/img/places/grabrok.jpg",
+    "alt_is": "Grábrók – mosavaxinn eldgígur í Norðurárdal",
+    "alt_en": "Grábrók volcanic crater covered in moss, west Iceland",
+    "credit": "Job Savelsberg",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-mountain-covered-in-green-grass-and-dirt-rQgPWA1zFdM"
+  },
+  "skagafjordur": {
+    "src": "/img/places/skagafjordur.jpg",
+    "alt_is": "Landslag í Skagafirði – útsýni yfir sveitina",
+    "alt_en": "Scenic view of the Skagafjörður landscape in north Iceland",
+    "credit": "Matt Hardy",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/2569792/"
+  },
+  "kolugljufur": {
+    "src": "/img/places/kolugljufur.jpg",
+    "alt_is": "Kolufossar í Kolugljúfri í Víðidal",
+    "alt_en": "Waterfall in Kolugljúfur canyon, northwest Iceland",
+    "credit": "Nick Haynes",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/kolugljufur-canyon-waterfall-in-iceland-10247864/"
+  },
+  "hofsos": {
+    "src": "/img/places/hofsos.jpg",
+    "alt_is": "Kirkjan á Hofsósi með bláu þaki í Skagafirði",
+    "alt_en": "The blue-roofed church at Hofsós, Skagafjörður",
+    "credit": "Mélanie Mélasse",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/church-with-blue-roofs-in-hofsos-iceland-26970387/"
+  },
+  "glaumbaer": {
+    "src": "/img/places/glaumbaer.jpg",
+    "alt_is": "Torfbæirnir í Glaumbæ í Skagafirði",
+    "alt_en": "The turf farmhouses at Glaumbær Farm and Museum, Skagafjörður",
+    "credit": "Antonio Morillas",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-grassy-field-with-mountains-in-the-background-lHplSXMdbB8"
+  },
+  "kalfshamarsvik": {
+    "src": "/img/places/kalfshamarsvik.jpg",
+    "alt_is": "Vitinn í Kálfshamarsvík á Skaga",
+    "alt_en": "The lighthouse at Kálfshamarsvík basalt cove, north Iceland",
+    "credit": "Sigurdur Fjalar Jonsson",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-lighthouse-on-a-rocky-shore-with-a-body-of-water-M1KX1120bl0"
+  },
+  "blonduos": {
+    "src": "/img/places/blonduos.jpg",
+    "alt_is": "Blönduóskirkja – nútímaleg kirkja á Blönduósi",
+    "alt_en": "The modern Blönduóskirkja church in Blönduós",
+    "credit": "Job Savelsberg",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-building-with-a-cross-on-top-14WRwHCe3a4"
+  },
+  "holmavik": {
+    "src": "/img/places/holmavik.jpg",
+    "alt_is": "Bátur á sjónum við Hólmavík á Ströndum",
+    "alt_en": "A boat on the water at Hólmavík, Strandir, Westfjords",
+    "credit": "Ondřej Sinta",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-boat-sitting-on-top-of-a-body-of-water-under-a-cloudy-sky-_4_7NNplJ0U"
+  },
+  "hornvik": {
+    "src": "/img/places/hornvik.jpg",
+    "alt_is": "Sandfjara og björg á Hornströndum",
+    "alt_en": "Sandy beach and cliffs in the Hornstrandir nature reserve",
+    "credit": "Andrey Kwin",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/a-beach-with-brown-sand-10436182/"
+  },
+  "laufas": {
+    "src": "/img/places/laufas.jpg",
+    "alt_is": "Gömlu torfbæirnir á Laufási við Eyjafjörð",
+    "alt_en": "Historic turf houses at Laufás in North Iceland",
+    "credit": "Susanne Jutzeler (suju-foto)",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/traditional-grass-roofed-houses-in-iceland-17071145/"
+  },
+  "oskjuvegur": {
+    "src": "/img/places/oskjuvegur.jpg",
+    "alt_is": "Víti og Öskjuvatn í Öskju úr lofti",
+    "alt_en": "Aerial view of Víti crater lake and Öskjuvatn in the Askja caldera",
+    "credit": "Tomáš Malík",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/lakes-viti-and-oskjuvatn-on-iceland-27244371/"
+  },
+  "djupivogur": {
+    "src": "/img/places/djupivogur.jpg",
+    "alt_is": "Höfnin á Djúpavogi við Berufjörð",
+    "alt_en": "The harbour at Djúpivogur in East Iceland",
+    "credit": "Paolo Gregotti",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/AA_TdL6Z59E"
+  },
+  "hofn": {
+    "src": "/img/places/hofn.jpg",
+    "alt_is": "Snævi þakin fjöll speglast í sjónum við Höfn í Hornafirði",
+    "alt_en": "Snow-covered mountains reflected in the water at Höfn í Hornafirði",
+    "credit": "Piotr Kowalonek",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/mountains-in-snow-15264652/"
+  },
+  "fimmvorduhals": {
+    "src": "/img/places/fimmvorduhals.jpg",
+    "alt_is": "Skáli í snjó á Fimmvörðuhálsi",
+    "alt_en": "Isolated hut in the snow on the Fimmvörðuháls trail",
+    "credit": "Jędrzej Koralewski",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/isolated-cabin-on-the-fimmvorduhals-trail-iceland-27776291/"
+  },
+  "reykjadalur": {
+    "src": "/img/places/reykjadalur.jpg",
+    "alt_is": "Gufustrókar og litríkir hverir í Reykjadal",
+    "alt_en": "Steam and colorful hot springs in Reykjadalur valley",
+    "credit": "Olena Shmahalo",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/gSIqw8zo0QQ"
+  },
+  "sky_lagoon": {
+    "src": "/img/places/sky_lagoon.jpg",
+    "alt_is": "Baðgestur í Sky Lagoon í Kópavogi, hraunklettar og hafið í baksýn",
+    "alt_en": "Bather at Sky Lagoon geothermal spa in Kópavogur, Iceland, framed by lava rock walls with the ocean horizon behind",
+    "credit": "Karsten Winegeart / Unsplash",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-woman-in-a-body-of-water-with-rocks-in-the-background-Tg3f3-_XmVM"
+  },
+  "jardbodin_myvatn": {
+    "src": "/img/places/jardbodin_myvatn.jpg",
+    "alt_is": "Sólsetur yfir lóninu í Jarðböðunum við Mývatn",
+    "alt_en": "Sunset over the lagoon at Mývatn Nature Baths in North Iceland, with a bather silhouetted at the water's edge",
+    "credit": "Chris Turgeon / Unsplash",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/silhouette-of-woman-standing-on-beach-during-sunset-9wqRZsdiIAI"
+  },
+  "hofsos_sundlaug": {
+    "src": "/img/places/hofsos_sundlaug.jpg",
+    "alt_is": "Sundlaugin á Hofsósi séð úr lofti að vetri, með útsýni yfir Skagafjörð",
+    "alt_en": "Aerial winter view of the Hofsós swimming pool perched above the fjord in North Iceland",
+    "credit": "Gylfi Gylfason / Pexels",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/aerial-view-of-swimming-pool-near-the-ocean-10896940/"
   }
 };
 
