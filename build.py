@@ -47,6 +47,20 @@ def load_images():
     return json5.loads(obj)
 IMAGES = {}
 
+# MAPDATA — kortið sjálft (deilt með app.js úr js/mapdata.js)
+def load_mapdata():
+    path = os.path.join(ROOT, "js", "mapdata.js")
+    src = open(path, encoding="utf-8").read()
+    def grab(name):
+        seg = src[src.index(f"const {name} =") + len(f"const {name} ="):]
+        seg = seg[:seg.index(";\n")]
+        return json5.loads(seg)
+    meta_seg = src[src.index("const MAP_META =") + len("const MAP_META ="):]
+    meta = json5.loads(meta_seg[:meta_seg.index(";")])
+    return meta, grab("REGION_PATHS"), src
+
+MAPDATA = None
+
 # COORDS — hnit staða (deilt með app.js úr js/coords.js)
 def load_coords():
     path = os.path.join(ROOT, "js", "coords.js")
@@ -92,7 +106,7 @@ REGION_ORDER = ["hofudborg","reykjanes","vesturland","vestfirdir",
 LANGS = {
   "is": {
     "code": "is", "og_locale": "is_IS", "data": "js/data.js", "prefix": "",
-    "seg": {"place": "stadur", "region": "landshluti", "all": "stadir", "coll": "leidir"},
+    "seg": {"place": "stadur", "region": "landshluti", "all": "stadir", "coll": "leidir", "pools": "laugar"},
     "country": "Ísland",
     "ui": {
       "nav_map":"Kort","nav_all":"Allir staðir","nav_about":"Um vefinn","crumb_home":"Heim",
@@ -115,11 +129,16 @@ LANGS = {
       "colls_h1":"Ferðaleiðir & þemalistar","colls_desc":"Tilbúnar leiðir og listar — Gullni hringurinn, Demantshringurinn, bestu laugarnar og fleira.",
       "colls_title":"Ferðaleiðir og þemalistar á Íslandi | {site}",
       "coll_title":"{name} — {tagline} | {site}","places_in":"Staðir á leiðinni",
+      "pools_title":"Sundlaugakort Íslands — allar laugar og böð á korti | {site}",
+      "pools_h1":"Sundlaugakort Íslands","pools_kicker":"Laugar og böð",
+      "pools_lead":"{n} laugar, böð og heitir pottar um allt land — smelltu á punkt til að lesa meira.",
+      "pools_chips":{"all":"Allt","spa":"Jarðböð & lón","pool":"Sundlaugar","natural":"Náttúrulaugar","pots":"Heitir pottar"},
+      "pools_map_link":"Sjá allar laugar á Íslandskorti →",
     },
   },
   "en": {
     "code": "en", "og_locale": "en", "data": "js/data.en.js", "prefix": "/en",
-    "seg": {"place": "place", "region": "region", "all": "places", "coll": "routes"},
+    "seg": {"place": "place", "region": "region", "all": "places", "coll": "routes", "pools": "pools"},
     "country": "Iceland",
     "ui": {
       "nav_map":"Map","nav_all":"All places","nav_about":"About","crumb_home":"Home",
@@ -142,6 +161,11 @@ LANGS = {
       "colls_h1":"Travel routes & themed lists","colls_desc":"Ready-made routes and lists — the Golden Circle, Diamond Circle, best baths and more.",
       "colls_title":"Iceland travel routes & themed lists | {site}",
       "coll_title":"{name} — {tagline} | {site}","places_in":"Places on this route",
+      "pools_title":"Iceland pools map — every swimming pool, lagoon & hot spring | {site}",
+      "pools_h1":"Iceland Pools Map","pools_kicker":"Pools & baths",
+      "pools_lead":"{n} pools, lagoons and hot pots across the country — click a dot to read more.",
+      "pools_chips":{"all":"All","spa":"Geothermal baths","pool":"Swimming pools","natural":"Natural hot springs","pots":"Hot pots"},
+      "pools_map_link":"See every pool on the Iceland map →",
     },
   },
 }
@@ -187,6 +211,7 @@ def place_url(lang, pid): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang
 def region_url(lang, rid): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['region']}/{rid}/"
 def coll_url(lang, cid): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['coll']}/{cid}/"
 def coll_index_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['coll']}/"
+def pools_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['pools']}/"
 def colls_url(lang):     return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['coll']}/"
 def out_path(url):
     return url.replace(SITE_URL + "/", "") + "index.html"
@@ -197,6 +222,7 @@ def kind_url(lang, kind, ident):
     if kind == "all":    return all_url(lang)
     if kind == "coll":   return coll_url(lang, ident)
     if kind == "colls":  return coll_index_url(lang)
+    if kind == "pools":  return pools_url(lang)
     if kind == "colls":  return colls_url(lang)
     return home_url(lang)
 
@@ -459,6 +485,8 @@ def build_collection(lang, cid, coll, places_by_id):
         parts.append(hero_html)
     if c.get("intro"):
         parts.append(f'<p class="doc-body">{e(c["intro"])}</p>')
+    if cid == "bestu-baudin":
+        parts.append(f'<p class="doc-more"><a href="{pools_url(lang)}">{e(ui["pools_map_link"])}</a></p>')
     # Ítarlegir kaflar (frá textahöfundum) ef til
     for sec in c.get("sections", []):
         txt = sec.get("text") or sec.get("body") or ""
@@ -494,6 +522,97 @@ def build_collections_index(lang, collections):
         "".join(f'<li><a href="{coll_url(lang,cid)}">{e(coll[lang]["name"])}</a> <span>{e(coll[lang]["tagline"])}</span></li>'
                 for cid, coll in ordered) + '</ul>']
     write(out_path(url), page(lang,"colls",None,title,desc,url,"website",[crumb_ld],"\n".join(parts)))
+    return url
+
+# ----------------------------------------------------------------------
+def pool_bucket(p):
+    ty = (p.get("type") or "").lower()
+    if "jarðböð" in ty or "geothermal bath" in ty or "lón" in ty or "lagoon" in ty or "sea bath" in ty or "sjóböð" in ty:
+        return "spa"
+    if "pottar" in ty or "pots" in ty or "hot tub" in ty:
+        return "pots"
+    if "náttúrulaug" in ty or "natural" in ty or "hot spring" in ty:
+        return "natural"
+    return "pool"
+
+def build_pools_page(lang, regions, places):
+    ui = LANGS[lang]["ui"]
+    url = pools_url(lang)
+    pools = [p for p in places if cat_of(p) == "bod"]
+    title = ui["pools_title"].format(site=SITE_NAME)
+    desc = trunc(ui["pools_lead"].format(n=len(pools)))
+    crumb_nav, crumb_ld = breadcrumbs([(ui["crumb_home"], home_url(lang)), (ui["pools_h1"], url)])
+
+    meta, region_paths, mapsrc = MAPDATA
+    # jöklar
+    gseg = mapsrc[mapsrc.index("const GLACIER_PATH =") + len("const GLACIER_PATH ="):]
+    glacier = json5.loads(gseg[:gseg.index(";")])
+
+    svg = [f'<svg viewBox="{meta["viewBox"]}" role="img" aria-label="{e(ui["pools_h1"])}">']
+    for rid in REGION_ORDER:
+        d = region_paths.get(rid)
+        if d:
+            svg.append(f'<path d="{d}" fill="{regions[rid]["color"]}" fill-rule="evenodd" class="pm-region"/>')
+    svg.append(f'<path d="{glacier}" class="pm-glacier"/>')
+    for p in pools:
+        c = COORDS.get(p["id"])
+        if not c:
+            continue
+        x = (c[1] * 0.424199 - (-10.406353)) * 213.595734
+        y = (66.566417 - c[0]) * 213.595734
+        b = pool_bucket(p)
+        svg.append(
+            f'<a href="{place_url(lang, p["id"])}" class="pm-dot" data-t="{b}">'
+            f'<circle cx="{x:.1f}" cy="{y:.1f}" r="5"><title>{e(p["name"])} — {e(p.get("location",""))}</title></circle></a>')
+    svg.append("</svg>")
+
+    chips = ui["pools_chips"]
+    chip_html = "".join(
+        f'<button class="cat-tab{" active" if k == "all" else ""}" data-pt="{k}" type="button">{e(v)}</button>'
+        for k, v in chips.items())
+
+    rows = []
+    for rid in REGION_ORDER:
+        rpools = [p for p in pools if p["region"] == rid]
+        if not rpools:
+            continue
+        rows.append(f'<h2>{e(regions[rid]["name"])}</h2><ul class="doc-links">')
+        for p in rpools:
+            b = pool_bucket(p)
+            loc = p.get("location", "")
+            rows.append(
+                f'<li data-t="{b}"><a href="{place_url(lang, p["id"])}">{e(p["name"])}</a> '
+                f'<span>{e(p["type"])}{" · " + e(loc) if loc else ""} · {e(p.get("price",""))}</span></li>')
+        rows.append("</ul>")
+
+    script = """<script>
+(function(){
+  var chips=document.querySelectorAll('[data-pt]');
+  function apply(t){
+    chips.forEach(function(c){c.classList.toggle('active',c.dataset.pt===t);});
+    document.querySelectorAll('.pm-dot,[data-t]').forEach(function(el){
+      if(el.dataset.pt!==undefined)return;
+      el.style.display=(t==='all'||el.dataset.t===t)?'':'none';
+    });
+  }
+  chips.forEach(function(c){c.addEventListener('click',function(){apply(c.dataset.pt);});});
+})();
+</script>"""
+
+    parts = [crumb_nav,
+        f'<p class="doc-kicker">{e(ui["pools_kicker"])}</p>',
+        f'<h1>{e(ui["pools_h1"])}</h1>',
+        f'<p class="doc-lead">{e(ui["pools_lead"].format(n=len(pools)))}</p>',
+        f'<div class="filter-cats pools-chips">{chip_html}</div>',
+        f'<div class="pools-map">{"".join(svg)}</div>',
+        "".join(rows),
+        f'<p class="doc-more"><a href="{home_url(lang)}#kort">{e(ui["view_map"])}</a></p>',
+        script]
+
+    item_list = {"@context":"https://schema.org","@type":"ItemList","name":ui["pools_h1"],
+                 "itemListElement":[{"@type":"ListItem","position":i+1,"url":place_url(lang,p["id"]),"name":p["name"]}
+                                    for i,p in enumerate(pools)]}
+    write(out_path(url), page(lang,"pools",None,title,desc,url,"website",[crumb_ld,jsonld_block(item_list)], "\n".join(parts)))
     return url
 
 # ----------------------------------------------------------------------
@@ -552,18 +671,26 @@ def build_doc_css():
 .doc-btn { flex: 1; min-width: 200px; text-align: center; padding: 14px 20px; border-radius: 6px; font-weight: 600; border: 1px solid var(--line); }
 .doc-btn.primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
 .doc-btn:hover { transform: translateY(-2px); }
+.pools-chips { margin: 6px 0 20px; flex-wrap: wrap; display: inline-flex; }
+.pools-map { margin: 0 0 34px; }
+.pools-map svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 12px 30px rgba(28,27,25,0.12)); }
+.pm-region { fill-opacity: 0.3; stroke: var(--paper); stroke-width: 1.2; }
+.pm-glacier { fill: #fbfcfd; fill-opacity: 0.9; stroke: #cdd8de; stroke-width: 0.8; }
+.pm-dot circle { fill: var(--accent); stroke: #fff; stroke-width: 1.6; cursor: pointer; transition: fill 0.15s; }
+.pm-dot:hover circle { fill: #b05750; }
 .doc-more { margin-top: 30px; color: var(--ink-faint); }
 .doc-more a { color: var(--accent); font-weight: 600; }
 """)
 
 # ----------------------------------------------------------------------
 def main():
-    global SEO, REGION_SEO, STAY_HUB, COLLECTIONS, IMAGES, COORDS
+    global SEO, REGION_SEO, STAY_HUB, COLLECTIONS, IMAGES, COORDS, MAPDATA
     SEO = load_seo()
     REGION_SEO = load_region_seo()
     STAY_HUB = load_stay_hub()
     IMAGES = load_images()
     COORDS = load_coords()
+    MAPDATA = load_mapdata()
     COLLECTIONS = load_collections()
     build_og_image(); build_doc_css(); build_robots()
     urls = [(home_url("is"), "1.0"), (home_url("en"), "1.0")]
@@ -577,6 +704,7 @@ def main():
                 urls.append((build_region(lang, rid, regions, places), "0.7"))
         for p in places:
             urls.append((build_place(lang, p, regions, places), "0.6"))
+        urls.append((build_pools_page(lang, regions, places), "0.8"))
         if COLLECTIONS:
             places_by_id = {p["id"]: p for p in places}
             urls.append((build_collections_index(lang, COLLECTIONS), "0.8"))

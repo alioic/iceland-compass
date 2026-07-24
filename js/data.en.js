@@ -5810,6 +5810,1476 @@ const PLACES = [
       "Water slide and children's pool",
       "Convenient stopover on the road"
     ]
+  },
+  {
+    "id": "breidholtslaug",
+    "name": "Breiðholtslaug",
+    "region": "hofudborg",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Reykjavík",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Family"
+    ],
+    "blurb": "Spacious neighbourhood pool in Breiðholt with outdoor lanes, hot tubs and a slide.",
+    "description": "Public pool at Austurberg with a 50 m outdoor pool, hot tubs, steam bath, water slide and a children's pool. A calmer, local alternative to the downtown pools.",
+    "highlights": [
+      "50 m outdoor pool",
+      "Water slide and kids' pool",
+      "Hot tubs and steam bath"
+    ]
+  },
+  {
+    "id": "grafarvogslaug",
+    "name": "Grafarvogslaug",
+    "region": "hofudborg",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Reykjavík",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Family"
+    ],
+    "blurb": "Popular family pool in the Grafarvogur suburb with a slide and great kids' facilities.",
+    "description": "Outdoor pool at Dalhús with a 25 m lap pool, hot tubs, steam bath, water slide and a shallow children's pool. One of Reykjavík's best family pools.",
+    "highlights": [
+      "25 m outdoor pool",
+      "Water slide",
+      "Great for kids"
+    ]
+  },
+  {
+    "id": "dalslaug",
+    "name": "Dalslaug",
+    "region": "hofudborg",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Reykjavík",
+    "tags": [
+      "Pool",
+      "Water slides",
+      "Family"
+    ],
+    "blurb": "Reykjavík's newest pool in Úlfarsárdalur, famous for its big water slides.",
+    "description": "Opened in 2021 with a 25 m outdoor pool, an indoor pool, hot tubs, a cold plunge, steam bath and two large water slides named Úlfur and Ylfa.",
+    "highlights": [
+      "Two big water slides",
+      "25 m outdoor plus indoor pool",
+      "The city's newest pool"
+    ]
+  },
+  {
+    "id": "klebergslaug",
+    "name": "Klébergslaug",
+    "region": "hofudborg",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Kjalarnes",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Quiet"
+    ],
+    "blurb": "Small, cosy countryside pool on Kjalarnes with views over the bay.",
+    "description": "A friendly outdoor pool by Kléberg school on the Kjalarnes peninsula, with a hot tub and steam bath. A quiet stop just off the road north from Reykjavík.",
+    "highlights": [
+      "Quiet rural feel",
+      "Hot tub and steam bath",
+      "Short drive from Reykjavík"
+    ]
+  },
+  {
+    "id": "sundlaug_kopavogs",
+    "name": "Sundlaug Kópavogs",
+    "region": "hofudborg",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Kópavogur",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Family"
+    ],
+    "blurb": "Kópavogur's large main pool with a 50 m outdoor pool and water slides.",
+    "description": "The main pool of Kópavogur with a 50 m outdoor pool, hot tubs, steam bath, water slides and a children's area. One of the largest pools in the capital region.",
+    "highlights": [
+      "50 m outdoor pool",
+      "Water slides",
+      "Hot tubs and steam bath"
+    ]
+  },
+  {
+    "id": "salalaug",
+    "name": "Salalaug",
+    "region": "hofudborg",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Kópavogur",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Family"
+    ],
+    "blurb": "Bright, modern pool in the Salir district with both indoor and outdoor areas.",
+    "description": "The pool at Versalir in upper Kópavogur, with a 25 m indoor pool, outdoor pool, hot tubs, steam bath and a water slide. A local family favourite.",
+    "highlights": [
+      "Indoor and outdoor pools",
+      "Water slide",
+      "Hot tubs"
+    ]
+  },
+  {
+    "id": "asgardslaug",
+    "name": "Ásgarðslaug",
+    "region": "hofudborg",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Garðabær",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Family"
+    ],
+    "blurb": "Garðabær's main pool at Ásgarður with an outdoor pool, hot tubs and a slide.",
+    "description": "The town pool of Garðabær at the Ásgarður sports grounds, with a 25 m outdoor pool, hot tubs, steam bath, water slide and children's pool.",
+    "highlights": [
+      "25 m outdoor pool",
+      "Water slide and kids' pool",
+      "Hot tubs and steam bath"
+    ]
+  },
+  {
+    "id": "sundholl_hafnarfjardar",
+    "name": "Sundhöll Hafnarfjarðar",
+    "region": "hofudborg",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Hafnarfjörður",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Historic"
+    ],
+    "blurb": "Historic 1943 swim hall by the sea in central Hafnarfjörður.",
+    "description": "The old swim hall on Herjólfsgata with an indoor pool, outdoor hot tubs and steam bath, beautifully placed by the shore. Open on weekdays and full of local history.",
+    "highlights": [
+      "Historic hall from 1943",
+      "Indoor pool and outdoor tubs",
+      "Seaside location"
+    ]
+  },
+  {
+    "id": "sudurbaejarlaug",
+    "name": "Suðurbæjarlaug",
+    "region": "hofudborg",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Hafnarfjörður",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Family"
+    ],
+    "blurb": "Popular outdoor pool in south Hafnarfjörður with a slide and hot tubs.",
+    "description": "Family-friendly outdoor pool on Hringbraut with a 25 m pool, hot tubs, steam bath, water slide and children's pool in a sheltered setting.",
+    "highlights": [
+      "25 m outdoor pool",
+      "Water slide",
+      "Sheltered and family-friendly"
+    ]
+  },
+  {
+    "id": "asvallalaug",
+    "name": "Ásvallalaug",
+    "region": "hofudborg",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Hafnarfjörður",
+    "tags": [
+      "Pool",
+      "Indoor pool",
+      "Family"
+    ],
+    "blurb": "One of Iceland's largest indoor pools, with a 50 m pool and kids' area.",
+    "description": "Large indoor complex at Ásvellir with a 50 m competition pool, teaching pool, children's area with a slide, and hot tubs. A great choice in any weather.",
+    "highlights": [
+      "50 m indoor pool",
+      "All-weather swimming",
+      "Kids' area with slide"
+    ]
+  },
+  {
+    "id": "varmarlaug",
+    "name": "Varmárlaug",
+    "region": "hofudborg",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Mosfellsbær",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Quiet"
+    ],
+    "blurb": "Mosfellsbær's older, quieter pool at the Varmá sports grounds.",
+    "description": "A cosy pool at Varmá with an outdoor pool, children's pool, two hot tubs, sauna and steam bath. A calmer alternative to Lágafellslaug.",
+    "highlights": [
+      "Quiet local feel",
+      "Hot tubs and sauna",
+      "Children's pool"
+    ]
+  },
+  {
+    "id": "sundlaug_njardvikur",
+    "name": "Sundlaug Njarðvíkur",
+    "region": "reykjanes",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Njarðvík",
+    "tags": [
+      "Pool",
+      "Indoor pool",
+      "Hot tubs"
+    ],
+    "blurb": "Small indoor pool in Njarðvík with hot tubs, massage jets and a sauna.",
+    "description": "Indoor pool on Norðurstígur in Njarðvík with a 16 m pool, hot tubs and sauna. In summer the hot tubs and sauna take centre stage.",
+    "highlights": [
+      "Indoor pool",
+      "Hot tubs and sauna",
+      "Quiet local spot"
+    ]
+  },
+  {
+    "id": "stapalaug",
+    "name": "Stapalaug",
+    "region": "reykjanes",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Innri-Njarðvík",
+    "tags": [
+      "Pool",
+      "Indoor pool",
+      "Family"
+    ],
+    "blurb": "New, modern indoor pool at Stapaskóli in Innri-Njarðvík.",
+    "description": "A recent addition at the Stapaskóli sports centre in Innri-Njarðvík, one of Reykjanesbær's three pools. A bright indoor pool with good family facilities.",
+    "highlights": [
+      "Brand-new facilities",
+      "Indoor pool",
+      "Family-friendly"
+    ]
+  },
+  {
+    "id": "sundlaug_grindavikur",
+    "name": "Sundlaug Grindavíkur",
+    "region": "reykjanes",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Grindavík",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Family"
+    ],
+    "blurb": "Grindavík's town pool on Austurvegur, open again after the seismic events.",
+    "description": "Outdoor pool at the Grindavík sports centre with a 25 m pool, hot tubs and a water slide. Opening hours can change with conditions in town, so check ahead before visiting.",
+    "highlights": [
+      "25 m outdoor pool",
+      "Hot tubs",
+      "Check opening hours in advance"
+    ]
+  },
+  {
+    "id": "sundlaugin_sandgerdi",
+    "name": "Sundlaugin Sandgerði",
+    "region": "reykjanes",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Sandgerði",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Quiet"
+    ],
+    "blurb": "Cosy town pool in the fishing village of Sandgerði.",
+    "description": "Outdoor pool with hot tubs and a children's pool in the seaside village of Sandgerði. A quiet, inexpensive pool where locals take their daily swim.",
+    "highlights": [
+      "Outdoor pool and hot tubs",
+      "Quiet village feel",
+      "Close to Keflavík Airport"
+    ]
+  },
+  {
+    "id": "sundlaugin_gardi",
+    "name": "Sundlaugin Garði",
+    "region": "reykjanes",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Garður",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Quiet"
+    ],
+    "blurb": "Small village pool in Garður, near the Garðskagi lighthouses.",
+    "description": "A small, friendly pool in Garður in Suðurnesjabær with a hot tub and children's pool. A great stop after a walk out to Garðskagi point.",
+    "highlights": [
+      "Friendly village pool",
+      "Hot tub",
+      "Near Garðskagi lighthouse"
+    ]
+  },
+  {
+    "id": "jadarsbakkalaug",
+    "name": "Jaðarsbakkalaug",
+    "region": "vesturland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Akranes",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Family"
+    ],
+    "blurb": "Akranes town pool right by Langisandur beach, with hot tubs and a slide.",
+    "description": "Outdoor pool at Jaðarsbakkar next to Langisandur beach, with a 25 m pool, hot tubs, steam bath, water slide and children's pool. Pairs perfectly with a sea dip and the Guðlaug baths.",
+    "highlights": [
+      "25 m outdoor pool",
+      "Next to Langisandur beach",
+      "Slide and hot tubs"
+    ]
+  },
+  {
+    "id": "sundlaug_borgarness",
+    "name": "Sundlaug Borgarness",
+    "region": "vesturland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Borgarnes",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Family"
+    ],
+    "blurb": "Popular outdoor pool in Borgarnes overlooking the fjord.",
+    "description": "The Borgarnes town pool with a 25 m outdoor pool, hot tubs, steam bath, water slide and kids' area. A favourite stop when driving west or north.",
+    "highlights": [
+      "25 m outdoor pool",
+      "Fjord views",
+      "Slide and hot tubs"
+    ]
+  },
+  {
+    "id": "sundlaug_husafelli",
+    "name": "Sundlaugin Húsafelli",
+    "region": "vesturland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Húsafell",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Nature"
+    ],
+    "blurb": "Geothermal pool in the Húsafell woodland, open year round.",
+    "description": "Outdoor pool dating from 1965 in the lovely Húsafell forest setting, with two pools, two hot tubs, a sauna and a water slide. Popular with travellers and summer-house guests.",
+    "highlights": [
+      "Geothermal water in woodland",
+      "Water slide",
+      "Open all year"
+    ]
+  },
+  {
+    "id": "sundlaugin_varmalandi",
+    "name": "Sundlaugin Varmalandi",
+    "region": "vesturland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Varmaland",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Quiet"
+    ],
+    "blurb": "Summer pool in the geothermal hamlet of Varmaland in Borgarfjörður.",
+    "description": "Outdoor pool at the Varmaland sports centre with hot tubs and a children's pool, heated by local geothermal springs. Open during the summer season.",
+    "highlights": [
+      "Geothermal area",
+      "Quiet country pool",
+      "Open in summer"
+    ]
+  },
+  {
+    "id": "sundlaugin_kleppjarnsreykjum",
+    "name": "Sundlaugin Kleppjárnsreykjum",
+    "region": "vesturland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Kleppjárnsreykir",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Quiet"
+    ],
+    "blurb": "Little country pool in the greenhouse village of Kleppjárnsreykir.",
+    "description": "Summer-season outdoor pool in the geothermal village of Kleppjárnsreykir in Borgarfjörður, with a hot tub and children's pool. A pleasant stop on the way through Reykholtsdalur.",
+    "highlights": [
+      "Geothermal village",
+      "Quiet and cheap",
+      "Near Reykholt"
+    ]
+  },
+  {
+    "id": "sundlaug_stykkisholms",
+    "name": "Sundlaug Stykkishólms",
+    "region": "vesturland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Stykkishólmur",
+    "tags": [
+      "Pool",
+      "Water slide",
+      "Family"
+    ],
+    "blurb": "Family pool in Stykkishólmur with a big slide and mineral-rich water.",
+    "description": "Outdoor pool with a 25 m pool, a large water slide, hot tubs and a children's pool. The water comes from a borehole rich in minerals that the pool is known for.",
+    "highlights": [
+      "Big water slide",
+      "Mineral-rich water",
+      "25 m outdoor pool"
+    ]
+  },
+  {
+    "id": "sundlaug_grundarfjardar",
+    "name": "Sundlaug Grundarfjarðar",
+    "region": "vesturland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Grundarfjörður",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Quiet"
+    ],
+    "blurb": "Grundarfjörður's town pool a short walk from Kirkjufell mountain.",
+    "description": "Outdoor pool with hot tubs and a children's pool at the town sports centre. A perfect soak after hiking near Kirkjufell or touring Snæfellsnes.",
+    "highlights": [
+      "Near Kirkjufell",
+      "Hot tubs",
+      "Quiet town pool"
+    ]
+  },
+  {
+    "id": "sundlaug_olafsvikur",
+    "name": "Sundlaug Ólafsvíkur",
+    "region": "vesturland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Ólafsvík",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Family"
+    ],
+    "blurb": "Snæfellsbær's pool in Ólafsvík beneath the Snæfellsjökull glacier.",
+    "description": "Town pool on Ennisbraut with an outdoor pool, hot tubs, steam bath and a water slide. A good stop while circling Snæfellsjökull National Park.",
+    "highlights": [
+      "Outdoor pool and tubs",
+      "Water slide",
+      "Near Snæfellsjökull"
+    ]
+  },
+  {
+    "id": "sundlaug_budardals",
+    "name": "Sundlaugin Búðardal",
+    "region": "vesturland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Búðardalur",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Brand new"
+    ],
+    "blurb": "Brand-new 25 m outdoor pool in Búðardalur with views over Hvammsfjörður.",
+    "description": "Dalabyggð's new sports centre opened in 2026 with a 25 m outdoor pool, hot tubs, wading pool, sauna and cold plunge. Búðardalur's first proper swimming pool.",
+    "highlights": [
+      "Opened in 2026",
+      "Views over Hvammsfjörður",
+      "Hot tubs, sauna and cold plunge"
+    ]
+  },
+  {
+    "id": "sundlaug_sudureyrar",
+    "name": "Suðureyri Swimming Pool",
+    "region": "vestfirdir",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Suðureyri",
+    "tags": [
+      "Outdoor pool",
+      "Hot tubs",
+      "Family friendly"
+    ],
+    "blurb": "A cosy outdoor pool in a tiny fishing village on Súgandafjörður.",
+    "description": "A small, welcoming outdoor pool in the heart of Suðureyri village on Súgandafjörður, run by the Ísafjarðarbær municipality. A local gathering spot and a great stop for travellers exploring the northern Westfjords.",
+    "highlights": [
+      "Outdoor pool in a quiet fishing village",
+      "Hot tubs",
+      "Close to Suðureyri's famous fishing-village atmosphere"
+    ]
+  },
+  {
+    "id": "sundlaug_flateyrar",
+    "name": "Flateyri Swimming Pool",
+    "region": "vestfirdir",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Flateyri",
+    "tags": [
+      "Indoor pool",
+      "Hot tub",
+      "Family friendly"
+    ],
+    "blurb": "The village pool in Flateyri's sports centre on Önundarfjörður.",
+    "description": "The swimming pool in Flateyri's sports centre on scenic Önundarfjörður, run by the Ísafjarðarbær municipality. A relaxing stop after hiking or kayaking in one of the Westfjords' most beautiful fjords.",
+    "highlights": [
+      "Cosy pool in a peaceful village",
+      "Hot tub",
+      "Beautiful Önundarfjörður scenery nearby"
+    ]
+  },
+  {
+    "id": "sundlaug_thingeyrar",
+    "name": "Þingeyri Swimming Pool",
+    "region": "vestfirdir",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Þingeyri",
+    "tags": [
+      "Outdoor pool",
+      "Hot tubs",
+      "Family friendly"
+    ],
+    "blurb": "Outdoor pool with hot tubs in Þingeyri on Dýrafjörður.",
+    "description": "An outdoor pool with hot tubs at the sports centre in Þingeyri village on Dýrafjörður. A great stop for travellers exploring the Westfjords Alps and the area's Viking history sites.",
+    "highlights": [
+      "Outdoor pool at the foot of the Westfjords Alps",
+      "Hot tubs",
+      "Close to Sandafell mountain and Þingeyri's Viking area"
+    ]
+  },
+  {
+    "id": "sundlaug_patreksfjardar",
+    "name": "Patreksfjörður Swimming Pool",
+    "region": "vestfirdir",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Patreksfjörður",
+    "tags": [
+      "Outdoor pool",
+      "Hot tub",
+      "Great views"
+    ],
+    "blurb": "Outdoor pool with a splendid view over Patreksfjörður fjord.",
+    "description": "The pool at the Brattahlíð sports centre sits high in the town with a superb view over the fjord. The perfect end to a day visiting the Látrabjarg bird cliffs or Rauðisandur beach.",
+    "highlights": [
+      "Fjord views straight from the pool",
+      "Hot tub and steam room",
+      "Ideal after Látrabjarg and Rauðisandur"
+    ]
+  },
+  {
+    "id": "sundlaug_talknafjardar",
+    "name": "Tálknafjörður Swimming Pool",
+    "region": "vestfirdir",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Tálknafjörður",
+    "tags": [
+      "Outdoor pool",
+      "Hot tubs",
+      "Family friendly"
+    ],
+    "blurb": "Friendly village pool in Tálknafjörður with hot tubs.",
+    "description": "The outdoor pool at Tálknafjörður's sports centre has hot tubs and good family facilities. A comfortable alternative to the natural Pollurinn hot pots on colder days.",
+    "highlights": [
+      "Heated outdoor pool with hot tubs",
+      "Family-friendly facilities",
+      "Short drive from the Pollurinn natural pools"
+    ]
+  },
+  {
+    "id": "sundlaugin_holmavik",
+    "name": "Hólmavík Swimming Pool",
+    "region": "vestfirdir",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Hólmavík",
+    "tags": [
+      "Outdoor pool",
+      "Hot tubs",
+      "Steam bath"
+    ],
+    "blurb": "A 25 m pool with hot tubs and steam bath in the Strandir region.",
+    "description": "A 25-metre pool with two hot tubs, a children's wading pool and a steam bath at the Hólmavík sports centre. The main pool of the Strandir coast and a great stop en route to the remote northern Westfjords.",
+    "highlights": [
+      "25-metre pool",
+      "Two hot tubs and a steam bath",
+      "Perfect rest stop on the Strandir coast"
+    ]
+  },
+  {
+    "id": "grettislaug_reykholar",
+    "name": "Grettislaug at Reykhólar",
+    "region": "vestfirdir",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Reykhólar",
+    "tags": [
+      "Outdoor pool",
+      "Hot tubs",
+      "Geothermal"
+    ],
+    "blurb": "A 25 m geothermal outdoor pool at Reykhólar on Breiðafjörður.",
+    "description": "Grettislaug is a 25-metre outdoor pool with hot tubs in Reykhólar village, heated by the local geothermal field. A quiet bathing spot overlooking the countless islands of Breiðafjörður bay.",
+    "highlights": [
+      "25-metre outdoor pool",
+      "Hot tubs and play equipment",
+      "Views over Breiðafjörður's islands"
+    ]
+  },
+  {
+    "id": "reykjanes_isafjardardjup",
+    "name": "Reykjanes Pool in Ísafjarðardjúp",
+    "region": "vestfirdir",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Reykjanes í Ísafjarðardjúpi",
+    "tags": [
+      "Outdoor pool",
+      "Geothermal",
+      "Historic pool"
+    ],
+    "blurb": "One of Iceland's longest pools, fed by free-flowing geothermal water.",
+    "description": "The 50-metre outdoor pool at Reykjanes in Ísafjarðardjúp was built in 1934 and is heated by naturally flowing geothermal water. It sits beside Hotel Reykjanes and is open to visitors for a small fee.",
+    "highlights": [
+      "Roughly 50-metre geothermal pool from 1934",
+      "Naturally hot spring water and steam bath",
+      "Wonderfully remote setting on Ísafjarðardjúp"
+    ]
+  },
+  {
+    "id": "sundlaugin_hvammstanga",
+    "name": "Hvammstangi Swimming Pool",
+    "region": "nordvestur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Hvammstangi",
+    "tags": [
+      "Outdoor pool",
+      "Hot tubs",
+      "Family friendly"
+    ],
+    "blurb": "A pleasant outdoor pool in Hvammstangi on Miðfjörður.",
+    "description": "An outdoor pool with hot tubs and good facilities in Hvammstangi, the gateway to the Vatnsnes peninsula. Perfect relaxation after seal watching on Vatnsnes or a day on the Ring Road detour.",
+    "highlights": [
+      "Outdoor pool with hot tubs",
+      "Close to Vatnsnes seal-watching sites",
+      "Generous opening hours"
+    ]
+  },
+  {
+    "id": "sundlaug_blonduoss",
+    "name": "Blönduós Swimming Pool",
+    "region": "nordvestur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Blönduós",
+    "tags": [
+      "Outdoor pool",
+      "Water slides",
+      "Cold plunge"
+    ],
+    "blurb": "A splendid modern pool with water slides right on the Ring Road.",
+    "description": "Blönduós opened a brand-new pool complex in 2021 featuring water slides, two hot tubs, a sauna and a cold plunge. One of the best family stops along the north Ring Road.",
+    "highlights": [
+      "Modern facilities opened in 2021",
+      "Water slides for kids",
+      "Sauna, cold plunge and hot tubs"
+    ]
+  },
+  {
+    "id": "sundlaug_skagastrandar",
+    "name": "Skagaströnd Swimming Pool",
+    "region": "nordvestur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Skagaströnd",
+    "tags": [
+      "Indoor pool",
+      "Hot tub",
+      "Off the beaten path"
+    ],
+    "blurb": "A small friendly pool beneath Spákonufell mountain.",
+    "description": "A small pool at the Skagaströnd sports centre, sitting beneath the striking Spákonufell mountain. A quiet spot where tourists are rare and locals give visitors a warm welcome.",
+    "highlights": [
+      "Genuinely off the tourist trail",
+      "Hot tub",
+      "Hiking trails up Spákonufell nearby"
+    ]
+  },
+  {
+    "id": "sundlaugin_varmahlid",
+    "name": "Varmahlíð Swimming Pool",
+    "region": "nordvestur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Varmahlíð",
+    "tags": [
+      "Outdoor pool",
+      "Water slides",
+      "Family friendly"
+    ],
+    "blurb": "A popular family pool with two water slides in Skagafjörður.",
+    "description": "An outdoor pool in Varmahlíð with two water slides and hot tubs, just off the Ring Road in Skagafjörður. A favourite stop for families and for rafters coming off the glacial rivers.",
+    "highlights": [
+      "Two water slides",
+      "Right by the Ring Road",
+      "Great after rafting or horse riding in Skagafjörður"
+    ]
+  },
+  {
+    "id": "sundlaug_olafsfjardar",
+    "name": "Ólafsfjörður Swimming Pool",
+    "region": "nordaustur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Ólafsfjörður",
+    "tags": [
+      "Outdoor pool",
+      "Hot tubs",
+      "Family friendly"
+    ],
+    "blurb": "An outdoor pool ringed by the steep peaks of Tröllaskagi.",
+    "description": "An outdoor pool with hot tubs in Ólafsfjörður, surrounded by the steep mountains of the Tröllaskagi peninsula. A relaxing stop on the scenic coastal drive between Dalvík and Siglufjörður.",
+    "highlights": [
+      "Mountain views in every direction",
+      "Hot tubs",
+      "On the beautiful Tröllaskagi coastal route"
+    ]
+  },
+  {
+    "id": "sundlaug_hriseyjar",
+    "name": "Hrísey Swimming Pool",
+    "region": "nordaustur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Hrísey",
+    "tags": [
+      "Outdoor pool",
+      "Hot tub",
+      "Island life"
+    ],
+    "blurb": "A little island pool with hot tub and cold plunge on Hrísey in Eyjafjörður.",
+    "description": "A 12.5-metre outdoor pool with a hot tub, paddling pool and cold plunge on Hrísey, the pearl of Eyjafjörður. An unforgettable open-air swim after the short ferry ride to the island.",
+    "highlights": [
+      "Swimming on a peaceful car-free island",
+      "Hot tub and cold plunge",
+      "Short ferry ride from Árskógssandur"
+    ]
+  },
+  {
+    "id": "sundlaug_grimseyjar",
+    "name": "Grímsey Swimming Pool",
+    "region": "nordaustur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Grímsey",
+    "tags": [
+      "Indoor pool",
+      "Arctic Circle",
+      "Island life"
+    ],
+    "blurb": "Iceland's northernmost pool, on the Arctic Circle island of Grímsey.",
+    "description": "A small indoor pool on Grímsey, Iceland's only inhabited island on the Arctic Circle. Few travellers can claim a swim this far north — a fun bonus to puffin watching and crossing the Circle.",
+    "highlights": [
+      "Iceland's northernmost swimming pool",
+      "The island straddles the Arctic Circle",
+      "Puffin colonies and sea cliffs all around"
+    ]
+  },
+  {
+    "id": "thelamerkurlaug",
+    "name": "Þelamörk Swimming Pool",
+    "region": "nordaustur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Þelamörk",
+    "tags": [
+      "Outdoor pool",
+      "Hot tubs",
+      "Countryside pool"
+    ],
+    "blurb": "A countryside pool in Hörgárdalur valley near Akureyri.",
+    "description": "An outdoor pool by the Þelamörk school in Hörgársveit, about 15 minutes' drive from Akureyri towards the Öxnadalsheiði pass. A quiet rural pool with hot tubs that few travellers know about.",
+    "highlights": [
+      "Quiet countryside pool just off the Ring Road",
+      "Hot tubs",
+      "Close to Akureyri yet far from the crowds"
+    ]
+  },
+  {
+    "id": "grenivikurlaug",
+    "name": "Grenivík Swimming Pool",
+    "region": "nordaustur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Grenivík",
+    "tags": [
+      "Outdoor pool",
+      "Hot tub",
+      "Great views"
+    ],
+    "blurb": "A small outdoor pool overlooking Eyjafjörður beneath Mt. Kaldbakur.",
+    "description": "A small outdoor pool in Grenivík with lovely views over Eyjafjörður and Mt. Kaldbakur. A friendly village pool on the fjord's quieter eastern shore, away from the main tourist routes.",
+    "highlights": [
+      "Views across Eyjafjörður",
+      "Hot tub",
+      "At the foot of Mt. Kaldbakur"
+    ]
+  },
+  {
+    "id": "sundlaug_husavikur",
+    "name": "Húsavík Swimming Pool",
+    "region": "nordaustur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Húsavík",
+    "tags": [
+      "Outdoor pool",
+      "Water slide",
+      "Family friendly"
+    ],
+    "blurb": "Húsavík's town pool with hot tubs and a water slide.",
+    "description": "Húsavík's recently renovated outdoor town pool has hot tubs, a water slide and a children's pool. A cheaper, more local alternative to the GeoSea baths after whale watching on Skjálfandi bay.",
+    "highlights": [
+      "A proper local town pool",
+      "Water slide and kids' pool",
+      "Perfect after whale watching on Skjálfandi"
+    ]
+  },
+  {
+    "id": "sundlaugin_laugum",
+    "name": "Laugar Swimming Pool",
+    "region": "nordaustur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Laugar í Reykjadal",
+    "tags": [
+      "Indoor pool",
+      "Hot tubs",
+      "Historic pool"
+    ],
+    "blurb": "A historic school pool with hot tubs in Reykjadalur valley, between Goðafoss and Mývatn.",
+    "description": "A 25-metre pool with two spacious hot tubs and a children's pool at the Laugar boarding-school campus in Reykjadalur. One of Iceland's oldest covered pools and a handy stop between Goðafoss and Lake Mývatn.",
+    "highlights": [
+      "25-metre pool on a historic school campus",
+      "Two spacious hot tubs",
+      "Halfway between Goðafoss and Mývatn"
+    ]
+  },
+  {
+    "id": "sundlaug_raufarhafnar",
+    "name": "Raufarhöfn Swimming Pool",
+    "region": "nordaustur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Raufarhöfn",
+    "tags": [
+      "Outdoor pool",
+      "Sauna",
+      "Remote"
+    ],
+    "blurb": "A remote pool in mainland Iceland's northernmost village, near the Arctic Henge.",
+    "description": "A small pool with sauna in Raufarhöfn, the northernmost village on the Icelandic mainland. A rarely visited bathing spot on the Melrakkaslétta plain, a stone's throw from the mysterious Arctic Henge.",
+    "highlights": [
+      "Northernmost village pool on the mainland",
+      "Sauna",
+      "Minutes from the Arctic Henge"
+    ]
+  },
+  {
+    "id": "sundlaug_thorshafnar",
+    "name": "Þórshöfn Swimming Pool",
+    "region": "nordaustur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Þórshöfn",
+    "tags": [
+      "Indoor pool",
+      "Hot tubs",
+      "Steam bath"
+    ],
+    "blurb": "An indoor pool with hot tubs and steam bath in Þórshöfn by Langanes.",
+    "description": "An indoor pool with two hot tubs and a steam bath at the Þórshöfn sports centre. A welcome rest in Iceland's remote northeast corner, ideal before or after exploring the Langanes peninsula.",
+    "highlights": [
+      "Indoor pool with two hot tubs",
+      "Steam bath",
+      "Gateway to the wild Langanes peninsula"
+    ]
+  },
+  {
+    "id": "sundlaug_bildudals",
+    "name": "Bíldudalur Swimming Pool",
+    "region": "vestfirdir",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Bíldudalur",
+    "tags": [
+      "Swimming pool",
+      "Westfjords",
+      "Family"
+    ],
+    "blurb": "Small village pool in the fishing hamlet of Bíldudalur on Arnarfjörður.",
+    "description": "Bíldudalur Swimming Pool is a cosy outdoor pool with a hot tub in the centre of this small village on Arnarfjörður. It serves locals and travellers exploring the southern Westfjords.",
+    "highlights": [
+      "Hot tub",
+      "Views over Arnarfjörður",
+      "Near Dynjandi waterfall"
+    ]
+  },
+  {
+    "id": "sundlaug_kopaskers",
+    "name": "Kópasker Swimming Pool",
+    "region": "nordaustur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Kópasker",
+    "tags": [
+      "Swimming pool",
+      "Northeast Iceland",
+      "Remote"
+    ],
+    "blurb": "Small village pool in Kópasker on the Melrakkaslétta peninsula.",
+    "description": "Kópasker Swimming Pool is a small outdoor pool with a hot tub in the village on the eastern shore of Öxarfjörður. Entry is by key card from morning until night, a welcome stop on a drive around remote Melrakkaslétta.",
+    "highlights": [
+      "Hot tub",
+      "Key-card access",
+      "Stop on Melrakkaslétta"
+    ]
+  },
+  {
+    "id": "sundlaug_thorlakshafnar",
+    "name": "Þorlákshöfn Swimming Pool",
+    "region": "sudurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Þorlákshöfn",
+    "tags": [
+      "Family",
+      "Water slides",
+      "Swimming"
+    ],
+    "blurb": "Family-friendly municipal pool in Þorlákshöfn with slides and hot tubs.",
+    "description": "Þorlákshöfn's town pool is part of the local sports centre, with a 25-metre outdoor pool, an indoor pool, hot tubs, a children's pool and three water slides. A popular family stop on the south coast.",
+    "highlights": [
+      "25-metre outdoor pool",
+      "Three water slides",
+      "Hot tubs and children's pool"
+    ]
+  },
+  {
+    "id": "sundlaug_stokkseyrar",
+    "name": "Stokkseyri Swimming Pool",
+    "region": "sudurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Stokkseyri",
+    "tags": [
+      "Village pool",
+      "Family",
+      "Quiet"
+    ],
+    "blurb": "Cosy village pool in the heart of Stokkseyri with a slide and hot tubs.",
+    "description": "Stokkseyri's pool is a welcoming 18-metre outdoor pool with a slide, a wading pool and two hot tubs. A quiet, family-friendly bathing spot in the seaside village.",
+    "highlights": [
+      "18-metre outdoor pool",
+      "Slide and wading pool",
+      "Two hot tubs"
+    ]
+  },
+  {
+    "id": "sundlaugin_hellu",
+    "name": "Hella Swimming Pool",
+    "region": "sudurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Hella",
+    "tags": [
+      "Family",
+      "Swimming",
+      "Hot tubs"
+    ],
+    "blurb": "Rangárþing ytra's town pool in Hella, a handy stop by the ring road.",
+    "description": "Hella's pool is part of the town sports centre, with an outdoor pool, hot tubs and good family facilities. A convenient bathing stop for travellers crossing South Iceland.",
+    "highlights": [
+      "Outdoor pool",
+      "Hot tubs",
+      "On-site sports centre"
+    ]
+  },
+  {
+    "id": "sundlaug_hvolsvallar",
+    "name": "Hvolsvöllur Swimming Pool",
+    "region": "sudurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Hvolsvöllur",
+    "tags": [
+      "Family",
+      "Swimming",
+      "Hot tubs"
+    ],
+    "blurb": "The Hvolsvöllur sports-centre pool, popular with locals and travellers.",
+    "description": "Hvolsvöllur's pool is part of the Rangárþing eystra sports centre, with an outdoor pool, hot tubs and facilities for children. A welcome ring-road stop near the Eyjafjöll mountains.",
+    "highlights": [
+      "Outdoor pool",
+      "Hot tubs",
+      "Central South Iceland location"
+    ]
+  },
+  {
+    "id": "sundlaugin_laugalandi",
+    "name": "Laugaland Swimming Pool",
+    "region": "sudurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Laugaland, Holtum",
+    "tags": [
+      "Village pool",
+      "Family",
+      "Slide"
+    ],
+    "blurb": "A small country pool in Holt, about 6 km off the ring road near Þjórsá.",
+    "description": "Laugaland's pool is an 8x16-metre outdoor pool with two hot tubs and a slide, next to the Laugaland school in Holt. A peaceful rural bathing spot away from the crowds.",
+    "highlights": [
+      "8x16-metre outdoor pool",
+      "Water slide",
+      "Two hot tubs"
+    ]
+  },
+  {
+    "id": "sundlaug_vikur",
+    "name": "Vík Swimming Pool",
+    "region": "sudurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Vík í Mýrdal",
+    "tags": [
+      "Family",
+      "Hot tub",
+      "Swimming"
+    ],
+    "blurb": "The sports-centre pool in Vík, a welcome stop on the south coast.",
+    "description": "Vík's pool on Mánabraut is part of the village sports centre, with a roughly 17-metre pool, a hot tub, a sauna and a gym. A cosy stop after exploring the black-sand beaches.",
+    "highlights": [
+      "Indoor pool",
+      "Hot tub and sauna",
+      "In the heart of Vík"
+    ]
+  },
+  {
+    "id": "sundlaug_fludir",
+    "name": "Flúðir Swimming Pool",
+    "region": "sudurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Flúðir",
+    "tags": [
+      "Family",
+      "Swimming",
+      "Sauna"
+    ],
+    "blurb": "Flúðir's municipal pool, separate from the Secret Lagoon.",
+    "description": "Flúðir's town pool is a 25-metre outdoor pool with two hot tubs, a cold pool, a sauna and a natural steam bath. This is the sports-centre pool, not to be confused with the Secret Lagoon in the village.",
+    "highlights": [
+      "25-metre outdoor pool",
+      "Hot tubs and cold pool",
+      "Natural steam bath"
+    ]
+  },
+  {
+    "id": "sundlaug_laugarvatns",
+    "name": "Laugarvatn Swimming Pool",
+    "region": "sudurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Laugarvatn",
+    "tags": [
+      "Family",
+      "Swimming",
+      "Hot tubs"
+    ],
+    "blurb": "Laugarvatn's town pool, separate from the Fontana baths.",
+    "description": "The Laugarvatn sports-centre pool is a 25-metre pool with three hot tubs, a cold pool and a sauna. It is the village's municipal pool, not to be confused with the lakeside Fontana spa.",
+    "highlights": [
+      "25-metre pool",
+      "Three hot tubs",
+      "Sauna and cold pool"
+    ]
+  },
+  {
+    "id": "sundlaugin_borg_grimsnesi",
+    "name": "Borg Swimming Pool",
+    "region": "sudurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Borg í Grímsnesi",
+    "tags": [
+      "Family",
+      "Slide",
+      "Hot tubs"
+    ],
+    "blurb": "The Borg sports centre in Grímsnes with a pool, slide and steam bath.",
+    "description": "Borg's pool is part of the Grímsnes- og Grafningshreppur sports centre, with an outdoor pool, hot tubs, a children's pool, a steam bath and a water slide. A popular stop near Kerið crater and the Golden Circle.",
+    "highlights": [
+      "Outdoor and children's pools",
+      "Water slide",
+      "Hot tubs and steam bath"
+    ]
+  },
+  {
+    "id": "sundholl_seydisfjardar",
+    "name": "Seyðisfjörður Swimming Hall",
+    "region": "austurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Seyðisfjörður",
+    "tags": [
+      "Historic",
+      "Indoor pool",
+      "Hot tub"
+    ],
+    "blurb": "A historic 1948 indoor pool in the arts village of Seyðisfjörður.",
+    "description": "Seyðisfjörður's swimming hall opened in 1948 and offers a 12.5-metre indoor pool with an outdoor hot tub, cold tub and sauna. A cosy bathing spot in one of the East Fjords' prettiest towns.",
+    "highlights": [
+      "1948 indoor pool",
+      "Hot and cold tubs",
+      "Sauna"
+    ]
+  },
+  {
+    "id": "sundlaug_reydarfjardar",
+    "name": "Reyðarfjörður Swimming Pool",
+    "region": "austurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Reyðarfjörður",
+    "tags": [
+      "Family",
+      "Swimming",
+      "Hot tubs"
+    ],
+    "blurb": "Fjarðabyggð's town pool in Reyðarfjörður with good family facilities.",
+    "description": "Reyðarfjörður's pool is part of the town sports centre, with an outdoor pool, hot tubs and facilities for children. A pleasant stop in one of Fjarðabyggð's fjords.",
+    "highlights": [
+      "Outdoor pool",
+      "Hot tubs",
+      "On-site sports centre"
+    ]
+  },
+  {
+    "id": "sundlaug_faskrudsfjardar",
+    "name": "Fáskrúðsfjörður Swimming Pool",
+    "region": "austurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Fáskrúðsfjörður",
+    "tags": [
+      "Indoor pool",
+      "Hot tub",
+      "Quiet"
+    ],
+    "blurb": "A small indoor pool in the French-heritage town of Fáskrúðsfjörður.",
+    "description": "Fáskrúðsfjörður's pool is a 12.5-metre indoor pool with an outdoor hot tub. Open through the winter, it makes a cosy stop in this historic French fishing town.",
+    "highlights": [
+      "12.5-metre indoor pool",
+      "Outdoor hot tub",
+      "In the heart of the village"
+    ]
+  },
+  {
+    "id": "sundlaug_stodvarfjardar",
+    "name": "Stöðvarfjörður Swimming Pool",
+    "region": "austurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Stöðvarfjörður",
+    "tags": [
+      "Village pool",
+      "Summer only",
+      "Quiet"
+    ],
+    "blurb": "A small outdoor pool below the school in Stöðvarfjörður, open in summer.",
+    "description": "Stöðvarfjörður's pool is a small outdoor pool with a hot tub on Skólabraut. Open only in summer, it is a quiet bathing spot in the fjord that is home to Petra's Stone Collection.",
+    "highlights": [
+      "Small outdoor pool",
+      "Hot tub",
+      "Open in summer"
+    ]
+  },
+  {
+    "id": "sundlaug_breiddalsvikur",
+    "name": "Breiðdalsvík Swimming Pool",
+    "region": "austurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Breiðdalsvík",
+    "tags": [
+      "Village pool",
+      "Summer only",
+      "Hot tub"
+    ],
+    "blurb": "An oval outdoor pool from 2002 in Breiðdalsvík, open in summer.",
+    "description": "Breiðdalsvík's pool is a small oval outdoor pool, 8x14 metres, with a hot tub. Built in 2002 and open from June to September, it is a cosy bathing spot in a quiet village.",
+    "highlights": [
+      "Oval outdoor pool",
+      "Hot tub",
+      "Open June to September"
+    ]
+  },
+  {
+    "id": "sundlaug_djupavogs",
+    "name": "Djúpivogur Swimming Pool",
+    "region": "austurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Djúpivogur",
+    "tags": [
+      "Family",
+      "Hot tubs",
+      "Swimming"
+    ],
+    "blurb": "The Djúpivogur sports-centre pool, a relaxed bathing spot.",
+    "description": "Djúpivogur's pool on Varða is part of the village sports centre, with an outdoor pool and hot tubs. A cosy stop in the peaceful Cittaslow town on the southeast corner.",
+    "highlights": [
+      "Outdoor pool",
+      "Hot tubs",
+      "In a peaceful Cittaslow town"
+    ]
+  },
+  {
+    "id": "sundlaug_hafnar",
+    "name": "Höfn Swimming Pool",
+    "region": "austurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Höfn í Hornafirði",
+    "tags": [
+      "Family",
+      "Water slides",
+      "Swimming"
+    ],
+    "blurb": "A large family pool in Höfn with three water slides.",
+    "description": "Höfn's pool is a fine 25x8.5-metre outdoor pool with a children's pool, two hot tubs, a steam bath and three water slides of different heights. A welcome stop near Jökulsárlón and Vatnajökull.",
+    "highlights": [
+      "25-metre outdoor pool",
+      "Three water slides",
+      "Hot tubs and steam bath"
+    ]
+  },
+  {
+    "id": "sundlaug_borgarfjardar_eystri",
+    "name": "Borgarfjörður eystri Swimming Pool",
+    "region": "austurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Borgarfjörður eystri",
+    "tags": [
+      "Village pool",
+      "Nature",
+      "Quiet"
+    ],
+    "blurb": "A small geothermal pool in Bakkagerði with mountain and fjord views.",
+    "description": "The pool at Borgarfjörður eystri sits by Fjarðarborg and is run by Múlaþing municipality. A perfect place to meet locals and warm up after hiking the Víknaslóðir trails in this remote, colourful fjord.",
+    "highlights": [
+      "Geothermal pool",
+      "Mountain views",
+      "Near the Víknaslóðir trails"
+    ]
+  },
+  {
+    "id": "sundlaug_vopnafjardar",
+    "name": "Vopnafjörður Swimming Pool",
+    "region": "austurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Vopnafjörður",
+    "tags": [
+      "Family",
+      "Swimming",
+      "Hot tubs"
+    ],
+    "blurb": "Vopnafjörður's town pool, separate from the Selárlaug nature pool.",
+    "description": "Vopnafjörður's pool is the village sports-centre pool, with hot tubs and good facilities. This is the town's municipal pool, not to be confused with Selárlaug a few kilometres outside the village.",
+    "highlights": [
+      "Outdoor pool",
+      "Hot tubs",
+      "In the heart of the village"
+    ]
+  },
+  {
+    "id": "giljabodin",
+    "name": "Húsafell Canyon Baths (Giljaböðin)",
+    "region": "vesturland",
+    "category": "bod",
+    "type": "Geothermal baths",
+    "price": "$$$",
+    "location": "Húsafell",
+    "tags": [
+      "Relaxation",
+      "Nature",
+      "Guided"
+    ],
+    "blurb": "Secluded geothermal pools hidden in a canyon above Húsafell, reached only by guided tour.",
+    "description": "The Canyon Baths are three natural pools, 30–41°C, tucked into a canyon with sweeping views of mountains and glaciers above Húsafell. Access is by a short guided walk from Hotel Húsafell, with visitor numbers capped to keep the experience tranquil.",
+    "highlights": [
+      "Three pools at different temperatures",
+      "Cold spring for contrast bathing",
+      "Views over the canyon and glaciers"
+    ]
+  },
+  {
+    "id": "laugaras-lagoon",
+    "name": "Laugarás Lagoon",
+    "region": "sudurland",
+    "category": "bod",
+    "type": "Geothermal baths",
+    "price": "$$$",
+    "location": "Laugarás",
+    "tags": [
+      "Relaxation",
+      "Golden Circle",
+      "New"
+    ],
+    "blurb": "A new two-level geothermal lagoon on the banks of the Hvítá on the Golden Circle.",
+    "description": "Laugarás Lagoon opened in October 2025 as Iceland's only two-level bathing lagoon, its tiers linked by a cascading waterfall beside the Hvítá River. It offers two saunas, a cold plunge, a grotto and swim-up bars alongside an on-site restaurant.",
+    "highlights": [
+      "Two-level lagoon",
+      "Cascading waterfall between tiers",
+      "Grotto and swim-up bars"
+    ]
+  },
+  {
+    "id": "bjorbodin",
+    "name": "Bjórböðin Beer Spa",
+    "region": "nordaustur",
+    "category": "bod",
+    "type": "Beer spa & geothermal baths",
+    "price": "$$$",
+    "location": "Árskógssandur",
+    "tags": [
+      "Beer bath",
+      "Relaxation",
+      "Unusual"
+    ],
+    "blurb": "Iceland's original beer spa paired with geothermal hot tubs on Eyjafjörður.",
+    "description": "Bjórböðin at Árskógssandur is Iceland's first beer spa, where guests soak in young beer, hops and live yeast in private hardwood tubs. The bathing session is followed by outdoor geothermal hot tubs overlooking Eyjafjörður, plus a relaxation room and restaurant.",
+    "highlights": [
+      "Soak in young beer and hops",
+      "Beer tap at the tub",
+      "Outdoor geothermal tubs with fjord views"
+    ]
+  },
+  {
+    "id": "kvika",
+    "name": "Kvika Foot Bath",
+    "region": "hofudborg",
+    "category": "bod",
+    "type": "Foot bath",
+    "price": "$",
+    "location": "Grótta, Seltjarnarnes",
+    "tags": [
+      "Free",
+      "Seashore",
+      "Feet"
+    ],
+    "blurb": "A tiny geothermal foot bath on the shore by Grótta.",
+    "description": "Kvika is a small natural foot bath, an artwork by Ólöf Nordal, set on the shoreline on the way out to Grótta on Seltjarnarnes. Passers-by can walk up, sit down and warm their feet in geothermal water while looking out over the sea and mountains.",
+    "highlights": [
+      "Free and open to all",
+      "Geothermally warmed water",
+      "Views to Snæfellsjökull on a clear day"
+    ]
   }
 ];
 
