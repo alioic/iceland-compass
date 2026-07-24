@@ -47,6 +47,28 @@ def load_images():
     return json5.loads(obj)
 IMAGES = {}
 
+# COORDS — hnit staða (deilt með app.js úr js/coords.js)
+def load_coords():
+    path = os.path.join(ROOT, "js", "coords.js")
+    if not os.path.exists(path):
+        return {}
+    src = open(path, encoding="utf-8").read()
+    obj = src[src.index("const COORDS =") + len("const COORDS ="):]
+    obj = obj[:obj.index(";")]
+    return json5.loads(obj)
+COORDS = {}
+RVK = (64.1466, -21.9426)
+
+def km_from_rvk(pid):
+    import math as _m
+    c = COORDS.get(pid)
+    if not c:
+        return None
+    la1, lo1 = _m.radians(RVK[0]), _m.radians(RVK[1])
+    la2, lo2 = _m.radians(c[0]), _m.radians(c[1])
+    a = _m.sin((la2-la1)/2)**2 + _m.cos(la1)*_m.cos(la2)*_m.sin((lo2-lo1)/2)**2
+    return round(6371 * 2 * _m.asin(_m.sqrt(a)))
+
 # STAY_HUB — næsti gistibær fyrir náttúrustaði (deilt með app.js úr js/staymap.js)
 def load_stay_hub():
     path = os.path.join(ROOT, "js", "staymap.js")
@@ -80,7 +102,7 @@ LANGS = {
       "h_accom":"Gisting í nágrenni","h_activities":"Afþreying",
       "stat_area":"Flæmi","stat_pop":"Íbúar","stat_town":"Þéttbýli",
       "stat_dist":"Vegalengd","stat_dur":"Tími","stat_diff":"Erfiðleiki",
-      "stat_cuisine":"Tegund","stat_price":"Verðflokkur","stat_loc":"Staðsetning",
+      "stat_cuisine":"Tegund","stat_price":"Verðflokkur","stat_loc":"Staðsetning","stat_dist_rvk":"Loftlína frá Reykjavík",
       "btn_book":"Bóka gistingu í nágrenni","btn_tours":"Skoða ferðir og afþreyingu","btn_find":"Sjá á korti",
       "more_in":"Fleiri á {r}","all_in":"Allt á {r} →","view_map":"Skoða á gagnvirku korti →",
       "region_groups":{"stadur":"Staðir og náttúra","ganga":"Gönguleiðir","bod":"Sundlaugar & böð","veitingar":"Veitingastaðir","kaffi":"Kaffihús"},
@@ -107,7 +129,7 @@ LANGS = {
       "h_accom":"Nearby accommodation","h_activities":"Activities",
       "stat_area":"Area","stat_pop":"Population","stat_town":"Main town",
       "stat_dist":"Distance","stat_dur":"Duration","stat_diff":"Difficulty",
-      "stat_cuisine":"Cuisine","stat_price":"Price","stat_loc":"Location",
+      "stat_cuisine":"Cuisine","stat_price":"Price","stat_loc":"Location","stat_dist_rvk":"Straight line from Reykjavík",
       "btn_book":"Book nearby accommodation","btn_tours":"Browse tours & activities","btn_find":"Find on map",
       "more_in":"More in {r}","all_in":"All of {r} →","view_map":"View on the interactive map →",
       "region_groups":{"stadur":"Places & nature","ganga":"Hiking trails","bod":"Pools & baths","veitingar":"Restaurants","kaffi":"Cafés"},
@@ -291,6 +313,8 @@ def build_place(lang, p, regions, places):
         txt = sec.get("text") or sec.get("body") or ""
         parts.append(f'<h2>{e(sec.get("title",""))}</h2><p class="doc-body">{e(txt)}</p>')
 
+    dist = km_from_rvk(pid) if pid != "reykjavik" else None
+    dist_stat = (ui["stat_dist_rvk"], f"{dist} km") if dist is not None else None
     if cat in ("ganga","veitingar","kaffi","bod"):
         if cat == "ganga":
             stats = [(ui["stat_dist"],p.get("length")),(ui["stat_dur"],p.get("duration")),(ui["stat_diff"],p.get("difficulty"))]
@@ -298,8 +322,13 @@ def build_place(lang, p, regions, places):
             stats = [(ui["stat_price"],p.get("price")),(ui["stat_loc"],p.get("location"))]
         else:
             stats = [(ui["stat_cuisine"],p.get("cuisine")),(ui["stat_price"],p.get("price")),(ui["stat_loc"],p.get("location"))]
+        if dist_stat:
+            stats.append(dist_stat)
         parts.append('<div class="doc-stats">' +
             "".join(f'<div class="doc-stat"><strong>{e(v)}</strong><span>{e(l)}</span></div>' for l,v in stats if v) + '</div>')
+    elif dist_stat:
+        parts.append('<div class="doc-stats">' +
+            f'<div class="doc-stat"><strong>{e(dist_stat[1])}</strong><span>{e(dist_stat[0])}</span></div></div>')
 
     if p.get("highlights"):
         ht = ui["h_route"] if cat=="ganga" else (ui["h_known"] if cat in ("veitingar","kaffi") else ui["h_highlights"])
@@ -529,11 +558,12 @@ def build_doc_css():
 
 # ----------------------------------------------------------------------
 def main():
-    global SEO, REGION_SEO, STAY_HUB, COLLECTIONS, IMAGES
+    global SEO, REGION_SEO, STAY_HUB, COLLECTIONS, IMAGES, COORDS
     SEO = load_seo()
     REGION_SEO = load_region_seo()
     STAY_HUB = load_stay_hub()
     IMAGES = load_images()
+    COORDS = load_coords()
     COLLECTIONS = load_collections()
     build_og_image(); build_doc_css(); build_robots()
     urls = [(home_url("is"), "1.0"), (home_url("en"), "1.0")]

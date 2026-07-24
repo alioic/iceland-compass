@@ -1011,3 +1011,13 @@ section { padding: 96px 32px; }
   .hero-stats { gap: 32px; }
   .modal-content { padding: 26px 22px; }
 }
+
+/* Punktar staða á kortinu */
+.map-dot-place {
+  fill: var(--accent);
+  stroke: #fff;
+  stroke-width: 1.4;
+  cursor: pointer;
+  transition: r 0.15s;
+}
+.map-dot-place:hover { fill: #b05750; }

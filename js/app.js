@@ -449,6 +449,12 @@ function renderPlaces() {
     b.addEventListener("click", (e) => { e.stopPropagation(); toggleFav(b.dataset.fav); })
   );
   observeFade(grid);
+
+  // punktar á kortinu fylgja síunum ("Allt" sleppir mat/kaffi svo Reykjavík kaffærist ekki)
+  const dotList = state.filterCategory === "allt"
+    ? filtered.filter((p) => !isDining(catOf(p)))
+    : filtered;
+  renderDots(dotList);
 }
 
 /* ---------------- MÓÐALGLUGGI ---------------- */
@@ -552,6 +558,54 @@ function openModal(placeId) {
 function closeModal() {
   document.getElementById("modalOverlay").hidden = true;
   document.body.style.overflow = "";
+}
+
+/* ---------------- PUNKTAR Á KORTINU ---------------- */
+function geoToMap(lat, lon) {
+  if (typeof MAP_PROJ === "undefined") return null;
+  return [
+    (lon * MAP_PROJ.cos - MAP_PROJ.minx) * MAP_PROJ.scale,
+    (MAP_PROJ.maxy - lat) * MAP_PROJ.scale,
+  ];
+}
+function renderDots(list) {
+  const svg = document.querySelector("#mapContainer svg");
+  if (!svg || typeof COORDS === "undefined") return;
+  const ns = "http://www.w3.org/2000/svg";
+  let layer = svg.querySelector("#dotsLayer");
+  if (!layer) {
+    layer = document.createElementNS(ns, "g");
+    layer.id = "dotsLayer";
+    svg.appendChild(layer);
+  }
+  layer.innerHTML = "";
+  const tooltip = document.getElementById("mapTooltip");
+  const container = document.getElementById("mapContainer");
+  list.forEach((p) => {
+    const c = COORDS[p.id];
+    if (!c) return;
+    const xy = geoToMap(c[0], c[1]);
+    if (!xy) return;
+    const dot = document.createElementNS(ns, "circle");
+    dot.setAttribute("cx", xy[0].toFixed(1));
+    dot.setAttribute("cy", xy[1].toFixed(1));
+    dot.setAttribute("r", "4");
+    dot.setAttribute("class", "map-dot-place");
+    dot.addEventListener("click", (e) => { e.stopPropagation(); openModal(p.id); });
+    if (tooltip && container) {
+      const move = (e) => {
+        const r = container.getBoundingClientRect();
+        tooltip.style.left = e.clientX - r.left + "px";
+        tooltip.style.top = e.clientY - r.top + "px";
+        tooltip.textContent = p.name;
+        tooltip.classList.add("show");
+      };
+      dot.addEventListener("mouseenter", move);
+      dot.addEventListener("mousemove", move);
+      dot.addEventListener("mouseleave", () => tooltip.classList.remove("show"));
+    }
+    layer.appendChild(dot);
+  });
 }
 
 /* ---------------- FERÐIN MÍN (uppáhalds) ---------------- */
