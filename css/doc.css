@@ -41,4 +41,69 @@
 .pm-dot circle { fill: var(--accent); stroke: #fff; stroke-width: 1.6; cursor: pointer; transition: fill 0.15s; }
 .pm-dot:hover circle { fill: #b05750; }
 .doc-more { margin-top: 30px; color: var(--ink-faint); }
+
+/* Hagnýtar leiðsögugreinar */
+.guide-cta {
+  background: var(--paper-2, #ece7dd);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin: 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  justify-content: space-between;
+}
+.guide-cta p { margin: 0; color: var(--ink-soft); font-weight: 500; }
+.btn-doc {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--paper);
+  padding: 11px 22px;
+  border-radius: 100px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.btn-doc:hover { background: var(--accent-soft, #2f6a5f); }
+.doc-faq { margin: 6px 0 8px; }
+.doc-faq details {
+  border-bottom: 1px solid var(--line);
+  padding: 4px 0;
+}
+.doc-faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 12px 0;
+  list-style: none;
+  position: relative;
+  padding-right: 28px;
+}
+.doc-faq summary::-webkit-details-marker { display: none; }
+.doc-faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 6px; top: 10px;
+  font-size: 1.3rem;
+  color: var(--ink-faint);
+}
+.doc-faq details[open] summary::after { content: "−"; }
+.doc-faq details p { padding: 0 0 14px; color: var(--ink-soft); }
+
+.guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 10px; }
+.guide-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--card, #fbfaf6);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.guide-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -22px rgba(28,27,25,0.4); }
+.gc-thumb { display: block; height: 150px; background-size: cover; background-position: center; }
+.gc-thumb-plain { background: linear-gradient(135deg, var(--accent), #2f6a5f); }
+.gc-body { padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; }
+.gc-body strong { font-family: var(--font-display, Georgia, serif); font-size: 1.1rem; }
+.gc-body span { color: var(--ink-soft); font-size: 0.9rem; }
 .doc-more a { color: var(--accent); font-weight: 600; }

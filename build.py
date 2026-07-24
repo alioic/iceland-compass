@@ -100,13 +100,19 @@ def load_collections():
     return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
 COLLECTIONS = {}
 
+# Hagnýtar leiðsögugreinar — guides.json
+def load_guides():
+    path = os.path.join(ROOT, "guides.json")
+    return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
+GUIDES = {}
+
 REGION_ORDER = ["hofudborg","reykjanes","vesturland","vestfirdir",
                 "nordvestur","nordaustur","austurland","sudurland"]
 
 LANGS = {
   "is": {
     "code": "is", "og_locale": "is_IS", "data": "js/data.js", "prefix": "",
-    "seg": {"place": "stadur", "region": "landshluti", "all": "stadir", "coll": "leidir", "pools": "laugar"},
+    "seg": {"place": "stadur", "region": "landshluti", "all": "stadir", "coll": "leidir", "pools": "laugar", "guide": "leidsogn"},
     "country": "Ísland",
     "ui": {
       "nav_map":"Kort","nav_all":"Allir staðir","nav_about":"Um vefinn","crumb_home":"Heim",
@@ -126,6 +132,14 @@ LANGS = {
       "dir_title":"Allir staðir, gönguleiðir og veitingar á Íslandi | {site}",
       "dir_desc":"Leiðsögn um Ísland — staðir, gönguleiðir, gisting og afþreyging í öllum landshlutum.",
       "nav_coll":"Leiðir","kicker_coll":"Þemaleið","colls_kicker":"Yfirlit",
+      "nav_guide":"Leiðsögn","kicker_guide":"Leiðsögn","guides_kicker":"Hagnýtt",
+      "guides_h1":"Hagnýt leiðsögn um Ísland","guides_desc":"Allt sem þú þarft að vita fyrir Íslandsferðina — hvenær á að fara, hvernig á að keyra, norðurljós og fleira.",
+      "guides_title":"Hagnýt ferðaleiðsögn um Ísland | {site}","guide_title":"{title} | {site}",
+      "guide_faq":"Algengar spurningar","guide_more":"Fleiri leiðsögugreinar →",
+      "cta_car":"Bera saman bílaleigur","cta_tours":"Skoða ferðir og afþreyingu","cta_hotel":"Finna gistingu",
+      "cta_car_lead":"Bíll er lykillinn að því að sjá landið á eigin hraða.",
+      "cta_tours_lead":"Skoðaðu skipulagðar ferðir með leiðsögn.",
+      "cta_hotel_lead":"Finndu gistingu um allt land.",
       "colls_h1":"Ferðaleiðir & þemalistar","colls_desc":"Tilbúnar leiðir og listar — Gullni hringurinn, Demantshringurinn, bestu laugarnar og fleira.",
       "colls_title":"Ferðaleiðir og þemalistar á Íslandi | {site}",
       "coll_title":"{name} — {tagline} | {site}","places_in":"Staðir á leiðinni",
@@ -138,7 +152,7 @@ LANGS = {
   },
   "en": {
     "code": "en", "og_locale": "en", "data": "js/data.en.js", "prefix": "/en",
-    "seg": {"place": "place", "region": "region", "all": "places", "coll": "routes", "pools": "pools"},
+    "seg": {"place": "place", "region": "region", "all": "places", "coll": "routes", "pools": "pools", "guide": "guide"},
     "country": "Iceland",
     "ui": {
       "nav_map":"Map","nav_all":"All places","nav_about":"About","crumb_home":"Home",
@@ -158,6 +172,14 @@ LANGS = {
       "dir_title":"All places, hiking trails & restaurants in Iceland | {site}",
       "dir_desc":"A guide to Iceland — places, hiking trails, accommodation and activities in every region.",
       "nav_coll":"Routes","kicker_coll":"Route","colls_kicker":"Overview",
+      "nav_guide":"Guides","kicker_guide":"Guide","guides_kicker":"Practical",
+      "guides_h1":"Practical Iceland travel guides","guides_desc":"Everything you need for your Iceland trip — when to go, how to drive, the northern lights and more.",
+      "guides_title":"Practical Iceland travel guides | {site}","guide_title":"{title} | {site}",
+      "guide_faq":"Frequently asked questions","guide_more":"More travel guides →",
+      "cta_car":"Compare car rentals","cta_tours":"Browse tours & activities","cta_hotel":"Find accommodation",
+      "cta_car_lead":"A car is the key to seeing the country at your own pace.",
+      "cta_tours_lead":"Browse guided tours and day trips.",
+      "cta_hotel_lead":"Find places to stay around the country.",
       "colls_h1":"Travel routes & themed lists","colls_desc":"Ready-made routes and lists — the Golden Circle, Diamond Circle, best baths and more.",
       "colls_title":"Iceland travel routes & themed lists | {site}",
       "coll_title":"{name} — {tagline} | {site}","places_in":"Places on this route",
@@ -212,6 +234,8 @@ def region_url(lang, rid): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lan
 def coll_url(lang, cid): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['coll']}/{cid}/"
 def coll_index_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['coll']}/"
 def pools_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['pools']}/"
+def guide_url(lang, gid): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['guide']}/{gid}/"
+def guides_index_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['guide']}/"
 def colls_url(lang):     return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['coll']}/"
 def out_path(url):
     return url.replace(SITE_URL + "/", "") + "index.html"
@@ -223,7 +247,8 @@ def kind_url(lang, kind, ident):
     if kind == "coll":   return coll_url(lang, ident)
     if kind == "colls":  return coll_index_url(lang)
     if kind == "pools":  return pools_url(lang)
-    if kind == "colls":  return colls_url(lang)
+    if kind == "guide":  return guide_url(lang, ident)
+    if kind == "guides": return guides_index_url(lang)
     return home_url(lang)
 
 def alternates(kind, ident):
@@ -268,6 +293,7 @@ HEAD = """<!DOCTYPE html>
   <nav class="main-nav">
     <a href="{home}#kort">{nav_map}</a>
     <a href="{coll_index}">{nav_coll}</a>
+    <a href="{guides_index}">{nav_guide}</a>
     <a href="{all}">{nav_all}</a>
     <a href="{home}#um">{nav_about}</a>
     <a href="{lang_href}" class="lang-switch">{lang_label}</a>
@@ -298,6 +324,7 @@ def page(lang, kind, ident, title, desc, url, ogtype, jsonld, body, ogimg=None):
         home=home_url(lang), all=all_url(lang), logo=logo, logosub=logosub,
         nav_map=ui["nav_map"], nav_all=ui["nav_all"], nav_about=ui["nav_about"],
         coll_index=coll_index_url(lang), nav_coll=ui["nav_coll"],
+        guides_index=guides_index_url(lang), nav_guide=ui["nav_guide"],
         lang_href=kind_url(other, kind, ident), lang_label=ui["lang_label"])
     full = head + body + FOOT.format(all=all_url(lang), nav_all=ui["nav_all"])
     # Innri <a>-tenglar afstæðir svo síðan virki á hvaða léni sem er
@@ -616,6 +643,96 @@ def build_pools_page(lang, regions, places):
     return url
 
 # ----------------------------------------------------------------------
+def guide_cta(lang, cta):
+    if not cta:
+        return ""
+    ui = LANGS[lang]["ui"]
+    label = ui.get(f"cta_{cta}"); lead = ui.get(f"cta_{cta}_lead")
+    if not label:
+        return ""
+    # Bókunarhlekkur — nýtir sömu affiliate-slóðir og staðasíður (ID bætt við síðar)
+    country = LANGS[lang]["country"]
+    if cta == "car":
+        href = "https://www.booking.com/cars/index.html"
+    elif cta == "tours":
+        href = f"https://www.getyourguide.com/s/?q={e(country)}"
+    else:
+        href = f"https://www.booking.com/searchresults.html?ss={e(country)}"
+    return (f'<div class="guide-cta"><p>{e(lead)}</p>'
+            f'<a class="btn-doc" href="{href}" target="_blank" rel="sponsored noopener">{e(label)} →</a></div>')
+
+def build_guide(lang, gid, g):
+    ui = LANGS[lang]["ui"]
+    c = g[lang]
+    url = guide_url(lang, gid)
+    title = ui["guide_title"].format(title=c["title"], site=SITE_NAME)
+    desc = trunc(c.get("excerpt") or c["title"])
+
+    crumb_nav, crumb_ld = breadcrumbs([(ui["crumb_home"], home_url(lang)),
+                                       (ui["nav_guide"], guides_index_url(lang)),
+                                       (c["title"], url)])
+    hero_html, hero_og = hero_figure(gid, lang)
+    parts = [crumb_nav,
+        f'<p class="doc-kicker">{e(ui["kicker_guide"])}</p>',
+        f'<h1>{e(c["title"])}</h1>',
+        f'<p class="doc-lead">{e(c.get("excerpt",""))}</p>']
+    if hero_html:
+        parts.append(hero_html)
+    if g.get("cta"):
+        parts.append(guide_cta(lang, g["cta"]))
+    for sec in c.get("sections", []):
+        body = "".join(f'<p>{e(par)}</p>' for par in (sec.get("body") or "").split("\n\n") if par.strip())
+        parts.append(f'<h2>{e(sec.get("heading",""))}</h2>{body}')
+
+    # FAQ + FAQPage skema
+    faq = c.get("faq", [])
+    faq_ld = None
+    if faq:
+        parts.append(f'<h2>{e(ui["guide_faq"])}</h2><div class="doc-faq">' +
+            "".join(f'<details><summary>{e(q["q"])}</summary><p>{e(q["a"])}</p></details>' for q in faq) + '</div>')
+        faq_ld = jsonld_block({"@context":"https://schema.org","@type":"FAQPage",
+            "mainEntity":[{"@type":"Question","name":q["q"],
+                "acceptedAnswer":{"@type":"Answer","text":q["a"]}} for q in faq]})
+
+    if g.get("cta"):
+        parts.append(guide_cta(lang, g["cta"]))
+    parts.append(f'<p class="doc-more"><a href="{guides_index_url(lang)}">{e(ui["guide_more"])}</a></p>')
+
+    article_ld = jsonld_block({"@context":"https://schema.org","@type":"Article",
+        "headline":c["title"], "description":desc, "inLanguage":LANGS[lang]["code"],
+        "publisher":{"@type":"Organization","name":SITE_NAME},
+        "mainEntityOfPage":url})
+    ld = [crumb_ld, article_ld] + ([faq_ld] if faq_ld else [])
+    write(out_path(url), page(lang,"guide",gid,title,desc,url,"article",ld,"\n".join(parts), ogimg=hero_og))
+    return url
+
+def build_guides_index(lang, guides):
+    ui = LANGS[lang]["ui"]
+    url = guides_index_url(lang)
+    title = ui["guides_title"].format(site=SITE_NAME)
+    desc = trunc(ui["guides_desc"])
+    crumb_nav, crumb_ld = breadcrumbs([(ui["crumb_home"], home_url(lang)),(ui["nav_guide"], url)])
+    ordered = sorted(guides.items(), key=lambda kv: kv[1].get("order", 99))
+    cards = []
+    for gid, g in ordered:
+        c = g[lang]
+        img = IMAGES.get(gid)
+        thumb = (f'<span class="gc-thumb" style="background-image:url(\'{img["src"]}\')"></span>' if img else '<span class="gc-thumb gc-thumb-plain"></span>')
+        cards.append(
+            f'<a class="guide-card" href="{guide_url(lang, gid)}">{thumb}'
+            f'<span class="gc-body"><strong>{e(c["title"])}</strong><span>{e(c.get("excerpt",""))}</span></span></a>')
+    parts = [crumb_nav,
+        f'<p class="doc-kicker">{e(ui["guides_kicker"])}</p>',
+        f'<h1>{e(ui["guides_h1"])}</h1>',
+        f'<p class="doc-lead">{e(ui["guides_desc"])}</p>',
+        f'<div class="guide-grid">{"".join(cards)}</div>']
+    item_list = {"@context":"https://schema.org","@type":"ItemList","name":ui["guides_h1"],
+                 "itemListElement":[{"@type":"ListItem","position":i+1,"url":guide_url(lang,gid),"name":g[lang]["title"]}
+                                    for i,(gid,g) in enumerate(ordered)]}
+    write(out_path(url), page(lang,"guides",None,title,desc,url,"website",[crumb_ld,jsonld_block(item_list)],"\n".join(parts)))
+    return url
+
+# ----------------------------------------------------------------------
 def build_sitemap(urls):
     items = "".join(
         f"<url><loc>{u}</loc><lastmod>{TODAY}</lastmod><changefreq>monthly</changefreq><priority>{pr}</priority></url>\n"
@@ -679,18 +796,84 @@ def build_doc_css():
 .pm-dot circle { fill: var(--accent); stroke: #fff; stroke-width: 1.6; cursor: pointer; transition: fill 0.15s; }
 .pm-dot:hover circle { fill: #b05750; }
 .doc-more { margin-top: 30px; color: var(--ink-faint); }
+
+/* Hagnýtar leiðsögugreinar */
+.guide-cta {
+  background: var(--paper-2, #ece7dd);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin: 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  justify-content: space-between;
+}
+.guide-cta p { margin: 0; color: var(--ink-soft); font-weight: 500; }
+.btn-doc {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--paper);
+  padding: 11px 22px;
+  border-radius: 100px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.btn-doc:hover { background: var(--accent-soft, #2f6a5f); }
+.doc-faq { margin: 6px 0 8px; }
+.doc-faq details {
+  border-bottom: 1px solid var(--line);
+  padding: 4px 0;
+}
+.doc-faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 12px 0;
+  list-style: none;
+  position: relative;
+  padding-right: 28px;
+}
+.doc-faq summary::-webkit-details-marker { display: none; }
+.doc-faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 6px; top: 10px;
+  font-size: 1.3rem;
+  color: var(--ink-faint);
+}
+.doc-faq details[open] summary::after { content: "−"; }
+.doc-faq details p { padding: 0 0 14px; color: var(--ink-soft); }
+
+.guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 10px; }
+.guide-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--card, #fbfaf6);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.guide-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -22px rgba(28,27,25,0.4); }
+.gc-thumb { display: block; height: 150px; background-size: cover; background-position: center; }
+.gc-thumb-plain { background: linear-gradient(135deg, var(--accent), #2f6a5f); }
+.gc-body { padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; }
+.gc-body strong { font-family: var(--font-display, Georgia, serif); font-size: 1.1rem; }
+.gc-body span { color: var(--ink-soft); font-size: 0.9rem; }
 .doc-more a { color: var(--accent); font-weight: 600; }
 """)
 
 # ----------------------------------------------------------------------
 def main():
-    global SEO, REGION_SEO, STAY_HUB, COLLECTIONS, IMAGES, COORDS, MAPDATA
+    global SEO, REGION_SEO, STAY_HUB, COLLECTIONS, IMAGES, COORDS, MAPDATA, GUIDES
     SEO = load_seo()
     REGION_SEO = load_region_seo()
     STAY_HUB = load_stay_hub()
     IMAGES = load_images()
     COORDS = load_coords()
     MAPDATA = load_mapdata()
+    GUIDES = load_guides()
     COLLECTIONS = load_collections()
     build_og_image(); build_doc_css(); build_robots()
     urls = [(home_url("is"), "1.0"), (home_url("en"), "1.0")]
@@ -705,6 +888,10 @@ def main():
         for p in places:
             urls.append((build_place(lang, p, regions, places), "0.6"))
         urls.append((build_pools_page(lang, regions, places), "0.8"))
+        if GUIDES:
+            urls.append((build_guides_index(lang, GUIDES), "0.8"))
+            for gid, g in GUIDES.items():
+                urls.append((build_guide(lang, gid, g), "0.7"))
         if COLLECTIONS:
             places_by_id = {p["id"]: p for p in places}
             urls.append((build_collections_index(lang, COLLECTIONS), "0.8"))
@@ -712,7 +899,7 @@ def main():
                 urls.append((build_collection(lang, cid, coll, places_by_id), "0.8"))
     build_sitemap(urls)
     print(f"✔ Byggt á 2 tungumálum — is: {counts['is']} staðir, en: {counts['en']} staðir")
-    print(f"✔ {len(COLLECTIONS)} þemaleiðir")
+    print(f"✔ {len(COLLECTIONS)} þemaleiðir · {len(GUIDES)} leiðsögugreinar")
     print(f"✔ {len(urls)} slóðir í sitemap.xml")
     print(f"⚠ Stilltu SITE_URL (nú: {SITE_URL}) — líka í index.html og en/index.html")
 

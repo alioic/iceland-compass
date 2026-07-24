@@ -514,6 +514,11 @@ section { padding: 96px 32px; }
   backdrop-filter: blur(4px);
 }
 .region-card { position: relative; }
+.guides-section .region-cards { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.guide-home-card { min-height: 200px; }
+.section-more { text-align: center; margin-top: 32px; }
+.section-more a { color: var(--accent); font-weight: 600; }
+.section-more a:hover { text-decoration: underline; }
 .region-card .rc-index {
   font-family: var(--font-display);
   font-size: 0.85rem;

@@ -688,6 +688,54 @@ const IMAGES = {
     "credit": "Gylfi Gylfason / Pexels",
     "source": "pexels",
     "page": "https://www.pexels.com/photo/aerial-view-of-swimming-pool-near-the-ocean-10896940/"
+  },
+  "hvenaer-fara": {
+    "src": "/img/places/gullfoss.jpg",
+    "alt_is": "Regnbogi yfir Gullfossi í Hvítá",
+    "alt_en": "Rainbow over Gullfoss waterfall in Iceland",
+    "credit": "Laila Gebhard",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/water-waves-hitting-the-shore-during-daytime-Rt4p0KMo86k"
+  },
+  "nordurljos": {
+    "src": "/img/places/snaefellsnes.jpg",
+    "alt_is": "Kirkjufell á Snæfellsnesi í vetrarbúningi",
+    "alt_en": "Kirkjufell mountain on the Snæfellsnes peninsula, Iceland",
+    "credit": "Presetbase Lightroom Presets",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/GhmVx0wpSto"
+  },
+  "hringvegurinn": {
+    "src": "/img/places/jokulsarlon.jpg",
+    "alt_is": "Ísjakar speglast í Jökulsárlóni",
+    "alt_en": "Icebergs reflected in Jokulsarlon glacier lagoon",
+    "credit": "Mark Olsen",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/reflection-of-snow-mountain-on-body-of-water-under-white-sky-KZdEtGWK1Mk"
+  },
+  "akstur-a-islandi": {
+    "src": "/img/places/austurland.jpg",
+    "alt_is": "Vestrahorn við Stokksnes",
+    "alt_en": "Vestrahorn mountain at Stokksnes, southeast Iceland",
+    "credit": "Michał Janus",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/Usj3EA5SSD4"
+  },
+  "island-ad-vetri": {
+    "src": "/img/places/gullni-hringurinn.jpg",
+    "alt_is": "Gullfoss í klakaböndum að vetri",
+    "alt_en": "Gullfoss waterfall in winter, Iceland",
+    "credit": "mana5280",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-frozen-waterfall-with-snow-on-the-ground-bLoQeWky8BU"
+  },
+  "fyrsta-ferdin": {
+    "src": "/img/places/hofudborg.jpg",
+    "alt_is": "Hallgrímskirkja í Reykjavík",
+    "alt_en": "Hallgrímskirkja church in Reykjavík, Iceland",
+    "credit": "Tim Foster",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/hallgrimur-church-iceland-WCtfyti07nc"
   }
 };
 
