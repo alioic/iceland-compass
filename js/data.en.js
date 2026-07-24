@@ -7280,6 +7280,841 @@ const PLACES = [
       "Geothermally warmed water",
       "Views to Snæfellsjökull on a clear day"
     ]
+  },
+  {
+    "id": "keilir",
+    "name": "Keilir",
+    "region": "reykjanes",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "9 km round trip",
+    "duration": "3–4 hrs",
+    "difficulty": "Moderate",
+    "tags": [
+      "Day hike",
+      "Views",
+      "Volcano",
+      "Reykjanes"
+    ],
+    "blurb": "A cone-shaped volcano rising above the Reykjanes Peninsula with a 360-degree summit panorama.",
+    "description": "Keilir is the signature landmark of the Reykjanes Peninsula, a perfectly cone-shaped hyaloclastite mountain visible from far away. The trail starts at the Oddafell parking area, crosses lava fields to the base of the mountain, then climbs a steep final stretch to the 379 m summit. From the top there are sweeping views over the peninsula, the Atlantic Ocean and, on clear days, all the way to Snæfellsjökull glacier.",
+    "highlights": [
+      "The mountain's perfect cone shape",
+      "360-degree summit views",
+      "Lava fields of the Reykjanes Peninsula"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "thorbjorn",
+    "name": "Þorbjörn",
+    "region": "reykjanes",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "5.5 km round trip",
+    "duration": "1.5–2 hrs",
+    "difficulty": "Moderate",
+    "tags": [
+      "Day hike",
+      "Views",
+      "Reykjanes"
+    ],
+    "blurb": "A short but steep climb up the hill above Grindavík, split at the top by the Þjófagjá fissure.",
+    "description": "Þorbjörn is a 243 m volcanic hill right beside the town of Grindavík and a popular local hike. The route usually starts from the Selskógur woods and climbs to the top, where the distinctive Þjófagjá fissure splits the mountain in two. Because of ongoing volcanic and seismic activity in the area, access may be restricted, so check safetravel.is before you hike.",
+    "highlights": [
+      "The Þjófagjá fissure at the summit",
+      "Views over Grindavík and the sea",
+      "Selskógur woods at the base"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "sveifluhals",
+    "name": "Sveifluháls (Krýsuvík)",
+    "region": "reykjanes",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "8.4 km round trip",
+    "duration": "3–4 hrs",
+    "difficulty": "Challenging",
+    "tags": [
+      "Day hike",
+      "Views",
+      "Geothermal",
+      "Reykjanes"
+    ],
+    "blurb": "A jagged hyaloclastite ridge above Lake Kleifarvatn and Krýsuvík with sweeping views over colourful geothermal ground.",
+    "description": "Sveifluháls is a 397 m hyaloclastite ridge in the Reykjanesfólkvangur reserve, part of the Krýsuvík volcanic system. A popular route starts near Lake Kleifarvatn and follows the ridge, with views over the lake, the Krýsuvík geothermal area and its colourful mud-pool hills. The trail is steep and rocky in places but rewards hikers with striking scenery and wide panoramas.",
+    "highlights": [
+      "The jagged ridge and views over Kleifarvatn",
+      "Colourful Krýsuvík geothermal area",
+      "Landscape of the Reykjanesfólkvangur reserve"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "reykjanesviti",
+    "name": "Reykjanesviti and Valahnúkamöl",
+    "region": "reykjanes",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "4 km round trip",
+    "duration": "1–1.5 hrs",
+    "difficulty": "Easy",
+    "tags": [
+      "Day hike",
+      "Coast",
+      "Geothermal",
+      "Reykjanes"
+    ],
+    "blurb": "An easy coastal walk past Iceland's oldest lighthouse, the Gunnuhver hot spring and the rugged Valahnúkamöl cliffs.",
+    "description": "On the southwestern tip of the Reykjanes Peninsula, an easy trail links Reykjanesviti, Iceland's oldest lighthouse, the Gunnuhver geothermal area and the boulder-strewn coast at Valahnúkamöl. The route is mostly flat and suits everyone, passing steam vents, surf-battered cliffs and seabird ledges. It is a dramatic spot where the open ocean meets raw volcanic land.",
+    "highlights": [
+      "Reykjanesviti, Iceland's oldest lighthouse",
+      "The Gunnuhver steam vents",
+      "Surf-battered Valahnúkamöl coast"
+    ],
+    "activities": [
+      "Walking",
+      "Birdwatching"
+    ]
+  },
+  {
+    "id": "helgafell_hafnarfjordur",
+    "name": "Helgafell (Hafnarfjörður)",
+    "region": "hofudborg",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "5.5 km round trip",
+    "duration": "2–3 hrs",
+    "difficulty": "Moderate",
+    "tags": [
+      "Day hike",
+      "Views",
+      "Capital region"
+    ],
+    "blurb": "A popular tuya above Hafnarfjörður with a short but steep climb to the summit.",
+    "description": "Helgafell is a 338 m tuya just above Hafnarfjörður and one of the most popular mountain hikes in the capital region. The trail crosses lava and gravel to the foot of the mountain, then climbs a steep and sometimes loose final stretch to the summit. From the top there are wide views over the capital area, the Reykjanes Peninsula and the surrounding mountains.",
+    "highlights": [
+      "Views over the capital region",
+      "A steep but short summit climb",
+      "Tuya and lava landscape"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "ulfarsfell",
+    "name": "Úlfarsfell",
+    "region": "hofudborg",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "3.7 km round trip",
+    "duration": "1.5–2 hrs",
+    "difficulty": "Easy",
+    "tags": [
+      "Day hike",
+      "Views",
+      "Capital region"
+    ],
+    "blurb": "An accessible local hill between Reykjavík and Mosfellsbær with fine views over the city.",
+    "description": "Úlfarsfell is a 296 m hill on the boundary between Reykjavík and Mosfellsbær and one of the most popular exercise hikes for city residents. Well-marked, easy trails lead up to its two summits, Stórihnjúkur and Litlihnjúkur, and suit most walkers. From the top there are good views over the capital region, Mount Esja and the Bláfjöll range.",
+    "highlights": [
+      "Views over Reykjavík and Esja",
+      "Accessible, well-marked trails",
+      "Popular with locals year-round"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Trail running"
+    ]
+  },
+  {
+    "id": "burfellsgja",
+    "name": "Búrfellsgjá and Búrfell",
+    "region": "hofudborg",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "6 km round trip",
+    "duration": "1.5–3 hrs",
+    "difficulty": "Easy",
+    "tags": [
+      "Day hike",
+      "Lava",
+      "Geology",
+      "Capital region"
+    ],
+    "blurb": "A family-friendly walk along a dramatic lava channel from the Heiðmörk parking area up to the Búrfell crater.",
+    "description": "Búrfellsgjá is a 3.5 km lava channel running from the Búrfell crater, which erupted more than 7,000 years ago. A well-cairned, mostly easy trail follows the channel from Heiðmörk between high lava walls and small caves up to the crater itself. It is a gentle, enjoyable hike close to the city that suits the whole family.",
+    "highlights": [
+      "The high walls of the lava channel",
+      "The Búrfell crater",
+      "Moss-covered lava of Heiðmörk"
+    ],
+    "activities": [
+      "Walking",
+      "Interpretive hike"
+    ]
+  },
+  {
+    "id": "vifilsfell",
+    "name": "Vífilsfell",
+    "region": "hofudborg",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "6.4 km round trip",
+    "duration": "3–3.5 hrs",
+    "difficulty": "Challenging",
+    "tags": [
+      "Day hike",
+      "Views",
+      "Capital region"
+    ],
+    "blurb": "The highest mountain near Reykjavík, with a steep, rocky final scramble to the 655 m summit.",
+    "description": "Vífilsfell is a 655 m hyaloclastite ridge just east of Reykjavík, near Sandskeið off the South Iceland road. The route begins with gentle slopes but turns steep and rocky higher up, where the last stretch requires scrambling, in places with fixed ropes. The summit offers one of the finest panoramas in the capital region over mountains, glaciers and the city.",
+    "highlights": [
+      "Wide mountain panorama from the summit",
+      "Steep final scramble with ropes",
+      "Hyaloclastite landscape near Sandskeið"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "kirkjufell_summit",
+    "name": "Kirkjufell",
+    "region": "vesturland",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "5.6 km round trip",
+    "duration": "3.5–4 hrs",
+    "difficulty": "Challenging",
+    "tags": [
+      "Day hike",
+      "Views",
+      "Scramble",
+      "Vesturland"
+    ],
+    "blurb": "A steep, dangerous scramble up Iceland's most photographed mountain at Grundarfjörður, for experienced hikers only.",
+    "description": "Kirkjufell near Grundarfjörður is one of Iceland's most famous mountains, but the climb is far harder than the photos suggest. The route to the 463 m summit involves scrambling through three steep, rope-assisted sections and demands a good head for heights. The mountain becomes slippery and hazardous when wet and has seen fatal accidents, so a guide is recommended and it should be attempted only by experienced hikers.",
+    "highlights": [
+      "Views over Grundarfjörður and Snæfellsnes",
+      "Three steep rope-assisted sections",
+      "Iceland's most photographed mountain"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Scrambling"
+    ]
+  },
+  {
+    "id": "eldborg",
+    "name": "Eldborg",
+    "region": "vesturland",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "6 km round trip",
+    "duration": "1.5–2 hrs",
+    "difficulty": "Moderate",
+    "tags": [
+      "Day hike",
+      "Crater",
+      "Snæfellsnes",
+      "Vesturland"
+    ],
+    "blurb": "A walk across lava to a perfectly shaped scoria crater on the southern side of Snæfellsnes.",
+    "description": "Eldborg is a remarkably regular scoria crater, about 60 m high, on the Mýrar plain of southern Snæfellsnes. The trail starts at Snorrastaðir farm and crosses moss-covered lava to the crater, roughly 3 km each way, with a chain-assisted climb to the rim. From the top there are wide views over the lava field, Faxaflói bay and the mountains of Snæfellsnes.",
+    "highlights": [
+      "The perfect form of the Eldborg crater",
+      "Views from the crater rim",
+      "Moss-covered lava of the Mýrar plain"
+    ],
+    "activities": [
+      "Walking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "naustahvilft",
+    "name": "Naustahvilft",
+    "region": "vestfirdir",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "1.6 km round trip",
+    "duration": "1-2 hrs",
+    "difficulty": "Challenging",
+    "tags": [
+      "Day hike",
+      "Viewpoint",
+      "Steep"
+    ],
+    "blurb": "A steep climb to the troll seat known as The Pot, with sweeping views over Ísafjörður.",
+    "description": "Naustahvilft is a bowl-shaped hanging valley high on Kirkjubólsfjall above Skutulsfjörður, nicknamed The Pot and tied to a folk tale of a resting troll woman. The path is short but very steep and loose, and the top rewards you with one of the finest panoramas over the town of Ísafjörður and its fjord.",
+    "highlights": [
+      "The troll-seat depression",
+      "Views over Ísafjörður and the airport",
+      "Glacial hanging valley"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "kaldbakur_vestfirdir",
+    "name": "Kaldbakur",
+    "region": "vestfirdir",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "7 km round trip",
+    "duration": "4-5 hrs",
+    "difficulty": "Challenging",
+    "tags": [
+      "Day hike",
+      "Mountain hike",
+      "Viewpoint"
+    ],
+    "blurb": "A climb to the Westfjords' highest peak at 998 metres, deep in the Westfjords Alps.",
+    "description": "Kaldbakur is the tallest mountain in the Westfjords at 998 metres, rising between Arnarfjörður and Dýrafjörður in the heart of the Westfjords Alps. A mountain track leads up to the Kvennaskarð pass, from where you hike to the summit and its two-metre cairn that lets you reach a full thousand metres. The route is long but technically manageable in good conditions.",
+    "highlights": [
+      "Highest peak in the Westfjords",
+      "The Westfjords Alps",
+      "Thousand-metre summit cairn"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "bolafjall",
+    "name": "Bolafjall",
+    "region": "vestfirdir",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "10.5 km loop",
+    "duration": "3-4 hrs",
+    "difficulty": "Moderate",
+    "tags": [
+      "Day hike",
+      "Viewpoint"
+    ],
+    "blurb": "A climb up Bolafjall above Bolungarvík to a skywalk platform cantilevered over the cliff edge.",
+    "description": "Bolafjall towers over the village of Bolungarvík, and a viewing platform that opened in 2022 juts out over the cliff edge at its top. It offers a staggering panorama across Ísafjarðardjúp and the Jökulfirðir fjords, and on the clearest days some say you can see all the way to Greenland. You can hike up or, in summer, drive the mountain road.",
+    "highlights": [
+      "The Skywalk platform",
+      "Views over Ísafjarðardjúp and Jökulfirðir",
+      "The old radar station"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "valagil",
+    "name": "Valagil",
+    "region": "vestfirdir",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "8 km round trip",
+    "duration": "2-3 hrs",
+    "difficulty": "Easy",
+    "tags": [
+      "Day hike",
+      "Waterfall"
+    ],
+    "blurb": "A gentle walk into Álftafjörður to a narrow ravine and its striking waterfall.",
+    "description": "Valagil is a narrow, dramatic ravine at the head of Álftafjörður, about 9 km south of Súðavík, with a fine waterfall tumbling from the cliffs. The path crosses green meadows and is clear and largely flat, though the final stretch turns rockier as you approach the gorge.",
+    "highlights": [
+      "The narrow ravine",
+      "The Valagil waterfall",
+      "Quiet head of Álftafjörður"
+    ],
+    "activities": [
+      "Walking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "dynjandi_ganga",
+    "name": "Dynjandi",
+    "region": "vestfirdir",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "1.6 km round trip",
+    "duration": "30-60 min",
+    "difficulty": "Easy",
+    "tags": [
+      "Day hike",
+      "Waterfall"
+    ],
+    "blurb": "A short walk up past a cascade of falls to the majestic Dynjandi, the Westfjords' tallest waterfall.",
+    "description": "Dynjandi, also called Fjallfoss, is the tallest and most spectacular waterfall in the Westfjords, roughly 100 metres high and fanning out like a bridal veil. From the parking area on Route 60 a 15-minute path climbs to the base of the falls, passing six smaller cascades along the way. The trail is rocky but manageable for most.",
+    "highlights": [
+      "The fan-shaped main falls",
+      "Six smaller waterfalls en route",
+      "Views over Arnarfjörður"
+    ],
+    "activities": [
+      "Walking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "reykjarholl_varmahlid",
+    "name": "Reykjarhóll",
+    "region": "nordvestur",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "3 km loop",
+    "duration": "1 hr",
+    "difficulty": "Easy",
+    "tags": [
+      "Day hike",
+      "Viewpoint",
+      "Family friendly"
+    ],
+    "blurb": "An easy walk up the wooded hill of Reykjarhóll with wide views over Skagafjörður.",
+    "description": "Reykjarhóll rises above the village of Varmahlíð, cloaked in woodland with clearly marked trails. A short, rewarding walk leads to the top of the hill, where on a clear day the view opens across most of the Skagafjörður region. It is an ideal outing for families and a shorter leg-stretch.",
+    "highlights": [
+      "Views over Skagafjörður",
+      "Wooded hilltop",
+      "Easy family route"
+    ],
+    "activities": [
+      "Walking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "kerlingarfjall_trollaskagi",
+    "name": "Kerlingarfjall (Kerling)",
+    "region": "nordvestur",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "12 km round trip",
+    "duration": "7-9 hrs",
+    "difficulty": "Challenging",
+    "tags": [
+      "Mountain hike",
+      "Viewpoint",
+      "Experienced hikers"
+    ],
+    "blurb": "A long, demanding climb to the highest peak of the Tröllaskagi peninsula at 1,538 metres.",
+    "description": "Kerling, often called Kerlingarfjall, is the highest peak of the Tröllaskagi peninsula at 1,538 metres, straddling the boundary between Skagafjörður and Eyjafjörður. It is a long, strenuous mountain hike for experienced walkers, often with snow and steep sections near the top, but the summit rewards you with sweeping views over the fjords and the sea. Choose settled weather and carry the right gear.",
+    "highlights": [
+      "Highest peak of Tröllaskagi",
+      "Expansive views over the fjords",
+      "Alpine mountain atmosphere"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "asbyrgi_rim",
+    "name": "Ásbyrgi",
+    "region": "nordaustur",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "12 km loop",
+    "duration": "4-5 hrs",
+    "difficulty": "Moderate",
+    "tags": [
+      "Day hike",
+      "Viewpoint",
+      "National park"
+    ],
+    "blurb": "A rim loop around the horseshoe canyon of Ásbyrgi with views down into its forest.",
+    "description": "Ásbyrgi is a dramatic horseshoe-shaped canyon in Vatnajökull National Park, carved by catastrophic floods of the Jökulsá á Fjöllum river and tied to the legend of Sleipnir's hoofprint. The trail follows the canyon rim, offering views down into the lush woodland and across to the rock island of Eyjan. The path is clear but fairly long.",
+    "highlights": [
+      "The horseshoe canyon",
+      "The rock island at its centre",
+      "Lush birch woodland"
+    ],
+    "activities": [
+      "Walking",
+      "Birdwatching"
+    ]
+  },
+  {
+    "id": "hverfjall",
+    "name": "Hverfjall",
+    "region": "nordaustur",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "4.5 km loop",
+    "duration": "1-2 hrs",
+    "difficulty": "Moderate",
+    "tags": [
+      "Day hike",
+      "Volcano",
+      "Viewpoint"
+    ],
+    "blurb": "A climb to the rim and a loop around the vast tephra crater of Hverfjall by Lake Mývatn.",
+    "description": "Hverfjall is a near-perfect ring-shaped tephra crater east of Lake Mývatn, about a kilometre across and one of the area's most striking volcanic features. A steep but short path climbs to the rim, from where you can walk the full loop around the crater with views over the Mývatn district. Stay strictly on the marked paths to protect the fragile ground.",
+    "highlights": [
+      "The circular crater rim",
+      "Views over Lake Mývatn",
+      "The tephra crater itself"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "leirhnjukur",
+    "name": "Leirhnjúkur",
+    "region": "nordaustur",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "5 km loop",
+    "duration": "1.5-2 hrs",
+    "difficulty": "Moderate",
+    "tags": [
+      "Day hike",
+      "Geothermal",
+      "Volcano"
+    ],
+    "blurb": "A loop through fresh lava and steaming geothermal ground in the Krafla caldera.",
+    "description": "Leirhnjúkur sits in the heart of the Krafla caldera and is one of Iceland's youngest lava fields, formed in the Krafla Fires of 1975-1984. A marked loop trail crosses ropey pahoehoe lava, passing bubbling mud pots and steaming fissures where geothermal heat escapes. The terrain is mostly flat but the surface is uneven, so sturdy shoes are essential and you must keep to the path.",
+    "highlights": [
+      "Fresh lava from the Krafla Fires",
+      "Bubbling mud pots and steam vents",
+      "Colourful geothermal ground"
+    ],
+    "activities": [
+      "Walking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "dimmuborgir",
+    "name": "Dimmuborgir",
+    "region": "nordaustur",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "2.4 km loop",
+    "duration": "45-60 min",
+    "difficulty": "Easy",
+    "tags": [
+      "Day hike",
+      "Lava field",
+      "Family friendly"
+    ],
+    "blurb": "An easy loop through a maze of towering lava pillars and arches by Lake Mývatn.",
+    "description": "Dimmuborgir is a remarkable lava field east of Lake Mývatn, where huge pillars, arches and caves form a mysterious labyrinth. Several marked, colour-coded loops start from the car park, from short strolls to longer walks, and the most popular is the Church Circle with its distinctive lava-cave arch known as Kirkjan.",
+    "highlights": [
+      "Towering lava pillars and arches",
+      "The Kirkjan lava cave",
+      "Colour-coded loop trails"
+    ],
+    "activities": [
+      "Walking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "valahnukur",
+    "name": "Valahnúkur",
+    "region": "sudurland",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "5 km loop",
+    "duration": "2–3 hrs",
+    "difficulty": "Moderate",
+    "tags": [
+      "Day hike",
+      "Views",
+      "Highlands"
+    ],
+    "blurb": "A short but steep climb to a panoramic summit in the heart of Þórsmörk.",
+    "description": "Valahnúkur (465 m) rises above the huts in Langidalur, and its summit opens up sweeping views of Eyjafjallajökull, Mýrdalsjökull, the Tindfjöll peaks and the whole Þórsmörk valley. The trail is marked and colour-coded on each side, ideal for hikers wanting a big reward in little time. Access is summer-only and requires driving a mountain road with unbridged river crossings.",
+    "highlights": [
+      "Views over three glaciers",
+      "Colour-marked up and down routes",
+      "Heart of Þórsmörk"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "blahnukur",
+    "name": "Bláhnúkur",
+    "region": "sudurland",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "6 km loop",
+    "duration": "3–4 hrs",
+    "difficulty": "Challenging",
+    "tags": [
+      "Day hike",
+      "Highlands",
+      "Views"
+    ],
+    "blurb": "A steep loop up a blue-hued rhyolite peak above Landmannalaugar.",
+    "description": "Bláhnúkur (945 m) is one of the most popular day-hike summits at Landmannalaugar, its blue-grey rhyolite slopes shifting colour with the light. The route is short but steep and narrow in places, with sweeping views over the Laugahraun lava field, Brennisteinsalda and the surrounding colourful mountains. The area is accessible only in summer via mountain F-roads, often with river fords.",
+    "highlights": [
+      "Blue-grey rhyolite slopes",
+      "Views over Laugahraun lava",
+      "One of the best highland day hikes"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "brennisteinsalda",
+    "name": "Brennisteinsalda",
+    "region": "sudurland",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "11 km round trip",
+    "duration": "3–4 hrs",
+    "difficulty": "Moderate",
+    "tags": [
+      "Day hike",
+      "Highlands",
+      "Geothermal"
+    ],
+    "blurb": "The most colourful mountain at Landmannalaugar, laced with steaming sulphur vents.",
+    "description": "Brennisteinsalda, the “Sulphur Wave” (855 m), takes its name from the yellow sulphur that streaks its slopes alongside red, green and black mineral layers. The hike follows the first stretch of the Laugavegur trail from Landmannalaugar up to the summit, where steam rises from the ground. It lies in an F-road highland area passable only during the summer months.",
+    "highlights": [
+      "Steaming sulphur vents",
+      "Multi-coloured rhyolite slopes",
+      "Start of the Laugavegur trail"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "hveradalir_kerlingarfjoll",
+    "name": "Hveradalir, Kerlingarfjöll",
+    "region": "sudurland",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "7 km loop",
+    "duration": "3–4 hrs",
+    "difficulty": "Moderate",
+    "tags": [
+      "Day hike",
+      "Highlands",
+      "Geothermal"
+    ],
+    "blurb": "A loop through one of the highlands' most colourful geothermal valleys.",
+    "description": "Hveradalir is a steaming high-temperature area in the heart of the Kerlingarfjöll mountains, filled with boiling mud pots, fumaroles and rhyolite peaks in every colour of the rainbow. A marked loop descends into the valley and winds along paths between the vents with dramatic views throughout. The area is reached in summer via the Kjölur route (F35) and the F347 mountain track.",
+    "highlights": [
+      "Boiling mud pots and fumaroles",
+      "Multi-coloured rhyolite peaks",
+      "Snow patches amid the geothermal heat"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "almannagja_thingvellir",
+    "name": "Almannagjá, Þingvellir",
+    "region": "sudurland",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "5 km",
+    "duration": "1–2 hrs",
+    "difficulty": "Easy",
+    "tags": [
+      "Day hike",
+      "History",
+      "Family-friendly"
+    ],
+    "blurb": "An easy walk through a historic rift between tectonic plates to Öxarárfoss waterfall.",
+    "description": "Almannagjá is a dramatic fissure where the North American and Eurasian plates pull apart, and the path through it once led to the Lögberg law rock of the ancient Alþingi. A level trail runs between towering rock walls to Öxarárfoss waterfall and down onto the plains of this UNESCO World Heritage site. It is accessible year-round and suits all ages.",
+    "highlights": [
+      "Rift between tectonic plates",
+      "Öxarárfoss waterfall",
+      "UNESCO site and old parliament grounds"
+    ],
+    "activities": [
+      "Walking",
+      "Sightseeing"
+    ]
+  },
+  {
+    "id": "solheimajokull_walk",
+    "name": "Sólheimajökull glacier edge",
+    "region": "sudurland",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "3.5 km round trip",
+    "duration": "1 hr",
+    "difficulty": "Easy",
+    "tags": [
+      "Day hike",
+      "Glacier",
+      "Family-friendly"
+    ],
+    "blurb": "An easy walk to the snout of Sólheimajökull and the lagoon in front of it.",
+    "description": "A level path leads from the car park along the glacial lagoon to the snout of Sólheimajökull, an outlet of Mýrdalsjökull with ash-streaked blue ice and deep crevasses. The walk itself is short and easy, suitable for the whole family. Walking onto the glacier itself requires a guide and crampons.",
+    "highlights": [
+      "Ash-streaked blue glacier ice",
+      "Lagoon at the glacier snout",
+      "Easy year-round access"
+    ],
+    "activities": [
+      "Walking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "mulagljufur",
+    "name": "Múlagljúfur",
+    "region": "sudurland",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "6 km round trip",
+    "duration": "2–3 hrs",
+    "difficulty": "Moderate",
+    "tags": [
+      "Day hike",
+      "Canyon",
+      "Views"
+    ],
+    "blurb": "A hidden canyon with waterfalls and views toward Öræfajökull.",
+    "description": "Múlagljúfur is a lush, deep canyon just off the Ring Road between Vík and Höfn that has become one of Iceland's most popular hidden gems in recent years. A trail climbs to viewpoints along the rim overlooking Hangandifoss, a waterfall dropping more than 100 metres, with Öræfajökull glacier as a backdrop. The access track is a short gravel road and the route is passable in summer.",
+    "highlights": [
+      "Hangandifoss, over 100 m tall",
+      "Moss-covered canyon rim",
+      "Views toward Öræfajökull"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "stakkholtsgja",
+    "name": "Stakkholtsgjá",
+    "region": "sudurland",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "4 km round trip",
+    "duration": "1–2 hrs",
+    "difficulty": "Easy",
+    "tags": [
+      "Day hike",
+      "Canyon",
+      "Family-friendly"
+    ],
+    "blurb": "A narrow, moss-lined canyon in Þórsmörk with a hidden waterfall at its end.",
+    "description": "Stakkholtsgjá is a roughly two-kilometre canyon with palagonite walls up to 100 metres high, cloaked in green moss through the summer. The route follows the riverbed inward across small fords until it reaches a cave at the far end where a waterfall plunges from above. It lies in Þórsmörk and is accessible only in summer via a mountain road with unbridged rivers.",
+    "highlights": [
+      "High moss-covered palagonite walls",
+      "Hidden waterfall in a cave",
+      "Easy walk for the whole family"
+    ],
+    "activities": [
+      "Walking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "hengifoss",
+    "name": "Hengifoss",
+    "region": "austurland",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "5 km round trip",
+    "duration": "2 hrs",
+    "difficulty": "Moderate",
+    "tags": [
+      "Day hike",
+      "Waterfall",
+      "Views"
+    ],
+    "blurb": "A hike to one of Iceland's tallest waterfalls, framed by red rock strata.",
+    "description": "Hengifoss plunges 128 metres and is one of Iceland's tallest waterfalls, set in a gorge banded with basalt columns and striking red clay layers. On the way up the trail passes Litlanesfoss, which tumbles through a wall of neatly formed basalt columns. The path is well marked but fairly steep in places.",
+    "highlights": [
+      "128 m tall waterfall",
+      "Red clay strata in the gorge walls",
+      "Litlanesfoss and basalt columns en route"
+    ],
+    "activities": [
+      "Walking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "snaefell_austurland",
+    "name": "Snæfell",
+    "region": "austurland",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "8 km round trip",
+    "duration": "7–8 hrs",
+    "difficulty": "Challenging",
+    "tags": [
+      "Mountain hike",
+      "Highlands",
+      "Views"
+    ],
+    "blurb": "A climb of Iceland's highest free-standing mountain on the edge of Vatnajökull.",
+    "description": "Snæfell (1,833 m) is Iceland's highest free-standing mountain, an old volcano towering over the highlands north of Vatnajökull. The hike starts at the Snæfellsskáli hut and is long and steep, with snow and loose scree near the top, but the summit rewards you with views over Vatnajökull, the Eyjabakkar wetlands and reindeer country. The route suits only experienced, well-equipped hikers and is accessible only in high summer via mountain roads.",
+    "highlights": [
+      "Iceland's highest free-standing mountain",
+      "Views over Vatnajökull and Eyjabakkar",
+      "Highland reindeer grounds"
+    ],
+    "activities": [
+      "Mountain hiking",
+      "Photography"
+    ]
+  },
+  {
+    "id": "gerpir",
+    "name": "Gerpir",
+    "region": "austurland",
+    "category": "ganga",
+    "type": "Hiking trail",
+    "length": "8 km",
+    "duration": "3–4 hrs",
+    "difficulty": "Moderate",
+    "tags": [
+      "Day hike",
+      "Coast",
+      "Views"
+    ],
+    "blurb": "A hike to the easternmost point of mainland Iceland with towering sea cliffs.",
+    "description": "Gerpir is the easternmost headland of mainland Iceland, where 12-million-year-old cliffs rise straight from the sea to heights of up to 661 metres. The hiking club Ferðafélag Fjarðamanna has marked numerous trails across the Gerpir area, offering dramatic views over the open ocean and the surrounding fjords. The access track is rough and the route is best walked in dry weather during summer.",
+    "highlights": [
+      "Easternmost point of the mainland",
+      "Towering sea cliffs",
+      "Sweeping ocean views"
+    ],
+    "activities": [
+      "Walking",
+      "Photography"
+    ]
   }
 ];
 
