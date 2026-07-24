@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="46" fill="#1f4e46"/>
+  <circle cx="50" cy="50" r="40" fill="none" stroke="#f4f1ea" stroke-width="2.5" opacity="0.55"/>
+  <!-- kompásnál: norður (ljós) og suður (rauðleit) -->
+  <polygon points="50,14 58,50 50,50 42,50" fill="#f4f1ea"/>
+  <polygon points="50,86 42,50 50,50 58,50" fill="#b05750"/>
+  <circle cx="50" cy="50" r="5.5" fill="#f4f1ea"/>
+  <circle cx="50" cy="50" r="2.6" fill="#1f4e46"/>
+</svg>

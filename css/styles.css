@@ -449,6 +449,45 @@ section { padding: 96px 32px; }
   background: var(--rc);
 }
 .region-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--line); }
+
+/* Landshluta-/leiðakort með ljósmyndabakgrunni */
+.region-card.photo-card {
+  background-size: cover;
+  background-position: center;
+  border-color: transparent;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.region-card.photo-card::before { display: none; }
+.region-card.photo-card .rc-index { color: rgba(255, 255, 255, 0.75); }
+.region-card.photo-card h3 { color: #fff; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45); }
+.region-card.photo-card p { color: rgba(255, 255, 255, 0.88); text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45); margin-bottom: 10px; }
+.region-card.photo-card .rc-count {
+  color: #fff;
+  background: rgba(14, 18, 18, 0.35);
+  padding: 4px 12px;
+  border-radius: 100px;
+  align-self: flex-start;
+  backdrop-filter: blur(4px);
+}
+.region-card.photo-card:hover { box-shadow: 0 26px 60px -22px rgba(28, 27, 25, 0.55); }
+.rc-dur {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 11px;
+  border-radius: 100px;
+  background: rgba(14, 18, 18, 0.4);
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
+.region-card { position: relative; }
 .region-card .rc-index {
   font-family: var(--font-display);
   font-size: 0.85rem;
@@ -519,6 +558,24 @@ section { padding: 96px 32px; }
 .cat-tab:hover { color: var(--ink); }
 .cat-tab.active { background: var(--card); color: var(--ink); box-shadow: var(--shadow-soft); }
 
+.btn-surprise {
+  padding: 10px 22px;
+  border-radius: 100px;
+  border: 1px dashed var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.btn-surprise:hover {
+  background: var(--accent);
+  color: var(--paper);
+  transform: rotate(-1.5deg) scale(1.03);
+}
+
 .filter-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 .chip {
   padding: 7px 16px;
@@ -574,6 +631,62 @@ section { padding: 96px 32px; }
 }
 .pc-region { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--ink-soft); font-weight: 500; }
 .pc-region .pc-swatch { width: 9px; height: 9px; border-radius: 2px; }
+
+/* Myndahaus á staðaspjöldum */
+.pc-media {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.pc-media-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.55s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+.place-card:hover .pc-media-bg { transform: scale(1.06); }
+.pc-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(14, 18, 18, 0) 45%, rgba(14, 18, 18, 0.55) 100%);
+  pointer-events: none;
+}
+.pc-media-bg.no-img + .pc-region-chip, .pc-media .pc-region-chip { }
+.pc-region-chip {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  z-index: 2;
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  max-width: calc(100% - 24px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pc-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
+.pc-badge.gem { background: rgba(122, 84, 158, 0.85); }
+.pc-badge.pop { background: rgba(176, 87, 80, 0.88); }
+.pc-badge.free { background: rgba(31, 78, 70, 0.85); }
 .pc-hlnd {
   font-size: 0.64rem;
   text-transform: uppercase;
@@ -773,6 +886,27 @@ section { padding: 96px 32px; }
 .mc-btn:hover { transform: translateY(-2px); border-color: var(--ink); }
 .mc-btn.primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
 .mc-btn.primary:hover { background: var(--accent-soft); border-color: var(--accent-soft); }
+
+/* ---------------- FADE-UP VIÐ SKRUN ---------------- */
+.fade-item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+.fade-item.in-view {
+  opacity: 1;
+  transform: none;
+}
+/* eftir innkomu: snöggt hover aftur */
+.place-card.in-view,
+.region-card.in-view {
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-item { opacity: 1; transform: none; transition: none; }
+  .pc-media-bg { transition: none; }
+  .place-card:hover .pc-media-bg { transform: none; }
+}
 
 /* ---------------- RESPONSIVE ---------------- */
 @media (max-width: 900px) {

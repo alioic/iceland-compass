@@ -48,6 +48,8 @@ const STR = {
     sCuisine: "Tegund", sPrice: "Verðflokkur", sLoc: "Staðsetning",
     btnBook: "Bóka gistingu í nágrenni", btnTours: "Skoða ferðir og afþreyingu", btnMap: "Finna á korti",
     fullPage: (n) => `Lestu meira um ${n} →`, near: "Ísland",
+    badgeGem: "Falin perla", badgePop: "Vinsælt", badgeFree: "Ókeypis",
+    surprise: "Komdu mér á óvart",
   },
   en: {
     hint: "Click a region to see places in that area",
@@ -63,6 +65,8 @@ const STR = {
     sCuisine: "Cuisine", sPrice: "Price", sLoc: "Location",
     btnBook: "Book nearby accommodation", btnTours: "Browse tours & activities", btnMap: "Find on map",
     fullPage: (n) => `Read more about ${n} →`, near: "Iceland",
+    badgeGem: "Hidden gem", badgePop: "Popular", badgeFree: "Free",
+    surprise: "Surprise me",
   },
 };
 const t = STR[LANG];
@@ -82,6 +86,34 @@ const CATEGORIES = [
   { id: "kaffi", label: t.cat.kaffi },
 ];
 const catOf = (p) => p.category || "stadur";
+
+// ---------------- MERKI Á SPJÖLD ----------------
+// Falin perla: minna þekktir staðir sem koma á óvart
+const GEM_IDS = new Set([
+  "kalfshamarsvik", "kolugljufur", "storurd", "hljodaklettar", "drangey",
+  "hellulaug", "krossneslaug", "pollurinn_talknafjordur", "landbrotalaug",
+  "gudrunarlaug", "franska_kaffihusid_raudasandi", "simbahollin",
+  "fjoruhusid_hellnar", "gilbakki_kaffihus_hellissandur", "aldeyjarfoss",
+  "kaffi_lara", "grettislaug", "laugarfell", "arctic_henge", "hrunalaug",
+]);
+// Vinsælt: frægustu staðirnir
+const POP_IDS = new Set([
+  "blaalonid", "sky_lagoon", "thingvellir", "geysir", "gullfoss",
+  "jokulsarlon", "reynisfjara", "kirkjufell", "skogafoss", "myvatn",
+  "jardbodin_myvatn", "husavik", "landmannalaugar", "fridheimar",
+]);
+// Ókeypis: náttúruperlur án aðgangseyris (sami listi og þemaleiðin)
+const FREE_IDS = new Set([
+  "godafoss", "gullfoss", "skogafoss", "dynjandi", "hraunfossar",
+  "aldeyjarfoss", "kolugljufur", "reynisfjara", "kirkjufell", "namaskard",
+  "brimketill", "hljodaklettar", "studlagil", "hvitserkur",
+]);
+function badgeFor(p) {
+  if (GEM_IDS.has(p.id)) return { label: t.badgeGem, cls: "gem" };
+  if (POP_IDS.has(p.id)) return { label: t.badgePop, cls: "pop" };
+  if (FREE_IDS.has(p.id)) return { label: t.badgeFree, cls: "free" };
+  return null;
+}
 
 /* ------------------------------------------------------------------
    TEKJUR / AFFILIATE
@@ -269,8 +301,13 @@ function buildRegionCards() {
     const r = REGIONS[id];
     const count = PLACES.filter((p) => p.region === id).length;
     const card = document.createElement("div");
-    card.className = "region-card";
+    const img = typeof IMAGES !== "undefined" ? IMAGES[id] : null;
+    card.className = "region-card" + (img ? " photo-card" : "");
     card.style.setProperty("--rc", r.color);
+    if (img) {
+      card.style.backgroundImage =
+        `linear-gradient(180deg, rgba(16,20,20,0.08) 30%, rgba(16,20,20,0.72) 100%), url('${img.src}')`;
+    }
     card.innerHTML = `
       <div class="rc-index">${String(i + 1).padStart(2, "0")}</div>
       <h3>${r.name}</h3>
@@ -364,11 +401,17 @@ function renderPlaces() {
       else if (cat === "bod") meta = [p.price, p.location].filter(Boolean).join(" · ");
       else meta = `${t.accomN} ${p.accommodation.length} · ${t.activN} ${p.activities.length}`;
       const sub = hasLoc(cat) && p.location ? ` · ${p.location}` : "";
+      const img = typeof IMAGES !== "undefined" ? IMAGES[p.id] : null;
+      const badge = badgeFor(p);
+      const bgStyle = img
+        ? `background-image:url('${img.src}')`
+        : `background:linear-gradient(150deg, ${region.color}, rgba(20,24,24,0.55)), linear-gradient(${region.color}, ${region.color})`;
       return `
       <article class="place-card cat-${cat}" data-place="${p.id}">
-        <div class="place-card-head">
-          <span class="pc-region"><span class="pc-swatch" style="background:${region.color}"></span>${region.name}${sub}</span>
-          ${hlnd}
+        <div class="pc-media">
+          <div class="pc-media-bg${img ? "" : " no-img"}" style="${bgStyle}"></div>
+          ${badge ? `<span class="pc-badge ${badge.cls}">${badge.label}</span>` : ""}
+          <span class="pc-region-chip">${region.name}${sub}${isHighland(p) ? " · " + t.highlands : ""}</span>
         </div>
         <div class="place-card-body">
           <span class="pc-type">${p.type}</span>
@@ -387,6 +430,7 @@ function renderPlaces() {
   grid.querySelectorAll(".place-card").forEach((el) =>
     el.addEventListener("click", () => openModal(el.dataset.place))
   );
+  observeFade(grid);
 }
 
 /* ---------------- MÓÐALGLUGGI ---------------- */
@@ -488,6 +532,60 @@ function closeModal() {
   document.body.style.overflow = "";
 }
 
+/* ---------------- LEIÐAKORT MEÐ MYNDUM ---------------- */
+function enhanceRouteCards() {
+  if (typeof IMAGES === "undefined") return;
+  document.querySelectorAll(".routes-section .region-card").forEach((card) => {
+    const href = card.getAttribute("href") || "";
+    const m = href.match(/\/(?:leidir|routes)\/([a-z0-9-]+)\//);
+    const img = m && IMAGES[m[1]];
+    if (img) {
+      card.classList.add("photo-card");
+      card.style.backgroundImage =
+        `linear-gradient(180deg, rgba(16,20,20,0.08) 30%, rgba(16,20,20,0.72) 100%), url('${img.src}')`;
+    }
+  });
+}
+
+/* ---------------- FADE-UP VIÐ SKRUN ----------------
+   Skrun-drifið (ekki IntersectionObserver) svo það þoli
+   stökk-skrun af akkeristenglum og virki alls staðar. */
+let fadeEnabled = false;
+let fadePending = false;
+function revealNow() {
+  fadePending = false;
+  const vh = window.innerHeight;
+  const items = document.querySelectorAll(".fade-item:not(.in-view)");
+  items.forEach((el) => {
+    if (el.getBoundingClientRect().top < vh - 30) el.classList.add("in-view");
+  });
+}
+function requestReveal() {
+  if (!fadeEnabled || fadePending) return;
+  fadePending = true;
+  requestAnimationFrame(revealNow);
+}
+function initFade() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  fadeEnabled = true;
+  window.addEventListener("scroll", requestReveal, { passive: true });
+  window.addEventListener("resize", requestReveal);
+  observeFade(document);
+}
+function observeFade(root) {
+  if (!fadeEnabled) return;
+  root.querySelectorAll(".place-card, .region-card, .section-head").forEach((el) => {
+    if (!el.classList.contains("in-view")) el.classList.add("fade-item");
+  });
+  requestReveal();
+}
+
+/* ---------------- KOMDU MÉR Á ÓVART ---------------- */
+function surpriseMe() {
+  const p = PLACES[Math.floor(Math.random() * PLACES.length)];
+  openModal(p.id);
+}
+
 /* ---------------- TÖLULEG HREYFING ---------------- */
 function countUp(el, target, dur = 1200) {
   const start = performance.now();
@@ -509,7 +607,15 @@ document.addEventListener("DOMContentLoaded", () => {
   buildCategoryFilters();
   buildFilters();
   buildFooterNav();
+  enhanceRouteCards();
+  initFade();
   renderPlaces();
+
+  const sb = document.getElementById("surpriseBtn");
+  if (sb) {
+    sb.textContent = t.surprise;
+    sb.addEventListener("click", surpriseMe);
+  }
 
   countUp(document.getElementById("statPlaces"), PLACES.length);
 
