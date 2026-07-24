@@ -50,6 +50,7 @@ const STR = {
     fullPage: (n) => `Lestu meira um ${n} →`, near: "Ísland",
     badgeGem: "Falin perla", badgePop: "Vinsælt", badgeFree: "Ókeypis",
     surprise: "Komdu mér á óvart",
+    noCatHere: "Ekkert í þessum flokki á þessu svæði.",
     myTrip: "Ferðin mín", tripEmpty: "Engir staðir í ferðinni enn — smelltu á hjartað á stað til að safna í ferðina þína.",
     tripAdd: "Bæta í ferðina mína", tripRemove: "Í ferðinni — fjarlægja",
     tripClear: "Hreinsa ferðina", tripHint: "Vistað í vafranum þínum — engin innskráning.",
@@ -73,6 +74,7 @@ const STR = {
     fullPage: (n) => `Read more about ${n} →`, near: "Iceland",
     badgeGem: "Hidden gem", badgePop: "Popular", badgeFree: "Free",
     surprise: "Surprise me",
+    noCatHere: "Nothing in this category in this area.",
     myTrip: "My trip", tripEmpty: "No places in your trip yet — tap the heart on any place to start collecting.",
     tripAdd: "Add to my trip", tripRemove: "In my trip — remove",
     tripClear: "Clear trip", tripHint: "Saved in your browser — no sign-up needed.",
@@ -276,12 +278,17 @@ function selectRegion(id) {
         <span class="rp-place-arrow">→</span>
       </div>`;
   const GROUP_ORDER = ["stadur", "ganga", "bod", "veitingar", "kaffi"];
-  const placesHTML = GROUP_ORDER.map((c) => {
+  // Ef flokkur er valinn í kortastikunni sýnum við bara hann
+  const activeCat = state.filterCategory;
+  const groups = activeCat === "allt" ? GROUP_ORDER : [activeCat];
+  const shown = places.filter((p) => activeCat === "allt" || catOf(p) === activeCat);
+  const placesHTML = groups.map((c) => {
     const items = places.filter((p) => catOf(p) === c);
     if (!items.length) return "";
     return `<p class="rp-group-title">${t.cat[c]}<span>${items.length}</span></p>` +
            items.map(renderPlace).join("");
-  }).join("");
+  }).join("") ||
+    `<p class="rp-empty-cat">${t.noCatHere}</p>`;
 
   document.getElementById("regionContent").innerHTML = `
     <p class="rp-tagline">${region.tagline}</p>
@@ -293,7 +300,7 @@ function selectRegion(id) {
       <div class="rp-stat"><strong>${region.stats.saeti}</strong><span>${t.statTown}</span></div>
     </div>
     <p class="rp-wx" id="regionWx" data-rid="${id}"></p>
-    <p class="rp-places-title">${t.onArea} — ${places.length}</p>
+    <p class="rp-places-title">${t.onArea} — ${shown.length}${activeCat !== "allt" ? ` · ${t.cat[activeCat]}` : ""}</p>
     ${placesHTML}
   `;
 
@@ -368,6 +375,8 @@ function setFilterCategory(id) {
     c.classList.toggle("active", c.dataset.cat === id)
   );
   renderPlaces();
+  // uppfæra hægra spjaldið ef landshluti er valinn svo listinn fylgi flokknum
+  if (state.activeRegion) selectRegion(state.activeRegion);
 }
 
 function buildFilters() {
