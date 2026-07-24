@@ -690,49 +690,49 @@ const IMAGES = {
     "page": "https://www.pexels.com/photo/aerial-view-of-swimming-pool-near-the-ocean-10896940/"
   },
   "hvenaer-fara": {
-    "src": "/img/places/gullfoss.jpg",
-    "alt_is": "Regnbogi yfir Gullfossi í Hvítá",
-    "alt_en": "Rainbow over Gullfoss waterfall in Iceland",
-    "credit": "Laila Gebhard",
+    "src": "/img/places/hvenaer-fara.jpg",
+    "alt_is": "Bláir lúpínubreiður undir fjöllum að sumri á Stokksnesi",
+    "alt_en": "Fields of blue lupines below mountains in summer at Stokksnes, Iceland",
+    "credit": "Colin Watts",
     "source": "unsplash",
-    "page": "https://unsplash.com/photos/water-waves-hitting-the-shore-during-daytime-Rt4p0KMo86k"
+    "page": "https://unsplash.com/photos/lupines-bloom-below-mountains-in-iceland-_GAqsC5c6WE"
   },
   "nordurljos": {
-    "src": "/img/places/snaefellsnes.jpg",
-    "alt_is": "Kirkjufell á Snæfellsnesi í vetrarbúningi",
-    "alt_en": "Kirkjufell mountain on the Snæfellsnes peninsula, Iceland",
-    "credit": "Presetbase Lightroom Presets",
+    "src": "/img/places/nordurljos.jpg",
+    "alt_is": "Græn norðurljós á næturhimni yfir Þórsmörk á Íslandi",
+    "alt_en": "Green aurora borealis in the night sky over Thorsmork, Iceland",
+    "credit": "Jonatan Pie",
     "source": "unsplash",
-    "page": "https://unsplash.com/photos/GhmVx0wpSto"
+    "page": "https://unsplash.com/photos/photography-of-aurora-borealis-7FfG8zcPcXU"
   },
   "hringvegurinn": {
-    "src": "/img/places/jokulsarlon.jpg",
-    "alt_is": "Ísjakar speglast í Jökulsárlóni",
-    "alt_en": "Icebergs reflected in Jokulsarlon glacier lagoon",
-    "credit": "Mark Olsen",
+    "src": "/img/places/hringvegurinn.jpg",
+    "alt_is": "Auður vegur sem liðast að fjalli í íslensku landslagi",
+    "alt_en": "An empty road winding toward a mountain in the Icelandic landscape",
+    "credit": "Christina Papp",
     "source": "unsplash",
-    "page": "https://unsplash.com/photos/reflection-of-snow-mountain-on-body-of-water-under-white-sky-KZdEtGWK1Mk"
+    "page": "https://unsplash.com/photos/an-empty-road-with-a-mountain-in-the-background-v7okokLJZ3E"
   },
   "akstur-a-islandi": {
-    "src": "/img/places/austurland.jpg",
-    "alt_is": "Vestrahorn við Stokksnes",
-    "alt_en": "Vestrahorn mountain at Stokksnes, southeast Iceland",
-    "credit": "Michał Janus",
+    "src": "/img/places/akstur-a-islandi.jpg",
+    "alt_is": "Ekið eftir hringveginum á Íslandi undir skýjuðum himni",
+    "alt_en": "Driving along the Ring Road in Iceland under a cloudy sky",
+    "credit": "Tim Foster",
     "source": "unsplash",
-    "page": "https://unsplash.com/photos/Usj3EA5SSD4"
+    "page": "https://unsplash.com/photos/TW-rxLXqJUs"
   },
   "island-ad-vetri": {
-    "src": "/img/places/gullni-hringurinn.jpg",
-    "alt_is": "Gullfoss í klakaböndum að vetri",
-    "alt_en": "Gullfoss waterfall in winter, Iceland",
+    "src": "/img/places/island-ad-vetri.jpg",
+    "alt_is": "Snævi þakinn foss og landslag að vetri við Gullfoss",
+    "alt_en": "Snow-covered waterfall and winter landscape at Gullfoss, Iceland",
     "credit": "mana5280",
     "source": "unsplash",
     "page": "https://unsplash.com/photos/a-frozen-waterfall-with-snow-on-the-ground-bLoQeWky8BU"
   },
   "fyrsta-ferdin": {
-    "src": "/img/places/hofudborg.jpg",
-    "alt_is": "Hallgrímskirkja í Reykjavík",
-    "alt_en": "Hallgrímskirkja church in Reykjavík, Iceland",
+    "src": "/img/places/fyrsta-ferdin.jpg",
+    "alt_is": "Hallgrímskirkja í miðborg Reykjavíkur á Íslandi",
+    "alt_en": "Hallgrimskirkja church in central Reykjavik, Iceland",
     "credit": "Tim Foster",
     "source": "unsplash",
     "page": "https://unsplash.com/photos/hallgrimur-church-iceland-WCtfyti07nc"
