@@ -348,9 +348,23 @@ function buildCategoryFilters() {
   });
 }
 
+// Takkar beint við kortið — sömu flokkar, stjórna hvað sést á kortinu
+function buildMapLayers() {
+  const wrap = document.getElementById("mapLayers");
+  if (!wrap) return;
+  CATEGORIES.forEach((c) => {
+    const b = document.createElement("button");
+    b.className = "cat-tab" + (c.id === "allt" ? " active" : "");
+    b.textContent = c.label;
+    b.dataset.cat = c.id;
+    b.addEventListener("click", () => setFilterCategory(c.id));
+    wrap.appendChild(b);
+  });
+}
+
 function setFilterCategory(id) {
   state.filterCategory = id;
-  document.querySelectorAll("#categoryFilters .cat-tab").forEach((c) =>
+  document.querySelectorAll("#categoryFilters .cat-tab, #mapLayers .cat-tab").forEach((c) =>
     c.classList.toggle("active", c.dataset.cat === id)
   );
   renderPlaces();
@@ -821,6 +835,7 @@ document.addEventListener("DOMContentLoaded", () => {
   buildQuicklist();
   buildRegionCards();
   buildCategoryFilters();
+  buildMapLayers();
   buildFilters();
   buildFooterNav();
   buildTripUI();

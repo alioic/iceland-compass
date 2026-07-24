@@ -253,6 +253,32 @@ section { padding: 96px 32px; }
 /* ---------------- KORT ---------------- */
 .map-section { background: var(--paper-2); border-bottom: 1px solid var(--line); padding-top: 40px; }
 
+.map-toolbar {
+  max-width: var(--max);
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.map-toolbar-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--ink-faint);
+}
+.map-layers { display: inline-flex; flex-wrap: wrap; gap: 8px; }
+.map-layers .cat-tab {
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+.map-layers .cat-tab.active { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+@media (max-width: 640px) {
+  .map-toolbar { margin-bottom: 16px; }
+  .map-toolbar-label { width: 100%; margin-bottom: 2px; }
+}
+
 .map-layout {
   max-width: var(--max);
   margin: 0 auto;
