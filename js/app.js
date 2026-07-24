@@ -50,6 +50,12 @@ const STR = {
     fullPage: (n) => `Lestu meira um ${n} →`, near: "Ísland",
     badgeGem: "Falin perla", badgePop: "Vinsælt", badgeFree: "Ókeypis",
     surprise: "Komdu mér á óvart",
+    myTrip: "Ferðin mín", tripEmpty: "Engir staðir í ferðinni enn — smelltu á hjartað á stað til að safna í ferðina þína.",
+    tripAdd: "Bæta í ferðina mína", tripRemove: "Í ferðinni — fjarlægja",
+    tripClear: "Hreinsa ferðina", tripHint: "Vistað í vafranum þínum — engin innskráning.",
+    favAria: "Vista í ferðina mína",
+    wind: "vindur", daylight: "birta",
+    wx: { 0: "Heiðskírt", 1: "Léttskýjað", 2: "Skýjað með köflum", 3: "Alskýjað", 45: "Þoka", 48: "Þoka", 51: "Súld", 53: "Súld", 55: "Súld", 61: "Rigning", 63: "Rigning", 65: "Úrhelli", 71: "Snjókoma", 73: "Snjókoma", 75: "Snjókoma", 80: "Skúrir", 81: "Skúrir", 82: "Skúrir", 85: "Él", 86: "Él", 95: "Þrumuveður" },
   },
   en: {
     hint: "Click a region to see places in that area",
@@ -67,6 +73,12 @@ const STR = {
     fullPage: (n) => `Read more about ${n} →`, near: "Iceland",
     badgeGem: "Hidden gem", badgePop: "Popular", badgeFree: "Free",
     surprise: "Surprise me",
+    myTrip: "My trip", tripEmpty: "No places in your trip yet — tap the heart on any place to start collecting.",
+    tripAdd: "Add to my trip", tripRemove: "In my trip — remove",
+    tripClear: "Clear trip", tripHint: "Saved in your browser — no sign-up needed.",
+    favAria: "Save to my trip",
+    wind: "wind", daylight: "daylight",
+    wx: { 0: "Clear", 1: "Mostly clear", 2: "Partly cloudy", 3: "Overcast", 45: "Fog", 48: "Fog", 51: "Drizzle", 53: "Drizzle", 55: "Drizzle", 61: "Rain", 63: "Rain", 65: "Heavy rain", 71: "Snow", 73: "Snow", 75: "Snow", 80: "Showers", 81: "Showers", 82: "Showers", 85: "Snow showers", 86: "Snow showers", 95: "Thunderstorm" },
   },
 };
 const t = STR[LANG];
@@ -280,6 +292,7 @@ function selectRegion(id) {
       <div class="rp-stat"><strong>${region.stats.ibuar}</strong><span>${t.statPop}</span></div>
       <div class="rp-stat"><strong>${region.stats.saeti}</strong><span>${t.statTown}</span></div>
     </div>
+    <p class="rp-wx" id="regionWx" data-rid="${id}"></p>
     <p class="rp-places-title">${t.onArea} — ${places.length}</p>
     ${placesHTML}
   `;
@@ -291,6 +304,7 @@ function selectRegion(id) {
     el.addEventListener("click", () => openModal(el.dataset.place))
   );
 
+  loadWeather(id);
   setFilterRegion(id);
 }
 
@@ -410,6 +424,7 @@ function renderPlaces() {
       <article class="place-card cat-${cat}" data-place="${p.id}">
         <div class="pc-media">
           <div class="pc-media-bg${img ? "" : " no-img"}" style="${bgStyle}"></div>
+          ${favBtnHTML(p.id)}
           ${badge ? `<span class="pc-badge ${badge.cls}">${badge.label}</span>` : ""}
           <span class="pc-region-chip">${region.name}${sub}${isHighland(p) ? " · " + t.highlands : ""}</span>
         </div>
@@ -429,6 +444,9 @@ function renderPlaces() {
 
   grid.querySelectorAll(".place-card").forEach((el) =>
     el.addEventListener("click", () => openModal(el.dataset.place))
+  );
+  grid.querySelectorAll(".pc-fav").forEach((b) =>
+    b.addEventListener("click", (e) => { e.stopPropagation(); toggleFav(b.dataset.fav); })
   );
   observeFade(grid);
 }
@@ -518,10 +536,14 @@ function openModal(placeId) {
       <h2>${p.name}</h2>
       <p class="mc-desc">${p.description}</p>
       ${body}
+      <button class="mc-trip${isFav(p.id) ? " on" : ""}" data-trip="${p.id}" type="button">${isFav(p.id) ? "♥ " + t.tripRemove : "♡ " + t.tripAdd}</button>
       <div class="mc-cta">${cta}</div>
       <p class="mc-fullpage"><a href="${placeHref(p.id)}">${t.fullPage(p.name)}</a></p>
     </div>
   `;
+
+  const tripBtn = document.querySelector("#modalBody .mc-trip");
+  if (tripBtn) tripBtn.addEventListener("click", () => toggleFav(tripBtn.dataset.trip));
 
   document.getElementById("modalOverlay").hidden = false;
   document.body.style.overflow = "hidden";
@@ -530,6 +552,146 @@ function openModal(placeId) {
 function closeModal() {
   document.getElementById("modalOverlay").hidden = true;
   document.body.style.overflow = "";
+}
+
+/* ---------------- FERÐIN MÍN (uppáhalds) ---------------- */
+const TRIP_KEY = "ic_trip";
+function loadTrip() {
+  try { return new Set(JSON.parse(localStorage.getItem(TRIP_KEY) || "[]")); }
+  catch (e) { return new Set(); }
+}
+let TRIP = loadTrip();
+function saveTrip() {
+  try { localStorage.setItem(TRIP_KEY, JSON.stringify([...TRIP])); } catch (e) {}
+  updateTripCount();
+}
+function isFav(id) { return TRIP.has(id); }
+function toggleFav(id) {
+  if (TRIP.has(id)) TRIP.delete(id); else TRIP.add(id);
+  saveTrip();
+  // uppfæra öll hjörtu fyrir þennan stað
+  document.querySelectorAll(`[data-fav="${id}"]`).forEach((b) => {
+    b.classList.toggle("on", TRIP.has(id));
+    b.textContent = TRIP.has(id) ? "♥" : "♡";
+  });
+  const mb = document.querySelector(`.mc-trip[data-trip="${id}"]`);
+  if (mb) {
+    mb.classList.toggle("on", TRIP.has(id));
+    mb.textContent = (TRIP.has(id) ? "♥ " + t.tripRemove : "♡ " + t.tripAdd);
+  }
+  const panel = document.getElementById("tripOverlay");
+  if (panel && !panel.hidden) renderTripPanel();
+}
+function updateTripCount() {
+  const el = document.getElementById("tripCount");
+  if (el) el.textContent = TRIP.size ? ` (${TRIP.size})` : "";
+}
+function favBtnHTML(id) {
+  const on = isFav(id);
+  return `<button class="pc-fav${on ? " on" : ""}" data-fav="${id}" aria-label="${t.favAria}" type="button">${on ? "♥" : "♡"}</button>`;
+}
+function buildTripUI() {
+  // hnappur í valmynd
+  const nav = document.getElementById("mainNav");
+  if (nav) {
+    const a = document.createElement("a");
+    a.href = "#";
+    a.id = "tripLink";
+    a.innerHTML = `♥ ${t.myTrip}<span id="tripCount"></span>`;
+    a.addEventListener("click", (e) => { e.preventDefault(); openTripPanel(); });
+    nav.insertBefore(a, nav.querySelector(".lang-switch"));
+  }
+  // yfirlagsgluggi
+  const ov = document.createElement("div");
+  ov.className = "modal-overlay";
+  ov.id = "tripOverlay";
+  ov.hidden = true;
+  ov.innerHTML = `
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="tripClose">${LANG === "en" ? "Close" : "Loka"}</button>
+      <div class="modal-content">
+        <span class="mc-type">Iceland Compass</span>
+        <h2>${t.myTrip}</h2>
+        <div id="tripBody"></div>
+      </div>
+    </div>`;
+  document.body.appendChild(ov);
+  document.getElementById("tripClose").addEventListener("click", closeTripPanel);
+  ov.addEventListener("click", (e) => { if (e.target.id === "tripOverlay") closeTripPanel(); });
+  updateTripCount();
+}
+function openTripPanel() { renderTripPanel(); const ov = document.getElementById("tripOverlay"); ov.hidden = false; document.body.style.overflow = "hidden"; }
+function closeTripPanel() { const ov = document.getElementById("tripOverlay"); ov.hidden = true; document.body.style.overflow = ""; }
+function renderTripPanel() {
+  const body = document.getElementById("tripBody");
+  if (!TRIP.size) {
+    body.innerHTML = `<p class="trip-empty">${t.tripEmpty}</p>`;
+    return;
+  }
+  let html = "";
+  REGION_ORDER.forEach((rid) => {
+    const items = PLACES.filter((p) => p.region === rid && TRIP.has(p.id));
+    if (!items.length) return;
+    html += `<p class="rp-group-title">${REGIONS[rid].name}<span>${items.length}</span></p>`;
+    items.forEach((p) => {
+      html += `
+        <div class="rp-place trip-row" data-open="${p.id}">
+          <span class="rp-place-bar" style="background:${REGIONS[rid].color}"></span>
+          <span class="rp-place-info"><strong>${p.name}</strong><span>${p.type}</span></span>
+          <button class="trip-del" data-del="${p.id}" aria-label="—" type="button">✕</button>
+        </div>`;
+    });
+  });
+  html += `<div class="trip-foot">
+    <span class="trip-hint">${t.tripHint}</span>
+    <button class="trip-clear" id="tripClearBtn" type="button">${t.tripClear}</button>
+  </div>`;
+  body.innerHTML = html;
+  body.querySelectorAll(".trip-row").forEach((row) =>
+    row.addEventListener("click", (e) => {
+      if (e.target.closest(".trip-del")) return;
+      closeTripPanel();
+      openModal(row.dataset.open);
+    })
+  );
+  body.querySelectorAll(".trip-del").forEach((b) =>
+    b.addEventListener("click", (e) => { e.stopPropagation(); toggleFav(b.dataset.del); })
+  );
+  const cb = document.getElementById("tripClearBtn");
+  if (cb) cb.addEventListener("click", () => { TRIP.clear(); saveTrip(); renderTripPanel(); document.querySelectorAll(".pc-fav.on").forEach((x) => { x.classList.remove("on"); x.textContent = "♡"; }); });
+}
+
+/* ---------------- VEÐUR OG BIRTA (open-meteo) ---------------- */
+const REGION_MET = {
+  hofudborg: [64.1466, -21.9426], reykjanes: [63.9979, -22.5624],
+  vesturland: [64.539, -21.921], vestfirdir: [66.0749, -23.124],
+  nordvestur: [65.7461, -19.6394], nordaustur: [65.6826, -18.0907],
+  austurland: [65.2669, -14.4113], sudurland: [63.933, -20.9971],
+};
+const wxCache = {};
+function loadWeather(rid) {
+  const slot = document.getElementById("regionWx");
+  if (!slot || !REGION_MET[rid]) return;
+  if (wxCache[rid]) { slot.innerHTML = wxCache[rid]; return; }
+  const [la, lo] = REGION_MET[rid];
+  fetch(`https://api.open-meteo.com/v1/forecast?latitude=${la}&longitude=${lo}&current=temperature_2m,wind_speed_10m,weather_code&daily=sunrise,sunset&timezone=auto&forecast_days=1`)
+    .then((r) => r.json())
+    .then((d) => {
+      const cur = d.current || {};
+      const temp = Math.round(cur.temperature_2m);
+      const wind = Math.round((cur.wind_speed_10m || 0) / 3.6); // km/klst -> m/s
+      const cond = t.wx[cur.weather_code] || "";
+      const hhmm = (s) => (s || "").slice(11, 16);
+      const sr = hhmm((d.daily && d.daily.sunrise && d.daily.sunrise[0]) || "");
+      const ss = hhmm((d.daily && d.daily.sunset && d.daily.sunset[0]) || "");
+      const parts = [`${temp}°C${cond ? " · " + cond : ""}`, `${t.wind} ${wind} m/s`];
+      if (sr && ss) parts.push(`${t.daylight} ${sr}–${ss}`);
+      const html = parts.join(" · ");
+      wxCache[rid] = html;
+      const s2 = document.getElementById("regionWx");
+      if (s2 && s2.dataset.rid === rid) s2.innerHTML = html;
+    })
+    .catch(() => {});
 }
 
 /* ---------------- LEIÐAKORT MEÐ MYNDUM ---------------- */
@@ -607,6 +769,7 @@ document.addEventListener("DOMContentLoaded", () => {
   buildCategoryFilters();
   buildFilters();
   buildFooterNav();
+  buildTripUI();
   enhanceRouteCards();
   initFade();
   renderPlaces();

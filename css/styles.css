@@ -687,6 +687,88 @@ section { padding: 96px 32px; }
 .pc-badge.gem { background: rgba(122, 84, 158, 0.85); }
 .pc-badge.pop { background: rgba(176, 87, 80, 0.88); }
 .pc-badge.free { background: rgba(31, 78, 70, 0.85); }
+
+/* Hjarta — Ferðin mín */
+.pc-fav {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(14, 18, 18, 0.35);
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: transform 0.15s, background 0.2s;
+}
+.pc-fav:hover { transform: scale(1.15); background: rgba(14, 18, 18, 0.55); }
+.pc-fav.on { color: #ff8f87; }
+.mc-trip {
+  display: block;
+  width: 100%;
+  margin-top: 26px;
+  padding: 13px 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 0.94rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.mc-trip:hover { border-color: var(--accent); }
+.mc-trip.on { border-color: #b05750; color: #b05750; background: rgba(176, 87, 80, 0.06); }
+.trip-empty { color: var(--ink-soft); padding: 8px 0 4px; }
+.trip-row { cursor: pointer; }
+.trip-del {
+  margin-left: auto;
+  border: none;
+  background: none;
+  color: var(--ink-faint);
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+.trip-del:hover { color: #b05750; background: rgba(176, 87, 80, 0.08); }
+.trip-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.trip-hint { font-size: 0.78rem; color: var(--ink-faint); }
+.trip-clear {
+  border: 1px solid var(--line);
+  background: none;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-family: inherit;
+  padding: 7px 14px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.trip-clear:hover { border-color: #b05750; color: #b05750; }
+#tripLink { white-space: nowrap; }
+
+/* Veðurlína í svæðisspjaldi */
+.rp-wx {
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  margin: -14px 0 18px;
+  min-height: 1.2em;
+}
+.rp-wx:empty { margin: 0; min-height: 0; }
 .pc-hlnd {
   font-size: 0.64rem;
   text-transform: uppercase;
