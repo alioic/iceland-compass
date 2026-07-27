@@ -268,6 +268,7 @@ HEAD = """<!DOCTYPE html>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{url}">
 <meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="ywIRPvLnnHm-9NPAZ1VW3NEM9Pvtu6tSMbOdBo-3T34">
 {alts}
 <meta property="og:type" content="{ogtype}">
 <meta property="og:title" content="{title}">
