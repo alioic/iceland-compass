@@ -299,11 +299,11 @@ const IMAGES = {
   },
   "asbyrgi": {
     "src": "/img/places/asbyrgi.jpg",
-    "alt_is": "Dettifoss, aflmesti foss Evrópu, í Jökulsárgljúfrum",
-    "alt_en": "Dettifoss, Europe's most powerful waterfall, in Jokulsargljufur",
-    "credit": "Richard Dorran",
+    "alt_is": "Ásbyrgi, hestaskeifulaga gljúfrið með háum bogadregnum klettaveggjum og gróðri í Norðausturlandi",
+    "alt_en": "Ásbyrgi, the horseshoe-shaped canyon with high curved cliffs and greenery in Northeast Iceland",
+    "credit": "Miha Rekar / Unsplash",
     "source": "unsplash",
-    "page": "https://unsplash.com/photos/dettifoss-waterfall-in-iceland-JFW-P9IMgxo"
+    "page": "https://unsplash.com/photos/an-aerial-view-of-a-lush-green-field-Y-4P5rAcURk"
   },
   "husavik": {
     "src": "/img/places/husavik.jpg",
@@ -736,6 +736,30 @@ const IMAGES = {
     "credit": "Tim Foster",
     "source": "unsplash",
     "page": "https://unsplash.com/photos/hallgrimur-church-iceland-WCtfyti07nc"
+  },
+  "dettifoss": {
+    "src": "/img/places/dettifoss.jpg",
+    "alt_is": "Dettifoss, aflmesti foss Evrópu, í Jökulsárgljúfrum",
+    "alt_en": "Dettifoss, Europe's most powerful waterfall, in Jokulsargljufur",
+    "credit": "Richard Dorran",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/dettifoss-waterfall-in-iceland-JFW-P9IMgxo"
+  },
+  "seljalandsfoss": {
+    "src": "/img/places/seljalandsfoss.jpg",
+    "alt_is": "Seljalandsfoss, hái og mjói fossinn á Suðurlandi sem hægt er að ganga á bak við",
+    "alt_en": "Seljalandsfoss, the tall thin waterfall in South Iceland that you can walk behind",
+    "credit": "Pavol Svantner / Unsplash",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/ycWERAjwEAQ"
+  },
+  "demantsstrondin": {
+    "src": "/img/places/demantsstrondin.jpg",
+    "alt_is": "Demantsströndin við Jökulsárlón, glitrandi ísjakar á svörtum sandi",
+    "alt_en": "Diamond Beach near Jökulsárlón, glittering chunks of ice on black volcanic sand",
+    "credit": "Joseph Corl / Unsplash",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/icebergs-are-scattered-on-a-black-sand-beach-Az7Ce8GLIPY"
   }
 };
 

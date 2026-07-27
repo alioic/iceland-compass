@@ -357,17 +357,18 @@ const PLACES = [
   },
   {
     id: "asbyrgi",
-    name: "Ásbyrgi og Dettifoss",
+    name: "Ásbyrgi",
     region: "nordaustur",
     type: "Þjóðgarður",
-    tags: ["Gljúfur", "Foss", "Ganga"],
-    blurb: "Hóflaga gljúfur Sleipnis og aflmesti foss Evrópu.",
-    description:
-      "Ásbyrgi er stórfenglegt hóflaga gljúfur, samkvæmt þjóðsögu myndað af hófi Sleipnis, hests Óðins. Sunnar í Jökulsárgljúfrum þrumar Dettifoss, aflmesti foss Evrópu, ásamt Selfossi og Hafragilsfossi.",
-    highlights: ["Ásbyrgi", "Dettifoss", "Hljóðaklettar", "Vesturdalur"],
-    accommodation: [{ name: "Tjaldsvæði og gisting í Ásbyrgi", type: "Tjald / gistiheimili", price: "$" }],
-    activities: ["Gönguleiðir í gljúfrum", "Fossaskoðun"],
-    season: "Júní–September",
+    tags: ["Gljúfur", "Ganga", "Þjóðgarður"],
+    blurb: "Hóflaga gljúfur með allt að 100 metra háum klettaveggjum, tjörn og birkiskógi.",
+    description: "Ásbyrgi er stórfenglegt hóflaga gljúfur í norðurhluta Jökulsárgljúfra, sem tilheyra Vatnajökulsþjóðgarði. Samkvæmt þjóðsögu myndaðist það þegar Sleipnir, áttfættur hestur Óðins, steig niður fæti, en jarðfræðin rekur myndunina til hamfarahlaupa í Jökulsá á Fjöllum. Innst, undir allt að 100 metra háum klettaveggjum, liggur tjörnin Botnstjörn umkringd gróskumiklum birkiskógi og gönguleiðum.",
+    highlights: ["Tjörnin Botnstjörn", "Klettastandurinn Eyjan", "Allt að 100 m háir klettaveggir", "Birkiskógur og gönguleiðir"],
+    accommodation: [
+      { "name": "Tjaldsvæðið í Ásbyrgi", "type": "Tjaldsvæði", "price": "$" }
+    ],
+    activities: ["Gönguleiðir um gljúfrið", "Fuglaskoðun við Botnstjörn"],
+    season: "Maí–September (þjónusta); gljúfrið aðgengilegt allt árið",
   },
   {
     id: "askja",
@@ -496,33 +497,33 @@ const PLACES = [
   },
   {
     id: "jokulsarlon",
-    name: "Jökulsárlón og Breiðamerkursandur",
+    name: "Jökulsárlón",
     region: "sudurland",
     type: "Jökullón",
     tags: ["Jökull", "Ísjakar", "Selir"],
-    blurb: "Töfrandi jökullón fullt af ísjökum og Demantaströndin við hlið.",
-    description:
-      "Jökulsárlón er dýpsta stöðuvatn landsins, fullt af bláum ísjökum sem brotna af Breiðamerkurjökli og fljóta til sjávar. Á Demantaströndinni skína ísmolar eins og demantar á svörtum sandi. Selir sjást oft í lóninu.",
-    highlights: ["Bátsferð milli ísjaka", "Demantaströndin", "Selir", "Fjallsárlón í nágrenni"],
+    blurb: "Dýpsta stöðuvatn landsins, fullt af bláum ísjökum sem brotna af Breiðamerkurjökli.",
+    description: "Jökulsárlón er dýpsta stöðuvatn Íslands og eitt tignarlegasta náttúruundur landsins. Lónið fyllist af bláum og hvítum ísjökum sem brotna af skriðjöklinum Breiðamerkurjökli, hluta Vatnajökuls, og reka hægt í átt til sjávar. Selir sjást oft synda á milli jakanna eða liggja á ísnum. Að sumri má fara í bátsferðir innan um ísinn, ýmist á uppblásnum sæfarabátum eða hröðum zódíak-bátum. Lónið er opið allan ársins hring og liggur við hringveginn á jaðri Vatnajökulsþjóðgarðs.",
+    highlights: ["Bátsferð milli ísjaka að sumri", "Bláir og hvítir ísjakar", "Selir í lóninu", "Fjallsárlón í nágrenni"],
     accommodation: [
-      { name: "Hótel í Öræfum / Höfn", type: "Hótel", price: "$$$" },
-      { name: "Gistiheimili", type: "Gistiheimili", price: "$$" },
+      { "name": "Hótel á Höfn og í Öræfum", "type": "Hótel", "price": "$$$" },
+      { "name": "Gistiheimili og bústaðir", "type": "Gistiheimili", "price": "$$" }
     ],
-    activities: ["Bátsferð á lóninu", "Íshellaferð að vetri"],
-    season: "Allt árið, íshellar nóv–mars",
+    activities: ["Bátsferð á lóninu (sumar)", "Ganga meðfram lónsbakkanum", "Ljósmyndun og fuglaskoðun"],
+    season: "Allt árið, bátsferðir vor–haust",
   },
   {
     id: "skogafoss",
-    name: "Skógafoss og Seljalandsfoss",
+    name: "Skógafoss",
     region: "sudurland",
-    type: "Fossar",
+    type: "Foss",
     tags: ["Foss", "Ganga", "Kennileiti"],
-    blurb: "Tveir tignarlegir fossar við rætur Eyjafjallajökuls.",
-    description:
-      "Skógafoss er 60 m hár og 25 m breiður – hægt að ganga upp tröppur að útsýnispalli og áfram inn á Fimmvörðuháls. Seljalandsfoss er einstakur því hægt er að ganga bak við fossinn. Báðir liggja við hringveginn undir Eyjafjallajökli.",
-    highlights: ["Skógafoss", "Seljalandsfoss", "Gljúfrabúi", "Fimmvörðuháls"],
-    accommodation: [{ name: "Gisting undir Eyjafjöllum", type: "Hótel og gistiheimili", price: "$$" }],
-    activities: ["Fossaganga", "Fimmvörðuháls gönguleið"],
+    blurb: "Sextíu metra hár foss undir Eyjafjöllum og upphaf Fimmvörðuhálsleiðar.",
+    description: "Skógafoss er einn tignarlegasti foss Íslands, 60 metra hár og um 25 metra breiður, þar sem Skógá steypist fram af fornri sjávarhamralínu við þorpið Skóga undir Eyjafjöllum. Tröppur liggja upp með fossinum að útsýnispalli á brúninni og þaðan hefst hin fræga Fimmvörðuháls gönguleið milli jökla. Á sólardögum myndast oft regnbogar í úðanum og þjóðsagan segir að Þrasi landnámsmaður hafi falið gullkistu bak við fossbununa.",
+    highlights: ["60 metra hár foss", "Tröppur að útsýnispalli", "Upphaf Fimmvörðuháls", "Regnbogar í úðanum", "Þjóðsaga um gullkistu Þrasa"],
+    accommodation: [
+      { "name": "Gisting undir Eyjafjöllum", "type": "Hótel og gistiheimili", "price": "$$" }
+    ],
+    activities: ["Fossaganga", "Fimmvörðuháls gönguleið", "Ljósmyndun"],
     season: "Allt árið",
   },
   {
@@ -4620,6 +4621,57 @@ const PLACES = [
     description: "Gerpir er austasti tangi meginlands Íslands, þar sem 12 milljón ára gamlir hamrar rísa hátt í sjó fram undir hömrunum sem ná allt að 661 metra hæð. Ferðafélag Fjarðamanna hefur merkt fjölda gönguleiða um Gerpissvæðið með stórbrotnu útsýni yfir úthafið og firðina. Slóðinn að upphafsstað er grófur og leiðin best farin í þurru veðri á sumrin.",
     highlights: ["Austasti oddi meginlandsins", "Háir sjávarhamrar", "Víðsýni yfir úthafið"],
     activities: ["Gönguferð", "Ljósmyndun"],
+  },
+
+  /* ==================== SKIPTAR SÍÐUR — nýir staðir ==================== */
+  {
+    id: "dettifoss",
+    name: "Dettifoss",
+    region: "nordaustur",
+    category: "stadur",
+    type: "Foss",
+    tags: ["Foss", "Kraftur", "Kennileiti"],
+    blurb: "Aflmesti foss Evrópu, um 44 metra hár og 100 metra breiður.",
+    description: "Dettifoss í Jökulsá á Fjöllum er talinn aflmesti foss Evrópu miðað við vatnsmagn, um 44 metra hár og um 100 metra breiður með gríðarlegu magni jökulvatns. Skammt ofar er Selfoss og neðar Hafragilsfoss, allir innan Jökulsárgljúfra í Vatnajökulsþjóðgarði. Vesturbakkinn er aðgengilegur um malbikaða veginn 862 en austurbakkinn um malarveginn 864, sem er einkum fær yfir sumarið.",
+    highlights: ["Aflmesti foss Evrópu", "Selfoss skammt ofar", "Hafragilsfoss neðar", "Útsýnispallar á báðum bökkum"],
+    accommodation: [
+      { "name": "Gisting við Mývatn", "type": "Hótel og gistiheimili", "price": "$$" }
+    ],
+    activities: ["Fossaskoðun", "Stutt ganga að útsýnispöllum"],
+    season: "Vegur 862 (vestur) oft fær apríl–desember; vegur 864 (austur) einkum að sumri",
+  },
+  {
+    id: "seljalandsfoss",
+    name: "Seljalandsfoss",
+    region: "sudurland",
+    category: "stadur",
+    type: "Foss",
+    tags: ["Foss", "Kennileiti"],
+    blurb: "Fossinn sem hægt er að ganga bak við, með falda nágrannann Gljúfrabúa.",
+    description: "Seljalandsfoss er um 60 metra hár foss undir Eyjafjöllum þar sem vatn frá Eyjafjallajökli steypist fram af fornri sjávarhamralínu. Það sem gerir hann einstakan er að hægt er að ganga á bak við fossbununa eftir stíg sem liggur inn í hvelfinguna. Skammt norðar leynist falinn nágranni hans, Gljúfrabúi, í þröngu gljúfri. Stígurinn er oft blautur og háll af úða, svo góðir skór og vatnsheld föt eru nauðsynleg. Gjald er tekið fyrir bílastæði á staðnum.",
+    highlights: ["Gangan á bak við fossinn", "Um 60 metra hár", "Faldi fossinn Gljúfrabúi", "Blautur og háll stígur", "Gjaldskylt bílastæði"],
+    accommodation: [
+      { "name": "Gisting undir Eyjafjöllum", "type": "Hótel og gistiheimili", "price": "$$" }
+    ],
+    activities: ["Fossaganga", "Ljósmyndun"],
+    season: "Allt árið",
+  },
+  {
+    id: "demantsstrondin",
+    name: "Demantsströndin",
+    region: "sudurland",
+    category: "stadur",
+    type: "Strönd",
+    tags: ["Strönd", "Ísjakar", "Ljósmyndun"],
+    blurb: "Svört sandströnd þar sem ísmolar glitra eins og demantar við hafið.",
+    description: "Demantsströndin, eða Fellsfjara á Breiðamerkursandi, er kolsvört sandströnd rétt handan þjóðvegar 1 gegnt Jökulsárlóni. Þangað berast ísmolar úr lóninu út í hafið og skolar aftur á land, þar sem þeir glitra eins og demantar á svarta sandinum. Ströndin er einn vinsælasti ljósmyndastaður landsins, sérstaklega í lágri sól við sólarupprás og sólsetur. Gætið fyllstu varúðar við sjóinn, því launöldur (sneaker waves) geta komið óvænt og langt upp á sandinn. Ströndin er heillandi allan ársins hring.",
+    highlights: ["Ísmolar glitra á svörtum sandi", "Ljósmyndun í lágri sól", "Rétt hjá Jökulsárlóni", "Kolsvartur Breiðamerkursandur"],
+    accommodation: [
+      { "name": "Hótel á Höfn og í Öræfum", "type": "Hótel", "price": "$$$" },
+      { "name": "Gistiheimili og bústaðir", "type": "Gistiheimili", "price": "$$" }
+    ],
+    activities: ["Ljósmyndun við sólarupprás og sólsetur", "Strandganga með varúð", "Skoða ísmola nálægt vatnsbakkanum"],
+    season: "Allt árið",
   },
 ];
 

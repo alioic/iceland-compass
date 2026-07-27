@@ -105,5 +105,8 @@ const STAY_HUB = {
 };
 
 if (typeof module !== "undefined") {
-  module.exports = { STAY_HUB };
+  module.exports = { STAY_HUB   "dettifoss": "Mývatn",
+  "seljalandsfoss": "Hvolsvöllur",
+  "demantsstrondin": "Höfn",
+};
 }

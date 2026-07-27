@@ -1418,34 +1418,34 @@ const PLACES = [
   },
   {
     "id": "asbyrgi",
-    "name": "Ásbyrgi og Dettifoss",
+    "name": "Ásbyrgi",
     "region": "nordaustur",
-    "type": "National park",
+    "type": "National park canyon",
     "tags": [
       "Canyon",
-      "Waterfall",
-      "Hiking"
+      "Hiking",
+      "National park"
     ],
-    "blurb": "Sleipnir's horseshoe-shaped canyon and Europe's most powerful waterfall.",
-    "description": "Ásbyrgi is a magnificent horseshoe-shaped canyon, said in folklore to have been formed by the hoof of Sleipnir, Odin's horse. Further south in Jökulsárgljúfur thunders Dettifoss, Europe's most powerful waterfall, along with Selfoss and Hafragilsfoss.",
+    "blurb": "A horseshoe-shaped canyon with cliffs up to 100 metres, a still pond and birch woodland.",
+    "description": "Ásbyrgi is a spectacular horseshoe-shaped canyon in the northern part of Jökulsárgljúfur, within Vatnajökull National Park. Folklore says it formed when Sleipnir, Odin's eight-legged horse, set down a hoof, though geologists trace it to catastrophic glacial floods in the river Jökulsá á Fjöllum. At its sheltered innermost end, cliffs rise up to 100 metres above the pond Botnstjörn, ringed by lush birch forest and walking trails.",
     "highlights": [
-      "Ásbyrgi",
-      "Dettifoss",
-      "Hljóðaklettar",
-      "Vesturdalur"
+      "Botnstjörn pond",
+      "The rock outcrop Eyjan",
+      "Cliff walls up to 100 m",
+      "Birch woodland and trails"
     ],
     "accommodation": [
       {
-        "name": "Campsite and accommodation in Ásbyrgi",
-        "type": "Camping / guesthouse",
+        "name": "Ásbyrgi campsite",
+        "type": "Campsite",
         "price": "$"
       }
     ],
     "activities": [
-      "Hiking trails in the canyons",
-      "Waterfall viewing"
+      "Walking the canyon trails",
+      "Birdwatching at Botnstjörn"
     ],
-    "season": "June–September"
+    "season": "May–September (services); canyon accessible year-round"
   },
   {
     "id": "askja",
@@ -2428,7 +2428,7 @@ const PLACES = [
   },
   {
     "id": "jokulsarlon",
-    "name": "Jökulsárlón og Breiðamerkursandur",
+    "name": "Jökulsárlón",
     "region": "sudurland",
     "type": "Glacier lagoon",
     "tags": [
@@ -2436,49 +2436,51 @@ const PLACES = [
       "Icebergs",
       "Seals"
     ],
-    "blurb": "A magical glacier lagoon full of icebergs, with the Diamond Beach alongside.",
-    "description": "Jökulsárlón is the deepest lake in the country, filled with blue icebergs that break off Breiðamerkurjökull and drift out to sea. On the Diamond Beach, chunks of ice glitter like diamonds on the black sand. Seals are often seen in the lagoon.",
+    "blurb": "Iceland's deepest lake, filled with blue icebergs calving from Breiðamerkurjökull.",
+    "description": "Jökulsárlón is Iceland's deepest lake and one of the country's most spectacular natural wonders. The lagoon fills with blue and white icebergs that break off Breiðamerkurjökull, an outlet glacier of Vatnajökull, and drift slowly toward the sea. Seals are often seen swimming between the floes or resting on the ice year-round. In summer you can take a boat tour among the icebergs, either on large amphibian boats or faster zodiac craft. The lagoon sits on the Ring Road at the edge of Vatnajökull National Park and is open all year.",
     "highlights": [
-      "Boat trip among the icebergs",
-      "The Diamond Beach",
-      "Seals",
-      "Nearby Fjallsárlón"
+      "Boat tours among icebergs (summer)",
+      "Blue and white calving icebergs",
+      "Seals in the lagoon",
+      "Nearby Fjallsárlón lagoon"
     ],
     "accommodation": [
       {
-        "name": "Hotel in Öræfi / Höfn",
+        "name": "Hotels in Höfn and Öræfi",
         "type": "Hotel",
         "price": "$$$"
       },
       {
-        "name": "Guesthouse",
+        "name": "Guesthouses and cabins",
         "type": "Guesthouse",
         "price": "$$"
       }
     ],
     "activities": [
-      "Boat trip on the lagoon",
-      "Ice-cave tour in winter"
+      "Amphibian or zodiac boat tour (summer)",
+      "Walking along the lagoon shore",
+      "Photography and birdwatching"
     ],
-    "season": "Year-round, ice caves Nov–March"
+    "season": "All year, boat tours spring–autumn"
   },
   {
     "id": "skogafoss",
-    "name": "Skógafoss og Seljalandsfoss",
+    "name": "Skógafoss",
     "region": "sudurland",
-    "type": "Waterfalls",
+    "type": "Waterfall",
     "tags": [
       "Waterfall",
       "Hiking",
       "Landmark"
     ],
-    "blurb": "Two magnificent waterfalls at the foot of Eyjafjallajökull.",
-    "description": "Skógafoss is 60 m high and 25 m wide — you can climb steps to a viewing platform and continue on to Fimmvörðuháls. Seljalandsfoss is unique because you can walk behind the waterfall. Both lie along the ring road beneath Eyjafjallajökull.",
+    "blurb": "A 60-metre waterfall beneath Eyjafjöll and the start of the Fimmvörðuháls trail.",
+    "description": "Skógafoss is one of Iceland's most majestic waterfalls, 60 metres high and about 25 metres wide, where the Skógá river plunges over an ancient sea cliff by the village of Skógar beneath Eyjafjöll. A staircase climbs alongside the falls to a viewing platform on the rim, and from there the famous Fimmvörðuháls hiking trail sets off between the glaciers. On sunny days rainbows form in the spray, and local folklore tells of a chest of treasure hidden behind the cascade by the settler Þrasi.",
     "highlights": [
-      "Skógafoss",
-      "Seljalandsfoss",
-      "Gljúfrabúi",
-      "Fimmvörðuháls"
+      "60-metre-high waterfall",
+      "Staircase to a viewing platform",
+      "Start of the Fimmvörðuháls trail",
+      "Rainbows in the spray",
+      "Folklore of Þrasi's treasure chest"
     ],
     "accommodation": [
       {
@@ -2489,9 +2491,10 @@ const PLACES = [
     ],
     "activities": [
       "Waterfall walk",
-      "Fimmvörðuháls hiking trail"
+      "Fimmvörðuháls hiking trail",
+      "Photography"
     ],
-    "season": "Year-round"
+    "season": "All year"
   },
   {
     "id": "vestmannaeyjar",
@@ -8115,6 +8118,108 @@ const PLACES = [
       "Walking",
       "Photography"
     ]
+  },
+  {
+    "id": "dettifoss",
+    "region": "nordaustur",
+    "category": "stadur",
+    "name": "Dettifoss",
+    "type": "Waterfall",
+    "tags": [
+      "Waterfall",
+      "Power",
+      "Landmark"
+    ],
+    "blurb": "Europe's most powerful waterfall, about 44 metres high and 100 metres wide.",
+    "description": "Dettifoss, on the glacial river Jökulsá á Fjöllum, is considered Europe's most powerful waterfall by volume, roughly 44 metres high and about 100 metres wide with an immense flow of glacial meltwater. Just upstream lies Selfoss and downstream Hafragilsfoss, all within Jökulsárgljúfur in Vatnajökull National Park. The west bank is reached by the paved Road 862, and the east bank by the gravel Road 864, which is mainly passable in summer.",
+    "highlights": [
+      "Europe's most powerful waterfall",
+      "Selfoss just upstream",
+      "Hafragilsfoss downstream",
+      "Viewing platforms on both banks"
+    ],
+    "accommodation": [
+      {
+        "name": "Accommodation around Mývatn",
+        "type": "Hotels and guesthouses",
+        "price": "$$"
+      }
+    ],
+    "activities": [
+      "Waterfall viewing",
+      "Short walk to the viewpoints"
+    ],
+    "season": "Road 862 (west) often open April–December; Road 864 (east) mainly summer"
+  },
+  {
+    "id": "seljalandsfoss",
+    "region": "sudurland",
+    "category": "stadur",
+    "name": "Seljalandsfoss",
+    "type": "Waterfall",
+    "tags": [
+      "Waterfall",
+      "Landmark"
+    ],
+    "blurb": "The waterfall you can walk behind, with the hidden Gljúfrabúi next door.",
+    "description": "Seljalandsfoss is a roughly 60-metre waterfall beneath Eyjafjöll, fed by glacial meltwater from Eyjafjallajökull as it drops over an ancient sea cliff. What makes it unique is that a path leads all the way behind the cascade into the hollow behind it. A short walk to the north hides its neighbour Gljúfrabúi, tucked away inside a narrow canyon. The path is often wet and slippery from the spray, so good footwear and waterproofs are essential. A parking fee is charged at the site.",
+    "highlights": [
+      "Walking behind the waterfall",
+      "About 60 metres high",
+      "The hidden Gljúfrabúi falls",
+      "Wet, slippery path",
+      "Paid parking"
+    ],
+    "accommodation": [
+      {
+        "name": "Accommodation beneath Eyjafjöll",
+        "type": "Hotels & guesthouses",
+        "price": "$$"
+      }
+    ],
+    "activities": [
+      "Waterfall walk",
+      "Photography"
+    ],
+    "season": "All year"
+  },
+  {
+    "id": "demantsstrondin",
+    "region": "sudurland",
+    "category": "stadur",
+    "name": "Diamond Beach",
+    "type": "Black-sand beach",
+    "tags": [
+      "Beach",
+      "Ice",
+      "Photography"
+    ],
+    "blurb": "Black-sand beach where ice chunks wash ashore and glisten like diamonds.",
+    "description": "Diamond Beach, known in Icelandic as Fellsfjara on Breiðamerkursandur, is a jet-black sand beach just across Route 1 from Jökulsárlón. Chunks of ice drift out of the lagoon into the sea and wash back onto the shore, where they sparkle like scattered diamonds on the black sand. It is one of Iceland's most famous photography spots, especially in the low golden light of sunrise and sunset. Take great care near the ocean, as sneaker waves can surge far up the sand without warning. Diamond Beach Iceland is captivating in every season.",
+    "highlights": [
+      "Ice glistening on black sand",
+      "Photography in golden light",
+      "Right beside Jökulsárlón",
+      "Jet-black Breiðamerkursandur"
+    ],
+    "accommodation": [
+      {
+        "name": "Hotels in Höfn and Öræfi",
+        "type": "Hotel",
+        "price": "$$$"
+      },
+      {
+        "name": "Guesthouses and cabins",
+        "type": "Guesthouse",
+        "price": "$$"
+      }
+    ],
+    "activities": [
+      "Photography at sunrise and sunset",
+      "Beach walking with caution",
+      "Watching ice near the shoreline"
+    ],
+    "season": "All year"
   }
 ];
 
