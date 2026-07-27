@@ -116,7 +116,7 @@ LANGS = {
     "country": "Ísland",
     "ui": {
       "nav_map":"Kort","nav_all":"Allir staðir","nav_about":"Um vefinn","crumb_home":"Heim",
-      "kicker_place":{"stadur":"Staður","ganga":"Gönguleið","bod":"Sundlaug & böð","veitingar":"Veitingastaður","kaffi":"Kaffihús"},
+      "kicker_place":{"stadur":"Staður","ganga":"Gönguleið","bod":"Sundlaug & böð","afthreying":"Afþreying","veitingar":"Veitingastaður","kaffi":"Kaffihús"},
       "kicker_region":"Landshluti","kicker_overview":"Yfirlit",
       "h_highlights":"Hápunktar","h_route":"Á leiðinni","h_known":"Þekkt fyrir",
       "h_accom":"Gisting í nágrenni","h_activities":"Afþreying",
@@ -125,7 +125,7 @@ LANGS = {
       "stat_cuisine":"Tegund","stat_price":"Verðflokkur","stat_loc":"Staðsetning","stat_dist_rvk":"Loftlína frá Reykjavík",
       "btn_book":"Bóka gistingu í nágrenni","btn_tours":"Skoða ferðir og afþreyingu","btn_find":"Sjá á korti",
       "more_in":"Fleiri á {r}","all_in":"Allt á {r} →","view_map":"Skoða á gagnvirku korti →",
-      "region_groups":{"stadur":"Staðir og náttúra","ganga":"Gönguleiðir","bod":"Sundlaugar & böð","veitingar":"Veitingastaðir","kaffi":"Kaffihús"},
+      "region_groups":{"stadur":"Staðir og náttúra","ganga":"Gönguleiðir","bod":"Sundlaugar & böð","afthreying":"Afþreying","veitingar":"Veitingastaðir","kaffi":"Kaffihús"},
       "dir_h1":"Allir staðir á Íslandi","all_places":"Allir staðir","lang_label":"EN",
       "place_title":"{name} — {type}, {rname} | {site}",
       "region_title":"{rname} — staðir, gisting og afþreyging | {site}",
@@ -156,7 +156,7 @@ LANGS = {
     "country": "Iceland",
     "ui": {
       "nav_map":"Map","nav_all":"All places","nav_about":"About","crumb_home":"Home",
-      "kicker_place":{"stadur":"Place","ganga":"Hiking trail","bod":"Pool & baths","veitingar":"Restaurant","kaffi":"Café"},
+      "kicker_place":{"stadur":"Place","ganga":"Hiking trail","bod":"Pool & baths","afthreying":"Attraction","veitingar":"Restaurant","kaffi":"Café"},
       "kicker_region":"Region","kicker_overview":"Overview",
       "h_highlights":"Highlights","h_route":"On the route","h_known":"Known for",
       "h_accom":"Nearby accommodation","h_activities":"Activities",
@@ -165,7 +165,7 @@ LANGS = {
       "stat_cuisine":"Cuisine","stat_price":"Price","stat_loc":"Location","stat_dist_rvk":"Straight line from Reykjavík",
       "btn_book":"Book nearby accommodation","btn_tours":"Browse tours & activities","btn_find":"Find on map",
       "more_in":"More in {r}","all_in":"All of {r} →","view_map":"View on the interactive map →",
-      "region_groups":{"stadur":"Places & nature","ganga":"Hiking trails","bod":"Pools & baths","veitingar":"Restaurants","kaffi":"Cafés"},
+      "region_groups":{"stadur":"Places & nature","ganga":"Hiking trails","bod":"Pools & baths","afthreying":"Attractions","veitingar":"Restaurants","kaffi":"Cafés"},
       "dir_h1":"All places in Iceland","all_places":"All places","lang_label":"IS",
       "place_title":"{name} — {type} in {rname} | {site}",
       "region_title":"{rname} — places, accommodation & activities | {site}",
@@ -369,11 +369,13 @@ def build_place(lang, p, regions, places):
 
     dist = km_from_rvk(pid) if pid != "reykjavik" else None
     dist_stat = (ui["stat_dist_rvk"], f"{dist} km") if dist is not None else None
-    if cat in ("ganga","veitingar","kaffi","bod"):
+    if cat in ("ganga","veitingar","kaffi","bod","afthreying"):
         if cat == "ganga":
             stats = [(ui["stat_dist"],p.get("length")),(ui["stat_dur"],p.get("duration")),(ui["stat_diff"],p.get("difficulty"))]
         elif cat == "bod":
             stats = [(ui["stat_price"],p.get("price")),(ui["stat_loc"],p.get("location"))]
+        elif cat == "afthreying":
+            stats = [(ui["stat_loc"],p.get("location"))]
         else:
             stats = [(ui["stat_cuisine"],p.get("cuisine")),(ui["stat_price"],p.get("price")),(ui["stat_loc"],p.get("location"))]
         if dist_stat:
@@ -393,13 +395,13 @@ def build_place(lang, p, regions, places):
         parts.append(f'<h2>{e(ui["h_accom"])}</h2><ul class="doc-list">' +
             "".join(f'<li><span>{e(a["name"])} <em>{e(a["type"])}</em></span><b>{e(a["price"])}</b></li>'
                     for a in p["accommodation"]) + '</ul>')
-    if cat == "stadur" and p.get("activities"):
+    if cat in ("stadur","afthreying") and p.get("activities"):
         parts.append(f'<h2>{e(ui["h_activities"])}</h2><ul class="doc-list">' +
             "".join(f'<li><span>{e(a)}</span></li>' for a in p["activities"]) + '</ul>')
 
     q = STAY_HUB.get(pid) or p.get("location") or f'{p["name"]} {rname}'
     booking = f'https://www.booking.com/searchresults.html?ss={e(q)}, {LANGS[lang]["country"]}'
-    if cat in ("veitingar","kaffi","bod"):
+    if cat in ("veitingar","kaffi","bod","afthreying"):
         mapq = f'{p["name"]} {p.get("location") or rname}'
         maplink = f'https://www.google.com/maps/search/{e(mapq)}, {LANGS[lang]["country"]}'
         parts.append(f'''<div class="doc-cta">
@@ -460,7 +462,7 @@ def build_region(lang, rid, regions, places):
     for sec in REGION_SEO.get(rid, {}).get(lang, []):
         txt = sec.get("text") or sec.get("body") or ""
         parts.append(f'<h2>{e(sec.get("title",""))}</h2><p class="doc-body">{e(txt)}</p>')
-    for cat in ("stadur","ganga","bod","veitingar","kaffi"):
+    for cat in ("stadur","ganga","bod","afthreying","veitingar","kaffi"):
         group = [p for p in rplaces if cat_of(p)==cat]
         if not group: continue
         parts.append(f'<h2>{e(ui["region_groups"][cat])}</h2><ul class="doc-links">' +
@@ -492,7 +494,7 @@ def build_directory(lang, regions, places):
     return url
 
 # ----------------------------------------------------------------------
-def build_collection(lang, cid, coll, places_by_id):
+def build_collection(lang, cid, coll, places_by_id, regions):
     ui = LANGS[lang]["ui"]
     c = coll[lang]
     url = coll_url(lang, cid)
@@ -520,11 +522,24 @@ def build_collection(lang, cid, coll, places_by_id):
         txt = sec.get("text") or sec.get("body") or ""
         parts.append(f'<h2>{e(sec.get("title",""))}</h2><p class="doc-body">{e(txt)}</p>')
 
-    # Viðkomustaðir í röð
+    # Viðkomustaðir
     items = [places_by_id[pid] for pid in coll["places"] if pid in places_by_id]
-    parts.append(f'<h2>{e(ui["places_in"])}</h2><ul class="doc-links">' +
-        "".join(f'<li><a href="{place_url(lang, p["id"])}">{e(p["name"])}</a> <span>{e(p.get("blurb") or p["type"])}</span></li>'
-                for p in items) + '</ul>')
+    def li(p):
+        return (f'<li><a href="{place_url(lang, p["id"])}">{e(p["name"])}</a> '
+                f'<span>{e(p.get("blurb") or p["type"])}</span></li>')
+    if coll.get("group_by_region"):
+        # flokkað eftir landshlutum
+        parts.append(f'<h2>{e(ui["places_in"])}</h2>')
+        for rid in REGION_ORDER:
+            grp = [p for p in items if p["region"] == rid]
+            if not grp:
+                continue
+            rname = regions[rid]["name"]
+            parts.append(f'<p class="rp-group-title">{e(rname)}<span>{len(grp)}</span></p>'
+                         f'<ul class="doc-links">' + "".join(li(p) for p in grp) + '</ul>')
+    else:
+        parts.append(f'<h2>{e(ui["places_in"])}</h2><ul class="doc-links">' +
+            "".join(li(p) for p in items) + '</ul>')
     parts.append(f'<p class="doc-more"><a href="{coll_index_url(lang)}">{e(ui["colls_h1"])} →</a> · '
                  f'<a href="{home_url(lang)}#kort">{e(ui["view_map"])}</a></p>')
 
@@ -897,7 +912,7 @@ def main():
             places_by_id = {p["id"]: p for p in places}
             urls.append((build_collections_index(lang, COLLECTIONS), "0.8"))
             for cid, coll in COLLECTIONS.items():
-                urls.append((build_collection(lang, cid, coll, places_by_id), "0.8"))
+                urls.append((build_collection(lang, cid, coll, places_by_id, regions), "0.8"))
     build_sitemap(urls)
     print(f"✔ Byggt á 2 tungumálum — is: {counts['is']} staðir, en: {counts['en']} staðir")
     print(f"✔ {len(COLLECTIONS)} þemaleiðir · {len(GUIDES)} leiðsögugreinar")

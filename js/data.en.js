@@ -8220,6 +8220,1080 @@ const PLACES = [
       "Watching ice near the shoreline"
     ],
     "season": "All year"
+  },
+  {
+    "id": "husdyragardurinn_reykjavik",
+    "name": "Reykjavík Family Park and Zoo",
+    "region": "hofudborg",
+    "category": "afthreying",
+    "type": "Zoo",
+    "location": "Reykjavík",
+    "tags": [
+      "Family",
+      "Animals",
+      "Kids"
+    ],
+    "blurb": "Farm animals, native Icelandic wildlife and rides in Laugardalur in the heart of Reykjavík.",
+    "description": "The Family Park and Zoo in Laugardalur combines a petting zoo of Icelandic farm animals with a family park full of rides. Visitors meet cows, sheep, horses, goats, foxes, seals and fish, and learn about Icelandic nature in a hands-on way. It is open year round and is a favourite with families.",
+    "highlights": [
+      "Icelandic farm animals such as cows, sheep and horses",
+      "Seals, foxes and fish from Iceland's own nature",
+      "Rides and slides in the family park"
+    ],
+    "activities": [
+      "Watch the animals and catch a feeding session",
+      "Enjoy the rides in the family park"
+    ]
+  },
+  {
+    "id": "whales_of_iceland",
+    "name": "Whales of Iceland",
+    "region": "hofudborg",
+    "category": "afthreying",
+    "type": "Exhibition",
+    "location": "Reykjavík",
+    "tags": [
+      "Family",
+      "Whales",
+      "Exhibition"
+    ],
+    "blurb": "Europe's largest whale exhibition, with life-size whale models at the Old Harbour.",
+    "description": "Whales of Iceland is an exhibition at Reykjavík's Old Harbour where visitors walk among life-size whale models, including the blue whale and the sperm whale. The darkened hall uses ambient ocean sounds and multimedia to tell the story of the whales' lives. It suits all ages and is a short walk from the city centre.",
+    "highlights": [
+      "Life-size whale models, including the blue whale",
+      "Ambient sound and lighting that evoke the seabed",
+      "Multilingual audio guide covering each species"
+    ],
+    "activities": [
+      "Walk among the whale models with an audio guide",
+      "Try interactive stations on whale song and echolocation"
+    ]
+  },
+  {
+    "id": "perlan_wonders_of_iceland",
+    "name": "Perlan – Wonders of Iceland",
+    "region": "hofudborg",
+    "category": "afthreying",
+    "type": "Exhibition",
+    "location": "Reykjavík",
+    "tags": [
+      "Family",
+      "Nature",
+      "Exhibition"
+    ],
+    "blurb": "Interactive nature exhibition, a man-made ice cave and an observation deck on Öskjuhlíð hill.",
+    "description": "Perlan on Öskjuhlíð hill houses the Wonders of Iceland exhibition, where interactive displays explore glaciers, volcanoes, caves and seabird cliffs. Highlights include a man-made ice cave, a volcano show and a planetarium with a northern lights film. The rooftop observation deck offers 360-degree views over Reykjavík.",
+    "highlights": [
+      "A man-made ice cave built from real snow and ice",
+      "A planetarium with a northern lights show",
+      "A 360-degree observation deck over Reykjavík"
+    ],
+    "activities": [
+      "Walk through the ice cave tunnel",
+      "Watch the northern lights show in the planetarium"
+    ]
+  },
+  {
+    "id": "arbaejarsafn",
+    "name": "Árbær Open Air Museum",
+    "region": "hofudborg",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Reykjavík",
+    "tags": [
+      "Family",
+      "History",
+      "Open-air"
+    ],
+    "blurb": "An open-air museum of old houses showing how life was lived in Reykjavík in times past.",
+    "description": "Árbær Open Air Museum, part of the Reykjavík City Museum, is laid out as a small village of historic houses relocated to the site. Visitors walk among the buildings, discover old interiors and crafts, and in summer often meet farm animals and see costumed activities. Daily guided tours run all year round.",
+    "highlights": [
+      "Historic houses arranged as a small village",
+      "A glimpse into the everyday life of old Reykjavík",
+      "Farm animals and live activities in summer"
+    ],
+    "activities": [
+      "Stroll through the village and explore the old houses",
+      "Join the daily guided tour of the museum"
+    ]
+  },
+  {
+    "id": "flyover_iceland",
+    "name": "FlyOver Iceland",
+    "region": "hofudborg",
+    "category": "afthreying",
+    "type": "Exhibition",
+    "location": "Reykjavík",
+    "tags": [
+      "Family",
+      "Experience",
+      "Indoor"
+    ],
+    "blurb": "A flight-simulation ride in the Grandi district that lets you soar over Iceland's landscapes.",
+    "description": "FlyOver Iceland in Reykjavík's Grandi district is an experience where guests sit in moving seats before a giant spherical screen and soar over glaciers, fjords and famous Icelandic landmarks. Wind, mist and scents accompany the film to create the sensation of flight. It suits all ages who meet the height requirement.",
+    "highlights": [
+      "A giant spherical screen with moving seats",
+      "Wind, mist and scents that heighten the experience",
+      "A flight over glaciers, fjords and Icelandic landmarks"
+    ],
+    "activities": [
+      "Take the flight-simulation ride over Iceland's landscapes",
+      "Enjoy the pre-show before the main ride"
+    ]
+  },
+  {
+    "id": "aurora_reykjavik",
+    "name": "Aurora Reykjavík",
+    "region": "hofudborg",
+    "category": "afthreying",
+    "type": "Exhibition",
+    "location": "Reykjavík",
+    "tags": [
+      "Family",
+      "Northern lights",
+      "Indoor"
+    ],
+    "blurb": "A northern lights centre in the Grandi district where you can learn about and experience the aurora all year round.",
+    "description": "Aurora Reykjavík is an exhibition in the Grandi district dedicated to the northern lights. Visitors learn about the aurora through science, stories and photography, watch the lights on a large screen and try interactive stations and virtual reality. Open all year, it lets guests experience the northern lights regardless of the weather.",
+    "highlights": [
+      "Displays on the science and history of the aurora",
+      "A large screen showing northern lights footage",
+      "Interactive stations and a virtual reality experience"
+    ],
+    "activities": [
+      "Watch a northern lights film on the big screen",
+      "Try the aurora virtual reality experience"
+    ]
+  },
+  {
+    "id": "vikingaheimar",
+    "name": "Viking World",
+    "region": "reykjanes",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Njarðvík",
+    "tags": [
+      "Family",
+      "Vikings",
+      "History"
+    ],
+    "blurb": "A museum in Njarðvík home to the Viking ship Íslendingur and exhibitions on settlement and seafaring.",
+    "description": "Viking World stands by the sea in Njarðvík, Reykjanesbær, and houses five exhibitions on Vikings, the settlement of Iceland and Norse seafaring. Its centrepiece is the Viking ship Íslendingur, an exact replica that sailed to America in the year 2000. In summer the museum adds a settlement zoo, a playground and an outdoor classroom.",
+    "highlights": [
+      "The full-size Viking ship Íslendingur",
+      "Five exhibitions on Vikings and the settlement",
+      "A settlement zoo and playground in summer"
+    ],
+    "activities": [
+      "Explore the Viking ship Íslendingur and the exhibitions",
+      "Visit the settlement zoo in summer"
+    ]
+  },
+  {
+    "id": "duus_safnahus",
+    "name": "Duus Museum",
+    "region": "reykjanes",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Keflavík",
+    "tags": [
+      "Family",
+      "Culture",
+      "History"
+    ],
+    "blurb": "The art and cultural centre of Reykjanesbær by the harbour in Keflavík.",
+    "description": "Duus Museum is the art and cultural centre of Reykjanesbær, set in a former merchant's warehouse from 1877 by the harbour in Keflavík. Under one roof it holds the local heritage museum, the art gallery and the Reykjanes Geopark visitor centre. A large collection of model ships is a highlight for children. Rotating exhibitions change throughout the year.",
+    "highlights": [
+      "A historic 1877 warehouse by the harbour",
+      "A large collection of wooden model ships",
+      "Heritage museum, art gallery and geopark centre"
+    ],
+    "activities": [
+      "View the model ships and the heritage displays",
+      "Enjoy the rotating art exhibitions throughout the year"
+    ]
+  },
+  {
+    "id": "rokksafn_islands",
+    "name": "Icelandic Museum of Rock 'n' Roll",
+    "region": "reykjanes",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Keflavík",
+    "tags": [
+      "Family",
+      "Music",
+      "Interactive"
+    ],
+    "blurb": "An interactive museum on the history of Icelandic popular music in Reykjanesbær.",
+    "description": "The Icelandic Museum of Rock 'n' Roll in Reykjanesbær traces the story of Icelandic pop and rock music from the early twentieth century to the present day. The museum is interactive, with sound booths, instruments and multimedia where visitors can listen, play and learn. It lies close to Keflavík Airport and suits all ages.",
+    "highlights": [
+      "The story of Icelandic popular music in one place",
+      "Interactive sound booths and instruments",
+      "Multimedia on well-known Icelandic musicians"
+    ],
+    "activities": [
+      "Try the instruments and sing in a sound booth",
+      "Listen to Icelandic music through the decades"
+    ]
+  },
+  {
+    "id": "landnamssetur_borgarnes",
+    "name": "The Settlement Center",
+    "region": "vesturland",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Borgarnes",
+    "tags": [
+      "Family",
+      "History",
+      "Sagas"
+    ],
+    "blurb": "Exhibitions on the settlement of Iceland and Egil's Saga in the heart of Borgarnes.",
+    "description": "The Settlement Center in Borgarnes houses two audio-guided exhibitions, one on the settlement of Iceland and the other on Egil's Saga and the fate of Egill Skallagrímsson. Set in old houses by the sea, it also has a restaurant. The exhibitions tell the stories in a vivid and visual way for all ages.",
+    "highlights": [
+      "An audio-guided exhibition on Iceland's settlement",
+      "An exhibition on Egil's Saga and Egill Skallagrímsson",
+      "Historic houses by the sea in Borgarnes"
+    ],
+    "activities": [
+      "Explore the settlement exhibition with an audio guide",
+      "Discover Egil's Saga in the saga exhibition"
+    ]
+  },
+  {
+    "id": "haafell_geitfjarsetur",
+    "name": "Háafell Goat Farm",
+    "region": "vesturland",
+    "category": "afthreying",
+    "type": "Animal farm",
+    "location": "Borgarfjörður",
+    "tags": [
+      "Family",
+      "Animals",
+      "Countryside"
+    ],
+    "blurb": "A goat farm in Borgarfjörður where visitors get to know the Icelandic goat.",
+    "description": "Háafell Goat Farm in Borgarfjörður is a working farm dedicated to preserving the Icelandic goat breed that opens its doors to visitors in summer. Friendly, people-loving goats greet guests, who learn about the Icelandic goat and the story of the farm. The on-site shop sells goat products, soaps, creams and handicrafts.",
+    "highlights": [
+      "Friendly, people-loving Icelandic goats",
+      "Learning about preserving the goat breed",
+      "A shop with goat products and handicrafts"
+    ],
+    "activities": [
+      "Meet and pet the goats",
+      "Browse goat products and crafts in the shop"
+    ]
+  },
+  {
+    "id": "erpsstadir_rjomabu",
+    "name": "Erpsstaðir Creamery",
+    "region": "vesturland",
+    "category": "afthreying",
+    "type": "Animal farm",
+    "location": "Dalir",
+    "tags": [
+      "Family",
+      "Animals",
+      "Ice cream"
+    ],
+    "blurb": "A family-run dairy farm in the Dalir region with homemade ice cream, skyr and a petting zoo.",
+    "description": "Erpsstaðir Creamery is a family-run dairy farm in the Dalir region of West Iceland, known for its homemade ice cream, skyr and cheeses. Visitors can taste and buy dairy products straight from the farm, meet the animals in a small petting zoo and let children enjoy the play area. It sits on Route 60 near Búðardalur and is a popular stop.",
+    "highlights": [
+      "Homemade ice cream and skyr straight from the farm",
+      "A small petting zoo with farm animals",
+      "A play area and outdoor space for children"
+    ],
+    "activities": [
+      "Taste homemade ice cream and dairy products",
+      "Visit the farm animals in the petting zoo"
+    ]
+  },
+  {
+    "id": "slakki-dyragardur",
+    "name": "Slakki Petting Zoo",
+    "region": "sudurland",
+    "category": "afthreying",
+    "type": "Zoo",
+    "location": "Laugarás",
+    "tags": [
+      "Family",
+      "Animals",
+      "Kids",
+      "Indoor"
+    ],
+    "blurb": "A cosy petting zoo in Laugarás where children can meet and touch calves, rabbits, guinea pigs and more.",
+    "description": "Slakki is a much-loved petting zoo in Laugarás in the South Iceland highlands, just off the Golden Circle. Visitors can pet and feed calves, rabbits, guinea pigs, kittens, ducks, turtles and other animals. The site also has a playground, mini golf and a café, making it an easy stop for families with young children.",
+    "highlights": [
+      "Hands-on animal petting and feeding",
+      "Indoor playground and mini golf",
+      "Close to the Golden Circle route"
+    ],
+    "activities": [
+      "Pet and feed the farm animals",
+      "Play in the play area and try mini golf"
+    ]
+  },
+  {
+    "id": "lava-centre-hvolsvollur",
+    "name": "LAVA Centre",
+    "region": "sudurland",
+    "category": "afthreying",
+    "type": "Exhibition",
+    "location": "Hvolsvöllur",
+    "tags": [
+      "Family",
+      "Volcanoes",
+      "Interactive",
+      "Indoor"
+    ],
+    "blurb": "An interactive exhibition about Iceland's volcanoes, earthquakes and geology in the heart of Hvolsvöllur.",
+    "description": "LAVA Centre is a high-tech, interactive exhibition in Hvolsvöllur that explores volcanic activity, earthquakes and the making of the Icelandic landscape. Visitors move through halls filled with animations, soundscapes and models that bring magma, volcanic zones and tectonic plates to life. Suitable for all ages, it offers great context before heading out into South Iceland's volcanic scenery.",
+    "highlights": [
+      "Interactive volcano exhibition",
+      "Models of volcanic zones and plate boundaries",
+      "Open year-round"
+    ],
+    "activities": [
+      "Walk through the interactive exhibition halls",
+      "Learn about Iceland's eruptions and earthquakes"
+    ]
+  },
+  {
+    "id": "efstidalur-ii",
+    "name": "Efstidalur II",
+    "region": "sudurland",
+    "category": "afthreying",
+    "type": "Animal farm",
+    "location": "Bláskógabyggð",
+    "tags": [
+      "Family",
+      "Animals",
+      "Ice cream",
+      "Countryside"
+    ],
+    "blurb": "A family farm on the Golden Circle with a cowshed café, homemade ice cream and animals all around.",
+    "description": "Efstidalur II is a working dairy farm in Bláskógabyggð, between Laugarvatn and Geysir, that warmly welcomes visitors. In the cowshed café you can enjoy homemade ice cream made from the farm's own milk while watching the cows through large windows. Around the farm are horses, calves and other animals, making it a fun stop for families on the Golden Circle.",
+    "highlights": [
+      "Homemade ice cream in the cowshed café",
+      "Views over the cows in the barn",
+      "Horses and farm animals on site"
+    ],
+    "activities": [
+      "Taste ice cream and food from the farm's produce",
+      "See the animals and farm life"
+    ]
+  },
+  {
+    "id": "icelandic-lava-show-vik",
+    "name": "Icelandic Lava Show",
+    "region": "sudurland",
+    "category": "afthreying",
+    "type": "Exhibition",
+    "location": "Vík í Mýrdal",
+    "tags": [
+      "Family",
+      "Volcanoes",
+      "Show",
+      "Indoor"
+    ],
+    "blurb": "A live show where real molten lava is poured in front of the audience in Vík.",
+    "description": "The Icelandic Lava Show in Vík is a unique experience where rock is melted to over a thousand degrees and glowing lava is poured in front of the audience. Guests feel the heat, see the colours and hear the sounds of flowing lava in a safe, indoor setting. Knowledgeable hosts explain Iceland's volcanism, making the show both thrilling and educational for the whole family.",
+    "highlights": [
+      "Real molten lava poured live",
+      "Feel the heat of glowing lava",
+      "Learn about Iceland's eruptions"
+    ],
+    "activities": [
+      "Watch the live lava show",
+      "Learn about the properties of lava and volcanism"
+    ]
+  },
+  {
+    "id": "eldheimar-vestmannaeyjar",
+    "name": "Eldheimar",
+    "region": "sudurland",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Vestmannaeyjar",
+    "tags": [
+      "Family",
+      "Eruption",
+      "History",
+      "Indoor"
+    ],
+    "blurb": "A volcano museum in the Westman Islands built around a house buried in ash by the 1973 eruption.",
+    "description": "Eldheimar is a powerful volcano museum in the Westman Islands telling the story of the 1973 eruption on Heimaey. The museum is built around a house that was buried in ash and later excavated, offering a striking insight into the night the townspeople had to flee. Interactive displays and personal accounts make the visit moving for all ages.",
+    "highlights": [
+      "A house excavated from the 1973 ash",
+      "Stories of the town's evacuation",
+      "Exhibits on the Surtsey eruption"
+    ],
+    "activities": [
+      "View the excavated house and exhibition",
+      "Learn about the eruption and its impact on Heimaey"
+    ]
+  },
+  {
+    "id": "sea-life-trust-beluga-sanctuary",
+    "name": "SEA LIFE Trust Beluga Whale Sanctuary",
+    "region": "sudurland",
+    "category": "afthreying",
+    "type": "Exhibition",
+    "location": "Vestmannaeyjar",
+    "tags": [
+      "Family",
+      "Animals",
+      "Puffins",
+      "Marine life"
+    ],
+    "blurb": "A visitor centre in the Westman Islands with an aquarium, rescued puffins and beluga whales in Klettsvík bay.",
+    "description": "The SEA LIFE Trust Beluga Whale Sanctuary in the Westman Islands is home to two beluga whales that travelled a long way to a natural bay by the island. The harbour-side visitor centre features an aquarium of local marine life and a puffin rescue, including the well-known Tóti. The exhibition teaches visitors about the whales, the sea life and the puffin colony, and is fun and educational for children.",
+    "highlights": [
+      "Meet rescued puffins",
+      "Aquarium of local marine life",
+      "Learn about the belugas in Klettsvík bay"
+    ],
+    "activities": [
+      "See the puffins and the aquarium",
+      "Learn about the belugas and the conservation work"
+    ]
+  },
+  {
+    "id": "skogasafn-skogar-museum",
+    "name": "Skógar Museum",
+    "region": "sudurland",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Skógar",
+    "tags": [
+      "Family",
+      "History",
+      "Culture",
+      "Turf houses"
+    ],
+    "blurb": "A folk museum in Skógar with thousands of artefacts, turf houses and old buildings showing Iceland's rural past.",
+    "description": "Skógar Museum beneath Eyjafjöll is one of Iceland's largest folk museums, holding thousands of artefacts that illuminate how Icelanders lived and worked in centuries past. The grounds feature old turf houses, a church and buildings that visitors can step inside to experience earlier ways of life. There is also a transport and technology museum, making the visit varied for the whole family.",
+    "highlights": [
+      "Old turf houses and a church to explore",
+      "Thousands of artefacts from rural life",
+      "Transport and technology museum"
+    ],
+    "activities": [
+      "Walk through turf houses and old buildings",
+      "View artefacts and learn about Icelandic heritage"
+    ]
+  },
+  {
+    "id": "hestheimar-horse-farm",
+    "name": "Hestheimar",
+    "region": "sudurland",
+    "category": "afthreying",
+    "type": "Animal farm",
+    "location": "Ásahreppur",
+    "tags": [
+      "Family",
+      "Horses",
+      "Countryside",
+      "Outdoors"
+    ],
+    "blurb": "A family-run horse farm near Hella offering riding tours for beginners and experienced riders alike.",
+    "description": "Hestheimar is a family-run horse farm and guesthouse in Ásahreppur, close to Hella and just off the Ring Road. It offers riding tours on Icelandic horses for both beginners and more experienced riders, with views towards Hekla and Eyjafjallajökull. The farm warmly welcomes families and is a great place to meet the Icelandic horse and experience rural life in South Iceland.",
+    "highlights": [
+      "Riding tours for beginners and experienced riders",
+      "Meet the Icelandic horse up close",
+      "Views towards Hekla and glaciers"
+    ],
+    "activities": [
+      "Take a riding tour on Icelandic horses",
+      "Get to know the horses and farm life"
+    ]
+  },
+  {
+    "id": "sogusetrid-saga-centre",
+    "name": "Saga Centre",
+    "region": "sudurland",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Hvolsvöllur",
+    "tags": [
+      "Family",
+      "History",
+      "Vikings",
+      "Culture"
+    ],
+    "blurb": "A saga exhibition in Hvolsvöllur dedicated to Njáls saga, with a Viking hall and a giant tapestry.",
+    "description": "The Saga Centre in Hvolsvöllur is a museum dedicated to Njáls saga, one of the best-known Icelandic sagas, and the events that unfolded in the Rangárvellir region. Visitors walk through an exhibition of artefacts and images and a Viking hall that brings the saga's world to life. It is also home to the ambitious Njála tapestry, a long embroidered artwork that guests can even help create.",
+    "highlights": [
+      "Exhibition on Njáls saga",
+      "Viking hall with a historical setting",
+      "The great Njála tapestry"
+    ],
+    "activities": [
+      "Explore the exhibition on the Icelandic sagas",
+      "Discover the setting of Njáls saga"
+    ]
+  },
+  {
+    "id": "sveitagardurinn-petting-zoo",
+    "name": "Sveitagarðurinn",
+    "region": "sudurland",
+    "category": "afthreying",
+    "type": "Zoo",
+    "location": "Grímsnes",
+    "tags": [
+      "Family",
+      "Animals",
+      "Kids",
+      "Countryside"
+    ],
+    "blurb": "A petting zoo and play park in Grímsnes where children can get close to farm animals.",
+    "description": "Sveitagarðurinn is a petting zoo and play park in Grímsnes, close to Selfoss and the Golden Circle. It is home to horses, calves, pigs, sheep, goats, chickens, ducks, rabbits and kittens that children can get close to and get to know. The site also has a play area, making it an enjoyable stop for families in summer.",
+    "highlights": [
+      "A variety of farm animals to pet",
+      "Play area for children",
+      "Close to Selfoss and the Golden Circle"
+    ],
+    "activities": [
+      "Pet and meet the farm animals",
+      "Play in the play park"
+    ]
+  },
+  {
+    "id": "selasetur-islands",
+    "name": "The Icelandic Seal Center",
+    "region": "nordvestur",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Hvammstangi",
+    "tags": [
+      "Family",
+      "Wildlife",
+      "Educational",
+      "Indoor"
+    ],
+    "blurb": "Interactive seal exhibition in the red harbour house at Hvammstangi.",
+    "description": "The Icelandic Seal Center is a research and education facility dedicated to Iceland's harbour and grey seals. Exhibitions explain seal biology, distribution and the long relationship between seals and people since settlement. It makes a perfect first stop before heading out onto the Vatnsnes peninsula to watch seals in the wild.",
+    "highlights": [
+      "Interactive seal exhibition",
+      "Advice on the best seal-watching spots on Vatnsnes",
+      "The landmark red harbour building"
+    ],
+    "activities": [
+      "Explore the seal exhibition",
+      "Get seal-watching tips for Vatnsnes"
+    ]
+  },
+  {
+    "id": "glaumbaer-torfbaer",
+    "name": "Glaumbaer Turf Farm Museum",
+    "region": "nordvestur",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Skagafjordur",
+    "tags": [
+      "Family",
+      "History",
+      "Turf house",
+      "Culture"
+    ],
+    "blurb": "A historic turf farm in Skagafjordur where old rural life comes alive.",
+    "description": "Glaumbaer preserves one of Iceland's best-known turf farms, built from turf, stone and timber. Visitors walk through the interconnected rooms, where furnishings and everyday objects show how people lived in the Icelandic countryside in centuries past. The site also includes two old timber houses and a cosy cafe.",
+    "highlights": [
+      "Beautifully preserved turf farmhouse",
+      "Period furnishings and household objects",
+      "Cafe in a historic timber house"
+    ],
+    "activities": [
+      "Walk through the turf farm rooms",
+      "Learn about historic rural life"
+    ]
+  },
+  {
+    "id": "1238-orrusta-islands",
+    "name": "1238: The Battle of Iceland",
+    "region": "nordvestur",
+    "category": "afthreying",
+    "type": "Exhibition",
+    "location": "Saudarkrokur",
+    "tags": [
+      "Family",
+      "History",
+      "Virtual reality",
+      "Indoor"
+    ],
+    "blurb": "Interactive Sturlung-era exhibition with virtual and augmented reality.",
+    "description": "1238: The Battle of Iceland is a modern experience in the heart of Saudarkrokur that brings the violent conflicts of the Sturlung era to life. Using virtual reality, augmented reality and hands-on storytelling, visitors relive the Battle of Orlygsstadir, the largest battle in Icelandic history. The exhibition engages all ages and makes history vivid in an innovative way.",
+    "highlights": [
+      "Become a virtual viking in VR",
+      "The Battle of Orlygsstadir comes alive",
+      "On-site bistro and gift shop"
+    ],
+    "activities": [
+      "Experience a battle in virtual reality",
+      "Explore the interactive history exhibition"
+    ]
+  },
+  {
+    "id": "brunastadir-dyrabaer",
+    "name": "Brunastadir Petting Zoo",
+    "region": "nordvestur",
+    "category": "afthreying",
+    "type": "Animal farm",
+    "location": "Fljot, Skagafjordur",
+    "tags": [
+      "Family",
+      "Farm animals",
+      "Countryside",
+      "Kids"
+    ],
+    "blurb": "A family-run petting zoo in Fljot with many friendly farm animals.",
+    "description": "At Brunastadir in the Fljot district, farmers run a welcoming petting zoo where visitors get close to Icelandic farm animals. Among them are goats, pigs, rabbits, chickens, turkeys, lambs, calves and horses. There is also a farm store selling homemade products and ice cream.",
+    "highlights": [
+      "Close contact with many friendly farm animals",
+      "Farm store with homemade goat cheese",
+      "Soft-serve ice cream and refreshments"
+    ],
+    "activities": [
+      "Feed and pet the farm animals",
+      "Buy homemade produce in the farm store"
+    ]
+  },
+  {
+    "id": "hvalasafnid-husavik",
+    "name": "Husavik Whale Museum",
+    "region": "nordaustur",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Husavik",
+    "tags": [
+      "Family",
+      "Whales",
+      "Educational",
+      "Indoor"
+    ],
+    "blurb": "One of the world's few whale museums, in the whale-watching town of Husavik.",
+    "description": "The Husavik Whale Museum is dedicated to whales and marine life, housed in a former slaughterhouse by the harbour. It displays full whale skeletons suspended from the ceiling alongside informative exhibits on whale ecology and conservation. It is a perfect stop before or after a whale-watching tour.",
+    "highlights": [
+      "Full whale skeletons on display",
+      "Exhibits on whale biology and conservation",
+      "Right by the Husavik harbour"
+    ],
+    "activities": [
+      "View skeletons and exhibitions",
+      "Learn about whales before a whale-watching tour"
+    ]
+  },
+  {
+    "id": "jolagardurinn-akureyri",
+    "name": "The Christmas Garden",
+    "region": "nordaustur",
+    "category": "afthreying",
+    "type": "Exhibition",
+    "location": "Eyjafjardarsveit",
+    "tags": [
+      "Family",
+      "Christmas",
+      "Shop",
+      "Garden"
+    ],
+    "blurb": "Year-round Christmas cheer in a gingerbread house just south of Akureyri.",
+    "description": "The Christmas Garden is a delightful destination where Christmas reigns all year round. The red house resembles a gingerbread house, and inside you will find Christmas decorations from around the world alongside Icelandic Christmas items and handicrafts. A pretty garden surrounds the house, with benches and a tower that holds a giant Advent calendar.",
+    "highlights": [
+      "Gingerbread-style house full of decorations",
+      "Pretty garden with benches",
+      "Tower with a giant Advent calendar"
+    ],
+    "activities": [
+      "Browse Christmas decorations and handicrafts",
+      "Stroll the garden and relax"
+    ]
+  },
+  {
+    "id": "lystigardur-akureyrar",
+    "name": "Akureyri Botanical Garden",
+    "region": "nordaustur",
+    "category": "afthreying",
+    "type": "Botanical garden",
+    "location": "Akureyri",
+    "tags": [
+      "Family",
+      "Garden",
+      "Plants",
+      "Outdoors"
+    ],
+    "blurb": "A beautiful botanical garden in the heart of Akureyri with diverse plants.",
+    "description": "The Akureyri Botanical Garden is one of the world's northernmost botanical gardens, showcasing a wide range of Icelandic and foreign plants. The garden is sheltered and well tended, with paths, flowerbeds and benches where you can sit and relax. Entry is free, and it is a popular resting spot for families in summer.",
+    "highlights": [
+      "Diverse plant collections and flowerbeds",
+      "Sheltered paths and benches",
+      "Free admission"
+    ],
+    "activities": [
+      "Stroll the garden and admire the plants",
+      "Sit and enjoy the outdoors"
+    ]
+  },
+  {
+    "id": "motorhjolasafn-islands",
+    "name": "The Motorcycle Museum of Iceland",
+    "region": "nordaustur",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Akureyri",
+    "tags": [
+      "Family",
+      "Vehicles",
+      "History",
+      "Indoor"
+    ],
+    "blurb": "A museum devoted to the history of motorcycles in Iceland, at Krokeyri in Akureyri.",
+    "description": "The Motorcycle Museum of Iceland holds a varied collection of motorcycles spanning their history in the country. Visitors can view old and new bikes alongside objects and photographs that illustrate Icelandic motorcycle culture. The museum is interesting for the whole family, especially those fascinated by vehicles.",
+    "highlights": [
+      "Varied collection of motorcycles",
+      "Objects and photos from motorcycling history",
+      "Indoor activity in Akureyri"
+    ],
+    "activities": [
+      "Explore the motorcycle collection",
+      "Learn about the history of bikes in Iceland"
+    ]
+  },
+  {
+    "id": "daladyrd-dyrabaer",
+    "name": "Daladyrd Petting Zoo",
+    "region": "nordaustur",
+    "category": "afthreying",
+    "type": "Animal farm",
+    "location": "Fnjoskadalur",
+    "tags": [
+      "Family",
+      "Farm animals",
+      "Countryside",
+      "Kids"
+    ],
+    "blurb": "A family-run petting zoo in Fnjoskadalur valley with diverse animals.",
+    "description": "Daladyrd is a friendly petting zoo at Brunagerdi farm in the Fnjoskadalur valley, where visitors get close to Icelandic farm animals. You will find horses, sheep, goats, rabbits, cats, dogs, pigs, cows and chickens of various breeds. There is also a small cafe emphasising products from the farm.",
+    "highlights": [
+      "Diverse farm animals to pet",
+      "Farm produce in the cafe",
+      "The scenic Fnjoskadalur valley"
+    ],
+    "activities": [
+      "Feed and pet the farm animals",
+      "Enjoy refreshments in the cafe"
+    ]
+  },
+  {
+    "id": "kjarnaskogur-akureyri",
+    "name": "Kjarnaskogur Forest",
+    "region": "nordaustur",
+    "category": "afthreying",
+    "type": "Family park",
+    "location": "Akureyri",
+    "tags": [
+      "Family",
+      "Outdoors",
+      "Playground",
+      "Forest"
+    ],
+    "blurb": "Iceland's most-visited forest, with playgrounds and trails by Akureyri.",
+    "description": "Kjarnaskogur lies just south of Akureyri and is one of Iceland's most popular outdoor recreation areas. The forest has children's playgrounds, walking and cycling trails, barbecue areas and varied facilities for families. It is sheltered and well suited to walks, play and time outdoors in beautiful surroundings.",
+    "highlights": [
+      "Three children's playgrounds",
+      "Illuminated walking trails",
+      "Barbecue and picnic areas"
+    ],
+    "activities": [
+      "Play at the playgrounds",
+      "Walk or cycle the trails"
+    ]
+  },
+  {
+    "id": "skrimslasetrid-bildudalur",
+    "name": "The Icelandic Sea Monster Museum",
+    "region": "vestfirdir",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Bíldudalur",
+    "tags": [
+      "Family",
+      "Indoor",
+      "Rainy day",
+      "Folklore",
+      "Kids"
+    ],
+    "blurb": "A museum devoted to the sea monsters of Arnarfjörður.",
+    "description": "The Sea Monster Museum in Bíldudalur tells the tales of the many sea monsters said to haunt Arnarfjörður and the wider Westfjords. The exhibition mixes folklore, eyewitness accounts and multimedia in a way that keeps both children and adults engaged. There is a cosy coffee shop on site.",
+    "highlights": [
+      "Lively multimedia sea-monster exhibition",
+      "Local folklore and eyewitness stories",
+      "Coffee shop on site"
+    ],
+    "activities": [
+      "Explore the sea-monster exhibition",
+      "Relax in the coffee shop"
+    ]
+  },
+  {
+    "id": "melrakkasetur-sudavik",
+    "name": "The Arctic Fox Centre",
+    "region": "vestfirdir",
+    "category": "afthreying",
+    "type": "Center",
+    "location": "Súðavík",
+    "tags": [
+      "Family",
+      "Animals",
+      "Nature",
+      "Indoor",
+      "Kids"
+    ],
+    "blurb": "A nature centre about the Icelandic arctic fox in Súðavík.",
+    "description": "The Arctic Fox Centre in Súðavík is a nature centre dedicated to Iceland's only native land mammal, the arctic fox. The exhibition covers the animal's life, the history of fox hunting and ongoing research, and orphaned fox cubs are often cared for at the centre over the summer. It is housed in Eyrardalur, the oldest house in Súðavík.",
+    "highlights": [
+      "Exhibition on the Icelandic arctic fox",
+      "Live fox cubs often on show in summer",
+      "Cosy café in a historic house"
+    ],
+    "activities": [
+      "Learn about the life of the arctic fox",
+      "Enjoy coffee and waffles at Eyrardalur"
+    ]
+  },
+  {
+    "id": "galdrasyning-holmavik",
+    "name": "Museum of Icelandic Sorcery & Witchcraft",
+    "region": "vestfirdir",
+    "category": "afthreying",
+    "type": "Exhibition",
+    "location": "Hólmavík",
+    "tags": [
+      "Family",
+      "History",
+      "Folklore",
+      "Indoor",
+      "Rainy day"
+    ],
+    "blurb": "An exhibition on sorcery and the witch-hunts of Strandir.",
+    "description": "The Museum of Icelandic Sorcery & Witchcraft in Hólmavík explores Iceland's magical traditions, its runic staves and the witch persecutions of the 17th century. The exhibition paints a vivid and at times eerie picture of the superstition and sorcery of earlier centuries through objects, texts and reconstructions. There is also a restaurant on site focusing on local ingredients.",
+    "highlights": [
+      "Magical staves and Icelandic sorcery",
+      "The history of 17th-century witch-hunts",
+      "Restaurant using local ingredients"
+    ],
+    "activities": [
+      "Explore the sorcery exhibition",
+      "Dine at the on-site restaurant"
+    ]
+  },
+  {
+    "id": "obyggdasetur-fljotsdalur",
+    "name": "The Wilderness Center",
+    "region": "austurland",
+    "category": "afthreying",
+    "type": "Center",
+    "location": "Fljótsdalur",
+    "tags": [
+      "Family",
+      "History",
+      "Nature",
+      "Horses",
+      "Countryside"
+    ],
+    "blurb": "A culture and experience centre on the edge of the highlands.",
+    "description": "The Wilderness Center lies in Norðurdalur in Fljótsdalur, on the edge of the largest uninhabited area in Northern Europe. It houses a living exhibition on the history of highland travel and the struggle for survival at the edge of the wilderness, along with accommodation, dining and outdoor areas for guests. Horse riding and other experiences are offered in dramatic surroundings.",
+    "highlights": [
+      "Exhibition on the history of highland travel",
+      "Dramatic setting at the edge of the highlands",
+      "Horse riding and outdoor activities"
+    ],
+    "activities": [
+      "Explore the wilderness exhibition",
+      "Take a short horse ride"
+    ]
+  },
+  {
+    "id": "steinasafn-petru-stodvarfjordur",
+    "name": "Petra's Stone Collection",
+    "region": "austurland",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Stöðvarfjörður",
+    "tags": [
+      "Family",
+      "Nature",
+      "Minerals",
+      "Garden",
+      "Kids"
+    ],
+    "blurb": "One of the world's largest private stone collections.",
+    "description": "Petra's Stone Collection in Stöðvarfjörður holds the life's work of Petra Sveinsdóttir, who spent decades gathering stones and crystals from the nature of the East Fjords. The collection is displayed both indoors and in a beautiful garden around Petra's former home, where colourful stones lie in rows everywhere. It is a unique experience for anyone captivated by minerals and the craftsmanship of nature.",
+    "highlights": [
+      "The life's work of collector Petra",
+      "Colourful stones in the garden and indoors",
+      "Charming setting in a former home"
+    ],
+    "activities": [
+      "Look at stones and crystals",
+      "Wander through the stone garden"
+    ]
+  },
+  {
+    "id": "skriduklaustur-fljotsdalur",
+    "name": "Skriðuklaustur",
+    "region": "austurland",
+    "category": "afthreying",
+    "type": "Center",
+    "location": "Fljótsdalur",
+    "tags": [
+      "Family",
+      "History",
+      "Culture",
+      "Indoor",
+      "Countryside"
+    ],
+    "blurb": "A culture centre and historic site in the author's house.",
+    "description": "Skriðuklaustur in Fljótsdalur is a culture centre set in the grand 1939 house of author Gunnar Gunnarsson. It features exhibitions on the author and on the medieval monastery that once stood here, a varied programme of cultural events, and the restaurant Klausturkaffi. The grounds are family-friendly, with paths and a play area for children.",
+    "highlights": [
+      "The historic house of Gunnar Gunnarsson",
+      "Exhibition on the medieval monastery",
+      "Klausturkaffi with local ingredients"
+    ],
+    "activities": [
+      "Explore the exhibitions and the author's house",
+      "Enjoy a meal at Klausturkaffi"
+    ]
+  },
+  {
+    "id": "osvor-bolungarvik",
+    "name": "Ósvör Maritime Museum",
+    "region": "vestfirdir",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Bolungarvík",
+    "tags": [
+      "Family",
+      "History",
+      "Fishing",
+      "Outdoor",
+      "Culture"
+    ],
+    "blurb": "A reconstructed fishing station from the age of rowing boats.",
+    "description": "Ósvör near Bolungarvík is a reconstructed fishing station showing how fishing was carried out in the days of rowing boats. Here you can see the salt house, drying shed, fishermen's hut and a traditional six-oared boat, often with a guide dressed in the skin clothing of bygone fishermen. It offers a vivid insight into the hard lives of Westfjords fishermen.",
+    "highlights": [
+      "Reconstructed fishing hut and rowing boat",
+      "Guide in traditional skin clothing",
+      "Insight into old-style fishing"
+    ],
+    "activities": [
+      "Explore the fishing station and boat",
+      "Learn about the lives of past fishermen"
+    ]
+  },
+  {
+    "id": "minjasafn-austurlands-egilsstadir",
+    "name": "East Iceland Heritage Museum",
+    "region": "austurland",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Egilsstaðir",
+    "tags": [
+      "Family",
+      "History",
+      "Reindeer",
+      "Indoor",
+      "Rainy day"
+    ],
+    "blurb": "The cultural history of East Iceland and a reindeer exhibition.",
+    "description": "The East Iceland Heritage Museum in Egilsstaðir preserves and presents the cultural history, traditions and community life of the East Fjords. Its permanent exhibitions include one on reindeer in East Iceland and another, Sustainable Unit, on the old Icelandic turf farm. The museum is indoors and suitable in any season.",
+    "highlights": [
+      "Exhibition on East Iceland's reindeer",
+      "Cultural history and the old Icelandic farm",
+      "Central location in Egilsstaðir"
+    ],
+    "activities": [
+      "See the reindeer exhibition",
+      "Learn about East Fjords cultural history"
+    ]
+  },
+  {
+    "id": "samuel-jonsson-selardalur",
+    "name": "Samúel Jónsson's Art Farm",
+    "region": "vestfirdir",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Selárdalur",
+    "tags": [
+      "Family",
+      "Art",
+      "Outdoor",
+      "Culture",
+      "Nature"
+    ],
+    "blurb": "The folk art of Samúel Jónsson in a remote valley.",
+    "description": "In Selárdalur at the outer edge of Arnarfjörður stands the art farm of Samúel Jónsson, a self-taught folk artist often called the artist with a child's heart. Here he built a church, an art house and many concrete sculptures, including a lion fountain and statues, with no formal art training. The works stand in the open air and are open to visitors through the summer.",
+    "highlights": [
+      "Concrete sculptures and a lion fountain",
+      "Samúel's church and art house",
+      "A remote and unique setting"
+    ],
+    "activities": [
+      "Wander the outdoor art site",
+      "See the church and the sculptures"
+    ]
+  },
+  {
+    "id": "hrafnseyri-jon-sigurdsson",
+    "name": "Hrafnseyri – Jón Sigurðsson Museum",
+    "region": "vestfirdir",
+    "category": "afthreying",
+    "type": "Museum",
+    "location": "Arnarfjörður",
+    "tags": [
+      "Family",
+      "History",
+      "Culture",
+      "Indoor",
+      "Countryside"
+    ],
+    "blurb": "The birthplace and museum of Jón Sigurðsson by Arnarfjörður.",
+    "description": "Hrafnseyri by Arnarfjörður is the birthplace of Jón Sigurðsson, leader of Iceland's campaign for independence. The site has a museum on his life and work, a reconstructed turf farm and a small café, surrounded by the beautiful nature of the Westfjords. Here you can learn about one of the most important figures in Icelandic history.",
+    "highlights": [
+      "Museum on Jón Sigurðsson",
+      "Reconstructed turf farm",
+      "Café and scenic surroundings"
+    ],
+    "activities": [
+      "Explore the Jón Sigurðsson museum",
+      "Walk around the turf farm and grounds"
+    ]
+  },
+  {
+    "id": "papeyjarferdir-djupivogur",
+    "name": "Papey Island Boat Tours",
+    "region": "austurland",
+    "category": "afthreying",
+    "type": "Boat tour",
+    "location": "Djúpivogur",
+    "tags": [
+      "Family",
+      "Wildlife",
+      "Puffins",
+      "Boat tour",
+      "Nature"
+    ],
+    "blurb": "A boat trip to the puffin island of Papey from Djúpivogur.",
+    "description": "Papey Island Boat Tours run boat trips from Djúpivogur out to the island of Papey, home to a large puffin colony and rich birdlife. On the trip you walk around the island with a guide, see the old lighthouse and learn about its history. It is an enjoyable experience for families and bird enthusiasts through the summer.",
+    "highlights": [
+      "Boat trip out to Papey",
+      "Puffin colony and varied birdlife",
+      "Guided walk around the island"
+    ],
+    "activities": [
+      "Sail to Papey island",
+      "Watch puffins and birdlife"
+    ]
   }
 ];
 
