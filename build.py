@@ -320,7 +320,7 @@ def page(lang, kind, ident, title, desc, url, ogtype, jsonld, body, ogimg=None):
     head = HEAD.format(
         lc=LANGS[lang]["code"], title=e(title), desc=e(desc), url=e(url), ogtype=ogtype,
         site=e(SITE_NAME), oglocale=LANGS[lang]["og_locale"], siteurl=SITE_URL,
-        ogimg=e(ogimg or f"{SITE_URL}/og-image.svg"),
+        ogimg=e(ogimg or f"{SITE_URL}/og-image.png"),
         alts=alternates(kind, ident), jsonld="\n".join(jsonld),
         home=home_url(lang), all=all_url(lang), logo=logo, logosub=logosub,
         nav_map=ui["nav_map"], nav_all=ui["nav_all"], nav_about=ui["nav_about"],
