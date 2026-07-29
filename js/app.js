@@ -37,13 +37,13 @@ const STR = {
   is: {
     hint: "Smelltu á landshluta til að sjá staði á svæðinu",
     onArea: "Á svæðinu", statArea: "Flæmi", statPop: "Íbúar", statTown: "Þéttbýli",
-    cat: { allt: "Allt", stadur: "Staðir", ganga: "Gönguleiðir", bod: "Sundlaugar & böð", afthreying: "Afþreying", veitingar: "Veitingastaðir", kaffi: "Kaffihús" },
+    cat: { allt: "Allt", stadur: "Staðir", ganga: "Gönguleiðir", bod: "Sundlaugar & böð", afthreying: "Afþreying", veitingar: "Veitingastaðir", kaffi: "Kaffihús", heimavara: "Heimavara" },
     allCountry: "Allt landið", highlands: "Hálendi",
     placesWord: (n) => `${n} ${n === 1 ? "staður" : "staðir"}`,
     resultsWord: (n) => `${n} ${n === 1 ? "niðurstaða" : "niðurstöður"}`,
     seeMore: "Skoða nánar →", accomN: "Gisting", activN: "Afþreying",
     mHighlights: "Hápunktar", mRoute: "Á leiðinni", mKnown: "Þekkt fyrir",
-    mAccom: "Gisting", mActiv: "Afþreying",
+    mAccom: "Gisting", mActiv: "Afþreying", mSells: "Í boði", btnShop: "Heimsækja / netverslun",
     sDist: "Vegalengd", sDur: "Tími", sDiff: "Erfiðleiki",
     sCuisine: "Tegund", sPrice: "Verðflokkur", sLoc: "Staðsetning", sType: "Tegund",
     btnBook: "Bóka gistingu í nágrenni", btnTours: "Skoða ferðir og afþreyingu", btnMap: "Finna á korti",
@@ -61,13 +61,13 @@ const STR = {
   en: {
     hint: "Click a region to see places in that area",
     onArea: "In this area", statArea: "Area", statPop: "Population", statTown: "Main town",
-    cat: { allt: "All", stadur: "Places", ganga: "Hiking trails", bod: "Pools & baths", afthreying: "Attractions", veitingar: "Restaurants", kaffi: "Cafés" },
+    cat: { allt: "All", stadur: "Places", ganga: "Hiking trails", bod: "Pools & baths", afthreying: "Attractions", veitingar: "Restaurants", kaffi: "Cafés", heimavara: "Local shops" },
     allCountry: "Whole country", highlands: "Highlands",
     placesWord: (n) => `${n} ${n === 1 ? "place" : "places"}`,
     resultsWord: (n) => `${n} ${n === 1 ? "result" : "results"}`,
     seeMore: "View details →", accomN: "Stays", activN: "Activities",
     mHighlights: "Highlights", mRoute: "On the route", mKnown: "Known for",
-    mAccom: "Nearby accommodation", mActiv: "Activities",
+    mAccom: "Nearby accommodation", mActiv: "Activities", mSells: "What they offer", btnShop: "Visit / shop online",
     sDist: "Distance", sDur: "Duration", sDiff: "Difficulty",
     sCuisine: "Cuisine", sPrice: "Price", sLoc: "Location", sType: "Type",
     btnBook: "Book nearby accommodation", btnTours: "Browse tours & activities", btnMap: "Find on map",
@@ -88,7 +88,7 @@ const placeHref  = (id) => (LANG === "en" ? `/en/place/${id}/`  : `/stadur/${id}
 const regionHref = (id) => (LANG === "en" ? `/en/region/${id}/` : `/landshluti/${id}/`);
 const isHighland = (p) => p.tags.includes("Hálendi") || p.tags.includes("Highlands");
 const isDining = (c) => c === "veitingar" || c === "kaffi";
-const hasLoc = (c) => c === "veitingar" || c === "kaffi" || c === "bod" || c === "afthreying"; // sýnir staðsetningu + kortatengil
+const hasLoc = (c) => c === "veitingar" || c === "kaffi" || c === "bod" || c === "afthreying" || c === "heimavara"; // sýnir staðsetningu + kortatengil
 
 // Flokkar
 const CATEGORIES = [
@@ -99,6 +99,7 @@ const CATEGORIES = [
   { id: "afthreying", label: t.cat.afthreying },
   { id: "veitingar", label: t.cat.veitingar },
   { id: "kaffi", label: t.cat.kaffi },
+  { id: "heimavara", label: t.cat.heimavara },
 ];
 const catOf = (p) => p.category || "stadur";
 
@@ -278,7 +279,7 @@ function selectRegion(id) {
         </span>
         <span class="rp-place-arrow">→</span>
       </div>`;
-  const GROUP_ORDER = ["stadur", "ganga", "bod", "afthreying", "veitingar", "kaffi"];
+  const GROUP_ORDER = ["stadur", "ganga", "bod", "afthreying", "veitingar", "kaffi", "heimavara"];
   // Ef flokkur er valinn í kortastikunni sýnum við bara hann
   const activeCat = state.filterCategory;
   const groups = activeCat === "allt" ? GROUP_ORDER : [activeCat];
@@ -438,6 +439,7 @@ function renderPlaces() {
       else if (isDining(cat)) meta = `${p.cuisine} · ${p.price}`;
       else if (cat === "bod") meta = [p.price, p.location].filter(Boolean).join(" · ");
       else if (cat === "afthreying") meta = [p.type, p.location].filter(Boolean).join(" · ");
+      else if (cat === "heimavara") meta = [p.type, p.location].filter(Boolean).join(" · ");
       else meta = `${t.accomN} ${p.accommodation.length} · ${t.activN} ${p.activities.length}`;
       const sub = hasLoc(cat) && p.location ? ` · ${p.location}` : "";
       const img = typeof IMAGES !== "undefined" ? IMAGES[p.id] : null;
@@ -525,10 +527,10 @@ function openModal(placeId) {
     body =
       statsRow([[t.sPrice, p.price], [t.sLoc, p.location]]) +
       highlightsBlock(t.mHighlights, p.highlights);
-  } else if (cat === "afthreying") {
+  } else if (cat === "afthreying" || cat === "heimavara") {
     body =
       statsRow([[t.sType, p.type], [t.sLoc, p.location]]) +
-      highlightsBlock(t.mHighlights, p.highlights) +
+      highlightsBlock(cat === "heimavara" ? t.mSells : t.mHighlights, p.highlights) +
       ((p.activities && p.activities.length)
         ? `<div class="mc-section-title">${t.mActiv}</div><ul class="mc-list">${p.activities.map((a)=>`<li><span>${a}</span></li>`).join("")}</ul>`
         : "");
@@ -549,7 +551,14 @@ function openModal(placeId) {
   const stayHub = typeof STAY_HUB !== "undefined" ? STAY_HUB[p.id] : null;
   const searchTerm = stayHub || p.location || region.name;
   let cta;
-  if (hasLoc(cat)) {
+  if (cat === "heimavara") {
+    const shopBtn = p.website
+      ? `<a class="mc-btn primary" href="${p.website}" target="_blank" rel="noopener nofollow">${t.btnShop}</a>`
+      : "";
+    cta = `
+      ${shopBtn}
+      <a class="mc-btn" href="${mapLink(p.name + " " + (p.location || region.name))}" target="_blank" rel="noopener nofollow">${t.btnMap}</a>`;
+  } else if (hasLoc(cat)) {
     cta = `
       <a class="mc-btn" href="${mapLink(p.name + " " + (p.location || region.name))}" target="_blank" rel="noopener nofollow">${t.btnMap}</a>
       <a class="mc-btn primary" href="${bookingLink(p.location || region.name)}" target="_blank" rel="noopener sponsored nofollow">${t.btnBook}</a>`;

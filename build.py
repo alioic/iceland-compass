@@ -116,16 +116,16 @@ LANGS = {
     "country": "Ísland",
     "ui": {
       "nav_map":"Kort","nav_all":"Allir staðir","nav_about":"Um vefinn","crumb_home":"Heim",
-      "kicker_place":{"stadur":"Staður","ganga":"Gönguleið","bod":"Sundlaug & böð","afthreying":"Afþreying","veitingar":"Veitingastaður","kaffi":"Kaffihús"},
+      "kicker_place":{"stadur":"Staður","ganga":"Gönguleið","bod":"Sundlaug & böð","afthreying":"Afþreying","veitingar":"Veitingastaður","kaffi":"Kaffihús","heimavara":"Heimavara"},
       "kicker_region":"Landshluti","kicker_overview":"Yfirlit",
       "h_highlights":"Hápunktar","h_route":"Á leiðinni","h_known":"Þekkt fyrir",
       "h_accom":"Gisting í nágrenni","h_activities":"Afþreying",
       "stat_area":"Flæmi","stat_pop":"Íbúar","stat_town":"Þéttbýli",
       "stat_dist":"Vegalengd","stat_dur":"Tími","stat_diff":"Erfiðleiki",
       "stat_cuisine":"Tegund","stat_price":"Verðflokkur","stat_loc":"Staðsetning","stat_dist_rvk":"Loftlína frá Reykjavík",
-      "btn_book":"Bóka gistingu í nágrenni","btn_tours":"Skoða ferðir og afþreyingu","btn_find":"Sjá á korti",
+      "btn_book":"Bóka gistingu í nágrenni","btn_tours":"Skoða ferðir og afþreyingu","btn_find":"Sjá á korti","btn_shop":"Heimsækja / netverslun","h_sells":"Í boði",
       "more_in":"Fleiri á {r}","all_in":"Allt á {r} →","view_map":"Skoða á gagnvirku korti →",
-      "region_groups":{"stadur":"Staðir og náttúra","ganga":"Gönguleiðir","bod":"Sundlaugar & böð","afthreying":"Afþreying","veitingar":"Veitingastaðir","kaffi":"Kaffihús"},
+      "region_groups":{"stadur":"Staðir og náttúra","ganga":"Gönguleiðir","bod":"Sundlaugar & böð","afthreying":"Afþreying","veitingar":"Veitingastaðir","kaffi":"Kaffihús","heimavara":"Heimavara & handverk"},
       "dir_h1":"Allir staðir á Íslandi","all_places":"Allir staðir","lang_label":"EN",
       "place_title":"{name} — {type}, {rname} | {site}",
       "region_title":"{rname} — staðir, gisting og afþreyging | {site}",
@@ -156,16 +156,16 @@ LANGS = {
     "country": "Iceland",
     "ui": {
       "nav_map":"Map","nav_all":"All places","nav_about":"About","crumb_home":"Home",
-      "kicker_place":{"stadur":"Place","ganga":"Hiking trail","bod":"Pool & baths","afthreying":"Attraction","veitingar":"Restaurant","kaffi":"Café"},
+      "kicker_place":{"stadur":"Place","ganga":"Hiking trail","bod":"Pool & baths","afthreying":"Attraction","veitingar":"Restaurant","kaffi":"Café","heimavara":"Local maker"},
       "kicker_region":"Region","kicker_overview":"Overview",
       "h_highlights":"Highlights","h_route":"On the route","h_known":"Known for",
       "h_accom":"Nearby accommodation","h_activities":"Activities",
       "stat_area":"Area","stat_pop":"Population","stat_town":"Main town",
       "stat_dist":"Distance","stat_dur":"Duration","stat_diff":"Difficulty",
       "stat_cuisine":"Cuisine","stat_price":"Price","stat_loc":"Location","stat_dist_rvk":"Straight line from Reykjavík",
-      "btn_book":"Book nearby accommodation","btn_tours":"Browse tours & activities","btn_find":"Find on map",
+      "btn_book":"Book nearby accommodation","btn_tours":"Browse tours & activities","btn_find":"Find on map","btn_shop":"Visit / shop online","h_sells":"What they offer",
       "more_in":"More in {r}","all_in":"All of {r} →","view_map":"View on the interactive map →",
-      "region_groups":{"stadur":"Places & nature","ganga":"Hiking trails","bod":"Pools & baths","afthreying":"Attractions","veitingar":"Restaurants","kaffi":"Cafés"},
+      "region_groups":{"stadur":"Places & nature","ganga":"Hiking trails","bod":"Pools & baths","afthreying":"Attractions","veitingar":"Restaurants","kaffi":"Cafés","heimavara":"Local shops & makers"},
       "dir_h1":"All places in Iceland","all_places":"All places","lang_label":"IS",
       "place_title":"{name} — {type} in {rname} | {site}",
       "region_title":"{rname} — places, accommodation & activities | {site}",
@@ -369,12 +369,12 @@ def build_place(lang, p, regions, places):
 
     dist = km_from_rvk(pid) if pid != "reykjavik" else None
     dist_stat = (ui["stat_dist_rvk"], f"{dist} km") if dist is not None else None
-    if cat in ("ganga","veitingar","kaffi","bod","afthreying"):
+    if cat in ("ganga","veitingar","kaffi","bod","afthreying","heimavara"):
         if cat == "ganga":
             stats = [(ui["stat_dist"],p.get("length")),(ui["stat_dur"],p.get("duration")),(ui["stat_diff"],p.get("difficulty"))]
         elif cat == "bod":
             stats = [(ui["stat_price"],p.get("price")),(ui["stat_loc"],p.get("location"))]
-        elif cat == "afthreying":
+        elif cat in ("afthreying","heimavara"):
             stats = [(ui["stat_loc"],p.get("location"))]
         else:
             stats = [(ui["stat_cuisine"],p.get("cuisine")),(ui["stat_price"],p.get("price")),(ui["stat_loc"],p.get("location"))]
@@ -387,7 +387,7 @@ def build_place(lang, p, regions, places):
             f'<div class="doc-stat"><strong>{e(dist_stat[1])}</strong><span>{e(dist_stat[0])}</span></div></div>')
 
     if p.get("highlights"):
-        ht = ui["h_route"] if cat=="ganga" else (ui["h_known"] if cat in ("veitingar","kaffi") else ui["h_highlights"])
+        ht = ui["h_route"] if cat=="ganga" else (ui["h_known"] if cat in ("veitingar","kaffi") else (ui["h_sells"] if cat=="heimavara" else ui["h_highlights"]))
         parts.append(f'<h2>{e(ht)}</h2><ul class="doc-tags">' +
                      "".join(f'<li>{e(h)}</li>' for h in p["highlights"]) + '</ul>')
 
@@ -401,9 +401,15 @@ def build_place(lang, p, regions, places):
 
     q = STAY_HUB.get(pid) or p.get("location") or f'{p["name"]} {rname}'
     booking = f'https://www.booking.com/searchresults.html?ss={e(q)}, {LANGS[lang]["country"]}'
-    if cat in ("veitingar","kaffi","bod","afthreying"):
-        mapq = f'{p["name"]} {p.get("location") or rname}'
-        maplink = f'https://www.google.com/maps/search/{e(mapq)}, {LANGS[lang]["country"]}'
+    mapq = f'{p["name"]} {p.get("location") or rname}'
+    maplink = f'https://www.google.com/maps/search/{e(mapq)}, {LANGS[lang]["country"]}'
+    if cat == "heimavara":
+        shopbtn = (f'<a class="doc-btn primary" href="{e(p["website"])}" target="_blank" rel="noopener nofollow">{e(ui["btn_shop"])}</a>'
+                   if p.get("website") else "")
+        parts.append(f'''<div class="doc-cta">
+      {shopbtn}
+      <a class="doc-btn" href="{maplink}" target="_blank" rel="noopener nofollow">{e(ui["btn_find"])}</a></div>''')
+    elif cat in ("veitingar","kaffi","bod","afthreying"):
         parts.append(f'''<div class="doc-cta">
       <a class="doc-btn primary" href="{maplink}" target="_blank" rel="noopener nofollow">{e(ui["btn_find"])}</a>
       <a class="doc-btn" href="{booking}" target="_blank" rel="noopener sponsored nofollow">{e(ui["btn_book"])}</a></div>''')
@@ -462,7 +468,7 @@ def build_region(lang, rid, regions, places):
     for sec in REGION_SEO.get(rid, {}).get(lang, []):
         txt = sec.get("text") or sec.get("body") or ""
         parts.append(f'<h2>{e(sec.get("title",""))}</h2><p class="doc-body">{e(txt)}</p>')
-    for cat in ("stadur","ganga","bod","afthreying","veitingar","kaffi"):
+    for cat in ("stadur","ganga","bod","afthreying","veitingar","kaffi","heimavara"):
         group = [p for p in rplaces if cat_of(p)==cat]
         if not group: continue
         parts.append(f'<h2>{e(ui["region_groups"][cat])}</h2><ul class="doc-links">' +

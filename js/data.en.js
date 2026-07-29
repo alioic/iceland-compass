@@ -9294,6 +9294,942 @@ const PLACES = [
       "Sail to Papey island",
       "Watch puffins and birdlife"
     ]
+  },
+  {
+    "id": "eimverk_distillery",
+    "name": "Eimverk Distillery (Flóki)",
+    "region": "hofudborg",
+    "category": "heimavara",
+    "type": "Distillery",
+    "location": "Garðabær",
+    "website": "https://www.flokiwhisky.is",
+    "tags": [
+      "Local",
+      "Distillery",
+      "Whisky",
+      "Family-run"
+    ],
+    "blurb": "Iceland's first whisky distillery, made entirely from Icelandic barley.",
+    "description": "This family-run distillery in Garðabær makes Flóki single malt whisky, Vor gin and Víti brennivín, all from 100% Icelandic barley. Guided tours with tastings run by appointment, and an on-site shop sells the full range of spirits and gifts.",
+    "highlights": [
+      "Guided tour and tasting by appointment",
+      "Flóki whisky, Vor gin and Víti brennivín",
+      "On-site shop open weekdays"
+    ]
+  },
+  {
+    "id": "alafoss_ullarverslun",
+    "name": "Álafoss Wool Store",
+    "region": "hofudborg",
+    "category": "heimavara",
+    "type": "Crafts",
+    "location": "Mosfellsbær",
+    "website": "https://alafoss.is",
+    "tags": [
+      "Local",
+      "Wool",
+      "Lopapeysa",
+      "Crafts"
+    ],
+    "blurb": "Historic wool store in Álafosskvos selling lopi yarn and sweaters.",
+    "description": "Álafoss has worked with Icelandic wool since 1896, and its store in Álafosskvos in Mosfellsbær sells lopi yarn, wool, hand-knitted lopapeysa sweaters and wool goods. The little valley itself is a scenic heritage spot beside the old wool mill.",
+    "highlights": [
+      "Icelandic lopi yarn and wool",
+      "Hand-knitted lopapeysa sweaters",
+      "Historic setting in Álafosskvos"
+    ]
+  },
+  {
+    "id": "handprjonasamband_islands",
+    "name": "Handknitting Association of Iceland",
+    "region": "hofudborg",
+    "category": "heimavara",
+    "type": "Crafts",
+    "location": "Reykjavík",
+    "website": "https://handknitted.is",
+    "tags": [
+      "Local",
+      "Wool",
+      "Lopapeysa",
+      "Crafts"
+    ],
+    "blurb": "Shop of the cooperative of Icelandic hand-knitters in central Reykjavík.",
+    "description": "The Handknitting Association of Iceland, founded in 1977, is a cooperative of hundreds of Icelandic knitters. Its stores on Skólavörðustígur and Borgartún sell hand-knitted lopapeysa sweaters and wool goods made by members from Icelandic wool.",
+    "highlights": [
+      "Hand-knitted lopapeysa by members",
+      "Icelandic wool and knitwear",
+      "Central location on Skólavörðustígur"
+    ]
+  },
+  {
+    "id": "kolaportid_flohamarkadur",
+    "name": "Kolaportið Flea Market",
+    "region": "hofudborg",
+    "category": "heimavara",
+    "type": "Market",
+    "location": "Reykjavík",
+    "website": "https://www.kolaportid.is",
+    "tags": [
+      "Local",
+      "Market",
+      "Food",
+      "Crafts"
+    ],
+    "blurb": "Iceland's largest weekend flea market in the old customs house.",
+    "description": "Kolaportið is Iceland's largest flea market, open on weekends in the old customs house by the harbour in Reykjavík. Dozens of vendors sell crafts, wool, vintage clothing and Icelandic food such as dried fish, kleinur doughnuts and fermented shark.",
+    "highlights": [
+      "Over 50 vendors on weekends",
+      "Food corner with dried fish and kleinur",
+      "Crafts, wool and vintage finds"
+    ]
+  },
+  {
+    "id": "aegir_brugghus",
+    "name": "Ægir Brugghús",
+    "region": "hofudborg",
+    "category": "heimavara",
+    "type": "Brewery",
+    "location": "Reykjavík",
+    "website": "https://www.aegirbrugghus.is",
+    "tags": [
+      "Local",
+      "Brewery",
+      "Craft beer"
+    ],
+    "blurb": "Reykjavík craft brewery with taprooms downtown and in Grandi.",
+    "description": "Ægir Brugghús opened in the Grandi district in 2017 and brews craft beer using Icelandic ingredients. The beer is served at the Ægir 101 taproom on Laugavegur and Ægir 220 in Hafnarfjörður, where guests can taste the range straight from the brewer.",
+    "highlights": [
+      "Craft beer brewed in Reykjavík",
+      "Ægir 101 taproom on Laugavegur",
+      "Ægir 220 in Hafnarfjörður's old harbour"
+    ]
+  },
+  {
+    "id": "farmers_and_friends",
+    "name": "Farmers & Friends (Farmers Market)",
+    "region": "hofudborg",
+    "category": "heimavara",
+    "type": "Design",
+    "location": "Reykjavík",
+    "website": "https://www.farmersmarket.is",
+    "tags": [
+      "Local",
+      "Design",
+      "Wool",
+      "Fashion"
+    ],
+    "blurb": "Icelandic design brand with a flagship store in Grandi.",
+    "description": "Farmers Market is an Icelandic design company founded in 2005 that blends modern design with Icelandic heritage. Its Farmers & Friends flagship store in Grandi sells clothing in natural fabrics, wool sweaters, music, books and household items.",
+    "highlights": [
+      "Icelandic design in natural fabrics",
+      "Wool sweaters and knitwear",
+      "Store and design studio in Grandi"
+    ]
+  },
+  {
+    "id": "burid_islenska_buri",
+    "name": "Búrið – The Icelandic Pantry",
+    "region": "hofudborg",
+    "category": "heimavara",
+    "type": "Farm shop",
+    "location": "Reykjavík",
+    "website": "",
+    "tags": [
+      "Local",
+      "Cheese",
+      "Food",
+      "Farm-direct"
+    ],
+    "blurb": "Grandi cheese shop stocking specialties from small Icelandic producers.",
+    "description": "Búrið on Grandagarður is a cheese shop and pantry specialising in artisan cheeses, jams, chutneys and treats from small Icelandic farms and producers. Founded in 2008, it also runs informal cheese workshops over the summer months.",
+    "highlights": [
+      "Icelandic artisan cheeses",
+      "Specialties from small producers",
+      "Summer cheese workshops"
+    ]
+  },
+  {
+    "id": "duus_handverk",
+    "name": "Duus Handverk",
+    "region": "reykjanes",
+    "category": "heimavara",
+    "type": "Crafts",
+    "location": "Reykjanesbær",
+    "website": "https://www.facebook.com/DuusHandverk",
+    "tags": [
+      "Local",
+      "Crafts",
+      "Wool",
+      "Art"
+    ],
+    "blurb": "Craft shop where twenty Reykjanes artisans sell under one roof.",
+    "description": "Duus Handverk on Hafnargata in Reykjanesbær is a cosy gift boutique where around twenty artisans from the Reykjanes Peninsula sell their work together: wool sweaters, textiles, glass art, ceramics, jewellery and paintings. A small café rounds out the visit.",
+    "highlights": [
+      "Crafts by 20 Reykjanes artisans",
+      "Wool, glass, ceramics and jewellery",
+      "Café with waffles and homemade jam"
+    ]
+  },
+  {
+    "id": "ullarselid_hvanneyri",
+    "name": "Ullarselið – Wool Centre",
+    "region": "vesturland",
+    "category": "heimavara",
+    "type": "Crafts",
+    "location": "Hvanneyri",
+    "website": "https://ull.is",
+    "tags": [
+      "Local",
+      "Wool",
+      "Crafts",
+      "Hand-knit"
+    ],
+    "blurb": "A locals' wool centre in Hvanneyri with hand-made wool goods.",
+    "description": "Ullarselið in Hvanneyri in Borgarfjörður is a craft shop devoted to Icelandic wool and other natural materials. Locals banded together to sell hand-made goods: knitwear, felted and woven pieces, scarves and accessories made from quality wool.",
+    "highlights": [
+      "Hand-made wool goods by locals",
+      "Knitted, felted and woven pieces",
+      "Workshops in knitting and wool craft"
+    ]
+  },
+  {
+    "id": "brugghus_stedja",
+    "name": "Brugghús Steðja",
+    "region": "vesturland",
+    "category": "heimavara",
+    "type": "Brewery",
+    "location": "Borgarfjörður",
+    "website": "https://www.facebook.com/BrugghusStedja",
+    "tags": [
+      "Local",
+      "Brewery",
+      "Farm brewery"
+    ],
+    "blurb": "A farm brewery in Borgarfjörður that loves to experiment.",
+    "description": "Brugghús Steðja is a farm brewery in Borgarfjörður, founded in 2012 and known for experimenting with unusual flavours such as seaweed and chocolate. Group visits and tastings are offered by arrangement in a relaxed, characterful tasting room.",
+    "highlights": [
+      "Farm brewery with experimental beers",
+      "Tastings and visits for groups",
+      "Smoked beer straight from the barrel"
+    ]
+  },
+  {
+    "id": "ljomalind_sveitamarkadur",
+    "name": "Ljómalind Local Market",
+    "region": "vesturland",
+    "category": "heimavara",
+    "type": "Market",
+    "location": "Borgarnes",
+    "website": "https://ljomalind.is",
+    "tags": [
+      "Local",
+      "Market",
+      "Farm-direct",
+      "Crafts"
+    ],
+    "blurb": "A Borgarnes local market with food and crafts straight from locals.",
+    "description": "Ljómalind in Borgarnes is a local market selling food straight from the farm and crafts by locals. Around seventy producers offer their goods: skyr, eggs, dried fish, smoked salmon, jams, chocolate, ice cream, knitwear and wool goods, all from West Iceland.",
+    "highlights": [
+      "Goods from around 70 West Iceland producers",
+      "Skyr, eggs, dried fish and smoked salmon",
+      "Crafts and wool goods straight from locals"
+    ]
+  },
+  {
+    "id": "olvisholt-brugghus",
+    "name": "Ölvisholt Brewery",
+    "region": "sudurland",
+    "category": "heimavara",
+    "type": "Brewery",
+    "location": "Ölvisholt, near Selfoss",
+    "website": "https://olvisholt.is",
+    "tags": [
+      "Local",
+      "Craft beer",
+      "Brewery",
+      "Countryside"
+    ],
+    "blurb": "A countryside brewery in a former dairy barn where you can taste the beer straight from the brewers.",
+    "description": "Founded in 2007 by two neighbouring farmers, Ölvisholt Brewery sits in an old dairy farm just outside Selfoss. Its taproom opens to visitors on selected days for tastings of craft beers such as the smoky Lava stout and lighter lagers. It is one of Iceland's oldest independent breweries and its beers are stocked across the country.",
+    "highlights": [
+      "Brewed in an old farm dairy",
+      "Known for the smoky Lava stout",
+      "Taproom open on selected days"
+    ]
+  },
+  {
+    "id": "smidjan-brugghus-vik",
+    "name": "Smiðjan Brugghús",
+    "region": "sudurland",
+    "category": "heimavara",
+    "type": "Brewery",
+    "location": "Vík",
+    "website": "https://smidjanbrugghus.is",
+    "tags": [
+      "Local",
+      "Craft beer",
+      "Brewery",
+      "Brewpub"
+    ],
+    "blurb": "A brewpub in Vík serving its own craft beer alongside burgers and grilled dishes.",
+    "description": "Smiðjan Brugghús is a small brewery and brewpub in the heart of Vík, founded by locals in 2018. It brews craft beer on site, from IPAs to stouts, and serves burgers, ribs and grilled fare. The spot is a popular gathering place for both residents and travellers seeking shelter from the south coast weather.",
+    "highlights": []
+  },
+  {
+    "id": "olverk-pizza-brugghus",
+    "name": "Ölverk Pizza & Brewery",
+    "region": "sudurland",
+    "category": "heimavara",
+    "type": "Brewery",
+    "location": "Hveragerði",
+    "website": "https://www.olverk.is",
+    "tags": [
+      "Local",
+      "Craft beer",
+      "Brewery",
+      "Geothermal"
+    ],
+    "blurb": "A family-run Hveragerði brewery using geothermal energy to brew beer and fire its pizzas.",
+    "description": "Ölverk opened in 2017 in Hveragerði and is run by a young local couple. It brews craft beer using geothermal energy from the Hengill area and serves wood-fired pizzas and its own hot sauces. The brewery offers tours explaining Iceland's beer history and the local use of geothermal power.",
+    "highlights": []
+  },
+  {
+    "id": "brothers-brewery-vestmannaeyjar",
+    "name": "The Brothers Brewery",
+    "region": "sudurland",
+    "category": "heimavara",
+    "type": "Brewery",
+    "location": "Vestmannaeyjar",
+    "website": "https://tbb.is",
+    "tags": [
+      "Local",
+      "Craft beer",
+      "Brewery",
+      "Islands"
+    ],
+    "blurb": "A Westman Islands brewery brewing beer from local ingredients, including dulse picked on the islands.",
+    "description": "The Brothers Brewery began in 2012 as a kitchen experiment by two friends and their brothers and today is a brewery with its own tavern in Vestmannaeyjar. It brews craft beer from carefully chosen ingredients, including its flagship Eldfell Volcano Red Ale, which uses dulse foraged on the islands. The tavern is a lively gathering place with live music and events.",
+    "highlights": []
+  },
+  {
+    "id": "eimverk-floki-distillery",
+    "name": "Eimverk / Flóki Distillery",
+    "region": "sudurland",
+    "category": "heimavara",
+    "type": "Distillery",
+    "location": "Bjálmholt, near Hella",
+    "website": "https://flokiwhisky.is",
+    "tags": [
+      "Local",
+      "Distillery",
+      "Whisky",
+      "Farm-direct"
+    ],
+    "blurb": "A family distillery growing its own barley to make Flóki whisky and other Icelandic spirits.",
+    "description": "Eimverk is a family-run distillery producing Flóki whisky, gin and brennivín from 100% Icelandic barley. The barley is grown at Bjálmholt farm near Hella in South Iceland, where tastings and tours are also offered. It was Iceland's first whisky distillery and the spirits are made from grain to glass.",
+    "highlights": []
+  },
+  {
+    "id": "skyrgerdin-hveragerdi",
+    "name": "Skyrgerðin (The Old Skyr Factory)",
+    "region": "sudurland",
+    "category": "heimavara",
+    "type": "Farm shop",
+    "location": "Hveragerði",
+    "website": "https://www.skyrgerdin.is",
+    "tags": [
+      "Local",
+      "Skyr",
+      "Farm-direct",
+      "Café"
+    ],
+    "blurb": "The old skyr factory in Hveragerði, where skyr is still made on site the traditional way.",
+    "description": "Skyrgerðin occupies a 1930 building in Hveragerði that once housed a skyr factory. Skyr is still made on site the traditional way and served with light dishes, cakes and coffee. The house has long been a gathering place for locals and travellers in the heart of town.",
+    "highlights": []
+  },
+  {
+    "id": "solheimar-vala-verslun",
+    "name": "Vala Shop, Sólheimar",
+    "region": "sudurland",
+    "category": "heimavara",
+    "type": "Design",
+    "location": "Sólheimar, Grímsnes",
+    "website": "https://verslun.solheimar.is",
+    "tags": [
+      "Local",
+      "Crafts",
+      "Art workshops",
+      "Organic"
+    ],
+    "blurb": "A shop in the Sólheimar eco-village selling crafts from its art workshops and organic produce.",
+    "description": "The Vala shop sits in Sólheimar, Iceland's oldest eco-village, founded in 1930 in Grímsnes. It sells handicrafts from the community's art workshops, including ceramics, candles, artwork and weaving, alongside organic goods from its bakery and greenhouses. The shop shares a building with the art studio and the organic café Græna kannan.",
+    "highlights": []
+  },
+  {
+    "id": "vikurprjon-icewear-vik",
+    "name": "Víkurprjón (Icewear)",
+    "region": "sudurland",
+    "category": "heimavara",
+    "type": "Design",
+    "location": "Vík",
+    "website": "https://icewear.is",
+    "tags": [
+      "Local",
+      "Wool",
+      "Lopapeysa",
+      "Design"
+    ],
+    "blurb": "One of Iceland's oldest wool works in Vík, with lopapeysa sweaters, wool goods and an on-site factory.",
+    "description": "Víkurprjón has processed Icelandic wool in Vík since 1972 and is today part of Icewear. It offers lopapeysa sweaters, knitwear, outdoor clothing and souvenirs, and visitors can see production in the factory. The same building also houses a café and a small grocery store.",
+    "highlights": []
+  },
+  {
+    "id": "hespuhusid-jurtalitun",
+    "name": "Hespuhúsið (The Yarn House)",
+    "region": "sudurland",
+    "category": "heimavara",
+    "type": "Crafts",
+    "location": "Near Selfoss",
+    "website": "https://hespa.is",
+    "tags": [
+      "Local",
+      "Wool",
+      "Plant dyeing",
+      "Crafts"
+    ],
+    "blurb": "An open plant-dyeing studio near Selfoss where Icelandic wool is dyed with plants the traditional way.",
+    "description": "At Hespuhúsið, Guðrún Bjarnadóttir dyes Icelandic einband yarn with plants following old traditions but with modern technique. She uses Icelandic plants such as rhubarb, lichen, lupine and flowers, along with indigo and other dyes. The studio welcomes visitors by arrangement, where you can peer into the dye pots and buy plant-dyed yarn.",
+    "highlights": []
+  },
+  {
+    "id": "thingborg-ullarvinnsla",
+    "name": "Þingborg Wool Centre",
+    "region": "sudurland",
+    "category": "heimavara",
+    "type": "Crafts",
+    "location": "Þingborg, east of Selfoss",
+    "website": "https://www.facebook.com/thingborgull",
+    "tags": [
+      "Local",
+      "Wool",
+      "Crafts",
+      "Lopapeysa"
+    ],
+    "blurb": "A wool workshop and shop in an old community hall where a group of women work Icelandic wool from scratch.",
+    "description": "Þingborg occupies an old community hall and schoolhouse from 1927, about 8 km east of Selfoss. A group of women gathers here to knit, spin, card, felt and weave Icelandic wool in natural colours. The shop sells lopapeysa sweaters, knitwear, hand-dyed yarn and lopi, all handmade on site.",
+    "highlights": []
+  },
+  {
+    "id": "solskinsbudin-fludir",
+    "name": "Sólskinsbúðin Farmers Market",
+    "region": "sudurland",
+    "category": "heimavara",
+    "type": "Market",
+    "location": "Flúðir",
+    "website": "https://www.solskinsbudin.is",
+    "tags": [
+      "Local",
+      "Farmers market",
+      "Farm-direct",
+      "Vegetables"
+    ],
+    "blurb": "A farmers market in a Flúðir greenhouse selling vegetables, baked goods and produce straight from nearby farms.",
+    "description": "Sólskinsbúðin is a farmers market inside a greenhouse in Flúðir, selling vegetables, home-baked bread, meat, fresh herbs, eggs and more. Everything is sourced on site or from nearby farms, and guests can see into the greenhouses where tomatoes and cucumbers are grown. Cultivation has taken place in Flúðir since 1944.",
+    "highlights": []
+  },
+  {
+    "id": "kidka-hvammstangi",
+    "name": "KIDKA Wool Factory",
+    "region": "nordvestur",
+    "category": "heimavara",
+    "type": "Design",
+    "location": "Hvammstangi",
+    "website": "https://kidka.com",
+    "tags": [
+      "Local",
+      "Wool",
+      "Knitwear",
+      "Lopapeysa"
+    ],
+    "blurb": "One of Iceland's largest wool factories, with a factory shop in the heart of Hvammstangi.",
+    "description": "KIDKA has knitted garments from Icelandic wool for decades and runs a factory shop in the village of Hvammstangi. You can buy lopapeysur, hats, mittens and blankets straight from the maker, all designed and finished on site. The shop sits just off the Ring Road.",
+    "highlights": [
+      "Lopapeysur and knitwear straight from the factory",
+      "100% Icelandic wool",
+      "Factory shop just off the Ring Road"
+    ]
+  },
+  {
+    "id": "atlantic-leather-saudarkrokur",
+    "name": "Atlantic Leather",
+    "region": "nordvestur",
+    "category": "heimavara",
+    "type": "Crafts",
+    "location": "Sauðárkrókur",
+    "website": "https://atlanticleather.is",
+    "tags": [
+      "Local",
+      "Crafts",
+      "Fish leather",
+      "Design"
+    ],
+    "blurb": "Europe's only fish-leather tannery, with a visitor centre and shop in Sauðárkrókur.",
+    "description": "Atlantic Leather tans the skins of salmon, wolffish, cod and perch, turning a food-industry by-product into sought-after fashion leather. At the Gestastofa visitor centre beside the tannery you can view the process and buy fish-leather goods along with jewellery and accessories from Icelandic designers. The material has reached houses such as Dior and Prada.",
+    "highlights": [
+      "Fish leather from salmon, wolffish, cod and perch",
+      "Visitor centre with goods by local designers",
+      "The only fish-leather tannery in Europe"
+    ]
+  },
+  {
+    "id": "brunastadir-fljot",
+    "name": "Brúnastaðir Farm",
+    "region": "nordvestur",
+    "category": "heimavara",
+    "type": "Farm shop",
+    "location": "Fljót, Skagafjörður",
+    "website": "https://www.brunastadir.is",
+    "tags": [
+      "Local",
+      "Farm shop",
+      "Cheese",
+      "Petting zoo"
+    ],
+    "blurb": "A family farm in Fljót with a farm shop, goat cheese and a petting zoo.",
+    "description": "At Brúnastaðir in Fljót the family runs a small farm shop selling goat cheese made on the farm alongside other local produce. There is a petting zoo with Icelandic farm animals and light refreshments such as ice cream, coffee and home baking. The farm sits by Lake Miklavatn in the north of Skagafjörður.",
+    "highlights": [
+      "Goat cheese made on the farm",
+      "Petting zoo with Icelandic farm animals",
+      "Home baking, ice cream and coffee"
+    ]
+  },
+  {
+    "id": "langafit-laugarbakki",
+    "name": "Langafit Handcraft Market",
+    "region": "nordvestur",
+    "category": "heimavara",
+    "type": "Market",
+    "location": "Laugarbakki",
+    "website": "",
+    "tags": [
+      "Local",
+      "Crafts",
+      "Country market"
+    ],
+    "blurb": "A handcraft shop and coffee house in the village of Laugarbakki by Miðfjörður.",
+    "description": "In the village of Laugarbakki by Miðfjörður, the Langafit shop sells handcraft made by local villagers and nearby farms. There is also a coffee house, open through the summer months beside the campsite. A greenhouse nearby sells strawberries and vegetables.",
+    "highlights": [
+      "Handcraft by locals and neighbouring farms",
+      "Coffee house by the campsite",
+      "Open in summer right off the Ring Road"
+    ]
+  },
+  {
+    "id": "stadarskali-hrutafjordur",
+    "name": "Staðarskáli",
+    "region": "nordvestur",
+    "category": "heimavara",
+    "type": "Village shop",
+    "location": "Hrútafjörður",
+    "website": "",
+    "tags": [
+      "Local",
+      "Roadside stop",
+      "Travel stop"
+    ],
+    "blurb": "A historic roadside stop and shop on the Ring Road in Hrútafjörður.",
+    "description": "Staðarskáli in Hrútafjörður is one of Iceland's best-known roadside stops, roughly halfway between Reykjavik and Akureyri. It has a service centre, a shop, food and a tourist information point. The place has long been a traditional halt on the northern route.",
+    "highlights": [
+      "A classic halfway stop on the northern route",
+      "Shop, food and fuel",
+      "Tourist information point"
+    ]
+  },
+  {
+    "id": "bruggsmidjan-kaldi-arskogssandur",
+    "name": "Bruggsmiðjan Kaldi",
+    "region": "nordaustur",
+    "category": "heimavara",
+    "type": "Brewery",
+    "location": "Árskógssandur",
+    "website": "https://www.bruggsmidjan.is",
+    "tags": [
+      "Local",
+      "Brewery",
+      "Craft beer"
+    ],
+    "blurb": "Iceland's first craft brewery, with a shop in Árskógssandur.",
+    "description": "Bruggsmiðjan Kaldi was Iceland's first craft brewery, founded in 2006 in Árskógssandur by Eyjafjörður. The beer is unfiltered and brewed with pure Icelandic water, and is sold straight from the brewery. On site there is also the Bjórböðin beer spa, where guests can bathe in beer.",
+    "highlights": [
+      "Iceland's first craft brewery",
+      "Unfiltered beer from Icelandic water",
+      "Beer spa on site"
+    ]
+  },
+  {
+    "id": "segull-67-siglufjordur",
+    "name": "Segull 67",
+    "region": "nordaustur",
+    "category": "heimavara",
+    "type": "Brewery",
+    "location": "Siglufjörður",
+    "website": "https://www.segull67.is",
+    "tags": [
+      "Local",
+      "Brewery",
+      "Distillery",
+      "Craft beer"
+    ],
+    "blurb": "A family brewery in an old herring factory in Siglufjörður.",
+    "description": "Segull 67 is a small family brewery in a renovated herring factory in Siglufjörður. In the taproom you can try beers from the core range and seasonal brews while watching the brewing through a glass wall. Upstairs is the Íshaf 67 distillery, producing gin and other spirits from Icelandic ingredients.",
+    "highlights": [
+      "Brewery in an old herring factory",
+      "Taproom overlooking the brewing",
+      "Íshaf 67 distillery upstairs"
+    ]
+  },
+  {
+    "id": "holtsel-eyjafjordur",
+    "name": "Holtsel (Holtsels-Hnoss)",
+    "region": "nordaustur",
+    "category": "heimavara",
+    "type": "Farm shop",
+    "location": "Eyjafjarðarsveit",
+    "website": "https://holtsel.is",
+    "tags": [
+      "Local",
+      "Farm shop",
+      "Ice cream",
+      "Dairy"
+    ],
+    "blurb": "A dairy farm in Eyjafjörður making homemade ice cream from its own milk.",
+    "description": "At Holtsel in Eyjafjarðarsveit, about 20 km south of Akureyri, the family has made ice cream from their cows' milk since 2006. The Holtsels-Hnoss ice cream comes in dozens of flavours, including liquorice, blueberry and rhubarb. The farm has a shop that sells only farm-direct produce.",
+    "highlights": [
+      "Homemade ice cream from the farm's milk",
+      "Dozens of flavours",
+      "Shop stocking only farm-direct produce"
+    ]
+  },
+  {
+    "id": "kaffi-ku-eyjafjordur",
+    "name": "Kaffi Kú",
+    "region": "nordaustur",
+    "category": "heimavara",
+    "type": "Farm shop",
+    "location": "Garður, Eyjafjarðarsveit",
+    "website": "https://www.kaffiku.is",
+    "tags": [
+      "Local",
+      "Farm shop",
+      "Café",
+      "Beef"
+    ],
+    "blurb": "A café in the loft above a cowshed selling farm-direct beef.",
+    "description": "Kaffi Kú sits at Garður farm in Eyjafjarðarsveit, about 10 km south of Akureyri, in the loft above a robotic dairy barn. Guests can watch the cows being milked while enjoying waffles and cakes with cream from the farm. On site you can also buy beef straight from the farm, fresh or frozen.",
+    "highlights": [
+      "Café in the loft above a cowshed",
+      "Waffles and cream straight from the farm",
+      "Farm-direct beef"
+    ]
+  },
+  {
+    "id": "vogafjos-myvatn",
+    "name": "Vogafjós",
+    "region": "nordaustur",
+    "category": "heimavara",
+    "type": "Farm shop",
+    "location": "Mývatn",
+    "website": "https://www.vogafjosfarmresort.is",
+    "tags": [
+      "Local",
+      "Farm shop",
+      "Cheese",
+      "Cowshed"
+    ],
+    "blurb": "A family farm by Lake Mývatn with a cowshed, food and a small shop of local goods.",
+    "description": "Vogafjós stands on the east shore of Lake Mývatn and is a family-run farm with accommodation, a restaurant in the cowshed and a small shop of local products. The kitchen focuses on homemade food, including smoked trout, mozzarella and salad cheese from their own milk, and rye bread baked underground. Guests can watch the cows being milked twice a day.",
+    "highlights": [
+      "Cheese and dairy from their own milk",
+      "Small shop with local products",
+      "Rye bread baked underground"
+    ]
+  },
+  {
+    "id": "fjalladyrd-modrudalur",
+    "name": "Fjalladýrð, Möðrudalur",
+    "region": "nordaustur",
+    "category": "heimavara",
+    "type": "Village shop",
+    "location": "Möðrudalur",
+    "website": "https://fjalladyrd.is",
+    "tags": [
+      "Local",
+      "Village shop",
+      "Crafts",
+      "Café"
+    ],
+    "blurb": "Iceland's highest farm, with a country shop, handcraft and a café.",
+    "description": "Möðrudalur is the highest inhabited farm in Iceland, where the family runs the Fjalladýrð travel service. The shop sells Icelandic woollens and handcraft made by locals along with essentials for travellers. At the Fjallakaffi café you will find homemade treats such as kleinur, ástarpungar and meat soup.",
+    "highlights": [
+      "Woollens and handcraft by locals",
+      "Fjallakaffi café with homemade treats",
+      "Iceland's highest inhabited farm"
+    ]
+  },
+  {
+    "id": "flora-akureyri",
+    "name": "Flóra Culture House",
+    "region": "nordaustur",
+    "category": "heimavara",
+    "type": "Design",
+    "location": "Akureyri",
+    "website": "https://www.floraflora.is",
+    "tags": [
+      "Local",
+      "Design",
+      "Crafts"
+    ],
+    "blurb": "A design and culture house in central Akureyri with goods from local makers.",
+    "description": "Flóra is a concept store and culture house set in a green oasis in central Akureyri. It offers a varied selection from small producers, artists, designers and farmers, including woollens, honey, herbs, candles and art. The house is also a venue for events and workshops.",
+    "highlights": [
+      "Goods from small producers and designers",
+      "Woollens, honey and Icelandic herbs",
+      "Culture house with events and workshops"
+    ]
+  },
+  {
+    "id": "modir-jord-vallanes",
+    "name": "Móðir Jörð – Vallanes",
+    "region": "austurland",
+    "category": "heimavara",
+    "type": "Farm shop",
+    "location": "Vallanes",
+    "website": "https://modirjord.is",
+    "tags": [
+      "Local",
+      "Organic",
+      "Farm shop",
+      "Vegetables"
+    ],
+    "blurb": "Organic farm shop and café between Egilsstaðir and Hallormsstaður forest.",
+    "description": "At the Vallanes farm by Lagarfljót, the family grows organic grain, herbs and vegetables and turns the harvest into specialty foods. The Aspen House holds a small farm shop and café selling wholegrain products, jams, chutneys and lacto-fermented vegetables. Open daily in summer.",
+    "highlights": [
+      "Organic grain and vegetables grown on the farm",
+      "Jams, chutneys and fermented foods",
+      "Café serving vegetarian dishes"
+    ]
+  },
+  {
+    "id": "beljandi-brugghus",
+    "name": "Beljandi Brugghús",
+    "region": "austurland",
+    "category": "heimavara",
+    "type": "Brewery",
+    "location": "Breiðdalsvík",
+    "website": "https://www.facebook.com/beljandibrugghus",
+    "tags": [
+      "Local",
+      "Craft beer",
+      "Brewery"
+    ],
+    "blurb": "Micro-brewery and bar in a restored house in tiny Breiðdalsvík.",
+    "description": "Beljandi is a small craft brewery started by two locals in a restored old house in Breiðdalsvík. The upstairs bar pours the brewery's own beers, from pale ale to porter, alongside light platters made with local ingredients. The bar is mainly open in the evenings through summer.",
+    "highlights": [
+      "Craft beer brewed on the premises",
+      "Bar overlooking the brewhouse and the sea",
+      "Light platters from local ingredients"
+    ]
+  },
+  {
+    "id": "austri-brugghus-askur",
+    "name": "Austri Brugghús / Askur Taproom",
+    "region": "austurland",
+    "category": "heimavara",
+    "type": "Brewery",
+    "location": "Egilsstaðir",
+    "website": "",
+    "tags": [
+      "Local",
+      "Craft beer",
+      "Brewery"
+    ],
+    "blurb": "Craft brewery in Egilsstaðir with its own taproom bar.",
+    "description": "Austri is a craft brewery in Egilsstaðir that names its beers after East Iceland landmarks. At the Askur taproom you can taste the beer straight from the brewer, including an IPA and a double IPA infused with locally grown wasabi. The taproom is small and homely, right in the centre of town.",
+    "highlights": [
+      "Beers named after East Iceland landmarks",
+      "Askur taproom in the heart of Egilsstaðir",
+      "Beer flavoured with locally grown ingredients"
+    ]
+  },
+  {
+    "id": "khb-brugghus",
+    "name": "KHB Brugghús",
+    "region": "austurland",
+    "category": "heimavara",
+    "type": "Distillery",
+    "location": "Borgarfjörður eystri",
+    "website": "https://www.khb-brugghus.is",
+    "tags": [
+      "Local",
+      "Distillery",
+      "Craft beer",
+      "Gin"
+    ],
+    "blurb": "Brewery and distillery in one of Borgarfjörður eystri's oldest houses.",
+    "description": "KHB Brugghús is a craft brewery and distillery in an old freezing plant in Borgarfjörður eystri. It produces beer, small-batch gin and landi (Icelandic moonshine), with the beers named after the area's elf and ghost stories. Visitors can drop into the taproom, taste the products and book a tour.",
+    "highlights": [
+      "Beer, gin and moonshine made on site",
+      "Beers named after elf and ghost lore",
+      "Taproom with tastings and tours"
+    ]
+  },
+  {
+    "id": "hus-handanna",
+    "name": "Hús Handanna",
+    "region": "austurland",
+    "category": "heimavara",
+    "type": "Design",
+    "location": "Egilsstaðir",
+    "website": "https://hushandanna.is",
+    "tags": [
+      "Local",
+      "Crafts",
+      "Design"
+    ],
+    "blurb": "Craft and design shop in the heart of Egilsstaðir.",
+    "description": "Hús Handanna is a small craft and design shop founded in 2010 at East Iceland's busiest crossroads. It carries a broad selection of Icelandic product design, art craft, clothing and chosen souvenirs. The shop emphasises eco-friendly goods and an artistic lifestyle.",
+    "highlights": [
+      "Icelandic product design and art craft",
+      "Clothing design and selected souvenirs",
+      "Eco-friendly home and personal-care goods"
+    ]
+  },
+  {
+    "id": "dokkan-brugghus",
+    "name": "Dokkan Brugghús",
+    "region": "vestfirdir",
+    "category": "heimavara",
+    "type": "Brewery",
+    "location": "Ísafjörður",
+    "website": "https://www.facebook.com/dokkanbrugghus",
+    "tags": [
+      "Local",
+      "Craft beer",
+      "Brewery"
+    ],
+    "blurb": "The Westfjords' first and only brewery, in the heart of Ísafjörður.",
+    "description": "Dokkan Brugghús is a small family business founded in Ísafjörður in 2017, the first brewery in the Westfjords. The beer is brewed with spring water that rises in the remote Westfjords mountains. Everything is made on site at Sindragata, and the bar is open in the afternoons and evenings in summer.",
+    "highlights": [
+      "The Westfjords' first brewery",
+      "Beer made with Westfjords spring water",
+      "Brewed and served on site at Sindragata"
+    ]
+  },
+  {
+    "id": "saltverk-reykjanes",
+    "name": "Saltverk",
+    "region": "vestfirdir",
+    "category": "heimavara",
+    "type": "Farm shop",
+    "location": "Reykjanes by Ísafjarðardjúp",
+    "website": "https://saltverk.com",
+    "tags": [
+      "Local",
+      "Sea salt",
+      "Hand-harvested"
+    ],
+    "blurb": "Hand-harvested sea salt from Ísafjarðardjúp, dried with geothermal heat.",
+    "description": "Saltverk makes hand-harvested sea salt at Reykjanes by Ísafjarðardjúp, where the seawater is considered among the purest and most mineral-rich in the world. The salt is boiled and dried using only geothermal energy, making the process carbon neutral. A range of flavours is produced, from lava salt to liquorice salt.",
+    "highlights": [
+      "Hand-harvested sea salt from Ísafjarðardjúp",
+      "Dried with geothermal heat, carbon neutral",
+      "Flavours from lava salt to liquorice"
+    ]
+  },
+  {
+    "id": "simbahollin-thingeyri",
+    "name": "Simbahöllin",
+    "region": "vestfirdir",
+    "category": "heimavara",
+    "type": "Village shop",
+    "location": "Þingeyri",
+    "website": "http://www.simbahollin.is",
+    "tags": [
+      "Local",
+      "Café",
+      "Crafts"
+    ],
+    "blurb": "Café and cultural house in a restored Norwegian building in Þingeyri.",
+    "description": "Simbahöllin is a homely café in a beautifully restored 1915 Norwegian house in the middle of the fishing village of Þingeyri. A Danish-Belgian couple opened it in 2009, and its Belgian waffles with homemade rhubarb jam quickly became famous. The house also serves as a cultural hub with concerts, events and horse riding.",
+    "highlights": [
+      "Belgian waffles with homemade rhubarb jam",
+      "Restored 1915 Norwegian house",
+      "Cultural hub with concerts and events"
+    ]
+  },
+  {
+    "id": "fisherman-sudureyri",
+    "name": "Fisherman",
+    "region": "vestfirdir",
+    "category": "heimavara",
+    "type": "Farm shop",
+    "location": "Suðureyri",
+    "website": "https://fisherman.is",
+    "tags": [
+      "Local",
+      "Fish",
+      "Seafood"
+    ],
+    "blurb": "Fishmonger and bistro in the fishing village of Suðureyri.",
+    "description": "Fisherman is a family-run fishmonger, bistro and café in Suðureyri, a small fishing village on Súgandafjörður. The fish arrives fresh straight from the harbour boats, and the kitchen uses as much local produce from within the village as possible. The company also offers guided seafood walks through the village.",
+    "highlights": [
+      "Fresh fish straight from the boats",
+      "Fishmonger, bistro and café in one",
+      "Guided seafood walks through the village"
+    ]
+  },
+  {
+    "id": "ivaf-knitwear",
+    "name": "Ívaf",
+    "region": "vestfirdir",
+    "category": "heimavara",
+    "type": "Crafts",
+    "location": "Ísafjörður",
+    "website": "https://ivafknitwear.is",
+    "tags": [
+      "Local",
+      "Wool",
+      "Knitwear",
+      "Crafts"
+    ],
+    "blurb": "Hand-knitted woollens from a small workshop in Ísafjörður.",
+    "description": "Ívaf is a small knitting workshop in Ísafjörður that started in 2016, run by Sigga Sifá. It makes hand-crafted woollens such as sweaters, hats and scarves inspired by Icelandic tradition. The focus is on sustainability and local production.",
+    "highlights": [
+      "Hand-knitted sweaters, hats and scarves",
+      "Icelandic wool and traditional craft",
+      "Small workshop focused on sustainability"
+    ]
+  },
+  {
+    "id": "kaupfelag-holmavik",
+    "name": "Kaupfélag Steingrímsfjarðar – Pakkhúsið",
+    "region": "vestfirdir",
+    "category": "heimavara",
+    "type": "Village shop",
+    "location": "Hólmavík",
+    "website": "https://www.ksholm.is",
+    "tags": [
+      "Local",
+      "Village shop",
+      "Co-op"
+    ],
+    "blurb": "Long-established locally owned co-op store in Hólmavík.",
+    "description": "Kaupfélag Steingrímsfjarðar was founded in 1898 and runs the Pakkhúsið shop in Hólmavík, which is entirely locally owned. It offers personal service and a varied range of goods for residents and travellers in the Strandir region. The store is a classic Icelandic village shop and an important stop on the way through the area.",
+    "highlights": [
+      "Locally owned co-op since 1898",
+      "Varied range of goods and personal service",
+      "Important stop in the Strandir region"
+    ]
   }
 ];
 
