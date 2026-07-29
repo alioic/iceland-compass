@@ -112,7 +112,7 @@ REGION_ORDER = ["hofudborg","reykjanes","vesturland","vestfirdir",
 LANGS = {
   "is": {
     "code": "is", "og_locale": "is_IS", "data": "js/data.js", "prefix": "",
-    "seg": {"place": "stadur", "region": "landshluti", "all": "stadir", "coll": "leidir", "pools": "laugar", "guide": "leidsogn"},
+    "seg": {"place": "stadur", "region": "landshluti", "all": "stadir", "coll": "leidir", "pools": "laugar", "guide": "leidsogn", "local": "heimavara"},
     "country": "Ísland",
     "ui": {
       "nav_map":"Kort","nav_all":"Allir staðir","nav_about":"Um vefinn","crumb_home":"Heim",
@@ -148,11 +148,17 @@ LANGS = {
       "pools_lead":"{n} laugar, böð og heitir pottar um allt land — smelltu á punkt til að lesa meira.",
       "pools_chips":{"all":"Allt","spa":"Jarðböð & lón","pool":"Sundlaugar","natural":"Náttúrulaugar","pots":"Heitir pottar"},
       "pools_map_link":"Sjá allar laugar á Íslandskorti →",
+      "nav_local":"Heimavara",
+      "locals_title":"Íslenskt heimafólk — brugghús, handverk og beint frá býli | {site}",
+      "locals_h1":"Íslenskt heimafólk","locals_kicker":"Shop from locals",
+      "locals_lead":"{n} íslenskir smáframleiðendur um allt land — brugghús, handverk, beint frá býli, markaðir og sveitasjoppur. Verslaðu beint af heimafólki.",
+      "locals_chips":{"all":"Allt","brugg":"Brugghús & eiming","handverk":"Handverk & hönnun","matur":"Beint frá býli","markadur":"Markaðir & sjoppur"},
+      "locals_map_link":"Sjá allt heimafólk á Íslandskorti →",
     },
   },
   "en": {
     "code": "en", "og_locale": "en", "data": "js/data.en.js", "prefix": "/en",
-    "seg": {"place": "place", "region": "region", "all": "places", "coll": "routes", "pools": "pools", "guide": "guide"},
+    "seg": {"place": "place", "region": "region", "all": "places", "coll": "routes", "pools": "pools", "guide": "guide", "local": "local"},
     "country": "Iceland",
     "ui": {
       "nav_map":"Map","nav_all":"All places","nav_about":"About","crumb_home":"Home",
@@ -188,6 +194,12 @@ LANGS = {
       "pools_lead":"{n} pools, lagoons and hot pots across the country — click a dot to read more.",
       "pools_chips":{"all":"All","spa":"Geothermal baths","pool":"Swimming pools","natural":"Natural hot springs","pots":"Hot pots"},
       "pools_map_link":"See every pool on the Iceland map →",
+      "nav_local":"Local shops",
+      "locals_title":"Shop from Icelandic locals — breweries, crafts & farm shops | {site}",
+      "locals_h1":"Shop from the locals","locals_kicker":"Shop from locals",
+      "locals_lead":"{n} small Icelandic producers across the country — breweries, crafts, farm shops, markets and village stores. Buy straight from the makers.",
+      "locals_chips":{"all":"All","brugg":"Breweries & distilleries","handverk":"Crafts & design","matur":"Farm shops","markadur":"Markets & shops"},
+      "locals_map_link":"See every local maker on the Iceland map →",
     },
   },
 }
@@ -235,6 +247,7 @@ def coll_url(lang, cid): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]
 def coll_index_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['coll']}/"
 def pools_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['pools']}/"
 def guide_url(lang, gid): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['guide']}/{gid}/"
+def locals_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['local']}/"
 def guides_index_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['guide']}/"
 def colls_url(lang):     return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['coll']}/"
 def out_path(url):
@@ -249,6 +262,7 @@ def kind_url(lang, kind, ident):
     if kind == "pools":  return pools_url(lang)
     if kind == "guide":  return guide_url(lang, ident)
     if kind == "guides": return guides_index_url(lang)
+    if kind == "locals": return locals_url(lang)
     return home_url(lang)
 
 def alternates(kind, ident):
@@ -295,6 +309,7 @@ HEAD = """<!DOCTYPE html>
     <a href="{home}#kort">{nav_map}</a>
     <a href="{coll_index}">{nav_coll}</a>
     <a href="{guides_index}">{nav_guide}</a>
+    <a href="{locals_index}">{nav_local}</a>
     <a href="{all}">{nav_all}</a>
     <a href="{home}#um">{nav_about}</a>
     <a href="{lang_href}" class="lang-switch">{lang_label}</a>
@@ -326,6 +341,7 @@ def page(lang, kind, ident, title, desc, url, ogtype, jsonld, body, ogimg=None):
         nav_map=ui["nav_map"], nav_all=ui["nav_all"], nav_about=ui["nav_about"],
         coll_index=coll_index_url(lang), nav_coll=ui["nav_coll"],
         guides_index=guides_index_url(lang), nav_guide=ui["nav_guide"],
+        locals_index=locals_url(lang), nav_local=ui["nav_local"],
         lang_href=kind_url(other, kind, ident), lang_label=ui["lang_label"])
     full = head + body + FOOT.format(all=all_url(lang), nav_all=ui["nav_all"])
     # Innri <a>-tenglar afstæðir svo síðan virki á hvaða léni sem er
@@ -583,6 +599,94 @@ def pool_bucket(p):
     if "náttúrulaug" in ty or "natural" in ty or "hot spring" in ty:
         return "natural"
     return "pool"
+
+def local_bucket(p):
+    ty = (p.get("type") or "").lower()
+    if any(w in ty for w in ("brugg","brew","eiming","distill")):
+        return "brugg"
+    if any(w in ty for w in ("handverk","hönnun","craft","design")):
+        return "handverk"
+    if any(w in ty for w in ("býli","farm","beint")):
+        return "matur"
+    return "markadur"
+
+def build_locals_page(lang, regions, places):
+    ui = LANGS[lang]["ui"]
+    url = locals_url(lang)
+    makers = [p for p in places if cat_of(p) == "heimavara"]
+    title = ui["locals_title"].format(site=SITE_NAME)
+    desc = trunc(ui["locals_lead"].format(n=len(makers)))
+    crumb_nav, crumb_ld = breadcrumbs([(ui["crumb_home"], home_url(lang)), (ui["locals_h1"], url)])
+
+    meta, region_paths, mapsrc = MAPDATA
+    gseg = mapsrc[mapsrc.index("const GLACIER_PATH =") + len("const GLACIER_PATH ="):]
+    glacier = json5.loads(gseg[:gseg.index(";")])
+
+    svg = [f'<svg viewBox="{meta["viewBox"]}" role="img" aria-label="{e(ui["locals_h1"])}">']
+    for rid in REGION_ORDER:
+        d = region_paths.get(rid)
+        if d:
+            svg.append(f'<path d="{d}" fill="{regions[rid]["color"]}" fill-rule="evenodd" class="pm-region"/>')
+    svg.append(f'<path d="{glacier}" class="pm-glacier"/>')
+    for p in makers:
+        c = COORDS.get(p["id"])
+        if not c:
+            continue
+        x = (c[1] * 0.424199 - (-10.406353)) * 213.595734
+        y = (66.566417 - c[0]) * 213.595734
+        b = local_bucket(p)
+        svg.append(
+            f'<a href="{place_url(lang, p["id"])}" class="pm-dot" data-t="{b}">'
+            f'<circle cx="{x:.1f}" cy="{y:.1f}" r="5"><title>{e(p["name"])} — {e(p.get("location",""))}</title></circle></a>')
+    svg.append("</svg>")
+
+    chips = ui["locals_chips"]
+    chip_html = "".join(
+        f'<button class="cat-tab{" active" if k == "all" else ""}" data-pt="{k}" type="button">{e(v)}</button>'
+        for k, v in chips.items())
+
+    rows = []
+    for rid in REGION_ORDER:
+        grp = [p for p in makers if p["region"] == rid]
+        if not grp:
+            continue
+        rows.append(f'<h2>{e(regions[rid]["name"])}</h2><ul class="doc-links">')
+        for p in grp:
+            b = local_bucket(p)
+            loc = p.get("location", "")
+            rows.append(
+                f'<li data-t="{b}"><a href="{place_url(lang, p["id"])}">{e(p["name"])}</a> '
+                f'<span>{e(p["type"])}{" · " + e(loc) if loc else ""}</span></li>')
+        rows.append("</ul>")
+
+    script = """<script>
+(function(){
+  var chips=document.querySelectorAll('[data-pt]');
+  function apply(t){
+    chips.forEach(function(c){c.classList.toggle('active',c.dataset.pt===t);});
+    document.querySelectorAll('.pm-dot,[data-t]').forEach(function(el){
+      if(el.dataset.pt!==undefined)return;
+      el.style.display=(t==='all'||el.dataset.t===t)?'':'none';
+    });
+  }
+  chips.forEach(function(c){c.addEventListener('click',function(){apply(c.dataset.pt);});});
+})();
+</script>"""
+
+    parts = [crumb_nav,
+        f'<p class="doc-kicker">{e(ui["locals_kicker"])}</p>',
+        f'<h1>{e(ui["locals_h1"])}</h1>',
+        f'<p class="doc-lead">{e(ui["locals_lead"].format(n=len(makers)))}</p>',
+        f'<div class="filter-cats pools-chips">{chip_html}</div>',
+        f'<div class="pools-map">{"".join(svg)}</div>',
+        "".join(rows),
+        f'<p class="doc-more"><a href="{home_url(lang)}#kort">{e(ui["view_map"])}</a></p>',
+        script]
+    item_list = {"@context":"https://schema.org","@type":"ItemList","name":ui["locals_h1"],
+                 "itemListElement":[{"@type":"ListItem","position":i+1,"url":place_url(lang,p["id"]),"name":p["name"]}
+                                    for i,p in enumerate(makers)]}
+    write(out_path(url), page(lang,"locals",None,title,desc,url,"website",[crumb_ld,jsonld_block(item_list)], "\n".join(parts)))
+    return url
 
 def build_pools_page(lang, regions, places):
     ui = LANGS[lang]["ui"]
@@ -910,6 +1014,7 @@ def main():
         for p in places:
             urls.append((build_place(lang, p, regions, places), "0.6"))
         urls.append((build_pools_page(lang, regions, places), "0.8"))
+        urls.append((build_locals_page(lang, regions, places), "0.8"))
         if GUIDES:
             urls.append((build_guides_index(lang, GUIDES), "0.8"))
             for gid, g in GUIDES.items():
