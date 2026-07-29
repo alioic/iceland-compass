@@ -760,6 +760,30 @@ const IMAGES = {
     "credit": "Joseph Corl / Unsplash",
     "source": "unsplash",
     "page": "https://unsplash.com/photos/icebergs-are-scattered-on-a-black-sand-beach-Az7Ce8GLIPY"
+  },
+  "islensk-brugghus": {
+    "src": "/img/places/islensk-brugghus.jpg",
+    "alt_is": "Bjórsmökkun með nokkrum handverksbjórum í glösum á trébakka",
+    "alt_en": "A craft beer flight with several beer glasses on a wooden tray",
+    "credit": "Bohdan Stocek / Unsplash",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/vt0O0Av96R4"
+  },
+  "kaupa-lopapeysu": {
+    "src": "/img/places/kaupa-lopapeysu.jpg",
+    "alt_is": "Manneskja í hefðbundinni íslenskri lopapeysu með mynstruðum berustykki",
+    "alt_en": "A person wearing a traditional patterned Icelandic wool sweater (lopapeysa)",
+    "credit": "Erica On The Go / Pexels",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/back-view-of-man-in-sweater-sitting-on-beach-19228597/"
+  },
+  "beint-fra-byli": {
+    "src": "/img/places/beint-fra-byli.jpg",
+    "alt_is": "Íslenskt sveitabýli í víðáttumiklu grænu túni",
+    "alt_en": "A lone Icelandic farmhouse in a vast green field of countryside farmland",
+    "credit": "Tegan Conway / Unsplash",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-lonely-house-sits-in-a-vast-field-Rr3bQO51hAY"
   }
 };
 
