@@ -20,6 +20,9 @@ import json5, json, os, re, html, datetime, hashlib
 # ----------------------------------------------------------------------
 SITE_URL  = "https://icelandcompass.com"   # <-- BREYTTU í þitt lén (líka í index.html og en/index.html)
 SITE_NAME = "Iceland Compass"
+SITE_EMAIL = "hello@icelandcompass.com"
+def mailto(label):
+    return f'<p class="doc-contact">{e(label)} <a href="mailto:{SITE_EMAIL}">{SITE_EMAIL}</a></p>'
 ROOT = os.path.dirname(os.path.abspath(__file__))
 TODAY = datetime.date.today().isoformat()
 
@@ -1023,10 +1026,13 @@ def build_about_page(lang, places=None):
         parts.append(strip)
     for h, b in a["secs"]:
         parts.append(f'<h2>{e(h)}</h2>{render_body(b)}')
+    parts.append(mailto("Hafðu samband:" if lang == "is" else "Get in touch:"))
     parts.append(f'<p class="doc-more"><a href="{home_url(lang)}#kort">{e(a["cta"])}</a></p>')
     ld = jsonld_block({"@context":"https://schema.org","@type":"AboutPage","name":a["h1"],
         "url":url,"inLanguage":LANGS[lang]["code"],
-        "publisher":{"@type":"Organization","name":SITE_NAME,"url":home_url(lang)}})
+        "email":SITE_EMAIL,
+        "publisher":{"@type":"Organization","name":SITE_NAME,"url":home_url(lang),
+            "email":SITE_EMAIL,"contactPoint":{"@type":"ContactPoint","email":SITE_EMAIL,"contactType":"customer support"}}})
     write(out_path(url), page(lang,"about",None,a["title"],a["desc"],url,"website",[crumb_ld,ld],"\n".join(parts)))
     return url
 
@@ -1106,6 +1112,11 @@ def build_legal_page(lang, key):
         f'<p class="doc-lead">{e(a["lead"])}</p>']
     for h, b in a["secs"]:
         parts.append(f'<h2>{e(h)}</h2>{render_body(b)}')
+    if lang == "is":
+        clabel = "Fyrirspurnir um persónuvernd:" if key == "privacy" else "Ábendingar og leiðréttingar:"
+    else:
+        clabel = "Privacy questions:" if key == "privacy" else "Feedback and corrections:"
+    parts.append(mailto(clabel))
     updated = ("Uppfært" if lang == "is" else "Last updated") + f": {TODAY}"
     parts.append(f'<p class="doc-updated">{e(updated)}</p>')
     ld = jsonld_block({"@context":"https://schema.org","@type":"WebPage","name":a["h1"],
@@ -1170,6 +1181,8 @@ def build_doc_css():
 .doc-links a:hover { color: var(--accent); }
 .doc-links span { color: var(--ink-faint); font-size: .88rem; display: block; }
 .doc-updated { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--ink-faint); font-size: .85rem; }
+.doc-contact { margin: 28px 0 0; font-size: .95rem; color: var(--ink-soft); }
+.doc-contact a { color: var(--accent); font-weight: 600; }
 .doc-ul { margin: 4px 0 20px; padding-left: 22px; }
 .doc-ul li { margin: 8px 0; color: var(--ink-soft); line-height: 1.6; }
 .doc-cta { display: flex; gap: 12px; flex-wrap: wrap; margin: 32px 0; padding-top: 26px; border-top: 1px solid var(--line); }
