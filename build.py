@@ -112,10 +112,11 @@ REGION_ORDER = ["hofudborg","reykjanes","vesturland","vestfirdir",
 LANGS = {
   "is": {
     "code": "is", "og_locale": "is_IS", "data": "js/data.js", "prefix": "",
-    "seg": {"place": "stadur", "region": "landshluti", "all": "stadir", "coll": "leidir", "pools": "laugar", "guide": "leidsogn", "local": "heimavara", "about": "um"},
+    "seg": {"place": "stadur", "region": "landshluti", "all": "stadir", "coll": "leidir", "pools": "laugar", "guide": "leidsogn", "local": "heimavara", "about": "um", "privacy": "personuvernd", "disclaimer": "fyrirvari"},
     "country": "Ísland",
     "ui": {
       "nav_map":"Kort","nav_all":"Allir staðir","nav_about":"Um vefinn","crumb_home":"Heim",
+      "nav_privacy":"Persónuvernd","nav_disclaimer":"Fyrirvari",
       "kicker_place":{"stadur":"Staður","ganga":"Gönguleið","bod":"Sundlaug & böð","afthreying":"Afþreying","veitingar":"Veitingastaður","kaffi":"Kaffihús","heimavara":"Heimavara"},
       "kicker_region":"Landshluti","kicker_overview":"Yfirlit",
       "h_highlights":"Hápunktar","h_route":"Á leiðinni","h_known":"Þekkt fyrir",
@@ -158,10 +159,11 @@ LANGS = {
   },
   "en": {
     "code": "en", "og_locale": "en", "data": "js/data.en.js", "prefix": "/en",
-    "seg": {"place": "place", "region": "region", "all": "places", "coll": "routes", "pools": "pools", "guide": "guide", "local": "local", "about": "about"},
+    "seg": {"place": "place", "region": "region", "all": "places", "coll": "routes", "pools": "pools", "guide": "guide", "local": "local", "about": "about", "privacy": "privacy", "disclaimer": "disclaimer"},
     "country": "Iceland",
     "ui": {
       "nav_map":"Map","nav_all":"All places","nav_about":"About","crumb_home":"Home",
+      "nav_privacy":"Privacy","nav_disclaimer":"Disclaimer",
       "kicker_place":{"stadur":"Place","ganga":"Hiking trail","bod":"Pool & baths","afthreying":"Attraction","veitingar":"Restaurant","kaffi":"Café","heimavara":"Local maker"},
       "kicker_region":"Region","kicker_overview":"Overview",
       "h_highlights":"Highlights","h_route":"On the route","h_known":"Known for",
@@ -275,6 +277,8 @@ def pools_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['se
 def guide_url(lang, gid): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['guide']}/{gid}/"
 def locals_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['local']}/"
 def about_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['about']}/"
+def privacy_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['privacy']}/"
+def disclaimer_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['disclaimer']}/"
 def guides_index_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['guide']}/"
 def colls_url(lang):     return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['coll']}/"
 def out_path(url):
@@ -291,6 +295,8 @@ def kind_url(lang, kind, ident):
     if kind == "guides": return guides_index_url(lang)
     if kind == "locals": return locals_url(lang)
     if kind == "about":  return about_url(lang)
+    if kind == "privacy": return privacy_url(lang)
+    if kind == "disclaimer": return disclaimer_url(lang)
     return home_url(lang)
 
 def alternates(kind, ident):
@@ -349,7 +355,7 @@ FOOT = """</main>
 <footer class="site-footer">
   <div class="footer-inner">
     <span class="footer-logo">Iceland Compass</span>
-    <span class="footer-small"><a href="{all}">{nav_all}</a></span>
+    <span class="footer-small"><a href="{all}">{nav_all}</a> · <a href="{about_index}">{nav_about}</a> · <a href="{privacy_index}">{nav_privacy}</a> · <a href="{disclaimer_index}">{nav_disclaimer}</a></span>
   </div>
 </footer>
 </body>
@@ -372,7 +378,10 @@ def page(lang, kind, ident, title, desc, url, ogtype, jsonld, body, ogimg=None):
         guides_index=guides_index_url(lang), nav_guide=ui["nav_guide"],
         locals_index=locals_url(lang), nav_local=ui["nav_local"],
         lang_href=kind_url(other, kind, ident), lang_label=ui["lang_label"])
-    full = head + body + FOOT.format(all=all_url(lang), nav_all=ui["nav_all"])
+    full = head + body + FOOT.format(all=all_url(lang), nav_all=ui["nav_all"],
+        about_index=about_url(lang), nav_about=ui["nav_about"],
+        privacy_index=privacy_url(lang), nav_privacy=ui["nav_privacy"],
+        disclaimer_index=disclaimer_url(lang), nav_disclaimer=ui["nav_disclaimer"])
     # Innri <a>-tenglar afstæðir svo síðan virki á hvaða léni sem er
     # (canonical/hreflang/og halda áfram að vera algildir — það á að vera svo)
     return full.replace('<a href="' + SITE_URL, '<a href="')
@@ -978,6 +987,18 @@ ABOUT = {
  },
 }
 
+def render_body(b):
+    """Skilar HTML fyrir kaflatexta: \\n\\n = ný málsgrein; blokk af '• ' línum = <ul>."""
+    out = []
+    for block in b.split("\n\n"):
+        lines = [ln.strip() for ln in block.split("\n") if ln.strip()]
+        if lines and all(ln.startswith("• ") for ln in lines):
+            out.append('<ul class="doc-ul">' +
+                "".join(f'<li>{e(ln[2:])}</li>' for ln in lines) + '</ul>')
+        else:
+            out.append(f'<p class="doc-body">{e(" ".join(lines))}</p>')
+    return "".join(out)
+
 def build_about_page(lang, places=None):
     ui = LANGS[lang]["ui"]
     a = ABOUT[lang]
@@ -1001,13 +1022,96 @@ def build_about_page(lang, places=None):
             f'<div class="doc-stat"><strong>{n}</strong><span>{e(stat_labels[k])}</span></div>' for n,k in cells) + '</div>'
         parts.append(strip)
     for h, b in a["secs"]:
-        paras = "".join(f'<p class="doc-body">{e(x)}</p>' for x in b.split("\n\n"))
-        parts.append(f'<h2>{e(h)}</h2>{paras}')
+        parts.append(f'<h2>{e(h)}</h2>{render_body(b)}')
     parts.append(f'<p class="doc-more"><a href="{home_url(lang)}#kort">{e(a["cta"])}</a></p>')
     ld = jsonld_block({"@context":"https://schema.org","@type":"AboutPage","name":a["h1"],
         "url":url,"inLanguage":LANGS[lang]["code"],
         "publisher":{"@type":"Organization","name":SITE_NAME,"url":home_url(lang)}})
     write(out_path(url), page(lang,"about",None,a["title"],a["desc"],url,"website",[crumb_ld,ld],"\n".join(parts)))
+    return url
+
+# ---- Persónuvernd + fyrirvari (lögfræðilegar síður) ----
+LEGAL = {
+ "privacy": {
+  "is": {
+   "title": "Persónuvernd — Iceland Compass",
+   "desc": "Persónuverndarstefna Iceland Compass: við söfnum engum persónuupplýsingum, engin rakning og engar auglýsingakökur.",
+   "h1": "Persónuvernd",
+   "lead": "Iceland Compass er einfaldur, kyrrstæður vefur og er hannaður með persónuvernd í huga. Við söfnum engum persónuupplýsingum um þig, keyrum enga vefmælingu og notum engar auglýsingakökur.",
+   "secs": [
+    ("Hvaða gögnum við söfnum", "Engum. Það eru engir aðgangar, engin innskráning og engin eyðublöð sem safna persónuupplýsingum. Við notum ekki Google Analytics eða sambærileg rakningartól, og enga auglýsinganetsþjónustu. Við sjáum ekki hverjir heimsækja vefinn."),
+    ("„Ferðin mín“ og vafrageymsla", "Þegar þú vistar stað í „Ferðin mín“ er hann geymdur í vafranum þínum sjálfum (localStorage) — hann er aldrei sendur til okkar né neins annars. Þú getur hreinsað hann hvenær sem er með því að tæma vafragögn fyrir síðuna."),
+    ("Kökur (cookies)", "Vefurinn sjálfur setur engar kökur. Þriðju aðilar sem þú átt samskipti við (t.d. bókunarsíður sem þú smellir á) geta sett sínar eigin kökur samkvæmt eigin stefnu."),
+    ("Þriðju aðilar", "Til að vefurinn virki er kallað á fáeina utanaðkomandi þjónustuaðila:\n\n• Google Fonts (letur) — vafrinn sækir leturgerðir frá Google, sem getur skráð IP-tölu í því ferli.\n• open-meteo.com (veður) — þegar þú skoðar landshluta sækjum við veðurspá; aðeins hnit svæðisins eru send, engar persónuupplýsingar.\n• Booking.com og GetYourGuide (bókanir) — aðeins ef þú smellir á bókunarhlekk; þá gilda þeirra eigin persónuverndarskilmálar og kökur.\n• Hýsingaraðili (SiteGround) heldur venjulegar aðgangsskrár (t.d. IP-tölu og vafragerð) í öryggis- og rekstrarskyni, eins og allir vefþjónar gera."),
+    ("Vefmælingar og auglýsingar", "Eins og er keyrum við hvorki vefmælingu né auglýsingar. Ef það breytist síðar (t.d. ef vefmæling eða auglýsingar eru teknar upp) munum við uppfæra þessa síðu og gera grein fyrir því hér áður en það tekur gildi."),
+    ("Réttindi þín", "Þar sem við geymum engar persónuupplýsingar um þig er ekkert fyrir okkur að afhenda eða eyða. Fyrir gögn sem þriðju aðilar kunna að safna vísum við á þeirra eigin persónuverndarstefnur."),
+    ("Breytingar", "Við kunnum að uppfæra þessa stefnu ef vefurinn breytist. Nýjasta útgáfan er alltaf hér með dagsetningu að neðan."),
+   ],
+  },
+  "en": {
+   "title": "Privacy — Iceland Compass",
+   "desc": "Iceland Compass privacy policy: we collect no personal data, run no tracking, and use no advertising cookies.",
+   "h1": "Privacy",
+   "lead": "Iceland Compass is a simple, static website built with privacy in mind. We collect no personal information about you, run no analytics, and use no advertising cookies.",
+   "secs": [
+    ("What data we collect", "None. There are no accounts, no logins and no forms that collect personal information. We don't use Google Analytics or similar tracking tools, and no advertising networks. We can't see who visits the site."),
+    ("“My trip” and browser storage", "When you save a place to “My trip”, it is stored in your own browser (localStorage) — it is never sent to us or anyone else. You can clear it at any time by clearing the site's browser data."),
+    ("Cookies", "The site itself sets no cookies. Third parties you interact with (for example booking sites you click through to) may set their own cookies under their own policies."),
+    ("Third parties", "To make the site work, a few outside services are called:\n\n• Google Fonts (typefaces) — your browser fetches fonts from Google, which may log an IP address in the process.\n• open-meteo.com (weather) — when you view a region we fetch a forecast; only the region's coordinates are sent, no personal data.\n• Booking.com and GetYourGuide (bookings) — only if you click a booking link; their own privacy terms and cookies then apply.\n• Our host (SiteGround) keeps standard access logs (such as IP address and browser type) for security and operations, as all web servers do."),
+    ("Analytics and advertising", "At present we run neither analytics nor advertising. If that changes later (for example if analytics or ads are introduced) we will update this page and disclose it here before it takes effect."),
+    ("Your rights", "Because we hold no personal data about you, there is nothing for us to hand over or delete. For any data third parties may collect, we refer you to their own privacy policies."),
+    ("Changes", "We may update this policy as the site evolves. The current version is always here, with the date shown below."),
+   ],
+  },
+ },
+ "disclaimer": {
+  "is": {
+   "title": "Fyrirvari — Iceland Compass",
+   "desc": "Fyrirvari Iceland Compass: upplýsingar eru til leiðsagnar, geta úreldast, og koma ekki í stað opinberra öryggis- og veðurspáa.",
+   "h1": "Fyrirvari",
+   "lead": "Efni Iceland Compass er birt í góðri trú og til leiðsagnar við ferðaskipulag. Við leggjum okkur fram um nákvæmni, en upplýsingar geta breyst og þú ferðast á eigin ábyrgð.",
+   "secs": [
+    ("Nákvæmni upplýsinga", "Við rannsökum og staðreyndaskoðum efnið eftir bestu getu, en opnunartími, verð, aðgengi og aðstæður geta breyst hvenær sem er. Staðfestu ávallt nýjustu upplýsingar hjá staðnum sjálfum áður en þú leggur af stað. Við ábyrgjumst ekki að efnið sé tæmandi eða villulaust."),
+    ("Öryggi og ábyrgð", "Náttúra Íslands er kraftmikil og veður og færð breytast hratt. Fyrir hverja ferð — sérstaklega á hálendi, að eldstöðvum, að vetri eða í óbyggðum — skaltu kanna safetravel.is, vedur.is og road.is (vegagerdin.is). Þú berð sjálf/ur ábyrgð á eigin öryggi og ákvörðunum; við berum ekki ábyrgð á tjóni eða óhöppum sem kunna að hljótast af notkun vefsins."),
+    ("Ytri hlekkir", "Vefurinn vísar á utanaðkomandi síður (t.d. framleiðendur, bókunarþjónustur og opinbera aðila) sem við stjórnum ekki og berum ekki ábyrgð á efni þeirra eða stefnum."),
+    ("Samstarfshlekkir", "Sumir bókunarhlekkir (gisting, ferðir, bílaleiga) eru samstarfshlekkir. Ef þú bókar í gegnum þá getur vefurinn fengið litla þóknun, án nokkurs aukakostnaðar fyrir þig. Þetta hefur engin áhrif á hvaða staði við mælum með — enginn borgar fyrir að vera á listanum."),
+    ("Ekki fagráðgjöf", "Efnið er almenn ferðaleiðsögn en ekki fagleg ráðgjöf (t.d. læknisfræðileg, lögfræðileg eða fjárhagsleg). Leitaðu til viðeigandi fagaðila þegar við á."),
+   ],
+  },
+  "en": {
+   "title": "Disclaimer — Iceland Compass",
+   "desc": "Iceland Compass disclaimer: information is for guidance, may become outdated, and does not replace official safety and weather forecasts.",
+   "h1": "Disclaimer",
+   "lead": "Iceland Compass content is published in good faith and for guidance in planning your trip. We strive for accuracy, but information can change and you travel at your own risk.",
+   "secs": [
+    ("Accuracy of information", "We research and fact-check the content as best we can, but opening hours, prices, access and conditions can change at any time. Always confirm the latest details with the place itself before you set off. We don't guarantee that the content is complete or error-free."),
+    ("Safety and responsibility", "Iceland's nature is powerful and weather and road conditions change fast. Before any trip — especially in the highlands, near volcanic areas, in winter or in remote areas — check safetravel.is, vedur.is and road.is (the Road Administration). You are responsible for your own safety and decisions; we are not liable for any loss or mishap arising from use of the site."),
+    ("External links", "The site links to external websites (such as producers, booking services and official bodies) that we don't control and are not responsible for in terms of their content or policies."),
+    ("Affiliate links", "Some booking links (accommodation, tours, car rental) are affiliate links. If you book through them the site may earn a small commission, at no extra cost to you. This has no bearing on which places we recommend — no one pays to be listed."),
+    ("Not professional advice", "The content is general travel guidance, not professional advice (for example medical, legal or financial). Consult a suitable professional where appropriate."),
+   ],
+  },
+ },
+}
+
+def build_legal_page(lang, key):
+    ui = LANGS[lang]["ui"]
+    a = LEGAL[key][lang]
+    url = privacy_url(lang) if key == "privacy" else disclaimer_url(lang)
+    label = ui["nav_privacy"] if key == "privacy" else ui["nav_disclaimer"]
+    crumb_nav, crumb_ld = breadcrumbs([(ui["crumb_home"], home_url(lang)), (label, url)])
+    parts = [crumb_nav,
+        f'<p class="doc-kicker">{e(label)}</p>',
+        f'<h1>{e(a["h1"])}</h1>',
+        f'<p class="doc-lead">{e(a["lead"])}</p>']
+    for h, b in a["secs"]:
+        parts.append(f'<h2>{e(h)}</h2>{render_body(b)}')
+    updated = ("Uppfært" if lang == "is" else "Last updated") + f": {TODAY}"
+    parts.append(f'<p class="doc-updated">{e(updated)}</p>')
+    ld = jsonld_block({"@context":"https://schema.org","@type":"WebPage","name":a["h1"],
+        "url":url,"inLanguage":LANGS[lang]["code"],
+        "publisher":{"@type":"Organization","name":SITE_NAME,"url":home_url(lang)}})
+    write(out_path(url), page(lang,key,None,a["title"],a["desc"],url,"website",[crumb_ld,ld],"\n".join(parts)))
     return url
 
 # ----------------------------------------------------------------------
@@ -1065,6 +1169,9 @@ def build_doc_css():
 .doc-links a { font-weight: 600; }
 .doc-links a:hover { color: var(--accent); }
 .doc-links span { color: var(--ink-faint); font-size: .88rem; display: block; }
+.doc-updated { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--ink-faint); font-size: .85rem; }
+.doc-ul { margin: 4px 0 20px; padding-left: 22px; }
+.doc-ul li { margin: 8px 0; color: var(--ink-soft); line-height: 1.6; }
 .doc-cta { display: flex; gap: 12px; flex-wrap: wrap; margin: 32px 0; padding-top: 26px; border-top: 1px solid var(--line); }
 .doc-btn { flex: 1; min-width: 200px; text-align: center; padding: 14px 20px; border-radius: 6px; font-weight: 600; border: 1px solid var(--line); }
 .doc-btn.primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
@@ -1174,6 +1281,8 @@ def main():
         urls.append((build_pools_page(lang, regions, places), "0.8"))
         urls.append((build_locals_page(lang, regions, places), "0.8"))
         urls.append((build_about_page(lang, places), "0.5"))
+        urls.append((build_legal_page(lang, "privacy"), "0.3"))
+        urls.append((build_legal_page(lang, "disclaimer"), "0.3"))
         if GUIDES:
             urls.append((build_guides_index(lang, GUIDES), "0.8"))
             for gid, g in GUIDES.items():

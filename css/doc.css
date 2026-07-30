@@ -32,6 +32,9 @@
 .doc-links a { font-weight: 600; }
 .doc-links a:hover { color: var(--accent); }
 .doc-links span { color: var(--ink-faint); font-size: .88rem; display: block; }
+.doc-updated { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--ink-faint); font-size: .85rem; }
+.doc-ul { margin: 4px 0 20px; padding-left: 22px; }
+.doc-ul li { margin: 8px 0; color: var(--ink-soft); line-height: 1.6; }
 .doc-cta { display: flex; gap: 12px; flex-wrap: wrap; margin: 32px 0; padding-top: 26px; border-top: 1px solid var(--line); }
 .doc-btn { flex: 1; min-width: 200px; text-align: center; padding: 14px 20px; border-radius: 6px; font-weight: 600; border: 1px solid var(--line); }
 .doc-btn.primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
