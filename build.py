@@ -946,12 +946,15 @@ ABOUT = {
   "title": "Um Iceland Compass — sjálfstæð ferðaleiðsögn um Ísland",
   "desc": "Um Iceland Compass: sjálfstætt íslenskt verkefni sem kortleggur alla áfangastaði, laugar og heimafólk landsins — ókeypis og staðreyndakannað.",
   "h1": "Um Iceland Compass",
-  "lead": "Iceland Compass er sjálfstæð, tvítyngd ferðaleiðsögn um allt Ísland — hugsuð til að hjálpa þér að skipuleggja ferðina og beina þér að því sem er raunverulega þess virði, ekki bara fjölförnustu túristastöðunum.",
+  "lead": "Iceland Compass er sjálfstæð, tvítyngd ferðaleiðsögn um allt Ísland — hugsuð til að hjálpa þér að skipuleggja ferðina og beina þér að því sem er raunverulega þess virði, ekki bara fjölförnustu túristastöðunum. Hér er allt á einum stað: gagnvirkt kort, hver staður með sinni síðu, og hagnýt leiðsögn sem tekur mið af íslensku veðri, vegum og árstíðum.",
   "secs": [
-   ("Hvað þetta er", "Vefurinn safnar saman áfangastöðum, gönguleiðum, sundlaugum og böðum, afþreyingu, veitingastöðum og íslensku heimafólki um allt land — hvern og einn með sinni síðu, korti og hagnýtum upplýsingum. Allt er ókeypis að nota og engar uppáþrengjandi auglýsingar."),
-   ("Sjálfstætt og íslenskt", "Þetta er sjálfstætt íslenskt verkefni, ekki hluti af stórri ferðaskrifstofu eða markaðstorgi. Sjónarhornið er heimafólks: við leggjum áherslu á smærri staði, sveitalaugar og íslenska framleiðendur sem stóru túristasíðurnar sleppa oft."),
-   ("Hvernig efnið er unnið", "Við byggjum hverja síðu á rannsókn og staðreyndaskoðun. Fyrirtæki eru könnuð til að ganga úr skugga um að þau séu opin (við fjarlægjum staði sem hafa lokað), sundlaugalistinn er borinn saman við sérhæfðar heimildir til að vera heildstæður, og kortið byggir á opnum landfræðigögnum. Ljósmyndir eru frá ljósmyndurum á Unsplash og Pexels og kredit fylgir hverri mynd. Efni er engu að síður aldrei fullkomið — ef þú sérð eitthvað sem má laga, láttu okkur vita og við uppfærum."),
-   ("Heiðarleiki og tekjur", "Enginn borgar fyrir að vera á listanum — staðir og fyrirtæki eru með af því að þau eiga heima þar, ekki gegn greiðslu. Sumir bókunarhlekkir (gisting, ferðir, bílaleiga) eru samstarfshlekkir: ef þú bókar í gegnum þá getur vefurinn fengið litla þóknun, án þess að það hafi nokkur áhrif á verðið til þín. Það er þannig sem ókeypis vefur eins og þessi stendur undir sér."),
+   ("Hvað þú finnur hér", "Vefurinn safnar saman áfangastöðum, gönguleiðum, sundlaugum og böðum, afþreyingu, veitingastöðum og íslensku heimafólki úr öllum átta landshlutum — hvern og einn með sinni síðu, staðsetningu á korti, myndum og hagnýtum upplýsingum.\n\nÞú getur valið landshluta á gagnvirku Íslandskorti, síað eftir tegund, sett saman þína eigin ferð og skoðað þemaleiðir eins og Gullna hringinn, Demantshringinn og Suðurströndina. Sérstök kort sýna allar sundlaugar landsins og allt heimafólkið á einum stað. Allt er ókeypis að nota og engar uppáþrengjandi auglýsingar."),
+   ("Sjálfstætt og íslenskt", "Þetta er sjálfstætt íslenskt verkefni, ekki hluti af stórri ferðaskrifstofu, hótelkeðju eða markaðstorgi. Enginn ræður því hvað ratar á vefinn nema við sjálf, og það þýðir að við getum sagt hlutina eins og þeir eru — mælt með því sem er gott og sleppt því sem er ofmetið.\n\nMarkmiðið er einfalt: að vera hreinasta, traustasta og heildstæðasta ókeypis leiðsögnin um Ísland, jafn gagnleg fyrir Íslending á leið út á land og ferðamann sem kemur í fyrsta sinn."),
+   ("Sjónarhorn heimafólks", "Stóru túristasíðurnar sýna aftur og aftur sömu tíu staðina. Við horfum víðar. Sjónarhornið er heimafólks: við leggjum jafn mikla áherslu á litlu sveitalaugina, afskekkta fossinn og litla brugghúsið úti á landi og á frægustu áfangastaðina.\n\nÞess vegna er sérstakur hluti tileinkaður íslensku heimafólki — smáframleiðendum, prjónakonum, bændum sem selja beint frá býli og litlum sveitasjoppum — með hlekk beint í þeirra eigin verslun. Það er okkar leið til að styðja við það sem gerir Ísland sérstakt."),
+   ("Hvernig efnið er unnið", "Við byggjum hverja síðu á rannsókn og staðreyndaskoðun. Fyrirtæki eru könnuð til að ganga úr skugga um að þau séu enn opin — við fjarlægjum staði sem hafa lokað — og opnunartími, verð og staðreyndir eru bornar saman við frumheimildir eftir bestu getu.\n\nSundlaugalistinn er borinn saman við sérhæfðar heimildir til að vera eins heildstæður og hægt er, og kortið sjálft byggir á opnum landfræðigögnum. Ljósmyndir eru frá ljósmyndurum á Unsplash og Pexels og kredit fylgir hverri mynd.\n\nEfni er engu að síður aldrei fullkomið, og upplýsingar úreldast. Skoðaðu alltaf opnunartíma og verð hjá staðnum sjálfum áður en þú leggur af stað."),
+   ("Tvö tungumál", "Vefurinn er til á íslensku og ensku, og þú getur skipt á milli með einum smelli hvar sem er. Örnefni og sérnöfn eru geymd á íslensku — Goðafoss er Goðafoss, ekki „God waterfall“ — svo þú getir spurt til vegar, slegið þeim inn í kort og þekkt þau á skiltum."),
+   ("Heiðarleiki og tekjur", "Enginn borgar fyrir að vera á listanum — staðir og fyrirtæki eru með af því að þau eiga heima þar, ekki gegn greiðslu.\n\nSumir bókunarhlekkir (gisting, ferðir, bílaleiga) eru samstarfshlekkir: ef þú bókar í gegnum þá getur vefurinn fengið litla þóknun, án þess að það hafi nokkur áhrif á verðið til þín. Það er þannig sem ókeypis vefur eins og þessi stendur undir sér — og það hefur engin áhrif á hvaða stöðum við mælum með."),
+   ("Ábendingar og leiðréttingar", "Vefurinn er í stöðugri þróun og við tökum öllum ábendingum fagnandi. Ef þú sérð eitthvað sem má laga — stað sem hefur lokað, rangar upplýsingar eða eitthvað sem vantar — látið okkur vita og við uppfærum. Heimafólk sem vill bæta við eða leiðrétta upplýsingar um sinn stað er sérstaklega velkomið."),
    ("Öryggi á ferðalagi", "Náttúra Íslands er kraftmikil og veður breytist hratt. Fyrir hverja ferð — sérstaklega á hálendi, að eldstöðvum eða að vetri — skaltu alltaf kanna safetravel.is, vedur.is og vegagerdin.is (road.is). Upplýsingar hér eru til leiðsagnar en koma aldrei í stað nýjustu opinberu spánna."),
   ],
   "cta": "Skoða Ísland á korti →",
@@ -960,19 +963,22 @@ ABOUT = {
   "title": "About Iceland Compass — an independent travel guide to Iceland",
   "desc": "About Iceland Compass: an independent, Icelandic project mapping every destination, pool and local maker in the country — free and fact-checked.",
   "h1": "About Iceland Compass",
-  "lead": "Iceland Compass is an independent, bilingual travel guide to all of Iceland — made to help you plan your trip and point you to what's genuinely worth it, not just the busiest tourist stops.",
+  "lead": "Iceland Compass is an independent, bilingual travel guide to all of Iceland — made to help you plan your trip and point you to what's genuinely worth it, not just the busiest tourist stops. Everything is in one place: an interactive map, a dedicated page for every place, and practical guidance that accounts for Icelandic weather, roads and seasons.",
   "secs": [
-   ("What this is", "The guide brings together destinations, hiking trails, swimming pools and geothermal baths, attractions, restaurants and Icelandic local makers from every region — each with its own page, map and practical details. Everything is free to use, with no intrusive ads."),
-   ("Independent and Icelandic", "This is an independent Icelandic project, not part of a large travel agency or marketplace. The perspective is local: we lean into the smaller places, rural pools and Icelandic producers that the big tourist sites often skip."),
-   ("How the content is made", "Every page is built on research and fact-checking. Businesses are checked to confirm they're open (we remove places that have closed), the pool list is cross-referenced against specialist sources to be complete, and the map is built from open geographic data. Photographs are by photographers on Unsplash and Pexels, each credited. No guide is ever perfect, though — if you spot something to fix, tell us and we'll update it."),
-   ("Honesty and how we're funded", "No one pays to be listed — places and businesses are included on merit, never for a fee. Some booking links (accommodation, tours, car rental) are affiliate links: if you book through them the site may earn a small commission, at no extra cost to you. That's how a free guide like this sustains itself."),
+   ("What you'll find here", "The guide brings together destinations, hiking trails, swimming pools and geothermal baths, attractions, restaurants and Icelandic local makers from all eight regions — each with its own page, a location on the map, photos and practical details.\n\nYou can pick a region on the interactive map of Iceland, filter by type, build your own trip, and browse themed routes like the Golden Circle, the Diamond Circle and the South Coast. Dedicated maps show every swimming pool in the country and all the local makers in one place. Everything is free to use, with no intrusive ads."),
+   ("Independent and Icelandic", "This is an independent Icelandic project — not part of a large travel agency, hotel chain or marketplace. No one but us decides what goes on the site, which means we can tell it straight: recommend what's good and skip what's overrated.\n\nThe goal is simple: to be the cleanest, most trustworthy and most complete free guide to Iceland — as useful to an Icelander heading into the countryside as to a first-time visitor."),
+   ("A local's perspective", "The big tourist sites show the same ten places over and over. We look wider. The perspective is local: we give the small rural pool, the remote waterfall and the little countryside brewery as much attention as the famous headline sights.\n\nThat's why a whole section is devoted to Icelandic local makers — small producers, knitters, farms selling direct from the farm, and little village shops — each with a link straight to their own store. It's our way of supporting what makes Iceland special."),
+   ("How the content is made", "Every page is built on research and fact-checking. Businesses are checked to confirm they're still open — we remove places that have closed — and opening hours, prices and facts are cross-referenced against primary sources as far as possible.\n\nThe pool list is compared against specialist sources to be as complete as we can make it, and the map itself is built from open geographic data. Photographs are by photographers on Unsplash and Pexels, each credited.\n\nNo guide is ever perfect, though, and information goes out of date. Always check opening hours and prices with the place itself before you set off."),
+   ("Two languages", "The site exists in Icelandic and English, and you can switch between them with a single click anywhere. Place names and proper nouns are kept in Icelandic — Goðafoss stays Goðafoss, not “God waterfall” — so you can ask for directions, type them into a map and recognise them on road signs."),
+   ("Honesty and how we're funded", "No one pays to be listed — places and businesses are included on merit, never for a fee.\n\nSome booking links (accommodation, tours, car rental) are affiliate links: if you book through them the site may earn a small commission, at no extra cost to you. That's how a free guide like this sustains itself — and it has no bearing on which places we recommend."),
+   ("Feedback and corrections", "The site is always evolving and we welcome any feedback. If you spot something to fix — a place that has closed, wrong information, or something missing — let us know and we'll update it. Local makers who'd like to add or correct details about their own place are especially welcome."),
    ("Safety while travelling", "Iceland's nature is powerful and the weather changes fast. Before any trip — especially in the highlands, near volcanic areas, or in winter — always check safetravel.is, vedur.is and road.is (the Road Administration). The information here is for guidance and never replaces the latest official forecasts."),
   ],
   "cta": "Explore Iceland on the map →",
  },
 }
 
-def build_about_page(lang):
+def build_about_page(lang, places=None):
     ui = LANGS[lang]["ui"]
     a = ABOUT[lang]
     url = about_url(lang)
@@ -981,8 +987,22 @@ def build_about_page(lang):
         f'<p class="doc-kicker">{e(ui["nav_about"])}</p>',
         f'<h1>{e(a["h1"])}</h1>',
         f'<p class="doc-lead">{e(a["lead"])}</p>']
+    # Tölfræðirönd — umfang vefsins (traust/E-E-A-T)
+    if places:
+        n_all = len(places)
+        n_bod = sum(1 for p in places if p.get("category") == "bod")
+        n_heim = sum(1 for p in places if p.get("category") == "heimavara")
+        n_guides = len(GUIDES) if GUIDES else 0
+        stat_labels = ({"a":"staðir","b":"laugar & böð","c":"heimafólk","d":"leiðsögugreinar","e":"landshlutar"}
+                       if lang == "is" else
+                       {"a":"places","b":"pools & baths","c":"local makers","d":"guides","e":"regions"})
+        cells = [(n_all,"a"),(n_bod,"b"),(n_heim,"c"),(n_guides,"d"),(8,"e")]
+        strip = '<div class="doc-stats asset-stats">' + "".join(
+            f'<div class="doc-stat"><strong>{n}</strong><span>{e(stat_labels[k])}</span></div>' for n,k in cells) + '</div>'
+        parts.append(strip)
     for h, b in a["secs"]:
-        parts.append(f'<h2>{e(h)}</h2><p class="doc-body">{e(b)}</p>')
+        paras = "".join(f'<p class="doc-body">{e(x)}</p>' for x in b.split("\n\n"))
+        parts.append(f'<h2>{e(h)}</h2>{paras}')
     parts.append(f'<p class="doc-more"><a href="{home_url(lang)}#kort">{e(a["cta"])}</a></p>')
     ld = jsonld_block({"@context":"https://schema.org","@type":"AboutPage","name":a["h1"],
         "url":url,"inLanguage":LANGS[lang]["code"],
@@ -1153,7 +1173,7 @@ def main():
             urls.append((build_place(lang, p, regions, places), "0.6"))
         urls.append((build_pools_page(lang, regions, places), "0.8"))
         urls.append((build_locals_page(lang, regions, places), "0.8"))
-        urls.append((build_about_page(lang), "0.5"))
+        urls.append((build_about_page(lang, places), "0.5"))
         if GUIDES:
             urls.append((build_guides_index(lang, GUIDES), "0.8"))
             for gid, g in GUIDES.items():
