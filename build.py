@@ -15,7 +15,7 @@ hreflang-tengsl og tungumálarofa á hverri síðu.
 Forsíðurnar (index.html og en/index.html) eru handgerðar og ekki snertar hér.
 Keyrsla:   python3 build.py   (þarf `json5`: python3 -m pip install json5)
 """
-import json5, json, os, re, html, datetime
+import json5, json, os, re, html, datetime, hashlib
 
 # ----------------------------------------------------------------------
 SITE_URL  = "https://icelandcompass.com"   # <-- BREYTTU í þitt lén (líka í index.html og en/index.html)
@@ -224,6 +224,32 @@ def write(path, content):
     full = os.path.join(ROOT, path)
     os.makedirs(os.path.dirname(full), exist_ok=True)
     open(full, "w", encoding="utf-8").write(content)
+
+# --- Cache-busting: hver skrá fær ?v=<hash> sem breytist bara við raunbreytingu ---
+CSS_STYLES = "/css/styles.css"   # sett á versjónaða slóð í main()
+CSS_DOC    = "/css/doc.css"
+def asset_ver(relpath):
+    p = os.path.join(ROOT, relpath.lstrip("/"))
+    try:
+        with open(p, "rb") as f:
+            return hashlib.md5(f.read()).hexdigest()[:8]
+    except OSError:
+        return "0"
+def stamp_homepage_assets():
+    """Bætir ?v=<hash> aftan á css/js tengingar í index.html + en/index.html."""
+    assets = ["css/styles.css", "js/mapdata.js", "js/staymap.js", "js/coords.js",
+              "js/images.js", "js/data.js", "js/data.en.js", "js/app.js"]
+    vers = {os.path.basename(a): asset_ver(a) for a in assets}
+    for fn in ("index.html", "en/index.html"):
+        path = os.path.join(ROOT, fn)
+        with open(path, encoding="utf-8") as f:
+            s = f.read()
+        for base, v in vers.items():
+            s = re.sub(
+                r'((?:href|src)="(?:[^"]*/)?)' + re.escape(base) + r'(?:\?v=[0-9a-f]+)?(")',
+                lambda m, _b=base, _v=v: m.group(1) + _b + f'?v={_v}' + m.group(2), s)
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(s)
 def jsonld_block(obj):
     return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False) + '</script>'
 
@@ -300,8 +326,8 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/css/doc.css">
+<link rel="stylesheet" href="{css_styles}">
+<link rel="stylesheet" href="{css_doc}">
 {jsonld}
 </head>
 <body>
@@ -338,6 +364,7 @@ def page(lang, kind, ident, title, desc, url, ogtype, jsonld, body, ogimg=None):
         lc=LANGS[lang]["code"], title=e(title), desc=e(desc), url=e(url), ogtype=ogtype,
         site=e(SITE_NAME), oglocale=LANGS[lang]["og_locale"], siteurl=SITE_URL,
         ogimg=e(ogimg or f"{SITE_URL}/og-image.png"),
+        css_styles=CSS_STYLES, css_doc=CSS_DOC,
         alts=alternates(kind, ident), jsonld="\n".join(jsonld),
         home=home_url(lang), all=all_url(lang), logo=logo, logosub=logosub,
         nav_map=ui["nav_map"], nav_all=ui["nav_all"], nav_about=ui["nav_about"], about_index=about_url(lang),
@@ -1101,6 +1128,7 @@ def build_doc_css():
 # ----------------------------------------------------------------------
 def main():
     global SEO, REGION_SEO, STAY_HUB, COLLECTIONS, IMAGES, COORDS, MAPDATA, GUIDES
+    global CSS_STYLES, CSS_DOC
     SEO = load_seo()
     REGION_SEO = load_region_seo()
     STAY_HUB = load_stay_hub()
@@ -1110,6 +1138,8 @@ def main():
     GUIDES = load_guides()
     COLLECTIONS = load_collections()
     build_og_image(); build_doc_css(); build_robots()
+    CSS_STYLES = f"/css/styles.css?v={asset_ver('css/styles.css')}"
+    CSS_DOC    = f"/css/doc.css?v={asset_ver('css/doc.css')}"
     urls = [(home_url("is"), "1.0"), (home_url("en"), "1.0")]
     counts = {}
     for lang, cfg in LANGS.items():
@@ -1134,6 +1164,7 @@ def main():
             for cid, coll in COLLECTIONS.items():
                 urls.append((build_collection(lang, cid, coll, places_by_id, regions), "0.8"))
     build_sitemap(urls)
+    stamp_homepage_assets()
     print(f"✔ Byggt á 2 tungumálum — is: {counts['is']} staðir, en: {counts['en']} staðir")
     print(f"✔ {len(COLLECTIONS)} þemaleiðir · {len(GUIDES)} leiðsögugreinar")
     print(f"✔ {len(urls)} slóðir í sitemap.xml")
