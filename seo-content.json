@@ -7836,5 +7836,291 @@
         "text": "Hólmavík is the largest settlement in Strandir and a good base for exploring this remote and captivating part of the Westfjords. The Pakkhúsið co-op store ensures that residents and guests have access to essentials, and the place reflects the history of cooperative retail in Iceland. For travellers who want to experience a genuine Icelandic village shop and support a rural community, it is an ideal stop on the way through Strandir and the northern Westfjords."
       }
     ]
+  },
+  "glerarlaug": {
+    "is": [
+      {
+        "title": "Innilaug í hjarta Glerárhverfis",
+        "text": "Glerárlaug er hlýleg 16,7 metra innilaug í norðurhluta Akureyrar og hefur lengi verið hverfislaug íbúa Glerárhverfis. Innandyra er löng laug til sundiðkunar en utandyra taka við heitir pottar, barnalaug og kaldur pottur þar sem gott er að slaka á eftir sundsprett. Laugin hentar vel fjölskyldum, sundnemum og þeim sem vilja rólegri stemningu en í stærri laugum bæjarins. Staðsetningin við Höfðahlíð gerir hana að þægilegum viðkomustað fyrir gesti sem gista norðan Glerár á Akureyri."
+      },
+      {
+        "title": "Rólegur valkostur á Akureyri",
+        "text": "Þótt Sundlaug Akureyrar sé þekktari er Glerárlaug fínn kostur fyrir ferðalanga sem vilja komast í sund án þrengsla. Laugin er opin bæði á virkum dögum og um helgar yfir sumarið og er í göngufæri við þjónustu í Glerárhverfi. Heitu pottarnir henta vel eftir langan akstur um Norðausturland og barnalaugin gerir heimsóknina auðvelda fyrir fjölskyldur. Munið sundreglur Íslands: sturta án sundfata áður en farið er ofan í laugina."
+      }
+    ],
+    "en": [
+      {
+        "title": "An indoor pool in Akureyri's Glerá district",
+        "text": "Glerárlaug is a warm 16.7-metre indoor pool in the northern part of Akureyri and has long served as the neighbourhood pool for the Glerá district. Inside is a lane pool for swimming, while outside you will find hot tubs, a children's pool and a cold tub, perfect for relaxing after a few lengths. It suits families, swimmers and anyone wanting a calmer atmosphere than the town's larger pools. Its location at Höfðahlíð makes it a handy stop for guests staying north of the Glerá river."
+      },
+      {
+        "title": "A quieter Akureyri option",
+        "text": "While the main Akureyri pool is better known, Glerárlaug is a great choice for travellers who want a swim without the crowds. It opens on weekdays and weekends through summer and sits within walking distance of local services in the Glerá district. The hot tubs are welcome after a long drive across North East Iceland, and the children's pool makes it easy for families. Remember Iceland's pool etiquette: shower thoroughly without a swimsuit before entering the water."
+      }
+    ]
+  },
+  "bjarnalaug": {
+    "is": [
+      {
+        "title": "Söguleg laug frá 1944",
+        "text": "Bjarnalaug á Akranesi var tekin í notkun árið 1944 og er meðal elstu innilauga landsins. Hún er teiknuð af Guðjóni Samúelssyni, húsameistara ríkisins, og er kennd við Bjarna Ólafsson skipstjóra. Laugin er 12,5 metrar að lengd og vatnið er hlýtt, um 33-34 gráður, sem hentar vel til kennslu og ungbarnasunds. Bjarnalaug er einkum nýtt af skólum og til námskeiða en er opin almenningi á veturna um helgar. Hún er notaleg og sögulega merkileg viðbót við sundmenningu Akraness."
+      },
+      {
+        "title": "Innilaug fyrir kaldari daga",
+        "text": "Bjarnalaug hentar sérstaklega vel þegar veður er svalt, enda innilaug með hlýju vatni. Hún er staðsett við Laugabraut í hjarta Akraness, í göngufæri við þjónustu bæjarins. Þótt stærri útilaug Akraness, Jaðarsbakkalaug, sé opin árið um kring er Bjarnalaug góður kostur fyrir barnafjölskyldur og þá sem sækja í rólega og hlýja innilaug. Athugið að opnunartími er takmarkaður og bundinn við vetrarmánuði, svo gott er að kanna opnun áður en lagt er af stað."
+      }
+    ],
+    "en": [
+      {
+        "title": "A historic pool from 1944",
+        "text": "Bjarnalaug in Akranes opened in 1944 and is among the oldest indoor pools in Iceland. It was designed by the state architect Guðjón Samúelsson and named after the sea captain Bjarni Ólafsson. The pool is 12.5 metres long and the water is warm, around 33-34 degrees, which suits lessons and infant swimming well. Bjarnalaug is mainly used by schools and courses but opens to the public on winter weekends. It is a cosy and historically significant part of Akranes swimming culture."
+      },
+      {
+        "title": "An indoor pool for cooler days",
+        "text": "Bjarnalaug is especially welcome when the weather is chilly, being a warm indoor pool. It sits on Laugabraut in the heart of Akranes, within walking distance of the town's services. While the larger outdoor pool of Akranes, Jaðarsbakkalaug, is open year-round, Bjarnalaug is a good choice for families with young children and anyone who enjoys a calm, warm indoor pool. Note that opening hours are limited to the winter months, so check the schedule before you set out."
+      }
+    ]
+  },
+  "gvendarlaug_bjarnarfirdi": {
+    "is": [
+      {
+        "title": "Fornhelg laug á Ströndum",
+        "text": "Gvendarlaug í Bjarnarfirði er einn sögufrægasti baðstaður Vestfjarða. Við Hótel Laugarhól er 25 metra útilaug og rétt hjá henni forn náttúrulaug með um 39-41 gráðu heitu vatni þar sem gott er að liggja og njóta náttúrunnar. Hluti vatnsins rennur úr uppsprettu sem kennd er við Guðmund góða Hólabiskup á 13. öld og er nú friðlýst og talin búa yfir lækningamætti. Neðan lauganna liðast heitur lækur þar sem börn geta leikið sér. Staðurinn er tilvalinn áningarstaður á leið um Strandir."
+      },
+      {
+        "title": "Sund og náttúrubað í einni ferð",
+        "text": "Fáir baðstaðir sameina sundlaug og forna náttúrulaug jafn skemmtilega og Gvendarlaug. Gestir geta synt í 25 metra útilauginni og skipt yfir í heita náttúrulaug til að slaka á í kyrrðinni. Laugin er í landi Laugarhóls í Bjarnarfirði, skammt frá Hólmavík, og hentar vel þeim sem ferðast um Strandir eða heimsækja Kotbýli kuklarans og Galdrasýninguna í nágrenninu. Munið að fara eftir almennum sundreglum og bera virðingu fyrir hinni friðlýstu uppsprettu."
+      }
+    ],
+    "en": [
+      {
+        "title": "A sacred old spring in Strandir",
+        "text": "Gvendarlaug in Bjarnarfjörður is one of the most storied bathing spots in the Westfjords. Beside Hótel Laugarhóll is a 25-metre outdoor pool and, just next to it, an ancient natural spring of around 39-41 degrees where you can soak and enjoy the surrounding nature. Part of the water flows from a spring said to have been blessed by Bishop Guðmundur the Good in the 13th century; it is now protected and believed to have healing powers. A warm stream runs below the pools where children can play, making it a perfect stop along the Strandir coast."
+      },
+      {
+        "title": "A swim and a wild soak in one trip",
+        "text": "Few bathing places combine a swimming pool and an ancient natural spring as pleasantly as Gvendarlaug. Visitors can swim in the 25-metre outdoor pool and then move to the hot natural spring to relax in the quiet. The pool sits on the land of Laugarhóll in Bjarnarfjörður, a short drive from Hólmavík, and suits anyone exploring Strandir or visiting the nearby Sorcerer's Cottage and Museum of Icelandic Sorcery. Please follow standard pool rules and respect the protected spring."
+      }
+    ]
+  },
+  "hreppslaug": {
+    "is": [
+      {
+        "title": "Ein elsta sundlaug Borgarfjarðar",
+        "text": "Hreppslaug í Andakíl var byggð árið 1928 og er meðal elstu útilauga á Vesturlandi. Laugin er hituð með vatni úr lækjum og lindum í hlíðinni fyrir ofan og hefur haldið sínum sögulega sjarma. Við hana eru tveir heitir pottar, gufubað, kaldur pottur og útisturta þar sem gestir geta slakað á í fallegu umhverfi Borgarfjarðar. Ungmennafélagið Íslendingur rekur laugina og hún er opin yfir sumarið. Hreppslaug er tilvalin fyrir þá sem vilja upplifa gamaldags, heimilislega sundlaug fjarri fjöldanum."
+      },
+      {
+        "title": "Rólegur baðstaður í sveitasælu",
+        "text": "Hreppslaug er falin perla í Andakíl, skammt frá Skorradal og Hvanneyri í Borgarfirði. Útilaugin, heitu pottarnir og gufubaðið gera hana að góðum áningarstað á ferð um Vesturland. Laugin er einkum opin á sumrin, alla daga nema mánudaga yfir háannatíma, og um helgar fram á haust, svo gott er að athuga opnunartíma fyrir heimsókn. Umgjörðin er einföld og notaleg og hentar vel fjölskyldum og ferðalöngum sem vilja komast í sund utan alfaraleiðar."
+      }
+    ],
+    "en": [
+      {
+        "title": "One of Borgarfjörður's oldest pools",
+        "text": "Hreppslaug in Andakíll was built in 1928 and is among the oldest outdoor pools in West Iceland. It is heated by water from streams and springs on the hillside above and has kept its historic charm. Alongside the pool are two hot tubs, a sauna, a cold tub and an outdoor shower, where guests can relax in the beautiful Borgarfjörður countryside. The local youth club Íslendingur runs the pool, which opens through summer. Hreppslaug is ideal for anyone wanting an old-fashioned, homely pool away from the crowds."
+      },
+      {
+        "title": "A calm country bathing spot",
+        "text": "Hreppslaug is a hidden gem in Andakíll, a short distance from Skorradalur and Hvanneyri in Borgarfjörður. The outdoor pool, hot tubs and sauna make it a fine stop on a West Iceland road trip. It opens mainly in summer, daily except Mondays in high season, and at weekends into the autumn, so check the schedule before visiting. The setting is simple and welcoming, suiting families and travellers who want a swim off the beaten track."
+      }
+    ]
+  },
+  "heydalur": {
+    "is": [
+      {
+        "title": "Baðparadís í Mjóafirði",
+        "text": "Heydalur er ferðaþjónusta og hótel innst í Mjóafirði við sunnanvert Ísafjarðardjúp á Vestfjörðum. Þar er lítil sundlaug og heitur pottur inni í gróðurhúsi, sem gerir baðið notalegt í hvaða veðri sem er, og utandyra bíða þrír heitir pottar hlaðnir úr grjóti og skeljasandi. Í göngufæri er náttúruleg heit uppspretta við Galtahrygg. Umhverfið er ósnortið og kyrrlátt og hentar vel þeim sem vilja slaka á eftir kajakróður, gönguferðir eða veiði í nágrenninu. Heydalur er einstök viðbót við baðmenningu Vestfjarða."
+      },
+      {
+        "title": "Afslöppun eftir ævintýri",
+        "text": "Heydalur er fjarri þjóðvegi, um 12 km frá vegi 61, og því friðsæll áfangastaður innan um fjöll og fjörð. Heitu pottarnir og gróðurhúsalaugin eru fullkomin til að hvíla lúin bein eftir kajakferð um Mjóafjörð, hestaferð eða göngu. Athugið að laugin og pottarnir eru fyrst og fremst hluti af ferðaþjónustunni, svo best er að hafa samband fyrir fram um aðgang og opnunartíma. Fyrir þá sem ferðast um Ísafjarðardjúp er Heydalur ómissandi hvíldarstaður."
+      }
+    ],
+    "en": [
+      {
+        "title": "A bathing haven in Mjóifjörður",
+        "text": "Heydalur is a country hotel and travel service at the head of Mjóifjörður on the southern side of Ísafjarðardjúp in the Westfjords. It has a small pool and hot tub inside a greenhouse, making a soak pleasant in any weather, and outside there are three hot tubs built from rock and shell sand. A natural hot spring at Galtahrygg lies within walking distance. The surroundings are pristine and quiet, ideal for relaxing after kayaking, hiking or fishing nearby. Heydalur is a distinctive addition to Westfjords bathing culture."
+      },
+      {
+        "title": "Unwind after an adventure",
+        "text": "Heydalur sits away from the main road, about 12 km off Route 61, making it a peaceful destination among mountains and fjord. The hot tubs and greenhouse pool are perfect for resting tired limbs after a kayak trip on Mjóifjörður, a horse ride or a hike. Note that the pool and tubs are primarily part of the travel service, so it is best to contact them in advance about access and opening hours. For anyone touring Ísafjarðardjúp, Heydalur is an essential rest stop."
+      }
+    ]
+  },
+  "illugastadir": {
+    "is": [
+      {
+        "title": "Sund í orlofsbyggð Fnjóskadals",
+        "text": "Illugastaðir í Fnjóskadal eru fjölskylduvæn orlofsbyggð um 27 km austan Akureyrar, og þar er 16,5 metra útilaug sem er opin öllum yfir sumarið. Við laugina eru tveir heitir pottar og góð sólbaðsaðstaða þar sem gott er að njóta kyrrðarinnar í dalnum. Svæðið er tilvalið til gönguferða, veiði og útivistar og hentar vel fjölskyldum á ferð um Þingeyjarsýslur og Eyjafjörð. Útilaugin er notaleg viðbót fyrir þá sem gista í nágrenninu eða eiga leið um Norðausturland á sumrin."
+      },
+      {
+        "title": "Áningarstaður í fallegum dal",
+        "text": "Fnjóskadalur er einn gróðursælasti dalur landsins og útilaugin á Illugastöðum er kærkominn viðkomustaður á ferð um svæðið. Laugin er opin frá byrjun júní fram í lok ágúst og hentar bæði sundfólki og þeim sem vilja aðeins liggja í heitum potti eftir göngu eða akstur. Þótt byggðin sé einkum ætluð orlofsgestum stéttarfélaga er sundlaugin sjálf opin almenningi. Munið að fylgja íslenskum sundreglum og sturta ykkur vel áður en farið er ofan í."
+      }
+    ],
+    "en": [
+      {
+        "title": "A swim in the Fnjóskadalur holiday village",
+        "text": "Illugastaðir in Fnjóskadalur is a family-friendly holiday village about 27 km east of Akureyri, with a 16.5-metre outdoor pool that is open to everyone in summer. The pool has two hot tubs and a good sunbathing area, perfect for enjoying the quiet of the valley. The area is ideal for hiking, fishing and outdoor recreation and suits families touring the Þingeyjarsýslur districts and Eyjafjörður. The outdoor pool is a welcome addition for anyone staying nearby or passing through North East Iceland in summer."
+      },
+      {
+        "title": "A stop in a beautiful valley",
+        "text": "Fnjóskadalur is one of Iceland's most verdant valleys, and the outdoor pool at Illugastaðir is a welcome stop when travelling the area. It is open from early June to the end of August and suits both swimmers and those who just want to soak in a hot tub after a hike or drive. Although the village mainly serves union holiday guests, the pool itself is open to the public. Remember to follow Icelandic pool rules and shower thoroughly before entering the water."
+      }
+    ]
+  },
+  "skeidalaug": {
+    "is": [
+      {
+        "title": "Endurnýjuð sveitalaug á Skeiðum",
+        "text": "Skeiðalaug í Brautarholti var tekin í notkun árið 1975 og gekk í gegnum gagngera endurnýjun á árunum 2023-2024. Í dag er þar 16,68 metra laug ásamt tveimur stórum heitum pottum, öðrum með nuddi, innikaldum potti og innrauðri gufu. Laugin er við þjóðveg 30 í Skeiða- og Gnúpverjahreppi og er þægilegur viðkomustaður á leið um uppsveitir Árnessýslu, til dæmis á leið að Gullfossi og Geysi. Endurbæturnar hafa gert Skeiðalaug að nútímalegri og notalegri sundlaug fyrir bæði heimamenn og ferðalanga."
+      },
+      {
+        "title": "Sund á leið um uppsveitir Suðurlands",
+        "text": "Fyrir þá sem ferðast um Gullna hringinn er Skeiðalaug kærkominn kostur til að komast í sund fjarri fjöldanum. Laugin er opin alla daga vikunnar og býður upp á nýja heita potta, gufu og kaldan pott sem gera heimsóknina afslappandi eftir dagsferð. Staðsetningin við veg 30 gerir hana að hentugum áningarstað milli Selfoss og Flúða. Skeiðalaug er dæmi um vel heppnaða uppgerð á sögulegri sveitalaug og er tilvalin fyrir fjölskyldur og ferðalanga sem vilja upplifa raunverulega íslenska sundmenningu."
+      }
+    ],
+    "en": [
+      {
+        "title": "A renovated country pool on Skeið",
+        "text": "Skeiðalaug in Brautarholt opened in 1975 and underwent a thorough renovation in 2023-2024. Today it has a 16.68-metre pool along with two large hot tubs, one with massage jets, an indoor cold tub and an infrared sauna. The pool sits by Route 30 in Skeiða- og Gnúpverjahreppur and makes a handy stop when touring the highland farming districts of Árnessýsla, for instance on the way to Gullfoss and Geysir. The upgrades have turned Skeiðalaug into a modern, comfortable pool for locals and travellers alike."
+      },
+      {
+        "title": "A swim on the South Iceland farm roads",
+        "text": "For anyone travelling the Golden Circle, Skeiðalaug is a welcome place to swim away from the crowds. It is open every day and offers new hot tubs, a sauna and a cold tub that make a visit relaxing after a day trip. Its location on Route 30 makes it a convenient stop between Selfoss and Flúðir. Skeiðalaug is a fine example of a well-executed renovation of a historic country pool and is ideal for families and travellers who want to experience genuine Icelandic swimming culture."
+      }
+    ]
+  },
+  "solgardar": {
+    "is": [
+      {
+        "title": "Sund í Fljótum",
+        "text": "Sundlaugin á Sólgörðum er í Fljótum í nyrsta hluta Skagafjarðar, á fallegu og kyrrlátu svæði skammt frá Siglufirði. Laugin er 16,6 metrar og hituð með vatni úr borholu í nágrenninu, og nýlega hefur verið tekið í notkun gufubað. Sólgarðar eru gamall skólastaður í sveitinni og laugin þjónar bæði heimamönnum og ferðalöngum sem eiga leið um Tröllaskaga og norðanverðan Skagafjörð. Fyrir þá sem ferðast milli Siglufjarðar og Sauðárkróks er Sólgarðalaug notalegur og lítt þekktur baðstaður."
+      },
+      {
+        "title": "Falin sveitalaug á Tröllaskaga",
+        "text": "Sólgarðar í Fljótum eru dæmi um litla sveitalaug sem býður upp á raunverulega íslenska sundupplifun fjarri ferðamannastraumnum. Laugin er hituð með heimafengnu borholuvatni og nýja gufan gerir heimsóknina enn notalegri, meðal annars með sérstökum kvennatímum yfir veturinn. Umhverfið er stórbrotið, umlukið fjöllum Tröllaskaga og nálægt Miklavatni. Sólgarðalaug hentar vel þeim sem vilja stoppa í sund á leið um Fljótin og upplifa rólega stemningu í norðlenskri sveit."
+      }
+    ],
+    "en": [
+      {
+        "title": "A swim in Fljót",
+        "text": "The pool at Sólgarðar lies in Fljót in the northernmost part of Skagafjörður, in a beautiful and quiet area not far from Siglufjörður. The pool is 16.6 metres and heated with water from a nearby borehole, and a steam room has recently been added. Sólgarðar is a former school site in the countryside, and the pool serves both locals and travellers passing through the Tröllaskagi peninsula and northern Skagafjörður. For anyone driving between Siglufjörður and Sauðárkrókur, Sólgarðar is a cosy and little-known bathing spot."
+      },
+      {
+        "title": "A hidden country pool on Tröllaskagi",
+        "text": "Sólgarðar in Fljót is an example of a small country pool offering a genuine Icelandic swimming experience away from the tourist trail. The pool is heated with locally sourced borehole water, and the new steam room makes a visit even nicer, including special women's hours in winter. The setting is dramatic, ringed by the mountains of Tröllaskagi and close to Miklavatn lake. Sólgarðar suits anyone wanting to stop for a swim while touring the Fljót district and enjoy the calm of a northern farming community."
+      }
+    ]
+  },
+  "djupidalur": {
+    "is": [
+      {
+        "title": "Baðstaður í Reykhólasveit",
+        "text": "Djúpidalur er ferðaþjónusta í Reykhólasveit á sunnanverðum Vestfjörðum þar sem gestir komast í sundlaug og heitan pott í fallegu og kyrrlátu umhverfi. Staðurinn er úr alfaraleið en er kærkominn viðkomustaður fyrir þá sem ferðast um Reykhólasveit og nágrenni. Í boði er gisting og aðstaða til að slaka á eftir gönguferðir og útivist á svæðinu. Djúpidalur hentar vel þeim sem vilja upplifa rólega sveitastemningu og komast í heitt vatn fjarri fjöldanum á leið um Vestfirði."
+      },
+      {
+        "title": "Rólegt sund á Vestfjörðum",
+        "text": "Fyrir ferðalanga sem vilja komast í sund án þrengsla er Djúpidalur góður kostur á sunnanverðum Vestfjörðum. Laugin og heiti potturinn eru hluti af ferðaþjónustunni og gott er að hafa samband fyrir fram um aðgang og opnunartíma. Umhverfið er friðsælt og tilvalið til að hvíla sig á leið um Reykhólasveit, sem er þekkt fyrir sitt sérstæða landslag og fjölbreytt fuglalíf. Djúpidalur er lítt þekkt en notaleg viðbót við baðmenningu Vestfjarða."
+      }
+    ],
+    "en": [
+      {
+        "title": "A bathing spot in Reykhólasveit",
+        "text": "Djúpidalur is a travel service in Reykhólasveit in the southern Westfjords where guests can enjoy a swimming pool and hot tub in beautiful, quiet surroundings. The place is off the beaten track but a welcome stop for anyone travelling through Reykhólasveit and the surrounding area. Accommodation is available along with a place to relax after hikes and outdoor activities nearby. Djúpidalur suits those who want to experience a calm country atmosphere and reach warm water far from the crowds while touring the Westfjords."
+      },
+      {
+        "title": "A quiet swim in the Westfjords",
+        "text": "For travellers who want a swim without the crowds, Djúpidalur is a good option in the southern Westfjords. The pool and hot tub are part of the travel service, so it is best to contact them in advance about access and opening hours. The setting is peaceful and ideal for a rest while exploring Reykhólasveit, an area known for its distinctive landscape and rich birdlife. Djúpidalur is a little-known but pleasant addition to Westfjords bathing culture."
+      }
+    ]
+  },
+  "hraunborgir": {
+    "is": [
+      {
+        "title": "Sund í Hraunborgum",
+        "text": "Hraunborgir í Grímsnesi eru vinsælt sumarhúsa- og tjaldsvæði í um klukkustundar akstursfjarlægð frá Reykjavík. Í þjónustumiðstöð svæðisins er sundlaug ásamt þremur heitum pottum og gufubaði, sem gerir Hraunborgir að góðum áningarstað fyrir fjölskyldur á ferð um Suðurland. Svæðið býður einnig upp á minigolf, níu holu golfvöll, leiktæki fyrir börn og útsýnisstað. Hraunborgir eru tilvalinn kostur fyrir þá sem vilja sameina sund, útivist og afslöppun í fallegu umhverfi Grímsness, skammt frá Gullna hringnum."
+      },
+      {
+        "title": "Fjölskylduvænn baðstaður í Grímsnesi",
+        "text": "Hraunborgir henta einstaklega vel fjölskyldum, enda er sundlaugin, heitu pottarnir og gufan hluti af stærra útivistarsvæði með golfi, minigolfi og leiktækjum. Svæðið er í Grímsnesi, nálægt fjölmörgum náttúruperlum Suðurlands og Gullna hringnum. Sundlaugin er kærkomin viðbót fyrir gesti sumarhúsabyggðarinnar og ferðalanga sem eiga leið um svæðið. Athugið að rekstur þjónustumiðstöðvarinnar er í höndum einkaaðila, svo gott er að kanna opnunartíma áður en lagt er af stað í heimsókn."
+      }
+    ],
+    "en": [
+      {
+        "title": "A swim at Hraunborgir",
+        "text": "Hraunborgir in Grímsnes is a popular summer-house and camping area about an hour's drive from Reykjavík. The area's service centre has a swimming pool with three hot tubs and a steam bath, making Hraunborgir a good stop for families touring South Iceland. The site also offers mini golf, a nine-hole golf course, children's playground equipment and a viewpoint. Hraunborgir is an ideal choice for anyone wanting to combine a swim, outdoor activities and relaxation in the beautiful Grímsnes area, close to the Golden Circle."
+      },
+      {
+        "title": "A family-friendly bathing spot in Grímsnes",
+        "text": "Hraunborgir suits families especially well, as the pool, hot tubs and sauna are part of a larger recreation area with golf, mini golf and playground equipment. The site is in Grímsnes, near many of South Iceland's natural attractions and the Golden Circle. The pool is a welcome amenity for summer-house guests and travellers passing through. Note that the service centre is privately operated, so it is best to check opening hours before setting out to visit."
+      }
+    ]
+  },
+  "heidarbaer": {
+    "is": [
+      {
+        "title": "Sund við Þingvallavatn",
+        "text": "Sundlaugin í Heiðarbæ er lítil og notaleg útilaug í Þingvallasveit, skammt frá Þingvallavatni. Þar er einn heitur pottur og góð aðstaða til sólbaðs, og á staðnum er einnig tjaldsvæði og matur til sölu. Laugin er opin yfir sumartímann og hentar vel ferðalöngum sem heimsækja Þingvelli og nágrenni. Heiðarbær er kærkominn og lítt þekktur baðstaður fyrir þá sem vilja komast í sund í rólegu sveitaumhverfi á leið um Gullna hringinn eða á göngu um Þingvallasvæðið."
+      },
+      {
+        "title": "Rólegur baðstaður í sögufrægu umhverfi",
+        "text": "Heiðarbær í Þingvallasveit er dæmi um litla sveitalaug sem býður upp á kyrrð og næði fjarri fjöldanum. Laugin, heiti potturinn og tjaldsvæðið gera hana að þægilegum áningarstað fyrir fjölskyldur og ferðalanga á Suðurlandi. Umhverfið er sögufrægt, í nágrenni þjóðgarðsins á Þingvöllum sem er á heimsminjaskrá UNESCO. Athugið að opnunartími er bundinn við sumarið, svo gott er að kanna opnun fyrir heimsókn. Heiðarbær er tilvalinn fyrir þá sem vilja upplifa einfalda og ekta íslenska sundmenningu."
+      }
+    ],
+    "en": [
+      {
+        "title": "A swim by Þingvallavatn",
+        "text": "The pool at Heiðarbær is a small, cosy outdoor pool in Þingvallasveit, a short distance from lake Þingvallavatn. It has one hot tub and a good sunbathing area, and there is also a campsite and food for sale on site. The pool is open in summer and suits travellers visiting Þingvellir and the surrounding area. Heiðarbær is a welcome and little-known bathing spot for anyone wanting a swim in a calm country setting while touring the Golden Circle or hiking around the Þingvellir area."
+      },
+      {
+        "title": "A quiet bathing spot in historic surroundings",
+        "text": "Heiðarbær in Þingvallasveit is an example of a small country pool offering peace and quiet away from the crowds. The pool, hot tub and campsite make it a comfortable stop for families and travellers in South Iceland. The surroundings are historic, near the Þingvellir national park, a UNESCO World Heritage Site. Note that opening hours are limited to summer, so check the schedule before visiting. Heiðarbær is ideal for anyone wanting to experience simple, authentic Icelandic swimming culture."
+      }
+    ]
+  },
+  "heidarborg": {
+    "is": [
+      {
+        "title": "Sundlaug í Hvalfjarðarsveit",
+        "text": "Heiðarborg er íþrótta- og samfélagsmiðstöð við Heiðarskóla í Hvalfjarðarsveit á Vesturlandi. Þar er sundlaug ásamt líkamsræktarsal og íþróttahúsi, og laugin er opin almenningi yfir vetrarmánuðina. Á sumrin er sundlaugin á Hlöðum opin í staðinn, svo Heiðarborg þjónar einkum heimamönnum og ferðalöngum utan háannatíma. Staðurinn er þægilegur viðkomustaður fyrir þá sem ferðast um Hvalfjörð og nágrenni og vilja komast í sund í rólegu og fjölskylduvænu umhverfi fjarri stærri laugum höfuðborgarsvæðisins."
+      },
+      {
+        "title": "Baðstaður fyrir heimamenn og gesti",
+        "text": "Sundlaugin í Heiðarborg er dæmi um litla sveitarlaug sem gegnir mikilvægu hlutverki fyrir samfélagið í Hvalfjarðarsveit. Auk sundlaugarinnar er þar líkamsræktaraðstaða og íþróttahús, og opnunartími er einkum yfir veturinn. Staðsetningin við Heiðarskóla gerir hana að góðum kosti fyrir fjölskyldur á ferð um Vesturland. Athugið að á sumrin er sundlaugin á Hlöðum opin í staðinn fyrir Heiðarborg, svo gott er að kanna opnunartíma áður en lagt er af stað í heimsókn á svæðið."
+      }
+    ],
+    "en": [
+      {
+        "title": "A pool in Hvalfjarðarsveit",
+        "text": "Heiðarborg is a sports and community centre by Heiðarskóli in Hvalfjarðarsveit in West Iceland. It has a swimming pool along with a gym and a sports hall, and the pool is open to the public during the winter months. In summer the pool at Hlaðir opens instead, so Heiðarborg mainly serves locals and travellers outside the high season. The place is a convenient stop for anyone touring Hvalfjörður and the surrounding area who wants a swim in a calm, family-friendly setting away from the larger capital-area pools."
+      },
+      {
+        "title": "A bathing spot for locals and guests",
+        "text": "The pool at Heiðarborg is an example of a small municipal pool that plays an important role for the community of Hvalfjarðarsveit. Alongside the pool there is a gym and a sports hall, and opening hours are mainly in winter. Its location by Heiðarskóli makes it a good choice for families travelling West Iceland. Note that in summer the pool at Hlaðir opens instead of Heiðarborg, so it is best to check opening hours before setting out to visit the area."
+      }
+    ]
+  },
+  "lundur_oxarfirdi": {
+    "is": [
+      {
+        "title": "Sund í Öxarfirði",
+        "text": "Sundlaugin á Lundi í Öxarfirði er notaleg sveitalaug skammt frá Kópaskeri á Norðausturlandi. Laugin hentar fólki á öllum aldri og þar er einnig heitur pottur þar sem gott er að slaka á eftir ferðalag. Lundur er kærkominn baðstaður fyrir þá sem ferðast um Öxarfjörð og nágrenni, til dæmis á leið að Ásbyrgi, Dettifossi eða Melrakkasléttu. Fyrir ferðalanga sem vilja komast í sund fjarri fjöldanum er Lundur góður og lítt þekktur kostur á norðausturhorni landsins."
+      },
+      {
+        "title": "Rólegur baðstaður á Norðausturlandi",
+        "text": "Lundur í Öxarfirði er dæmi um litla sveitalaug sem býður upp á rólega og ekta íslenska sundupplifun. Laugin og heiti potturinn þjóna bæði heimamönnum og ferðalöngum, og staðsetningin gerir hana að góðum áningarstað á leið um Norðausturland. Í nágrenninu eru margar náttúruperlur, þar á meðal þjóðgarðurinn í Jökulsárgljúfrum og Ásbyrgi. Munið að fara eftir almennum sundreglum og sturta ykkur vel áður en farið er ofan í laugina. Lundur er tilvalinn fyrir þá sem vilja upplifa kyrrð norðlenskrar sveitar."
+      }
+    ],
+    "en": [
+      {
+        "title": "A swim in Öxarfjörður",
+        "text": "The pool at Lundur in Öxarfjörður is a pleasant country pool a short distance from Kópasker in North East Iceland. It suits people of all ages and also has a hot tub where you can relax after travelling. Lundur is a welcome bathing spot for anyone exploring Öxarfjörður and the surrounding area, for instance on the way to Ásbyrgi, Dettifoss or the Melrakkaslétta peninsula. For travellers who want a swim away from the crowds, Lundur is a good and little-known option in the north-eastern corner of the country."
+      },
+      {
+        "title": "A quiet bathing spot in North East Iceland",
+        "text": "Lundur in Öxarfjörður is an example of a small country pool offering a calm, authentic Icelandic swimming experience. The pool and hot tub serve both locals and travellers, and the location makes it a good stop when touring North East Iceland. Nearby are many natural attractions, including the Jökulsárgljúfur canyon area and Ásbyrgi. Remember to follow standard pool rules and shower thoroughly before entering the water. Lundur is ideal for anyone wanting to experience the quiet of a northern farming community."
+      }
+    ]
   }
 }

@@ -196,5 +196,18 @@ if (typeof module !== "undefined") {
   "fisherman-sudureyri": "Sudureyri",
   "ivaf-knitwear": "Isafjordur",
   "kaupfelag-holmavik": "Holmavik",
+  "glerarlaug": "Akureyri",
+  "bjarnalaug": "Akranes",
+  "gvendarlaug_bjarnarfirdi": "Hólmavík",
+  "hreppslaug": "Borgarnes",
+  "heydalur": "Ísafjörður",
+  "illugastadir": "Akureyri",
+  "skeidalaug": "Selfoss",
+  "solgardar": "Siglufjörður",
+  "djupidalur": "Reykhólar",
+  "hraunborgir": "Selfoss",
+  "heidarbaer": "Selfoss",
+  "heidarborg": "Borgarnes",
+  "lundur_oxarfirdi": "Húsavík",
 };
 }

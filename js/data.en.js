@@ -10230,6 +10230,292 @@ const PLACES = [
       "Varied range of goods and personal service",
       "Important stop in the Strandir region"
     ]
+  },
+  {
+    "id": "glerarlaug",
+    "name": "Glerárlaug",
+    "region": "nordaustur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Höfðahlíð, Glerárhverfi, Akureyri",
+    "tags": [
+      "Pool",
+      "Indoor pool",
+      "Hot tubs",
+      "Family-friendly"
+    ],
+    "blurb": "A cosy indoor pool in the Glerá district of Akureyri with hot tubs outside.",
+    "description": "Glerárlaug is a 16.7-metre indoor pool in the northern part of Akureyri. The outdoor area has hot tubs, a children's pool and a cold tub, and it is a local favourite.",
+    "highlights": [
+      "16.7-metre indoor pool",
+      "Outdoor hot tubs",
+      "Children's pool and cold tub"
+    ]
+  },
+  {
+    "id": "bjarnalaug",
+    "name": "Bjarnalaug",
+    "region": "vesturland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Laugabraut, Akranes",
+    "tags": [
+      "Pool",
+      "Indoor pool",
+      "Historic",
+      "Hot tub"
+    ],
+    "blurb": "A historic indoor pool in Akranes from 1944, named after Bjarni Ólafsson.",
+    "description": "Bjarnalaug is a 12.5-metre indoor pool in Akranes, designed by Guðjón Samúelsson and opened in 1944. It is mainly used for lessons and infant swimming and is open to the public on winter weekends.",
+    "highlights": [
+      "Opened in 1944",
+      "12.5-metre indoor teaching pool",
+      "Warm water around 33-34°C"
+    ]
+  },
+  {
+    "id": "gvendarlaug_bjarnarfirdi",
+    "name": "Gvendarlaug í Bjarnarfirði",
+    "region": "vestfirdir",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Laugarhóll, Bjarnarfjörður, Strandir",
+    "tags": [
+      "Pool",
+      "Natural pool",
+      "Historic",
+      "Outdoor pool"
+    ],
+    "blurb": "A pool at Laugarhóll in Bjarnarfjörður with an ancient natural spring linked to Guðmundur the Good.",
+    "description": "At Hótel Laugarhóll in Bjarnarfjörður on the Strandir coast is a 25-metre outdoor pool and a hot natural spring (39-41°C). Some of the water comes from the ancient Gvendarlaug, said to have been blessed by Bishop Guðmundur the Good and now a protected site.",
+    "highlights": [
+      "25-metre outdoor pool",
+      "Ancient natural spring, 39-41°C",
+      "Protected spring linked to Guðmundur the Good"
+    ]
+  },
+  {
+    "id": "hreppslaug",
+    "name": "Hreppslaug",
+    "region": "vesturland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Andakíll, Skorradalur, Borgarfjörður",
+    "tags": [
+      "Pool",
+      "Outdoor pool",
+      "Historic",
+      "Hot tubs"
+    ],
+    "blurb": "A historic outdoor pool in Andakíll from 1928, heated by water from the hillside above.",
+    "description": "Hreppslaug is a historic outdoor pool in Andakíll in Borgarfjörður, built by locals in 1928. It has two hot tubs, a sauna, a cold tub and an outdoor shower, and is run by the local youth club Íslendingur.",
+    "highlights": [
+      "Built in 1928 by locals",
+      "Two hot tubs and a sauna",
+      "Naturally heated outdoor pool"
+    ]
+  },
+  {
+    "id": "heydalur",
+    "name": "Heydalur",
+    "region": "vestfirdir",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Heydalur, Mjóifjörður, Ísafjarðardjúp",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Natural pool",
+      "Countryside"
+    ],
+    "blurb": "A small pool and hot tubs at the Heydalur country hotel in Mjóifjörður.",
+    "description": "At Heydalur in Mjóifjörður by Ísafjarðardjúp there is a small pool and hot tub inside a greenhouse, plus three outdoor hot tubs built from rock and shell sand. A natural hot spring at Galtahrygg lies within walking distance.",
+    "highlights": [
+      "Pool and tub inside a greenhouse",
+      "Three outdoor hot tubs",
+      "Natural spring within walking distance"
+    ]
+  },
+  {
+    "id": "illugastadir",
+    "name": "Illugastaðir",
+    "region": "nordaustur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Illugastaðir, Fnjóskadalur",
+    "tags": [
+      "Pool",
+      "Outdoor pool",
+      "Hot tubs",
+      "Holiday village"
+    ],
+    "blurb": "An outdoor pool in the Illugastaðir holiday village in Fnjóskadalur, open to all in summer.",
+    "description": "At Illugastaðir in Fnjóskadalur, about 27 km east of Akureyri, is a 16.5-metre outdoor pool with two hot tubs and a sunbathing area. The pool sits in a union holiday village but is open to everyone during summer.",
+    "highlights": [
+      "16.5-metre outdoor pool",
+      "Two hot tubs",
+      "Open to all in summer"
+    ]
+  },
+  {
+    "id": "skeidalaug",
+    "name": "Skeiðalaug",
+    "region": "sudurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Brautarholt, Skeið, Árnessýsla",
+    "tags": [
+      "Pool",
+      "Outdoor pool",
+      "Hot tubs",
+      "Sauna"
+    ],
+    "blurb": "A renovated country pool in Brautarholt on Skeið with new hot tubs and a sauna.",
+    "description": "Skeiðalaug in Brautarholt in Skeiða- og Gnúpverjahreppur opened in 1975 and was renovated in 2023-2024. It now has two large hot tubs, an indoor cold tub and an infrared sauna alongside its 16.68-metre pool.",
+    "highlights": [
+      "16.68-metre pool",
+      "Two new hot tubs",
+      "Infrared sauna and cold tub"
+    ]
+  },
+  {
+    "id": "solgardar",
+    "name": "Sólgarðar í Fljótum",
+    "region": "nordvestur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Sólgarðar, Fljót, Skagafjörður",
+    "tags": [
+      "Pool",
+      "Outdoor pool",
+      "Sauna",
+      "Countryside"
+    ],
+    "blurb": "A country pool at Sólgarðar in Fljót, heated with water from a nearby borehole.",
+    "description": "The pool at Sólgarðar in Fljót in Skagafjörður is a 16.6-metre pool heated with water from a nearby borehole. A new steam room has been added, and the pool is run on behalf of the municipality.",
+    "highlights": [
+      "16.6-metre pool",
+      "Heated by borehole water",
+      "New steam room"
+    ]
+  },
+  {
+    "id": "djupidalur",
+    "name": "Djúpidalur",
+    "region": "vestfirdir",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Djúpidalur, Reykhólasveit",
+    "tags": [
+      "Pool",
+      "Natural pool",
+      "Hot tub",
+      "Countryside"
+    ],
+    "blurb": "A country pool and hot soak at the Djúpidalur travel service in Reykhólasveit.",
+    "description": "At Djúpidalur in Reykhólasveit in the southern Westfjords there is a swimming pool and hot tub at the travel service. The setting is peaceful and the pool is a popular stop when travelling the area.",
+    "highlights": [
+      "Pool and hot tub",
+      "Peaceful country setting",
+      "A stop in Reykhólasveit"
+    ]
+  },
+  {
+    "id": "hraunborgir",
+    "name": "Hraunborgir",
+    "region": "sudurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Hraunborgir, Grímsnes",
+    "tags": [
+      "Pool",
+      "Hot tubs",
+      "Sauna",
+      "Family-friendly"
+    ],
+    "blurb": "A pool with three hot tubs in the Hraunborgir summer-house area in Grímsnes.",
+    "description": "At Hraunborgir in Grímsnes there is a swimming pool with three hot tubs and a steam bath in the area's service centre. There is also mini golf, a nine-hole golf course and children's playground equipment.",
+    "highlights": [
+      "Pool and three hot tubs",
+      "Steam bath",
+      "Mini golf and golf course on site"
+    ]
+  },
+  {
+    "id": "heidarbaer",
+    "name": "Heiðarbær",
+    "region": "sudurland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Heiðarbær, Þingvallasveit",
+    "tags": [
+      "Pool",
+      "Outdoor pool",
+      "Hot tub",
+      "Countryside"
+    ],
+    "blurb": "A small, cosy country pool in Þingvallasveit with a single hot tub.",
+    "description": "The pool at Heiðarbær in Þingvallasveit is a small, cosy outdoor pool with one hot tub and a sunbathing area. There is also a campsite and food for sale on site, and the pool is open in summer.",
+    "highlights": [
+      "Small, cosy outdoor pool",
+      "One hot tub",
+      "Campsite on site"
+    ]
+  },
+  {
+    "id": "heidarborg",
+    "name": "Heiðarborg",
+    "region": "vesturland",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Heiðarskóli, Hvalfjarðarsveit",
+    "tags": [
+      "Pool",
+      "Sports centre",
+      "Indoor pool",
+      "Family-friendly"
+    ],
+    "blurb": "A pool at the Heiðarborg sports centre by Heiðarskóli in Hvalfjarðarsveit.",
+    "description": "Heiðarborg is a sports centre by Heiðarskóli in Hvalfjarðarsveit with a swimming pool, gym and sports hall. The pool is open to the public in winter, while in summer the pool at Hlaðir opens instead.",
+    "highlights": [
+      "Pool at a sports centre",
+      "Gym and sports hall",
+      "Open to the public in winter"
+    ]
+  },
+  {
+    "id": "lundur_oxarfirdi",
+    "name": "Lundur í Öxarfirði",
+    "region": "nordaustur",
+    "category": "bod",
+    "type": "Swimming pool",
+    "price": "$",
+    "location": "Lundur, Öxarfjörður",
+    "tags": [
+      "Pool",
+      "Outdoor pool",
+      "Hot tub",
+      "Countryside"
+    ],
+    "blurb": "A pleasant country pool in Öxarfjörður with a hot tub, for all ages.",
+    "description": "The pool at Lundur in Öxarfjörður, a short distance from Kópasker, is a pleasant country pool with a hot tub suitable for all ages. It serves locals and travellers in North East Iceland.",
+    "highlights": [
+      "Pleasant country pool",
+      "Hot tub",
+      "Suitable for all ages"
+    ]
   }
 ];
 
