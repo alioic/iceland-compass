@@ -112,7 +112,7 @@ REGION_ORDER = ["hofudborg","reykjanes","vesturland","vestfirdir",
 LANGS = {
   "is": {
     "code": "is", "og_locale": "is_IS", "data": "js/data.js", "prefix": "",
-    "seg": {"place": "stadur", "region": "landshluti", "all": "stadir", "coll": "leidir", "pools": "laugar", "guide": "leidsogn", "local": "heimavara"},
+    "seg": {"place": "stadur", "region": "landshluti", "all": "stadir", "coll": "leidir", "pools": "laugar", "guide": "leidsogn", "local": "heimavara", "about": "um"},
     "country": "Ísland",
     "ui": {
       "nav_map":"Kort","nav_all":"Allir staðir","nav_about":"Um vefinn","crumb_home":"Heim",
@@ -158,7 +158,7 @@ LANGS = {
   },
   "en": {
     "code": "en", "og_locale": "en", "data": "js/data.en.js", "prefix": "/en",
-    "seg": {"place": "place", "region": "region", "all": "places", "coll": "routes", "pools": "pools", "guide": "guide", "local": "local"},
+    "seg": {"place": "place", "region": "region", "all": "places", "coll": "routes", "pools": "pools", "guide": "guide", "local": "local", "about": "about"},
     "country": "Iceland",
     "ui": {
       "nav_map":"Map","nav_all":"All places","nav_about":"About","crumb_home":"Home",
@@ -248,6 +248,7 @@ def coll_index_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang
 def pools_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['pools']}/"
 def guide_url(lang, gid): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['guide']}/{gid}/"
 def locals_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['local']}/"
+def about_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['about']}/"
 def guides_index_url(lang): return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['guide']}/"
 def colls_url(lang):     return f"{SITE_URL}{LANGS[lang]['prefix']}/{LANGS[lang]['seg']['coll']}/"
 def out_path(url):
@@ -263,6 +264,7 @@ def kind_url(lang, kind, ident):
     if kind == "guide":  return guide_url(lang, ident)
     if kind == "guides": return guides_index_url(lang)
     if kind == "locals": return locals_url(lang)
+    if kind == "about":  return about_url(lang)
     return home_url(lang)
 
 def alternates(kind, ident):
@@ -311,7 +313,7 @@ HEAD = """<!DOCTYPE html>
     <a href="{guides_index}">{nav_guide}</a>
     <a href="{locals_index}">{nav_local}</a>
     <a href="{all}">{nav_all}</a>
-    <a href="{home}#um">{nav_about}</a>
+    <a href="{about_index}">{nav_about}</a>
     <a href="{lang_href}" class="lang-switch">{lang_label}</a>
   </nav>
 </header>
@@ -338,7 +340,7 @@ def page(lang, kind, ident, title, desc, url, ogtype, jsonld, body, ogimg=None):
         ogimg=e(ogimg or f"{SITE_URL}/og-image.png"),
         alts=alternates(kind, ident), jsonld="\n".join(jsonld),
         home=home_url(lang), all=all_url(lang), logo=logo, logosub=logosub,
-        nav_map=ui["nav_map"], nav_all=ui["nav_all"], nav_about=ui["nav_about"],
+        nav_map=ui["nav_map"], nav_all=ui["nav_all"], nav_about=ui["nav_about"], about_index=about_url(lang),
         coll_index=coll_index_url(lang), nav_coll=ui["nav_coll"],
         guides_index=guides_index_url(lang), nav_guide=ui["nav_guide"],
         locals_index=locals_url(lang), nav_local=ui["nav_local"],
@@ -912,6 +914,56 @@ def build_guides_index(lang, guides):
     return url
 
 # ----------------------------------------------------------------------
+ABOUT = {
+ "is": {
+  "title": "Um Iceland Compass — sjálfstæð ferðaleiðsögn um Ísland",
+  "desc": "Um Iceland Compass: sjálfstætt íslenskt verkefni sem kortleggur alla áfangastaði, laugar og heimafólk landsins — ókeypis og staðreyndakannað.",
+  "h1": "Um Iceland Compass",
+  "lead": "Iceland Compass er sjálfstæð, tvítyngd ferðaleiðsögn um allt Ísland — hugsuð til að hjálpa þér að skipuleggja ferðina og beina þér að því sem er raunverulega þess virði, ekki bara fjölförnustu túristastöðunum.",
+  "secs": [
+   ("Hvað þetta er", "Vefurinn safnar saman áfangastöðum, gönguleiðum, sundlaugum og böðum, afþreyingu, veitingastöðum og íslensku heimafólki um allt land — hvern og einn með sinni síðu, korti og hagnýtum upplýsingum. Allt er ókeypis að nota og engar uppáþrengjandi auglýsingar."),
+   ("Sjálfstætt og íslenskt", "Þetta er sjálfstætt íslenskt verkefni, ekki hluti af stórri ferðaskrifstofu eða markaðstorgi. Sjónarhornið er heimafólks: við leggjum áherslu á smærri staði, sveitalaugar og íslenska framleiðendur sem stóru túristasíðurnar sleppa oft."),
+   ("Hvernig efnið er unnið", "Við byggjum hverja síðu á rannsókn og staðreyndaskoðun. Fyrirtæki eru könnuð til að ganga úr skugga um að þau séu opin (við fjarlægjum staði sem hafa lokað), sundlaugalistinn er borinn saman við sérhæfðar heimildir til að vera heildstæður, og kortið byggir á opnum landfræðigögnum. Ljósmyndir eru frá ljósmyndurum á Unsplash og Pexels og kredit fylgir hverri mynd. Efni er engu að síður aldrei fullkomið — ef þú sérð eitthvað sem má laga, láttu okkur vita og við uppfærum."),
+   ("Heiðarleiki og tekjur", "Enginn borgar fyrir að vera á listanum — staðir og fyrirtæki eru með af því að þau eiga heima þar, ekki gegn greiðslu. Sumir bókunarhlekkir (gisting, ferðir, bílaleiga) eru samstarfshlekkir: ef þú bókar í gegnum þá getur vefurinn fengið litla þóknun, án þess að það hafi nokkur áhrif á verðið til þín. Það er þannig sem ókeypis vefur eins og þessi stendur undir sér."),
+   ("Öryggi á ferðalagi", "Náttúra Íslands er kraftmikil og veður breytist hratt. Fyrir hverja ferð — sérstaklega á hálendi, að eldstöðvum eða að vetri — skaltu alltaf kanna safetravel.is, vedur.is og vegagerdin.is (road.is). Upplýsingar hér eru til leiðsagnar en koma aldrei í stað nýjustu opinberu spánna."),
+  ],
+  "cta": "Skoða Ísland á korti →",
+ },
+ "en": {
+  "title": "About Iceland Compass — an independent travel guide to Iceland",
+  "desc": "About Iceland Compass: an independent, Icelandic project mapping every destination, pool and local maker in the country — free and fact-checked.",
+  "h1": "About Iceland Compass",
+  "lead": "Iceland Compass is an independent, bilingual travel guide to all of Iceland — made to help you plan your trip and point you to what's genuinely worth it, not just the busiest tourist stops.",
+  "secs": [
+   ("What this is", "The guide brings together destinations, hiking trails, swimming pools and geothermal baths, attractions, restaurants and Icelandic local makers from every region — each with its own page, map and practical details. Everything is free to use, with no intrusive ads."),
+   ("Independent and Icelandic", "This is an independent Icelandic project, not part of a large travel agency or marketplace. The perspective is local: we lean into the smaller places, rural pools and Icelandic producers that the big tourist sites often skip."),
+   ("How the content is made", "Every page is built on research and fact-checking. Businesses are checked to confirm they're open (we remove places that have closed), the pool list is cross-referenced against specialist sources to be complete, and the map is built from open geographic data. Photographs are by photographers on Unsplash and Pexels, each credited. No guide is ever perfect, though — if you spot something to fix, tell us and we'll update it."),
+   ("Honesty and how we're funded", "No one pays to be listed — places and businesses are included on merit, never for a fee. Some booking links (accommodation, tours, car rental) are affiliate links: if you book through them the site may earn a small commission, at no extra cost to you. That's how a free guide like this sustains itself."),
+   ("Safety while travelling", "Iceland's nature is powerful and the weather changes fast. Before any trip — especially in the highlands, near volcanic areas, or in winter — always check safetravel.is, vedur.is and road.is (the Road Administration). The information here is for guidance and never replaces the latest official forecasts."),
+  ],
+  "cta": "Explore Iceland on the map →",
+ },
+}
+
+def build_about_page(lang):
+    ui = LANGS[lang]["ui"]
+    a = ABOUT[lang]
+    url = about_url(lang)
+    crumb_nav, crumb_ld = breadcrumbs([(ui["crumb_home"], home_url(lang)), (ui["nav_about"], url)])
+    parts = [crumb_nav,
+        f'<p class="doc-kicker">{e(ui["nav_about"])}</p>',
+        f'<h1>{e(a["h1"])}</h1>',
+        f'<p class="doc-lead">{e(a["lead"])}</p>']
+    for h, b in a["secs"]:
+        parts.append(f'<h2>{e(h)}</h2><p class="doc-body">{e(b)}</p>')
+    parts.append(f'<p class="doc-more"><a href="{home_url(lang)}#kort">{e(a["cta"])}</a></p>')
+    ld = jsonld_block({"@context":"https://schema.org","@type":"AboutPage","name":a["h1"],
+        "url":url,"inLanguage":LANGS[lang]["code"],
+        "publisher":{"@type":"Organization","name":SITE_NAME,"url":home_url(lang)}})
+    write(out_path(url), page(lang,"about",None,a["title"],a["desc"],url,"website",[crumb_ld,ld],"\n".join(parts)))
+    return url
+
+# ----------------------------------------------------------------------
 def build_sitemap(urls):
     items = "".join(
         f"<url><loc>{u}</loc><lastmod>{TODAY}</lastmod><changefreq>monthly</changefreq><priority>{pr}</priority></url>\n"
@@ -1071,6 +1123,7 @@ def main():
             urls.append((build_place(lang, p, regions, places), "0.6"))
         urls.append((build_pools_page(lang, regions, places), "0.8"))
         urls.append((build_locals_page(lang, regions, places), "0.8"))
+        urls.append((build_about_page(lang), "0.5"))
         if GUIDES:
             urls.append((build_guides_index(lang, GUIDES), "0.8"))
             for gid, g in GUIDES.items():

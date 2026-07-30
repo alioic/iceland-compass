@@ -784,6 +784,14 @@ const IMAGES = {
     "credit": "Tegan Conway / Unsplash",
     "source": "unsplash",
     "page": "https://unsplash.com/photos/a-lonely-house-sits-in-a-vast-field-Rr3bQO51hAY"
+  },
+  "blaa-lonid": {
+    "src": "/img/places/bestu-baudin.webp",
+    "alt_is": "Slökun í mjólkurbláu jarðhitalóni, Bláa lónið",
+    "alt_en": "Bather relaxing in the milky-blue Blue Lagoon geothermal spa, Iceland",
+    "credit": "Karsten Winegeart",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/aiBu12OlzFA"
   }
 };
 

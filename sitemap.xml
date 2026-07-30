@@ -435,6 +435,7 @@
 <url><loc>https://icelandcompass.com/stadur/lundur_oxarfirdi/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 <url><loc>https://icelandcompass.com/laugar/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://icelandcompass.com/heimavara/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://icelandcompass.com/um/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 <url><loc>https://icelandcompass.com/leidsogn/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://icelandcompass.com/leidsogn/hvenaer-fara/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://icelandcompass.com/leidsogn/nordurljos/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -445,6 +446,8 @@
 <url><loc>https://icelandcompass.com/leidsogn/islensk-brugghus/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://icelandcompass.com/leidsogn/kaupa-lopapeysu/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://icelandcompass.com/leidsogn/beint-fra-byli/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://icelandcompass.com/leidsogn/gullni-hringurinn/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://icelandcompass.com/leidsogn/blaa-lonid/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://icelandcompass.com/leidir/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://icelandcompass.com/leidir/gullni-hringurinn/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://icelandcompass.com/leidir/demantshringurinn/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -887,6 +890,7 @@
 <url><loc>https://icelandcompass.com/en/place/lundur_oxarfirdi/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 <url><loc>https://icelandcompass.com/en/pools/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://icelandcompass.com/en/local/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://icelandcompass.com/en/about/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 <url><loc>https://icelandcompass.com/en/guide/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://icelandcompass.com/en/guide/hvenaer-fara/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://icelandcompass.com/en/guide/nordurljos/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -897,6 +901,8 @@
 <url><loc>https://icelandcompass.com/en/guide/islensk-brugghus/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://icelandcompass.com/en/guide/kaupa-lopapeysu/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://icelandcompass.com/en/guide/beint-fra-byli/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://icelandcompass.com/en/guide/gullni-hringurinn/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://icelandcompass.com/en/guide/blaa-lonid/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://icelandcompass.com/en/routes/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://icelandcompass.com/en/routes/gullni-hringurinn/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://icelandcompass.com/en/routes/demantshringurinn/</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
