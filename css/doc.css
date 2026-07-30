@@ -7,6 +7,9 @@
 .doc h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 16px; }
 .doc-lead { font-size: 1.2rem; color: var(--ink-soft); margin-bottom: 24px; }
 .doc-band { height: 8px; border-radius: 6px; margin-bottom: 28px; }
+.asset-stats { display: flex; flex-wrap: wrap; gap: 14px; margin: 4px 0 26px; }
+.asset-stats .doc-stat { background: var(--paper-2, #ece7dd); border-radius: 10px; padding: 14px 20px; min-width: 96px; }
+.asset-stats .doc-stat strong { font-size: 1.9rem; }
 .doc-hero { margin: 0 0 28px; }
 .doc-hero img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px; display: block; }
 .doc-hero figcaption { font-size: .72rem; color: var(--ink-faint); margin-top: 6px; text-align: right; }

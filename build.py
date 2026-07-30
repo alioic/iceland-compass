@@ -124,7 +124,7 @@ LANGS = {
       "stat_dist":"Vegalengd","stat_dur":"Tími","stat_diff":"Erfiðleiki",
       "stat_cuisine":"Tegund","stat_price":"Verðflokkur","stat_loc":"Staðsetning","stat_dist_rvk":"Loftlína frá Reykjavík",
       "btn_book":"Bóka gistingu í nágrenni","btn_tours":"Skoða ferðir og afþreyingu","btn_find":"Sjá á korti","btn_shop":"Heimsækja / netverslun","h_sells":"Í boði",
-      "more_in":"Fleiri á {r}","all_in":"Allt á {r} →","view_map":"Skoða á gagnvirku korti →",
+      "more_in":"Fleiri á {r}","all_in":"Allt á {r} →","view_map":"Skoða á gagnvirku korti →","nearby":"Nálægt",
       "region_groups":{"stadur":"Staðir og náttúra","ganga":"Gönguleiðir","bod":"Sundlaugar & böð","afthreying":"Afþreying","veitingar":"Veitingastaðir","kaffi":"Kaffihús","heimavara":"Heimavara & handverk"},
       "dir_h1":"Allir staðir á Íslandi","all_places":"Allir staðir","lang_label":"EN",
       "place_title":"{name} — {type}, {rname} | {site}",
@@ -170,7 +170,7 @@ LANGS = {
       "stat_dist":"Distance","stat_dur":"Duration","stat_diff":"Difficulty",
       "stat_cuisine":"Cuisine","stat_price":"Price","stat_loc":"Location","stat_dist_rvk":"Straight line from Reykjavík",
       "btn_book":"Book nearby accommodation","btn_tours":"Browse tours & activities","btn_find":"Find on map","btn_shop":"Visit / shop online","h_sells":"What they offer",
-      "more_in":"More in {r}","all_in":"All of {r} →","view_map":"View on the interactive map →",
+      "more_in":"More in {r}","all_in":"All of {r} →","view_map":"View on the interactive map →","nearby":"Nearby",
       "region_groups":{"stadur":"Places & nature","ganga":"Hiking trails","bod":"Pools & baths","afthreying":"Attractions","veitingar":"Restaurants","kaffi":"Cafés","heimavara":"Local shops & makers"},
       "dir_h1":"All places in Iceland","all_places":"All places","lang_label":"IS",
       "place_title":"{name} — {type} in {rname} | {site}",
@@ -435,11 +435,36 @@ def build_place(lang, p, regions, places):
       <a class="doc-btn primary" href="{booking}" target="_blank" rel="noopener sponsored nofollow">{e(ui["btn_book"])}</a>
       <a class="doc-btn" href="{tours}" target="_blank" rel="noopener sponsored nofollow">{e(ui["btn_tours"])}</a></div>''')
 
-    siblings = [x for x in places if x["region"]==rid and x["id"]!=pid][:8]
-    if siblings:
-        parts.append(f'<h2>{e(ui["more_in"].format(r=rname))}</h2><ul class="doc-links">' +
-            "".join(f'<li><a href="{place_url(lang,s["id"])}">{e(s["name"])}</a> <span>{e(s["type"])}</span></li>'
-                    for s in siblings) + '</ul>')
+    # Nálægt: næstu staðir eftir raunverulegri fjarlægð (betri innri tenglar en bara sami landshluti)
+    here = COORDS.get(pid)
+    if here:
+        import math as _m
+        def _dist(o):
+            c = COORDS.get(o["id"])
+            if not c: return 9e9
+            return (c[0]-here[0])**2 + ((c[1]-here[1])*0.42)**2
+        near = sorted((x for x in places if x["id"]!=pid), key=_dist)[:6]
+    else:
+        near = [x for x in places if x["region"]==rid and x["id"]!=pid][:6]
+    if near:
+        parts.append(f'<h2>{e(ui["nearby"])}</h2><ul class="doc-links">' +
+            "".join(f'<li><a href="{place_url(lang,s["id"])}">{e(s["name"])}</a> <span>{e(s["type"])}{" · " + e(s.get("location")) if s.get("location") else ""}</span></li>'
+                    for s in near) + '</ul>')
+
+    # Tengt efni — innri tenglar á viðeigandi kort/leiðir/greinar eftir flokki
+    related = []
+    if cat == "bod":
+        related.append((ui["pools_h1"], pools_url(lang)))
+        if COLLECTIONS.get("bestu-baudin"):
+            related.append((COLLECTIONS["bestu-baudin"][lang]["name"], coll_url(lang,"bestu-baudin")))
+    elif cat == "heimavara":
+        related.append((ui["locals_h1"], locals_url(lang)))
+    elif cat == "ganga":
+        related.append((ui["nav_guide"], guides_index_url(lang)))
+    if related:
+        parts.append('<p class="doc-more">' +
+            " · ".join(f'<a href="{u}">{e(t2)} →</a>' for t2,u in related) + '</p>')
+
     parts.append(f'<p class="doc-more"><a href="{region_url(lang,rid)}">{e(ui["all_in"].format(r=rname))}</a> · '
                  f'<a href="{home_url(lang)}#kort">{e(ui["view_map"])}</a></p>')
 
@@ -640,6 +665,18 @@ def build_locals_page(lang, regions, places):
             f'<circle cx="{x:.1f}" cy="{y:.1f}" r="5"><title>{e(p["name"])} — {e(p.get("location",""))}</title></circle></a>')
     svg.append("</svg>")
 
+    from collections import Counter as _C
+    bc = _C(local_bucket(p) for p in makers)
+    nreg = len({p["region"] for p in makers})
+    slbl = ({"n":"Framleiðendur","brugg":"Brugghús & eiming","handverk":"Handverk","matur":"Beint frá býli","reg":"Landshlutar"}
+            if lang=="is" else
+            {"n":"Local makers","brugg":"Breweries","handverk":"Crafts","matur":"Farm shops","reg":"Regions"})
+    stats_html = ('<div class="doc-stats asset-stats">'
+        f'<div class="doc-stat"><strong>{len(makers)}</strong><span>{slbl["n"]}</span></div>'
+        f'<div class="doc-stat"><strong>{bc.get("brugg",0)}</strong><span>{slbl["brugg"]}</span></div>'
+        f'<div class="doc-stat"><strong>{bc.get("handverk",0)}</strong><span>{slbl["handverk"]}</span></div>'
+        f'<div class="doc-stat"><strong>{bc.get("matur",0)}</strong><span>{slbl["matur"]}</span></div>'
+        f'<div class="doc-stat"><strong>{nreg}</strong><span>{slbl["reg"]}</span></div></div>')
     chips = ui["locals_chips"]
     chip_html = "".join(
         f'<button class="cat-tab{" active" if k == "all" else ""}" data-pt="{k}" type="button">{e(v)}</button>'
@@ -677,6 +714,7 @@ def build_locals_page(lang, regions, places):
         f'<p class="doc-kicker">{e(ui["locals_kicker"])}</p>',
         f'<h1>{e(ui["locals_h1"])}</h1>',
         f'<p class="doc-lead">{e(ui["locals_lead"].format(n=len(makers)))}</p>',
+        stats_html,
         f'<div class="filter-cats pools-chips">{chip_html}</div>',
         f'<div class="pools-map">{"".join(svg)}</div>',
         "".join(rows),
@@ -719,6 +757,20 @@ def build_pools_page(lang, regions, places):
             f'<circle cx="{x:.1f}" cy="{y:.1f}" r="5"><title>{e(p["name"])} — {e(p.get("location",""))}</title></circle></a>')
     svg.append("</svg>")
 
+    # Tilvitnanleg tölfræði (linkable asset)
+    from collections import Counter as _C
+    bc = _C(pool_bucket(p) for p in pools)
+    nreg = len({p["region"] for p in pools})
+    stat_lbl = ({"n":"Laugar & böð","pool":"Sundlaugar","spa":"Jarðböð & lón","natural":"Náttúrulaugar","reg":"Landshlutar"}
+                if lang=="is" else
+                {"n":"Pools & baths","pool":"Swimming pools","spa":"Geothermal baths","natural":"Natural springs","reg":"Regions"})
+    stats_html = ('<div class="doc-stats asset-stats">'
+        f'<div class="doc-stat"><strong>{len(pools)}</strong><span>{stat_lbl["n"]}</span></div>'
+        f'<div class="doc-stat"><strong>{bc.get("pool",0)}</strong><span>{stat_lbl["pool"]}</span></div>'
+        f'<div class="doc-stat"><strong>{bc.get("spa",0)}</strong><span>{stat_lbl["spa"]}</span></div>'
+        f'<div class="doc-stat"><strong>{bc.get("natural",0)}</strong><span>{stat_lbl["natural"]}</span></div>'
+        f'<div class="doc-stat"><strong>{nreg}</strong><span>{stat_lbl["reg"]}</span></div></div>')
+
     chips = ui["pools_chips"]
     chip_html = "".join(
         f'<button class="cat-tab{" active" if k == "all" else ""}" data-pt="{k}" type="button">{e(v)}</button>'
@@ -756,6 +808,7 @@ def build_pools_page(lang, regions, places):
         f'<p class="doc-kicker">{e(ui["pools_kicker"])}</p>',
         f'<h1>{e(ui["pools_h1"])}</h1>',
         f'<p class="doc-lead">{e(ui["pools_lead"].format(n=len(pools)))}</p>',
+        stats_html,
         f'<div class="filter-cats pools-chips">{chip_html}</div>',
         f'<div class="pools-map">{"".join(svg)}</div>',
         "".join(rows),
@@ -888,6 +941,9 @@ def build_doc_css():
 .doc h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 16px; }
 .doc-lead { font-size: 1.2rem; color: var(--ink-soft); margin-bottom: 24px; }
 .doc-band { height: 8px; border-radius: 6px; margin-bottom: 28px; }
+.asset-stats { display: flex; flex-wrap: wrap; gap: 14px; margin: 4px 0 26px; }
+.asset-stats .doc-stat { background: var(--paper-2, #ece7dd); border-radius: 10px; padding: 14px 20px; min-width: 96px; }
+.asset-stats .doc-stat strong { font-size: 1.9rem; }
 .doc-hero { margin: 0 0 28px; }
 .doc-hero img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px; display: block; }
 .doc-hero figcaption { font-size: .72rem; color: var(--ink-faint); margin-top: 6px; text-align: right; }
