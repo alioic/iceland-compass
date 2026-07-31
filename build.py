@@ -25,8 +25,28 @@ GYG_PARTNER = "ONAATAD"   # GetYourGuide partner_id (samstarfsþóknun)
 # GetYourGuide leitin (/s/?q=) er óáreiðanleg — hún síar ekki og endar á sjálfgefnu.
 # Þess í stað tengjum við á STÖÐUGAR staðsetningar-/flokkasíður sem sýna réttar ferðir.
 GYG_DEFAULT = "iceland-l169030"   # öll íslensk ferðaþjónusta (staðfest)
-GYG_OVERRIDE = {                  # efnis-sértækar flokkasíður (slug/id -> GYG-slóð)
+GYG_OVERRIDE = {   # efnis-sértækar GYG-síður (staðfestar); lykill = guide-slug / collection-id / place-id
+    # -- greinar + leiðir --
     "nordurljos": "reykjavik-l30/northern-lights-tc310",
+    "gullni-hringurinn": "golden-circle-l1881",
+    "blaa-lonid": "blue-lagoon-reykjavik-l5049",
+    "sudurstrondin": "southern-region-iceland-l32352",
+    "snaefellsnes": "snaefellsnes-l87260",
+    # -- Gullni hringurinn staðir --
+    "thingvellir": "golden-circle-l1881", "geysir": "golden-circle-l1881",
+    "gullfoss": "golden-circle-l1881", "kerid": "golden-circle-l1881",
+    # -- Bláa lónið + jöklalón --
+    "blaalonid": "blue-lagoon-reykjavik-l5049",
+    "jokulsarlon": "jokulsarlon-l2030", "demantsstrondin": "jokulsarlon-l2030",
+    # -- Suðurströndin staðir --
+    "skogafoss": "southern-region-iceland-l32352", "seljalandsfoss": "southern-region-iceland-l32352",
+    "reynisfjara": "southern-region-iceland-l32352", "solheimajokull": "southern-region-iceland-l32352",
+    "solheimasandur": "southern-region-iceland-l32352", "fjadrargljufur": "southern-region-iceland-l32352",
+    "skaftafell": "southern-region-iceland-l32352",
+    # -- Snæfellsnes staðir --
+    "kirkjufell": "snaefellsnes-l87260", "snaefellsjokull": "snaefellsnes-l87260",
+    "arnarstapi_hellnar": "snaefellsnes-l87260", "stykkisholmur": "snaefellsnes-l87260",
+    "budir": "snaefellsnes-l87260",
 }
 def mailto(label):
     return f'<p class="doc-contact">{e(label)} <a href="mailto:{SITE_EMAIL}">{SITE_EMAIL}</a></p>'
