@@ -21,8 +21,13 @@ import json5, json, os, re, html, datetime, hashlib
 SITE_URL  = "https://icelandcompass.com"   # <-- BREYTTU í þitt lén (líka í index.html og en/index.html)
 SITE_NAME = "Iceland Compass"
 SITE_EMAIL = "hello@icelandcompass.com"
+GYG_PARTNER = "ONAATAD"   # GetYourGuide partner_id (samstarfsþóknun)
 def mailto(label):
     return f'<p class="doc-contact">{e(label)} <a href="mailto:{SITE_EMAIL}">{SITE_EMAIL}</a></p>'
+def gyg_url(query):
+    from urllib.parse import quote
+    return (f"https://www.getyourguide.com/s/?q={quote(query)}"
+            f"&partner_id={GYG_PARTNER}&cmp=share_to_earn")
 ROOT = os.path.dirname(os.path.abspath(__file__))
 TODAY = datetime.date.today().isoformat()
 
@@ -471,7 +476,7 @@ def build_place(lang, p, regions, places):
       <a class="doc-btn primary" href="{maplink}" target="_blank" rel="noopener nofollow">{e(ui["btn_find"])}</a>
       <a class="doc-btn" href="{booking}" target="_blank" rel="noopener sponsored nofollow">{e(ui["btn_book"])}</a></div>''')
     else:
-        tours = f'https://www.getyourguide.com/s/?q={e(p["name"])}'
+        tours = gyg_url(p["name"])
         parts.append(f'''<div class="doc-cta">
       <a class="doc-btn primary" href="{booking}" target="_blank" rel="noopener sponsored nofollow">{e(ui["btn_book"])}</a>
       <a class="doc-btn" href="{tours}" target="_blank" rel="noopener sponsored nofollow">{e(ui["btn_tours"])}</a></div>''')
@@ -875,7 +880,7 @@ def guide_cta(lang, cta):
     if cta == "car":
         href = "https://www.booking.com/cars/index.html"
     elif cta == "tours":
-        href = f"https://www.getyourguide.com/s/?q={e(country)}"
+        href = gyg_url(country)
     else:
         href = f"https://www.booking.com/searchresults.html?ss={e(country)}"
     return (f'<div class="guide-cta"><p>{e(lead)}</p>'

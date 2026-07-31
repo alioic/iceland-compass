@@ -140,14 +140,14 @@ function badgeFor(p) {
    Skráning: partner.booking.com, partner.getyourguide.com,
              eða safnþjónusta eins og travelpayouts.com
 ------------------------------------------------------------------ */
-const AFFILIATE = { booking: "", gyg: "" };
+const AFFILIATE = { booking: "", gyg: "ONAATAD" };
 
 function bookingLink(q) {
   const aid = AFFILIATE.booking ? `&aid=${AFFILIATE.booking}` : "";
   return `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(q + ", " + t.near)}${aid}`;
 }
 function tourLink(q) {
-  const pid = AFFILIATE.gyg ? `&partner_id=${AFFILIATE.gyg}` : "";
+  const pid = AFFILIATE.gyg ? `&partner_id=${AFFILIATE.gyg}&cmp=share_to_earn` : "";
   return `https://www.getyourguide.com/s/?q=${encodeURIComponent(q)}${pid}`;
 }
 function mapLink(q) {
