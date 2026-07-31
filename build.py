@@ -22,12 +22,17 @@ SITE_URL  = "https://icelandcompass.com"   # <-- BREYTTU í þitt lén (líka í
 SITE_NAME = "Iceland Compass"
 SITE_EMAIL = "hello@icelandcompass.com"
 GYG_PARTNER = "ONAATAD"   # GetYourGuide partner_id (samstarfsþóknun)
+# GetYourGuide leitin (/s/?q=) er óáreiðanleg — hún síar ekki og endar á sjálfgefnu.
+# Þess í stað tengjum við á STÖÐUGAR staðsetningar-/flokkasíður sem sýna réttar ferðir.
+GYG_DEFAULT = "iceland-l169030"   # öll íslensk ferðaþjónusta (staðfest)
+GYG_OVERRIDE = {                  # efnis-sértækar flokkasíður (slug/id -> GYG-slóð)
+    "nordurljos": "reykjavik-l30/northern-lights-tc310",
+}
 def mailto(label):
     return f'<p class="doc-contact">{e(label)} <a href="mailto:{SITE_EMAIL}">{SITE_EMAIL}</a></p>'
-def gyg_url(query):
-    from urllib.parse import quote
-    return (f"https://www.getyourguide.com/s/?q={quote(query)}"
-            f"&partner_id={GYG_PARTNER}&cmp=share_to_earn")
+def gyg_url(path=None):
+    p = (path or GYG_DEFAULT).strip("/")
+    return f"https://www.getyourguide.com/{p}/?partner_id={GYG_PARTNER}&cmp=share_to_earn"
 ROOT = os.path.dirname(os.path.abspath(__file__))
 TODAY = datetime.date.today().isoformat()
 
@@ -478,7 +483,7 @@ def build_place(lang, p, regions, places):
       <a class="doc-btn primary" href="{maplink}" target="_blank" rel="noopener nofollow">{e(ui["btn_find"])}</a>
       <a class="doc-btn" href="{booking}" target="_blank" rel="noopener sponsored nofollow">{e(ui["btn_book"])}</a></div>''')
     else:
-        tours = gyg_url(p["name"])
+        tours = gyg_url(GYG_OVERRIDE.get(p["id"]))
         parts.append(f'''<div class="doc-cta">
       <a class="doc-btn primary" href="{booking}" target="_blank" rel="noopener sponsored nofollow">{e(ui["btn_book"])}</a>
       <a class="doc-btn" href="{tours}" target="_blank" rel="noopener sponsored nofollow">{e(ui["btn_tours"])}</a></div>''')
@@ -589,10 +594,9 @@ def build_directory(lang, regions, places):
     return url
 
 # ----------------------------------------------------------------------
-def collection_cta(lang, coll):
+def collection_cta(lang, coll, gyg_path=None):
     ui = LANGS[lang]["ui"]
-    q = coll.get("en", {}).get("name") or coll[lang]["name"]  # GYG-flokkur er enskur → besta samsvörun
-    tours = gyg_url(q)
+    tours = gyg_url(gyg_path)
     car = "https://www.booking.com/cars/index.html"
     return (f'<div class="guide-cta"><p>{e(ui["coll_cta_lead"])}</p>'
             f'<div class="doc-cta">'
@@ -646,7 +650,7 @@ def build_collection(lang, cid, coll, places_by_id, regions):
     else:
         parts.append(f'<h2>{e(ui["places_in"])}</h2><ul class="doc-links">' +
             "".join(li(p) for p in items) + '</ul>')
-    parts.append(collection_cta(lang, coll))
+    parts.append(collection_cta(lang, coll, GYG_OVERRIDE.get(cid)))
     parts.append(f'<p class="doc-more"><a href="{coll_index_url(lang)}">{e(ui["colls_h1"])} →</a> · '
                  f'<a href="{home_url(lang)}#kort">{e(ui["view_map"])}</a></p>')
 
@@ -882,19 +886,18 @@ def build_pools_page(lang, regions, places):
     return url
 
 # ----------------------------------------------------------------------
-def guide_cta(lang, cta):
+def guide_cta(lang, cta, gyg_path=None):
     if not cta:
         return ""
     ui = LANGS[lang]["ui"]
     label = ui.get(f"cta_{cta}"); lead = ui.get(f"cta_{cta}_lead")
     if not label:
         return ""
-    # Bókunarhlekkur — nýtir sömu affiliate-slóðir og staðasíður (ID bætt við síðar)
     country = LANGS[lang]["country"]
     if cta == "car":
         href = "https://www.booking.com/cars/index.html"
     elif cta == "tours":
-        href = gyg_url(country)
+        href = gyg_url(gyg_path)
     else:
         href = f"https://www.booking.com/searchresults.html?ss={e(country)}"
     return (f'<div class="guide-cta"><p>{e(lead)}</p>'
@@ -918,7 +921,7 @@ def build_guide(lang, gid, g):
     if hero_html:
         parts.append(hero_html)
     if g.get("cta"):
-        parts.append(guide_cta(lang, g["cta"]))
+        parts.append(guide_cta(lang, g["cta"], GYG_OVERRIDE.get(gid)))
     for sec in c.get("sections", []):
         body = "".join(f'<p>{e(par)}</p>' for par in (sec.get("body") or "").split("\n\n") if par.strip())
         parts.append(f'<h2>{e(sec.get("heading",""))}</h2>{body}')
@@ -934,7 +937,7 @@ def build_guide(lang, gid, g):
                 "acceptedAnswer":{"@type":"Answer","text":q["a"]}} for q in faq]})
 
     if g.get("cta"):
-        parts.append(guide_cta(lang, g["cta"]))
+        parts.append(guide_cta(lang, g["cta"], GYG_OVERRIDE.get(gid)))
     parts.append(f'<p class="doc-more"><a href="{guides_index_url(lang)}">{e(ui["guide_more"])}</a></p>')
 
     article_ld = jsonld_block({"@context":"https://schema.org","@type":"Article",

@@ -147,8 +147,9 @@ function bookingLink(q) {
   return `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(q + ", " + t.near)}${aid}`;
 }
 function tourLink(q) {
-  const pid = AFFILIATE.gyg ? `&partner_id=${AFFILIATE.gyg}&cmp=share_to_earn` : "";
-  return `https://www.getyourguide.com/s/?q=${encodeURIComponent(q)}${pid}`;
+  // GetYourGuide-leitin (/s/?q=) síar ekki áreiðanlega — tengjum á stöðugu Íslands-síðuna.
+  const pid = AFFILIATE.gyg ? `?partner_id=${AFFILIATE.gyg}&cmp=share_to_earn` : "";
+  return `https://www.getyourguide.com/iceland-l169030/${pid}`;
 }
 function mapLink(q) {
   return `https://www.google.com/maps/search/${encodeURIComponent(q + ", " + t.near)}`;
