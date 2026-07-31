@@ -149,6 +149,7 @@ LANGS = {
       "cta_car_lead":"Bíll er lykillinn að því að sjá landið á eigin hraða.",
       "cta_tours_lead":"Skoðaðu skipulagðar ferðir með leiðsögn.",
       "cta_hotel_lead":"Finndu gistingu um allt land.",
+      "coll_cta_lead":"Skipuleggðu ferðina — skoðaðu skipulagðar ferðir og bílaleigur fyrir þessa leið.",
       "colls_h1":"Ferðaleiðir & þemalistar","colls_desc":"Tilbúnar leiðir og listar — Gullni hringurinn, Demantshringurinn, bestu laugarnar og fleira.",
       "colls_title":"Ferðaleiðir og þemalistar á Íslandi | {site}",
       "coll_title":"{name} — {tagline} | {site}","places_in":"Staðir á leiðinni",
@@ -196,6 +197,7 @@ LANGS = {
       "cta_car_lead":"A car is the key to seeing the country at your own pace.",
       "cta_tours_lead":"Browse guided tours and day trips.",
       "cta_hotel_lead":"Find places to stay around the country.",
+      "coll_cta_lead":"Plan the trip — browse guided tours and car rental for this route.",
       "colls_h1":"Travel routes & themed lists","colls_desc":"Ready-made routes and lists — the Golden Circle, Diamond Circle, best baths and more.",
       "colls_title":"Iceland travel routes & themed lists | {site}",
       "coll_title":"{name} — {tagline} | {site}","places_in":"Places on this route",
@@ -587,6 +589,17 @@ def build_directory(lang, regions, places):
     return url
 
 # ----------------------------------------------------------------------
+def collection_cta(lang, coll):
+    ui = LANGS[lang]["ui"]
+    q = coll.get("en", {}).get("name") or coll[lang]["name"]  # GYG-flokkur er enskur → besta samsvörun
+    tours = gyg_url(q)
+    car = "https://www.booking.com/cars/index.html"
+    return (f'<div class="guide-cta"><p>{e(ui["coll_cta_lead"])}</p>'
+            f'<div class="doc-cta">'
+            f'<a class="doc-btn primary" href="{tours}" target="_blank" rel="sponsored noopener nofollow">{e(ui["cta_tours"])} →</a>'
+            f'<a class="doc-btn" href="{car}" target="_blank" rel="sponsored noopener nofollow">{e(ui["cta_car"])} →</a>'
+            f'</div></div>')
+
 def build_collection(lang, cid, coll, places_by_id, regions):
     ui = LANGS[lang]["ui"]
     c = coll[lang]
@@ -633,6 +646,7 @@ def build_collection(lang, cid, coll, places_by_id, regions):
     else:
         parts.append(f'<h2>{e(ui["places_in"])}</h2><ul class="doc-links">' +
             "".join(li(p) for p in items) + '</ul>')
+    parts.append(collection_cta(lang, coll))
     parts.append(f'<p class="doc-more"><a href="{coll_index_url(lang)}">{e(ui["colls_h1"])} →</a> · '
                  f'<a href="{home_url(lang)}#kort">{e(ui["view_map"])}</a></p>')
 
