@@ -480,20 +480,38 @@ const PLACES = [
   },
   {
     id: "reynisfjara",
-    name: "Reynisfjara og Vík",
+    name: "Reynisfjara",
     region: "sudurland",
     type: "Strönd",
     tags: ["Svört strönd", "Kennileiti", "Lundi"],
     blurb: "Fræg svört sandfjara með stuðlabergi og Reynisdröngum.",
+    warning: "Laumuöldur (sleðaöldur) við Reynisfjöru eru lífshættulegar og hafa dregið ferðamenn til dauða. Þær koma fyrirvaralaust, ná miklu lengra upp í fjöruna en venjulegar öldur, sjórinn er ískaldur og straumurinn þungur. Snúðu aldrei baki í hafið, haltu góðri fjarlægð frá sjólínunni og farðu aldrei nær vatninu til að ná mynd.",
     description:
-      "Reynisfjara er tignarlegasta svarta sandfjara landsins, með háum stuðlabergshellum, Reynisdröngum úti í sjó og lundabyggð á sumrin. Varúð: hættulegar laumuöldur – haldið fjarlægð frá sjónum. Þorpið Vík er skammt frá.",
-    highlights: ["Stuðlaberg", "Reynisdrangar", "Dyrhólaey", "Vík í Mýrdal"],
+      "Reynisfjara er tignarlegasta svarta sandfjara landsins, með háum stuðlabergshellum (Hálsanefshellir), Reynisdröngum úti í sjó og lundabyggð í Reynisfjalli á sumrin. Fjaran er ægifögur en hættuleg — sjá viðvörun að neðan. Þorpið Vík er í örfárra mínútna akstursfjarlægð.",
+    highlights: ["Stuðlaberg og Hálsanefshellir", "Reynisdrangar", "Reynisfjall", "Lundar (maí–ágúst)"],
     accommodation: [
       { name: "Hótel í Vík", type: "Hótel", price: "$$$" },
       { name: "Gistiheimili og bústaðir", type: "Gistiheimili", price: "$$" },
     ],
-    activities: ["Strandganga með varúð", "Lundaskoðun í Dyrhólaey"],
+    activities: ["Strandganga með fyllstu varúð", "Ljósmyndun stuðlabergs"],
     season: "Allt árið, lundi maí–ágúst",
+  },
+  {
+    id: "vik",
+    name: "Vík í Mýrdal",
+    region: "sudurland",
+    type: "Þorp",
+    tags: ["Þorp", "Þjónusta", "Suðurströnd"],
+    blurb: "Syðsta þorp Íslands og þjónustumiðja Suðurstrandarinnar.",
+    description:
+      "Vík í Mýrdal er syðsta þorp Íslands, um 750 manna byggð sem er náttúruleg þjónustumiðja Suðurstrandarinnar — eldsneyti, veitingar, verslanir og gisting á löngum kafla þar sem fátt annað er í boði. Yfir þorpinu trónir hvíta Reyniskirkja á hól með útsýni yfir svartan sand og Reynisdranga, og í kring rís Mýrdalsjökull sem hylur eldstöðina Kötlu. Vík er tilvalinn gististaður til að skipta Suðurstrandarferð í tvo daga.",
+    highlights: ["Reyniskirkja", "Víkurfjara", "Útsýni yfir Reynisdranga", "Þjónusta og verslanir"],
+    accommodation: [
+      { name: "Hótel í Vík", type: "Hótel", price: "$$$" },
+      { name: "Gistiheimili og bústaðir", type: "Gistiheimili", price: "$$" },
+    ],
+    activities: ["Ganga um þorpið", "Útsýni frá Reyniskirkju"],
+    season: "Allt árið",
   },
   {
     id: "jokulsarlon",

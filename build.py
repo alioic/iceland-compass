@@ -40,7 +40,7 @@ GYG_OVERRIDE = {   # efnis-sértækar GYG-síður (staðfestar); lykill = guide-
     "jokulsarlon": "jokulsarlon-l2030", "demantsstrondin": "jokulsarlon-l2030",
     # -- Suðurströndin staðir --
     "skogafoss": "southern-region-iceland-l32352", "seljalandsfoss": "southern-region-iceland-l32352",
-    "reynisfjara": "southern-region-iceland-l32352", "solheimajokull": "southern-region-iceland-l32352",
+    "reynisfjara": "southern-region-iceland-l32352", "vik": "southern-region-iceland-l32352", "solheimajokull": "southern-region-iceland-l32352",
     "solheimasandur": "southern-region-iceland-l32352", "fjadrargljufur": "southern-region-iceland-l32352",
     "skaftafell": "southern-region-iceland-l32352",
     # -- Snæfellsnes staðir --
@@ -149,7 +149,7 @@ LANGS = {
     "country": "Ísland",
     "ui": {
       "nav_map":"Kort","nav_all":"Allir staðir","nav_about":"Um vefinn","crumb_home":"Heim",
-      "nav_privacy":"Persónuvernd","nav_disclaimer":"Fyrirvari",
+      "nav_privacy":"Persónuvernd","nav_disclaimer":"Fyrirvari","warning_label":"Varúð:",
       "kicker_place":{"stadur":"Staður","ganga":"Gönguleið","bod":"Sundlaug & böð","afthreying":"Afþreying","veitingar":"Veitingastaður","kaffi":"Kaffihús","heimavara":"Heimavara"},
       "kicker_region":"Landshluti","kicker_overview":"Yfirlit",
       "h_highlights":"Hápunktar","h_route":"Á leiðinni","h_known":"Þekkt fyrir",
@@ -197,7 +197,7 @@ LANGS = {
     "country": "Iceland",
     "ui": {
       "nav_map":"Map","nav_all":"All places","nav_about":"About","crumb_home":"Home",
-      "nav_privacy":"Privacy","nav_disclaimer":"Disclaimer",
+      "nav_privacy":"Privacy","nav_disclaimer":"Disclaimer","warning_label":"Warning:",
       "kicker_place":{"stadur":"Place","ganga":"Hiking trail","bod":"Pool & baths","afthreying":"Attraction","veitingar":"Restaurant","kaffi":"Café","heimavara":"Local maker"},
       "kicker_region":"Region","kicker_overview":"Overview",
       "h_highlights":"Highlights","h_route":"On the route","h_known":"Known for",
@@ -446,6 +446,12 @@ def build_place(lang, p, regions, places):
         f'<p class="doc-lead">{e(p.get("blurb",""))}</p>',
         f'<div class="doc-band" style="background:{e(region["color"])}"></div>',
         f'<p class="doc-body">{e(p["description"])}</p>']
+
+    # Áberandi öryggisviðvörun (t.d. laumuöldur á Reynisfjöru)
+    if p.get("warning"):
+        parts.append(f'<div class="doc-warning" role="alert">'
+                     f'<span class="dw-icon" aria-hidden="true">!</span>'
+                     f'<div><strong>{e(ui["warning_label"])}</strong> {e(p["warning"])}</div></div>')
 
     hero_html, hero_og = hero_figure(pid, lang)
     if hero_html:
@@ -1223,6 +1229,12 @@ def build_doc_css():
 .doc-links a:hover { color: var(--accent); }
 .doc-links span { color: var(--ink-faint); font-size: .88rem; display: block; }
 .doc-updated { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--ink-faint); font-size: .85rem; }
+.doc-warning { display: flex; gap: 14px; align-items: flex-start; margin: 22px 0; padding: 16px 18px;
+  background: #fbeae6; border: 1px solid #e0a89c; border-left: 5px solid #b0402e; border-radius: 8px;
+  color: #5c231a; line-height: 1.55; }
+.doc-warning strong { color: #8f2e1f; }
+.doc-warning .dw-icon { flex: none; width: 26px; height: 26px; border-radius: 50%; background: #b0402e;
+  color: #fff; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; }
 .doc-contact { margin: 28px 0 0; font-size: .95rem; color: var(--ink-soft); }
 .doc-contact a { color: var(--accent); font-weight: 600; }
 .doc-ul { margin: 4px 0 20px; padding-left: 22px; }

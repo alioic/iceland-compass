@@ -33,6 +33,12 @@
 .doc-links a:hover { color: var(--accent); }
 .doc-links span { color: var(--ink-faint); font-size: .88rem; display: block; }
 .doc-updated { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--ink-faint); font-size: .85rem; }
+.doc-warning { display: flex; gap: 14px; align-items: flex-start; margin: 22px 0; padding: 16px 18px;
+  background: #fbeae6; border: 1px solid #e0a89c; border-left: 5px solid #b0402e; border-radius: 8px;
+  color: #5c231a; line-height: 1.55; }
+.doc-warning strong { color: #8f2e1f; }
+.doc-warning .dw-icon { flex: none; width: 26px; height: 26px; border-radius: 50%; background: #b0402e;
+  color: #fff; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; }
 .doc-contact { margin: 28px 0 0; font-size: .95rem; color: var(--ink-soft); }
 .doc-contact a { color: var(--accent); font-weight: 600; }
 .doc-ul { margin: 4px 0 20px; padding-left: 22px; }

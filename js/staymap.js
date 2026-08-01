@@ -95,6 +95,7 @@ const STAY_HUB = {
   laugavegurinn: "Hella",
   reykjadalur: "Hveragerði",
   reynisfjara: "Vík í Mýrdal",
+  vik: "Vík í Mýrdal",
   skaftafell: "Kirkjubæjarklaustur",
   skogafoss: "Hvolsvöllur",
   solheimajokull: "Vík í Mýrdal",

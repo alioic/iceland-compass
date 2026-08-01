@@ -2392,39 +2392,36 @@ const PLACES = [
   },
   {
     "id": "reynisfjara",
-    "name": "Reynisfjara og Vík",
+    "name": "Reynisfjara",
     "region": "sudurland",
     "type": "Beach",
-    "tags": [
-      "Black-sand beach",
-      "Landmark",
-      "Puffin"
-    ],
+    "tags": ["Black-sand beach", "Landmark", "Puffin"],
     "blurb": "Famous black-sand beach with basalt columns and the Reynisdrangar sea stacks.",
-    "description": "Reynisfjara is the most striking black-sand beach in the country, with tall basalt columns, the Reynisdrangar sea stacks offshore and a puffin colony in summer. Caution: dangerous sneaker waves — keep well away from the sea. The village of Vík is close by.",
-    "highlights": [
-      "Basalt columns",
-      "Reynisdrangar",
-      "Dyrhólaey",
-      "Vík í Mýrdal"
-    ],
+    "warning": "The sneaker waves at Reynisfjara are life-threatening and have swept tourists to their deaths. They arrive without warning, surge far higher up the beach than ordinary waves, and the water is freezing with a powerful undertow. Never turn your back on the sea, keep well back from the waterline, and never step closer to the water for a photo.",
+    "description": "Reynisfjara is the most striking black-sand beach in Iceland, with tall basalt columns (the Hálsanefshellir cave), the Reynisdrangar sea stacks offshore and a puffin colony on Reynisfjall in summer. The beach is breathtaking but dangerous — see the warning below. The village of Vík is a few minutes' drive away.",
+    "highlights": ["Basalt columns & Hálsanefshellir", "Reynisdrangar", "Reynisfjall", "Puffins (May–Aug)"],
     "accommodation": [
-      {
-        "name": "Hotel in Vík",
-        "type": "Hotel",
-        "price": "$$$"
-      },
-      {
-        "name": "Guesthouses and cottages",
-        "type": "Guesthouse",
-        "price": "$$"
-      }
+      { "name": "Hótel í Vík", "type": "Hotel", "price": "$$$" },
+      { "name": "Guesthouses & cabins", "type": "Guesthouse", "price": "$$" }
     ],
-    "activities": [
-      "Beach walk with caution",
-      "Puffin watching at Dyrhólaey"
+    "activities": ["Beach walk with extreme caution", "Photographing the basalt columns"],
+    "season": "Year-round, puffins May–Aug"
+  },
+  {
+    "id": "vik",
+    "name": "Vík í Mýrdal",
+    "region": "sudurland",
+    "type": "Village",
+    "tags": ["Village", "Services", "South Coast"],
+    "blurb": "Iceland's southernmost village and the service hub of the South Coast.",
+    "description": "Vík í Mýrdal is Iceland's southernmost village, a community of around 750 people that serves as the natural service hub of the South Coast — fuel, food, shops and accommodation along a long stretch where little else exists. Above the village stands the white Reyniskirkja church on a hill, with views over the black sand and the Reynisdrangar sea stacks, while the Mýrdalsjökull glacier, which caps the Katla volcano, rises all around. Vík is the ideal place to stay to split a South Coast trip over two days.",
+    "highlights": ["Reyniskirkja church", "Víkurfjara beach", "Views of Reynisdrangar", "Services & shops"],
+    "accommodation": [
+      { "name": "Hótel í Vík", "type": "Hotel", "price": "$$$" },
+      { "name": "Guesthouses & cabins", "type": "Guesthouse", "price": "$$" }
     ],
-    "season": "Year-round, puffins May–August"
+    "activities": ["Stroll through the village", "Views from Reyniskirkja"],
+    "season": "Year-round"
   },
   {
     "id": "jokulsarlon",
