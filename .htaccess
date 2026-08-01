@@ -1,0 +1,20 @@
+# Iceland Compass — cache-hegðun
+# Markmið: HTML-síður endurmetist alltaf svo uppfærslur birtist STRAX,
+# en versjónaðar skrár (css/js með ?v=<hash>) og myndir geymist í vafra.
+
+<IfModule mod_headers.c>
+  # HTML: sannreyna alltaf við þjóninn (ódýrt 304 ef óbreytt) — engin gömul síða úr cache
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  # CSS/JS eru cache-bust-uð með ?v=<hash> → mega geymast að eilífu
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Myndir og letur: geymast í 30 daga (ekki immutable — skipt út undir sama nafni stöku sinnum)
+  <FilesMatch "\.(webp|jpg|jpeg|png|gif|svg|ico|woff2?)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
