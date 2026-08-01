@@ -169,6 +169,14 @@ const IMAGES = {
     "source": "unsplash",
     "page": "https://unsplash.com/photos/black-sand-beach-with-rock-formations-FV7NJ-bSH6o"
   },
+  "vik": {
+    "src": "/img/places/vik.webp",
+    "alt_is": "Þorpið Vík í Mýrdal með Víkurkirkju og Reynisdrangar í baksýn",
+    "alt_en": "The village of Vík í Mýrdal with Víkurkirkja church and the Reynisdrangar sea stacks behind",
+    "credit": "David Stanfield",
+    "source": "pexels",
+    "page": "https://www.pexels.com/photo/village-of-vik-with-the-vikurkirkja-church-in-the-foreground-19282471/"
+  },
   "skogafoss": {
     "src": "/img/places/skogafoss.webp",
     "alt_is": "Skógafoss steypist fram af brúninni í grænu umhverfi",

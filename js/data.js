@@ -504,13 +504,13 @@ const PLACES = [
     tags: ["Þorp", "Þjónusta", "Suðurströnd"],
     blurb: "Syðsta þorp Íslands og þjónustumiðja Suðurstrandarinnar.",
     description:
-      "Vík í Mýrdal er syðsta þorp Íslands, um 750 manna byggð sem er náttúruleg þjónustumiðja Suðurstrandarinnar — eldsneyti, veitingar, verslanir og gisting á löngum kafla þar sem fátt annað er í boði. Yfir þorpinu trónir hvíta Reyniskirkja á hól með útsýni yfir svartan sand og Reynisdranga, og í kring rís Mýrdalsjökull sem hylur eldstöðina Kötlu. Vík er tilvalinn gististaður til að skipta Suðurstrandarferð í tvo daga.",
-    highlights: ["Reyniskirkja", "Víkurfjara", "Útsýni yfir Reynisdranga", "Þjónusta og verslanir"],
+      "Vík í Mýrdal er syðsta þorp Íslands, um 750 manna byggð sem er náttúruleg þjónustumiðja Suðurstrandarinnar — eldsneyti, veitingar, verslanir og gisting á löngum kafla þar sem fátt annað er í boði. Yfir þorpinu trónir hvíta Víkurkirkja á hól með útsýni yfir svartan sand og Reynisdranga, og í kring rís Mýrdalsjökull sem hylur eldstöðina Kötlu. Vík er tilvalinn gististaður til að skipta Suðurstrandarferð í tvo daga.",
+    highlights: ["Víkurkirkja", "Víkurfjara", "Útsýni yfir Reynisdranga", "Þjónusta og verslanir"],
     accommodation: [
       { name: "Hótel í Vík", type: "Hótel", price: "$$$" },
       { name: "Gistiheimili og bústaðir", type: "Gistiheimili", price: "$$" },
     ],
-    activities: ["Ganga um þorpið", "Útsýni frá Reyniskirkju"],
+    activities: ["Ganga um þorpið", "Útsýni frá Víkurkirkju"],
     season: "Allt árið",
   },
   {

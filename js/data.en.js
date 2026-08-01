@@ -2414,13 +2414,13 @@ const PLACES = [
     "type": "Village",
     "tags": ["Village", "Services", "South Coast"],
     "blurb": "Iceland's southernmost village and the service hub of the South Coast.",
-    "description": "Vík í Mýrdal is Iceland's southernmost village, a community of around 750 people that serves as the natural service hub of the South Coast — fuel, food, shops and accommodation along a long stretch where little else exists. Above the village stands the white Reyniskirkja church on a hill, with views over the black sand and the Reynisdrangar sea stacks, while the Mýrdalsjökull glacier, which caps the Katla volcano, rises all around. Vík is the ideal place to stay to split a South Coast trip over two days.",
-    "highlights": ["Reyniskirkja church", "Víkurfjara beach", "Views of Reynisdrangar", "Services & shops"],
+    "description": "Vík í Mýrdal is Iceland's southernmost village, a community of around 750 people that serves as the natural service hub of the South Coast — fuel, food, shops and accommodation along a long stretch where little else exists. Above the village stands the white Víkurkirkja church on a hill, with views over the black sand and the Reynisdrangar sea stacks, while the Mýrdalsjökull glacier, which caps the Katla volcano, rises all around. Vík is the ideal place to stay to split a South Coast trip over two days.",
+    "highlights": ["Víkurkirkja church", "Víkurfjara beach", "Views of Reynisdrangar", "Services & shops"],
     "accommodation": [
       { "name": "Hótel í Vík", "type": "Hotel", "price": "$$$" },
       { "name": "Guesthouses & cabins", "type": "Guesthouse", "price": "$$" }
     ],
-    "activities": ["Stroll through the village", "Views from Reyniskirkja"],
+    "activities": ["Stroll through the village", "Views from Víkurkirkja"],
     "season": "Year-round"
   },
   {
