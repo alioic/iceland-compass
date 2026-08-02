@@ -1,6 +1,14 @@
 /* IMAGES — hero-myndir fyrir staði/landshluta/leiðir.
    Sjálfvirkt búið til; myndir frá Unsplash/Pexels (leyfin heimila notkun). */
 const IMAGES = {
+  "grettislaug": {
+    "src": "/img/places/grettislaug.webp",
+    "alt_is": "Steinhlaðnar náttúrulaugar Grettislaugar við sjóinn á Reykjaströnd í Skagafirði",
+    "alt_en": "The stone-built natural hot pools of Grettislaug by the sea at Reykjaströnd, Skagafjörður",
+    "credit": "Bromr, CC BY-SA 3.0",
+    "source": "wikimedia",
+    "page": "https://commons.wikimedia.org/wiki/File:Grettislaug.JPG"
+  },
   "hvalaskodun": {
     "src": "/img/places/hvalaskodun.webp",
     "alt_is": "Hnúfubakur stekkur upp úr köldu Atlantshafinu við Ísland",
