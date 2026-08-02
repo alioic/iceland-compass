@@ -146,10 +146,29 @@ function bookingLink(q) {
   const aid = AFFILIATE.booking ? `&aid=${AFFILIATE.booking}` : "";
   return `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(q + ", " + t.near)}${aid}`;
 }
-function tourLink(q) {
-  // GetYourGuide-leitin (/s/?q=) síar ekki áreiðanlega — tengjum á stöðugu Íslands-síðuna.
+// GetYourGuide: stöðugar staðsetningar-/flokkasíður (leitin /s/?q= síar ekki áreiðanlega).
+// Sértæk síða → svæðissíða landshlutans → Ísland. Í samræmi við build.py.
+const GYG_DEFAULT = "iceland-l169030";
+const GYG_OVERRIDE = {
+  thingvellir:"golden-circle-l1881", geysir:"golden-circle-l1881", gullfoss:"golden-circle-l1881", kerid:"golden-circle-l1881",
+  blaalonid:"blue-lagoon-reykjavik-l5049",
+  jokulsarlon:"jokulsarlon-l2030", demantsstrondin:"jokulsarlon-l2030",
+  skogafoss:"southern-region-iceland-l32352", seljalandsfoss:"southern-region-iceland-l32352",
+  reynisfjara:"southern-region-iceland-l32352", vik:"southern-region-iceland-l32352",
+  solheimajokull:"southern-region-iceland-l32352", solheimasandur:"southern-region-iceland-l32352",
+  fjadrargljufur:"southern-region-iceland-l32352", skaftafell:"southern-region-iceland-l32352",
+  kirkjufell:"snaefellsnes-l87260", snaefellsjokull:"snaefellsnes-l87260",
+  arnarstapi_hellnar:"snaefellsnes-l87260", stykkisholmur:"snaefellsnes-l87260", budir:"snaefellsnes-l87260",
+};
+const GYG_REGION = {
+  hofudborg:"reykjavik-l30", reykjanes:"reykjanes-peninsula-l2123", vesturland:"western-region-iceland-l95049",
+  vestfirdir:"westfjords-l2124", nordvestur:"northwestern-region-iceland-l204803", nordaustur:"akureyri-l2028",
+  austurland:"eastern-region-iceland-l32307", sudurland:"southern-region-iceland-l32352",
+};
+function tourLink(p) {
+  const path = (p && (GYG_OVERRIDE[p.id] || GYG_REGION[p.region])) || GYG_DEFAULT;
   const pid = AFFILIATE.gyg ? `?partner_id=${AFFILIATE.gyg}&cmp=share_to_earn` : "";
-  return `https://www.getyourguide.com/iceland-l169030/${pid}`;
+  return `https://www.getyourguide.com/${path}/${pid}`;
 }
 function mapLink(q) {
   return `https://www.google.com/maps/search/${encodeURIComponent(q + ", " + t.near)}`;
@@ -566,7 +585,7 @@ function openModal(placeId) {
   } else {
     cta = `
       <a class="mc-btn primary" href="${bookingLink(searchTerm)}" target="_blank" rel="noopener sponsored nofollow">${t.btnBook}</a>
-      <a class="mc-btn" href="${tourLink(p.name)}" target="_blank" rel="noopener sponsored nofollow">${t.btnTours}</a>`;
+      <a class="mc-btn" href="${tourLink(p)}" target="_blank" rel="noopener sponsored nofollow">${t.btnTours}</a>`;
   }
 
   // Hero-mynd ef til, annars litur landshlutans

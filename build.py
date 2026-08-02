@@ -48,6 +48,21 @@ GYG_OVERRIDE = {   # efnis-sértækar GYG-síður (staðfestar); lykill = guide-
     "arnarstapi_hellnar": "snaefellsnes-l87260", "stykkisholmur": "snaefellsnes-l87260",
     "budir": "snaefellsnes-l87260",
 }
+# Svæðis-fallback: hver landshluti á sína GetYourGuide-svæðissíðu (allar staðfestar),
+# svo staður sem hefur ekki sértæka síðu sýni a.m.k. ferðir í sínum landshluta — aldrei bara "Ísland".
+GYG_REGION = {
+    "hofudborg":  "reykjavik-l30",
+    "reykjanes":  "reykjanes-peninsula-l2123",
+    "vesturland": "western-region-iceland-l95049",
+    "vestfirdir": "westfjords-l2124",
+    "nordvestur": "northwestern-region-iceland-l204803",
+    "nordaustur": "akureyri-l2028",
+    "austurland": "eastern-region-iceland-l32307",
+    "sudurland":  "southern-region-iceland-l32352",
+}
+def place_gyg_path(p):
+    """Besta GYG-slóð fyrir stað: sértæk síða → svæðissíða → (annars sjálfgefið Ísland)."""
+    return GYG_OVERRIDE.get(p["id"]) or GYG_REGION.get(p.get("region"))
 def mailto(label):
     return f'<p class="doc-contact">{e(label)} <a href="mailto:{SITE_EMAIL}">{SITE_EMAIL}</a></p>'
 def gyg_url(path=None):
@@ -509,7 +524,7 @@ def build_place(lang, p, regions, places):
       <a class="doc-btn primary" href="{maplink}" target="_blank" rel="noopener nofollow">{e(ui["btn_find"])}</a>
       <a class="doc-btn" href="{booking}" target="_blank" rel="noopener sponsored nofollow">{e(ui["btn_book"])}</a></div>''')
     else:
-        tours = gyg_url(GYG_OVERRIDE.get(p["id"]))
+        tours = gyg_url(place_gyg_path(p))
         parts.append(f'''<div class="doc-cta">
       <a class="doc-btn primary" href="{booking}" target="_blank" rel="noopener sponsored nofollow">{e(ui["btn_book"])}</a>
       <a class="doc-btn" href="{tours}" target="_blank" rel="noopener sponsored nofollow">{e(ui["btn_tours"])}</a></div>''')
