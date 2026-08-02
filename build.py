@@ -29,6 +29,7 @@ GYG_OVERRIDE = {   # efnis-sértækar GYG-síður (staðfestar); lykill = guide-
     # -- greinar + leiðir --
     "nordurljos": "reykjavik-l30/northern-lights-tc310",
     "lon-og-jardbod": "blue-lagoon-reykjavik-l5049",
+    "hvalaskodun": "husavik-l87259/dolphin-whale-watching-tc49",
     "gullni-hringurinn": "golden-circle-l1881",
     "blaa-lonid": "blue-lagoon-reykjavik-l5049",
     "sudurstrondin": "southern-region-iceland-l32352",

@@ -1,6 +1,14 @@
 /* IMAGES — hero-myndir fyrir staði/landshluta/leiðir.
    Sjálfvirkt búið til; myndir frá Unsplash/Pexels (leyfin heimila notkun). */
 const IMAGES = {
+  "hvalaskodun": {
+    "src": "/img/places/husavik.webp",
+    "alt_is": "Bátur við bryggju á Húsavík",
+    "alt_en": "Boat at the harbour in Husavik, whale watching capital of Iceland",
+    "credit": "Bernd Dittrich",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-yellow-boat-is-docked-at-a-dock-hHWm8l_gB2Q"
+  },
   "lon-og-jardbod": {
     "src": "/img/places/blaalonid.webp",
     "alt_is": "Slökun í mjólkurbláu vatni Bláa lónsins",
