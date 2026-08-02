@@ -10,12 +10,12 @@ const IMAGES = {
     "page": "https://unsplash.com/photos/whale-tail-in-the-middle-of-ocean-larQY4lhbT4"
   },
   "lon-og-jardbod": {
-    "src": "/img/places/blaalonid.webp",
-    "alt_is": "Slökun í mjólkurbláu vatni Bláa lónsins",
-    "alt_en": "Bather floating in the milky-blue water of the Blue Lagoon, Iceland",
-    "credit": "Karsten Winegeart",
+    "src": "/img/places/reykjadalur.webp",
+    "alt_is": "Heit náttúruleg baðá í Reykjadal með gufu og litríkum jarðhita",
+    "alt_en": "The natural hot bathing river in Reykjadalur with steam and colorful geothermal ground",
+    "credit": "Olena Shmahalo",
     "source": "unsplash",
-    "page": "https://unsplash.com/photos/a-woman-is-floating-in-a-blue-pool-aiBu12OlzFA"
+    "page": "https://unsplash.com/photos/gSIqw8zo0QQ"
   },
   "hvad-a-ad-pakka": {
     "src": "/img/places/seljalandsfoss.webp",
