@@ -28,6 +28,7 @@ GYG_DEFAULT = "iceland-l169030"   # öll íslensk ferðaþjónusta (staðfest)
 GYG_OVERRIDE = {   # efnis-sértækar GYG-síður (staðfestar); lykill = guide-slug / collection-id / place-id
     # -- greinar + leiðir --
     "nordurljos": "reykjavik-l30/northern-lights-tc310",
+    "lon-og-jardbod": "blue-lagoon-reykjavik-l5049",
     "gullni-hringurinn": "golden-circle-l1881",
     "blaa-lonid": "blue-lagoon-reykjavik-l5049",
     "sudurstrondin": "southern-region-iceland-l32352",

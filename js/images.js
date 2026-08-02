@@ -1,6 +1,30 @@
 /* IMAGES — hero-myndir fyrir staði/landshluta/leiðir.
    Sjálfvirkt búið til; myndir frá Unsplash/Pexels (leyfin heimila notkun). */
 const IMAGES = {
+  "lon-og-jardbod": {
+    "src": "/img/places/blaalonid.webp",
+    "alt_is": "Slökun í mjólkurbláu vatni Bláa lónsins",
+    "alt_en": "Bather floating in the milky-blue water of the Blue Lagoon, Iceland",
+    "credit": "Karsten Winegeart",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/a-woman-is-floating-in-a-blue-pool-aiBu12OlzFA"
+  },
+  "hvad-a-ad-pakka": {
+    "src": "/img/places/seljalandsfoss.webp",
+    "alt_is": "Seljalandsfoss, hái og mjói fossinn á Suðurlandi sem hægt er að ganga á bak við",
+    "alt_en": "Seljalandsfoss, the tall thin waterfall in South Iceland that you can walk behind",
+    "credit": "Pavol Svantner / Unsplash",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/ycWERAjwEAQ"
+  },
+  "island-5-7-dagar": {
+    "src": "/img/places/hringvegurinn.webp",
+    "alt_is": "Auður vegur sem liðast að fjalli í íslensku landslagi",
+    "alt_en": "An empty road winding toward a mountain in the Icelandic landscape",
+    "credit": "Christina Papp",
+    "source": "unsplash",
+    "page": "https://unsplash.com/photos/an-empty-road-with-a-mountain-in-the-background-v7okokLJZ3E"
+  },
   "gullni-hringurinn": {
     "src": "/img/places/gullni-hringurinn.webp",
     "alt_is": "Gullfoss í klakaböndum að vetri",
