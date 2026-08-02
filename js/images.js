@@ -2,12 +2,12 @@
    Sjálfvirkt búið til; myndir frá Unsplash/Pexels (leyfin heimila notkun). */
 const IMAGES = {
   "hvalaskodun": {
-    "src": "/img/places/husavik.webp",
-    "alt_is": "Bátur við bryggju á Húsavík",
-    "alt_en": "Boat at the harbour in Husavik, whale watching capital of Iceland",
-    "credit": "Bernd Dittrich",
+    "src": "/img/places/hvalaskodun.webp",
+    "alt_is": "Hnúfubakur stekkur upp úr köldu Atlantshafinu við Ísland",
+    "alt_en": "A humpback whale breaching from the cold ocean off Iceland",
+    "credit": "Mike Doherty",
     "source": "unsplash",
-    "page": "https://unsplash.com/photos/a-yellow-boat-is-docked-at-a-dock-hHWm8l_gB2Q"
+    "page": "https://unsplash.com/photos/whale-tail-in-the-middle-of-ocean-larQY4lhbT4"
   },
   "lon-og-jardbod": {
     "src": "/img/places/blaalonid.webp",
