@@ -209,7 +209,7 @@ LANGS = {
     },
   },
   "en": {
-    "code": "en", "og_locale": "en", "data": "js/data.en.js", "prefix": "/en",
+    "code": "en", "og_locale": "en_US", "data": "js/data.en.js", "prefix": "/en",
     "seg": {"place": "place", "region": "region", "all": "places", "coll": "routes", "pools": "pools", "guide": "guide", "local": "local", "about": "about", "privacy": "privacy", "disclaimer": "disclaimer"},
     "country": "Iceland",
     "ui": {
@@ -307,6 +307,19 @@ def stamp_homepage_assets():
 def jsonld_block(obj):
     return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False) + '</script>'
 
+_DIM_CACHE = {}
+def img_dims(src):
+    """(width, height) úr myndaskrá á disk; ('','') ef ekki tekst."""
+    if src in _DIM_CACHE:
+        return _DIM_CACHE[src]
+    try:
+        from PIL import Image
+        with Image.open(os.path.join(ROOT, src.lstrip("/"))) as im:
+            _DIM_CACHE[src] = im.size
+    except Exception:
+        _DIM_CACHE[src] = ("", "")
+    return _DIM_CACHE[src]
+
 def hero_figure(key, lang):
     """Skilar (html, ogimg_url) fyrir hero-mynd ef til, annars ("", None)."""
     img = IMAGES.get(key)
@@ -314,7 +327,11 @@ def hero_figure(key, lang):
         return "", None
     alt = img.get("alt_" + lang) or img.get("alt_en") or ""
     cap = " / ".join(x for x in (img.get("credit"), (img.get("source") or "").capitalize()) if x)
-    html_ = (f'<figure class="doc-hero"><img src="{e(img["src"])}" alt="{e(alt)}" loading="lazy">'
+    w, h = img_dims(img["src"])
+    dim = f' width="{w}" height="{h}"' if w else ""
+    # Hero er LCP-þátturinn — engin lazy-hleðsla; fetchpriority=high + stærð svo enginn CLS.
+    html_ = (f'<figure class="doc-hero"><img src="{e(img["src"])}" alt="{e(alt)}"{dim}'
+             f' fetchpriority="high" decoding="async">'
              + (f'<figcaption>{e(cap)}</figcaption>' if cap else '') + '</figure>')
     return html_, SITE_URL + img["src"]
 
@@ -355,7 +372,7 @@ def alternates(kind, ident):
     return "\n".join([
         f'<link rel="alternate" hreflang="is" href="{kind_url("is",kind,ident)}">',
         f'<link rel="alternate" hreflang="en" href="{kind_url("en",kind,ident)}">',
-        f'<link rel="alternate" hreflang="x-default" href="{kind_url("is",kind,ident)}">',
+        f'<link rel="alternate" hreflang="x-default" href="{kind_url("en",kind,ident)}">',
     ])
 
 # ----------------------------------------------------------------------
@@ -570,12 +587,12 @@ def build_place(lang, p, regions, places):
                   "description":p["description"],"servesCuisine":p.get("cuisine"),"priceRange":p.get("price"),
                   "address":{"@type":"PostalAddress","addressLocality":p.get("location",rname),
                              "addressRegion":rname,"addressCountry":"IS"},
-                  "url":url,"image":f"{SITE_URL}/og-image.svg"}
+                  "url":url,"image":hero_og or f"{SITE_URL}/og-image.png"}
     else:
         schema = {"@context":"https://schema.org","@type":"TouristAttraction","name":p["name"],
                   "description":p["description"],"touristType":list(p.get("tags",[])),
                   "address":{"@type":"PostalAddress","addressRegion":rname,"addressCountry":"IS"},
-                  "isAccessibleForFree":True,"url":url,"image":f"{SITE_URL}/og-image.svg"}
+                  "isAccessibleForFree":True,"url":url,"image":hero_og or f"{SITE_URL}/og-image.png"}
 
     write(out_path(url), page(lang,"place",pid,title,desc,url,"article",[crumb_ld,jsonld_block(schema)], crumb_nav and "\n".join(parts), ogimg=hero_og))
     return url
@@ -615,7 +632,7 @@ def build_region(lang, rid, regions, places):
                  "itemListElement":[{"@type":"ListItem","position":i+1,"url":place_url(lang,p["id"]),"name":p["name"]}
                                     for i,p in enumerate(rplaces)]}
     dest = {"@context":"https://schema.org","@type":"TouristDestination","name":rname,
-            "description":region.get("intro",""),"url":url,"image":f"{SITE_URL}/og-image.svg","addressCountry":"IS"}
+            "description":region.get("intro",""),"url":url,"image":hero_og or f"{SITE_URL}/og-image.png","addressCountry":"IS"}
     write(out_path(url), page(lang,"region",rid,title,desc,url,"website",[crumb_ld,jsonld_block(dest),jsonld_block(item_list)], "\n".join(parts), ogimg=hero_og))
     return url
 
