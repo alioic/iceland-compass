@@ -178,7 +178,8 @@ LANGS = {
       "more_in":"Fleiri á {r}","all_in":"Allt á {r} →","view_map":"Skoða á gagnvirku korti →","nearby":"Nálægt",
       "region_groups":{"stadur":"Staðir og náttúra","ganga":"Gönguleiðir","bod":"Sundlaugar & böð","afthreying":"Afþreying","veitingar":"Veitingastaðir","kaffi":"Kaffihús","heimavara":"Heimavara & handverk"},
       "dir_h1":"Allir staðir á Íslandi","all_places":"Allir staðir","lang_label":"EN",
-      "place_title":"{name} — {type}, {rname} | {site}",
+      "place_title":"{name} — {type}, {rname}",
+      "place_title_short":"{name} — {rname}",
       "region_title":"{rname} — staðir, gisting og afþreyging | {site}",
       "dir_title":"Allir staðir, gönguleiðir og veitingar á Íslandi | {site}",
       "dir_desc":"Leiðsögn um Ísland — staðir, gönguleiðir, gisting og afþreyging í öllum landshlutum.",
@@ -226,7 +227,8 @@ LANGS = {
       "more_in":"More in {r}","all_in":"All of {r} →","view_map":"View on the interactive map →","nearby":"Nearby",
       "region_groups":{"stadur":"Places & nature","ganga":"Hiking trails","bod":"Pools & baths","afthreying":"Attractions","veitingar":"Restaurants","kaffi":"Cafés","heimavara":"Local shops & makers"},
       "dir_h1":"All places in Iceland","all_places":"All places","lang_label":"IS",
-      "place_title":"{name} — {type} in {rname} | {site}",
+      "place_title":"{name} — {type} in {rname}",
+      "place_title_short":"{name} — {rname}",
       "region_title":"{rname} — places, accommodation & activities | {site}",
       "dir_title":"All places, hiking trails & restaurants in Iceland | {site}",
       "dir_desc":"A guide to Iceland — places, hiking trails, accommodation and activities in every region.",
@@ -470,6 +472,8 @@ def build_place(lang, p, regions, places):
     rid = p["region"]; region = regions[rid]; rname = region["name"]; cat = cat_of(p); pid = p["id"]
     url = place_url(lang, pid)
     title = ui["place_title"].format(name=p["name"], type=p["type"], rname=rname, site=SITE_NAME)
+    if len(title) > 60:
+        title = ui["place_title_short"].format(name=p["name"], rname=rname)
     desc = trunc(p.get("blurb") or p.get("description",""))
 
     crumb_nav, crumb_ld = breadcrumbs([(ui["crumb_home"], home_url(lang)),
@@ -1000,9 +1004,14 @@ def build_guide(lang, gid, g):
         parts.append(guide_cta(lang, g["cta"], GYG_OVERRIDE.get(gid)))
     parts.append(f'<p class="doc-more"><a href="{guides_index_url(lang)}">{e(ui["guide_more"])}</a></p>')
 
+    _mod = LASTMOD.get(out_path(url), TODAY)
     article_ld = jsonld_block({"@context":"https://schema.org","@type":"Article",
         "headline":c["title"], "description":desc, "inLanguage":LANGS[lang]["code"],
-        "publisher":{"@type":"Organization","name":SITE_NAME},
+        "datePublished": g.get("published", _mod),
+        "dateModified": _mod,
+        "author":    {"@type":"Organization","name":SITE_NAME,"url":home_url(lang)},
+        "publisher": {"@type":"Organization","name":SITE_NAME,"url":home_url(lang)},
+        "image": hero_og or f"{SITE_URL}/og-image.png",
         "mainEntityOfPage":url})
     ld = [crumb_ld, article_ld] + ([faq_ld] if faq_ld else [])
     write(out_path(url), page(lang,"guide",gid,title,desc,url,"article",ld,"\n".join(parts), ogimg=hero_og))
@@ -1208,9 +1217,28 @@ def build_legal_page(lang, key):
     return url
 
 # ----------------------------------------------------------------------
+LASTMOD = {}   # {skráarslóð: 'ÁÁÁÁ-MM-DD'} — fyllt í main() úr git-sögunni
+def git_lastmod_map():
+    """{skráarslóð: 'ÁÁÁÁ-MM-DD'} úr git-sögunni, ein keyrsla (nýjasti commit sem snerti skrána)."""
+    out = {}
+    try:
+        import subprocess
+        raw = subprocess.run(
+            ["git", "log", "--name-only", "--format=__%cs", "--", "."],
+            cwd=ROOT, capture_output=True, text=True, timeout=60).stdout
+        cur = None
+        for line in raw.splitlines():
+            if line.startswith("__"):
+                cur = line[2:]
+            elif line.strip() and cur and line not in out:
+                out[line] = cur          # fyrsta sinn = nýjasta commit sem snerti skrána
+    except Exception:
+        pass
+    return out
+
 def build_sitemap(urls):
     items = "".join(
-        f"<url><loc>{u}</loc><lastmod>{TODAY}</lastmod><changefreq>monthly</changefreq><priority>{pr}</priority></url>\n"
+        f"<url><loc>{u}</loc><lastmod>{LASTMOD.get(out_path(u), TODAY)}</lastmod><changefreq>monthly</changefreq><priority>{pr}</priority></url>\n"
         for u,pr in urls)
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + items + '</urlset>\n')
@@ -1356,7 +1384,8 @@ def build_doc_css():
 # ----------------------------------------------------------------------
 def main():
     global SEO, REGION_SEO, STAY_HUB, COLLECTIONS, IMAGES, COORDS, MAPDATA, GUIDES
-    global CSS_STYLES, CSS_DOC
+    global CSS_STYLES, CSS_DOC, LASTMOD
+    LASTMOD = git_lastmod_map()
     SEO = load_seo()
     REGION_SEO = load_region_seo()
     STAY_HUB = load_stay_hub()
