@@ -28,4 +28,6 @@ jobs:
             **/.github/**
             build.py
             *.md
+            *.json
+            scratchpad/**
             **/.DS_Store

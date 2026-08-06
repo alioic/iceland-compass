@@ -2,6 +2,9 @@
 # Markmið: HTML-síður endurmetist alltaf svo uppfærslur birtist STRAX,
 # en versjónaðar skrár (css/js með ?v=<hash>) og myndir geymist í vafra.
 
+# Eigin 404-síða (annars sýnir SiteGround sína)
+ErrorDocument 404 /404.html
+
 <IfModule mod_headers.c>
   # HTML: sannreyna alltaf við þjóninn (ódýrt 304 ef óbreytt) — engin gömul síða úr cache
   <FilesMatch "\.html$">
