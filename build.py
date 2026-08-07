@@ -284,6 +284,7 @@ def write(path, content):
 # --- Cache-busting: hver skrá fær ?v=<hash> sem breytist bara við raunbreytingu ---
 CSS_STYLES = "/css/styles.css"   # sett á versjónaða slóð í main()
 CSS_DOC    = "/css/doc.css"
+CSS_FONTS  = "/css/fonts.css"     # sjálfhýst letur (ekkert Google Fonts)
 def asset_ver(relpath):
     p = os.path.join(ROOT, relpath.lstrip("/"))
     try:
@@ -293,7 +294,7 @@ def asset_ver(relpath):
         return "0"
 def stamp_homepage_assets():
     """Bætir ?v=<hash> aftan á css/js tengingar í index.html + en/index.html."""
-    assets = ["css/styles.css", "js/mapdata.js", "js/staymap.js", "js/coords.js",
+    assets = ["css/styles.css", "css/fonts.css", "js/mapdata.js", "js/staymap.js", "js/coords.js",
               "js/images.js", "js/data.js", "js/data.en.js", "js/app.js"]
     vers = {os.path.basename(a): asset_ver(a) for a in assets}
     for fn in ("index.html", "en/index.html"):
@@ -400,9 +401,7 @@ HEAD = """<!DOCTYPE html>
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:image" content="{ogimg}">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{css_fonts}">
 <link rel="stylesheet" href="{css_styles}">
 <link rel="stylesheet" href="{css_doc}">
 {jsonld}
@@ -441,7 +440,7 @@ def page(lang, kind, ident, title, desc, url, ogtype, jsonld, body, ogimg=None):
         lc=LANGS[lang]["code"], title=e(title), desc=e(desc), url=e(url), ogtype=ogtype,
         site=e(SITE_NAME), oglocale=LANGS[lang]["og_locale"], siteurl=SITE_URL,
         ogimg=e(ogimg or f"{SITE_URL}/og-image.png"),
-        css_styles=CSS_STYLES, css_doc=CSS_DOC,
+        css_styles=CSS_STYLES, css_doc=CSS_DOC, css_fonts=CSS_FONTS,
         alts=alternates(kind, ident), jsonld="\n".join(jsonld),
         home=home_url(lang), all=all_url(lang), logo=logo, logosub=logosub,
         nav_map=ui["nav_map"], nav_all=ui["nav_all"], nav_about=ui["nav_about"], about_index=about_url(lang),
@@ -1384,7 +1383,7 @@ def build_doc_css():
 # ----------------------------------------------------------------------
 def main():
     global SEO, REGION_SEO, STAY_HUB, COLLECTIONS, IMAGES, COORDS, MAPDATA, GUIDES
-    global CSS_STYLES, CSS_DOC, LASTMOD
+    global CSS_STYLES, CSS_DOC, CSS_FONTS, LASTMOD
     LASTMOD = git_lastmod_map()
     SEO = load_seo()
     REGION_SEO = load_region_seo()
@@ -1395,6 +1394,7 @@ def main():
     GUIDES = load_guides()
     COLLECTIONS = load_collections()
     build_og_image(); build_doc_css(); build_robots()
+    CSS_FONTS  = f"/css/fonts.css?v={asset_ver('css/fonts.css')}"
     CSS_STYLES = f"/css/styles.css?v={asset_ver('css/styles.css')}"
     CSS_DOC    = f"/css/doc.css?v={asset_ver('css/doc.css')}"
     urls = [(home_url("is"), "1.0"), (home_url("en"), "1.0")]
