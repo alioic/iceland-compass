@@ -389,6 +389,8 @@ HEAD = """<!DOCTYPE html>
 <link rel="canonical" href="{url}">
 <meta name="robots" content="index, follow">
 <meta name="google-site-verification" content="ywIRPvLnnHm-9NPAZ1VW3NEM9Pvtu6tSMbOdBo-3T34">
+<meta name="p:domain_verify" content="6ad3e5bea0dd678f25943c4b2103fbb0">
+
 {alts}
 <meta property="og:type" content="{ogtype}">
 <meta property="og:title" content="{title}">
