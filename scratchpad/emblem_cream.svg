@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <g fill="#FCFAF6" stroke="#FCFAF6">
+
+    <!-- Hringur -->
+    <circle cx="100" cy="100" r="56" fill="none" stroke-width="1.9"/>
+
+    <!-- 4 höfuðoddar — langir, slankir, örlítið íhvolfir. Sitja utan á hringnum. -->
+    <g stroke="none">
+      <path id="pt" d="M100,8 Q102,34 104.5,46 Q102,50 100,52 Q98,50 95.5,46 Q98,34 100,8 Z"/>
+      <use href="#pt" transform="rotate(90 100 100)"/>
+      <use href="#pt" transform="rotate(180 100 100)"/>
+      <use href="#pt" transform="rotate(270 100 100)"/>
+    </g>
+
+    <!-- Fínlegar þverslár á oddunum -->
+    <g stroke-width="1.8" stroke-linecap="round">
+      <line x1="94.5" y1="26" x2="105.5" y2="26"/>
+      <line x1="174" y1="94.5" x2="174" y2="105.5"/>
+      <line x1="94.5" y1="174" x2="105.5" y2="174"/>
+      <line x1="26" y1="94.5" x2="26" y2="105.5"/>
+    </g>
+
+    <!-- Kirkjufell — ein fáguð, ósamhverf mynd með íhvolfum brekkum + fínlegri hryggjar-slóð -->
+    <path stroke="none" fill-rule="evenodd"
+          d="M61,138 Q79,100 103,65 Q120,90 139,138 Z
+             M104.2,78 L100.2,138 L106.6,138 Z"/>
+
+    <!-- Vatnslína (róleg alda, láréttir endar) -->
+    <path d="M62,146 Q81,141 100,145 Q119,149 138,145" fill="none" stroke-width="1.9" stroke-linecap="round"/>
+  </g>
+</svg>
