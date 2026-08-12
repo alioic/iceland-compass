@@ -214,7 +214,7 @@ def arc_text(img,w1,w2,radius,span,centre_deg,cap,col,gap_mult=1.0,flip=False,mo
 # ---------------------------------------------------------------- compose
 def build(point_radius, point_scale=1.0, n_radius=None, n_scale=None,
           s_radius=None, s_scale=None, top_mode='gap', bot_mode='gap',
-          top_gap=1.0, bot_gap=1.0, bot_words=("DISCOVER","MORE"), dashes=True):
+          top_gap=1.0, bot_gap=1.0, bot_words=("DISCOVER","MORE"), dashes=True, top_words=("ICELAND","COMPASS")):
     src=load_source()
     img=Image.new("RGBA",(OUT,OUT),(0,0,0,0))
     draw_ring(img,src)
@@ -232,7 +232,9 @@ def build(point_radius, point_scale=1.0, n_radius=None, n_scale=None,
     img.alpha_composite(mt,(int(round(C+MTN_DX*K-mw/2)),int(round(C+MTN_DY*K-mh/2))))
 
     tc=text_colour(src)
-    arc_text(img,"ICELAND","COMPASS",TEXT_R,TOP_SPAN,-90,CAP,tc,gap_mult=top_gap,flip=False,mode=top_mode)
+    if top_words is None:
+        return img                      # mark only — no lettering at all
+    arc_text(img,top_words[0],top_words[1],TEXT_R,TOP_SPAN,-90,CAP,tc,gap_mult=top_gap,flip=False,mode=top_mode)
     if bot_words is None:
         return img                      # top arc only — no bottom lettering
     b1,b2=bot_words
