@@ -403,6 +403,8 @@ HEAD = """<!DOCTYPE html>
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:image" content="{ogimg}">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="{css_fonts}">
 <link rel="stylesheet" href="{css_styles}">
 <link rel="stylesheet" href="{css_doc}">
@@ -410,7 +412,7 @@ HEAD = """<!DOCTYPE html>
 </head>
 <body>
 <header class="site-header scrolled">
-  <a href="{home}" class="logo"><span class="logo-text">{logo}</span><span class="logo-sub">{logosub}</span></a>
+  <a href="{home}" class="logo"><img class="logo-mark" src="/img/logo-mark.svg" alt="" width="30" height="22"><span class="logo-text">{logo}</span><span class="logo-sub">{logosub}</span></a>
   <nav class="main-nav">
     <a href="{home}#kort">{nav_map}</a>
     <a href="{coll_index}">{nav_coll}</a>
