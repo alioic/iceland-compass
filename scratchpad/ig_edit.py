@@ -7,7 +7,10 @@ from PIL import Image, ImageEnhance, ImageDraw, ImageFont, ImageFilter
 
 HOME = os.path.expanduser("~")
 SRC  = f"{HOME}/Downloads/Kirkjufell.jpg"
-STAMP = f"{HOME}/Downloads/icelandcompassstamp.png"   # real badge, transparent PNG
+STAMP = f"{HOME}/island-vefur/brand/iceland-compass-stamp.png"
+# Rebuilt badge: true circle, exact point placement, no bottom lettering (that
+# line was illegible mush at stamp size). Built by scratchpad/rebuild_badge.py
+# from the user's original artwork — mountain and points lifted unchanged.
 EMBLEM = f"{HOME}/Downloads/Iceland-Compass-emblem-white-transparent-2048.png"
 FONT = f"{HOME}/island-vefur/scratchpad/pinfonts/Inter.ttf"
 OUT  = f"{HOME}/Downloads/Kirkjufell-compass-edit.jpg"
