@@ -91,7 +91,7 @@ section { padding: 96px 32px; }
 }
 
 .logo { display: flex; align-items: center; gap: 10px; }
-.logo-mark { width: 30px; height: auto; display: block; flex: none; }
+.logo-mark { width: 34px; height: auto; display: block; flex: none; }
 .logo-text, .logo-sub { align-self: baseline; }
 .logo-text {
   font-family: var(--font-display);

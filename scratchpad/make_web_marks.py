@@ -17,17 +17,17 @@ def mark():          # ring + points + mountain, transparent
     return Image.open(f"{BRAND}/iceland-compass-stamp-markonly.png").convert("RGBA")
 
 def mountain_only():
-    """Just the white mountain, lifted from the stamp's interior."""
-    im=Image.open(f"{BRAND}/iceland-compass-stamp.png").convert("RGBA")
-    S=im.size[0]; C=S/2; px=im.load()
-    out=Image.new("RGBA",(S,S),(0,0,0,0)); op=out.load()
-    for y in range(S):
-        for x in range(S):
-            r,g,b,a=px[x,y]
-            if a<40: continue
-            if math.hypot(x-C,y-C)>S*0.215: continue     # inside the ring only
-            if r>170 and g>170 and b>160: op[x,y]=px[x,y]
-    return out.crop(out.getbbox())
+    """The full mountain, straight from the original artwork.
+
+    Do NOT re-extract this from the rendered stamp: the compass points have
+    pale facets, so any radius wide enough to catch the mountain's lower
+    corners also catches the points, and any radius tight enough to exclude
+    them clips the mountain. rebuild_badge already lifts it cleanly.
+    """
+    import sys
+    sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+    import rebuild_badge as R
+    return R.extract_mountain(R.load_source())
 
 def recolour(im,rgb):
     """Flatten artwork to one colour, keeping its alpha (and antialiasing)."""
