@@ -429,7 +429,7 @@ HEAD = """<!DOCTYPE html>
 </head>
 <body>
 <header class="site-header scrolled">
-  <a href="{home}" class="logo"><img class="logo-mark" src="/img/logo-mark.svg?v={v_logomark}" alt="" width="34" height="17"><span class="logo-text">{logo}</span><span class="logo-sub">{logosub}</span></a>
+  <a href="{home}" class="logo"><img class="logo-mark" src="/img/logo-mark.svg?v={v_logomark}" alt="" width="28" height="28"><span class="logo-text">{logo}</span><span class="logo-sub">{logosub}</span></a>
   <nav class="main-nav">
     <a href="{home}#kort">{nav_map}</a>
     <a href="{coll_index}">{nav_coll}</a>
