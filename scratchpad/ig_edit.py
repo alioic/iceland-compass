@@ -25,18 +25,39 @@ def _lut(mult, lift=0, gamma=1.0):
         t.append(max(0,min(255,int(v*255))))
     return t
 
+def _tone_stats(im):
+    """How warm and how contrasty the photo already is."""
+    s=im.convert("RGB").resize((64,64),Image.BILINEAR)
+    px=list(s.getdata()); n=len(px)
+    warmth=(sum(p[0] for p in px)-sum(p[2] for p in px))/n   # red minus blue
+    lum=[0.299*p[0]+0.587*p[1]+0.114*p[2] for p in px]
+    mean=sum(lum)/n
+    spread=(sum((v-mean)**2 for v in lum)/n)**0.5
+    return warmth, spread
+
 def grade(im):
+    """Warm editorial grade that adapts to the photo it is given.
+
+    A golden wash flatters a sunlit shot but does nothing for a grey winter
+    one — those need contrast, not warmth, or they land in the feed looking
+    washed out next to everything else. So the wash fades out as the photo
+    gets colder, and contrast comes up as it gets flatter.
+    """
     im=im.convert("RGB")
+    warmth,spread=_tone_stats(im)
+    cold = max(0.0, min(1.0, (14.0-warmth)/22.0))    # 0 = warm photo, 1 = cold
+    flat = max(0.0, min(1.0, (46.0-spread)/22.0))    # 0 = punchy,     1 = flat
+
     r,g,b=im.split()
     r=r.point(_lut(1.055, lift=5))          # warm reds + lift shadows a touch
     g=g.point(_lut(1.005, lift=3))
-    b=b.point(_lut(0.925, lift=3, gamma=1.03))  # pull blues → golden warmth
+    b=b.point(_lut(0.925 + 0.055*cold, lift=3, gamma=1.03))  # keep the blues on cold shots
     im=Image.merge("RGB",(r,g,b))
-    im=ImageEnhance.Contrast(im).enhance(1.05)   # soft contrast
-    im=ImageEnhance.Color(im).enhance(0.92)      # slightly muted / editorial
-    im=ImageEnhance.Brightness(im).enhance(1.015)
+    im=ImageEnhance.Contrast(im).enhance(1.05 + 0.10*flat + 0.04*cold)
+    im=ImageEnhance.Color(im).enhance(0.92 + 0.06*cold)
+    im=ImageEnhance.Brightness(im).enhance(1.015 + 0.02*flat)
     glow=Image.new("RGB",im.size,(255,211,150))
-    im=Image.blend(im,glow,0.04)                 # 4% warm wash
+    im=Image.blend(im,glow,0.04*(1.0-0.75*cold))     # wash fades out on cold photos
     # subtle vignette
     vig=Image.new("L",im.size,0); vd=ImageDraw.Draw(vig)
     vd.ellipse([-im.width*0.18,-im.height*0.18,im.width*1.18,im.height*1.18],fill=255)
