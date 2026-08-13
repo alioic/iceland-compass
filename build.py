@@ -285,6 +285,22 @@ def write(path, content):
 CSS_STYLES = "/css/styles.css"   # sett á versjónaða slóð í main()
 CSS_DOC    = "/css/doc.css"
 CSS_FONTS  = "/css/fonts.css"     # sjálfhýst letur (ekkert Google Fonts)
+ICON_VERS = {}
+def icon_vers():
+    """Cache-bust the brand icons.
+
+    SiteGround's CDN honours the .htaccess max-age=31536000 on images, so an
+    icon replaced under the same filename keeps serving stale from the edge
+    for a year. Versioning the URL makes it a new resource instead.
+    """
+    if not ICON_VERS:
+        ICON_VERS.update(
+            v_favsvg=asset_ver("favicon.svg"),
+            v_fav32=asset_ver("favicon-32.png"),
+            v_favatouch=asset_ver("apple-touch-icon.png"),
+            v_logomark=asset_ver("img/logo-mark.svg"))
+    return ICON_VERS
+
 def asset_ver(relpath):
     p = os.path.join(ROOT, relpath.lstrip("/"))
     try:
@@ -295,7 +311,8 @@ def asset_ver(relpath):
 def stamp_homepage_assets():
     """Bætir ?v=<hash> aftan á css/js tengingar í index.html + en/index.html."""
     assets = ["css/styles.css", "css/fonts.css", "js/mapdata.js", "js/staymap.js", "js/coords.js",
-              "js/images.js", "js/data.js", "js/data.en.js", "js/app.js"]
+              "js/images.js", "js/data.js", "js/data.en.js", "js/app.js",
+              "favicon.svg", "favicon-32.png", "apple-touch-icon.png", "img/logo-mark.svg"]
     vers = {os.path.basename(a): asset_ver(a) for a in assets}
     for fn in ("index.html", "en/index.html"):
         path = os.path.join(ROOT, fn)
@@ -402,9 +419,9 @@ HEAD = """<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:image" content="{ogimg}">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v={v_favsvg}">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v={v_fav32}">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v={v_favatouch}">
 <link rel="stylesheet" href="{css_fonts}">
 <link rel="stylesheet" href="{css_styles}">
 <link rel="stylesheet" href="{css_doc}">
@@ -412,7 +429,7 @@ HEAD = """<!DOCTYPE html>
 </head>
 <body>
 <header class="site-header scrolled">
-  <a href="{home}" class="logo"><img class="logo-mark" src="/img/logo-mark.svg" alt="" width="34" height="17"><span class="logo-text">{logo}</span><span class="logo-sub">{logosub}</span></a>
+  <a href="{home}" class="logo"><img class="logo-mark" src="/img/logo-mark.svg?v={v_logomark}" alt="" width="34" height="17"><span class="logo-text">{logo}</span><span class="logo-sub">{logosub}</span></a>
   <nav class="main-nav">
     <a href="{home}#kort">{nav_map}</a>
     <a href="{coll_index}">{nav_coll}</a>
@@ -451,7 +468,8 @@ def page(lang, kind, ident, title, desc, url, ogtype, jsonld, body, ogimg=None):
         coll_index=coll_index_url(lang), nav_coll=ui["nav_coll"],
         guides_index=guides_index_url(lang), nav_guide=ui["nav_guide"],
         locals_index=locals_url(lang), nav_local=ui["nav_local"],
-        lang_href=kind_url(other, kind, ident), lang_label=ui["lang_label"])
+        lang_href=kind_url(other, kind, ident), lang_label=ui["lang_label"],
+        **icon_vers())
     full = head + body + FOOT.format(all=all_url(lang), nav_all=ui["nav_all"],
         about_index=about_url(lang), nav_about=ui["nav_about"],
         privacy_index=privacy_url(lang), nav_privacy=ui["nav_privacy"],
